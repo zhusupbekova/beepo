@@ -1,0 +1,41 @@
+/* Shared pixel look for popup, options and editor pages. */
+:root {
+  --ink: #1b1b2f;
+  --muted: #1b1b2f99;
+  --paper: #f4f1e8;
+  --card: #fff;
+  --blue: #7ad1ff;
+  --green: #8affc1;
+  --red: #ff5c7a;
+  --gold: #ffd84a;
+}
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+body { margin: 0; font: 12px/1.4 ui-monospace, Menlo, monospace; background: var(--paper); color: var(--ink); }
+h1, h2, h3 { margin: 0; }
+h2 { font-size: 13px; margin-bottom: 6px; }
+a { color: var(--ink); }
+canvas { image-rendering: pixelated; }
+.box { border: 3px solid var(--ink); background: var(--card); padding: 8px; margin-bottom: 10px; }
+input, select, button, textarea {
+  font: inherit; color: var(--ink); border: 2px solid var(--ink); padding: 4px 6px; background: #fff;
+}
+input[type="checkbox"] { width: auto; }
+button { background: var(--blue); cursor: pointer; font-weight: bold; box-shadow: 2px 2px 0 var(--ink); }
+button:active { translate: 1px 1px; box-shadow: 1px 1px 0 var(--ink); }
+button:disabled { opacity: .45; cursor: default; }
+button.ghost { background: #fff; }
+button.icon { background: none; border: 0; box-shadow: none; padding: 0 3px; opacity: .6; }
+button.icon:hover { opacity: 1; }
+.muted { color: var(--muted); }
+.row { display: flex; align-items: center; gap: 6px; }
+.grow { flex: 1; min-width: 0; }
+.tag { font-size: 10px; padding: 0 4px; border: 1px solid; white-space: nowrap; }
+.bar { height: 8px; border: 2px solid var(--ink); background: #eee; margin-top: 4px; position: relative; }
+.bar > div { height: 100%; background: var(--blue); }
+.bar.goal > div { background: var(--green); }
+.bar.over > div { background: var(--red); }
+.bar .bonus { position: absolute; top: 0; bottom: 0; background: repeating-linear-gradient(45deg, #0000 0 2px, #1b1b2f33 2px 4px); }
+.empty { color: var(--muted); text-align: center; padding: 8px; }
+label.field { display: flex; flex-direction: column; gap: 2px; font-size: 11px; }
+label.check { display: flex; align-items: center; gap: 6px; }

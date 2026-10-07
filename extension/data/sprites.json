@@ -1,0 +1,154 @@
+{
+  "width": 16,
+  "height": 20,
+  "palette": {
+    "k": "#1b1b2f",
+    "b": "#7ad1ff",
+    "d": "#4a9fd6",
+    "s": "#10334a",
+    "g": "#8affc1",
+    "r": "#ff5c7a",
+    "a": "#ff5c7a",
+    "y": "#ffd84a",
+    "p": "#ff9bb3",
+    "v": "#9b7bff",
+    "o": "#ffa24a",
+    "w": "#e8e4ff",
+    "l": "#9be86b",
+    "n": "#4f9a3a",
+    "x": "#ffffff",
+    "m": "#8a8a9e"
+  },
+  "body": [
+    "................",
+    "................",
+    "................",
+    "................",
+    ".......aa.......",
+    ".......kk.......",
+    "...kkkkkkkkkk...",
+    "..kbbbbbbbbbbk..",
+    "..kbssssssssbk..",
+    "..kbFFFFFFFFbk..",
+    "..kbFFFFFFFFbk..",
+    "..kbFFFFFFFFbk..",
+    "..kbbbbbbbbbbk..",
+    "...kkkkkkkkkk...",
+    "....kddddddk....",
+    "...kbbbbbbbbk...",
+    "..kdkbbyybbkdk..",
+    "...kbbbbbbbbk...",
+    "....kk....kk....",
+    "................"
+  ],
+  "faceRow": 9,
+  "faceCol": 4,
+  "faces": {
+    "neutral": ["sggssggs", "sggssggs", "ssssssss"],
+    "happy": ["sggssggs", "gssssssg", "sggggggs"],
+    "worried": ["sggssggs", "ssssssss", "sgsggsgs"],
+    "angry": ["srrssrrs", "srrssrrs", "ssrrrrss"],
+    "party": ["syyssyys", "yssssssy", "syyyyyys"],
+    "blink": ["ssssssss", "sggssggs", "ssssssss"],
+    "sleepy": ["ssssssss", "sggssggs", "sssggsss"],
+    "bored": ["ssssssss", "sggssggs", "ssggggss"],
+    "proud": ["sgssssgs", "gsgssgsg", "ssggggss"],
+    "sad": ["sggssggs", "sbsggsss", "sgssssgs"],
+    "lookLeft": ["ggssggss", "ggssggss", "ssssssss"],
+    "lookRight": ["ssggssgg", "ssggssgg", "ssssssss"]
+  },
+  "poses": {
+    "walk": { "18": "...k._...._.k..." },
+    "wave": { "14": ".............dk.", "15": ".............dk.", "16": "............k_.." },
+    "sit": { "18": "....__....__...." }
+  },
+  "evolve": [
+    { "id": "cheeks", "name": "Rosy cheeks", "minStreak": 3, "rows": { "11": "....p......p...." } },
+    { "id": "grow", "name": "Growth spurt", "minStreak": 7, "grow": 1 },
+    { "id": "collar", "name": "Golden collar", "minStreak": 14, "rows": { "13": "...yyyyyyyyyy..." } }
+  ],
+  "scruffy": {
+    "rows": {
+      "7": ".....m.....m....",
+      "12": "...m............",
+      "15": "....m......m...."
+    }
+  },
+  "items": {
+    "color-blue": { "slot": "color", "name": "Sky Blue", "price": 0, "colors": { "b": "#7ad1ff", "d": "#4a9fd6" } },
+    "color-pink": { "slot": "color", "name": "Bubblegum", "price": 4, "colors": { "b": "#ffa6c9", "d": "#e0779f" } },
+    "color-mint": { "slot": "color", "name": "Mint", "price": 4, "colors": { "b": "#9ff0c4", "d": "#5cc495" } },
+    "color-purple": { "slot": "color", "name": "Grape", "price": 4, "colors": { "b": "#c3a6ff", "d": "#8f6fe0" } },
+    "color-gold": { "slot": "color", "name": "Solid Gold", "price": 12, "colors": { "b": "#ffe27a", "d": "#d9a520" } },
+
+    "antenna-heart": {
+      "slot": "antenna", "name": "Heart Antenna", "price": 3,
+      "rows": { "2": ".....pp..pp.....", "3": ".....pppppp.....", "4": "......pppp......" }
+    },
+    "antenna-star": {
+      "slot": "antenna", "name": "Star Antenna", "price": 3,
+      "rows": { "2": ".......yy.......", "3": ".....yyyyyy.....", "4": "......y__y......" }
+    },
+
+    "hat-cap": {
+      "slot": "hat", "name": "Red Cap", "price": 5,
+      "rows": { "3": "......kkkk......", "4": ".....krrrrk.....", "5": "....krrrrrrk....", "6": "...kkkkkkkkkkkk." }
+    },
+    "hat-party": {
+      "slot": "hat", "name": "Party Hat", "price": 5,
+      "rows": {
+        "0": ".......yy.......",
+        "1": ".......pp.......",
+        "2": "......pvvp......",
+        "3": "......vppv......",
+        "4": ".....ppvvpp.....",
+        "5": ".....vvppvv....."
+      }
+    },
+    "hat-top": {
+      "slot": "hat", "name": "Top Hat", "price": 8,
+      "rows": {
+        "1": ".....kkkkkk.....",
+        "2": ".....kkkkkk.....",
+        "3": ".....kkkkkk.....",
+        "4": ".....krrrrk.....",
+        "5": "...kkkkkkkkkk..."
+      }
+    },
+    "hat-crown": {
+      "slot": "hat", "name": "Crown", "price": 15,
+      "rows": { "3": "....y..yy..y....", "4": "....yyyrryyy....", "5": "....yyyyyyyy...." }
+    },
+
+    "acc-shades": {
+      "slot": "accessory", "name": "Cool Shades", "price": 6,
+      "rows": { "9": "....kkkkkkkk....", "10": "....kkk..kkk...." }
+    },
+    "acc-scarf": {
+      "slot": "accessory", "name": "Cozy Scarf", "price": 6,
+      "rows": { "14": "...rrrrrrrrrr...", "15": "...........rr..." }
+    },
+
+    "pet-cat": {
+      "slot": "pet", "name": "Mochi the Cat", "price": 15,
+      "frames": [
+        ["o...o.....", "ooooo.....", "okoko.....", "oopoo...o.", ".oooooo.o.", ".oooooooo.", ".oooooo...", ".k.k..k.k."],
+        ["o...o.....", "ooooo.....", "okoko.....", "oopoo.....", ".oooooo..o", ".ooooooo.o", ".oooooooo.", ".k.k..k.k."]
+      ]
+    },
+    "pet-ghost": {
+      "slot": "pet", "name": "Boo the Ghost", "price": 15,
+      "frames": [
+        ["..wwww....", ".wwwwww...", "wwkwwkww..", "wwkwwkww..", "wwwwwwww..", "wwwppwww..", "wwwwwwww..", "ww.ww.ww.."],
+        ["..wwww....", ".wwwwww...", "wwkwwkww..", "wwkwwkww..", "wwwwwwww..", "wwwppwww..", "wwwwwwww..", ".ww.ww.ww."]
+      ]
+    },
+    "pet-slime": {
+      "slot": "pet", "name": "Gloop the Slime", "price": 15,
+      "frames": [
+        ["..........", "..........", "...llll...", "..lxllll..", ".llkllkll.", ".llllllll.", "llllllllll", "nnnnnnnnnn"],
+        ["..........", "..........", "..........", "..lxllll..", ".llkllkll.", "llllllllll", "llllllllll", "nnnnnnnnnn"]
+      ]
+    }
+  }
+}

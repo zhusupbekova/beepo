@@ -1,0 +1,40 @@
+{
+  "greetMorning": { "mood": "happy", "lines": ["Good morning! Let's have a good one.", "Morning! I brought my best beeps.", "Rise and shine, friend!"] },
+  "greetAfternoon": { "mood": "happy", "lines": ["Hey there! Beepo reporting for duty.", "Afternoon! Remember to drink some water.", "Oh hi! Didn't see you there."] },
+  "greetEvening": { "mood": "happy", "lines": ["Evening! Winding down soon?", "Hi! The sun's going down, beep boop.", "Hey! Hope today was a good one."] },
+  "greetNight": { "mood": "sleepy", "lines": ["It's late... *yawn*. Hi.", "Shouldn't we both be asleep?", "Night owl mode, huh?"] },
+
+  "statusLimit": { "mood": "happy", "lines": ["{left} left on {name} today.", "You've got {left} left here. Spend it well!", "{left} to go on {name}. I'm counting!"] },
+  "statusOver": { "mood": "angry", "lines": ["You're {over} over on {name}.", "We passed the limit {over} ago...", "{over} over. Let's go do something else?"] },
+  "statusGoal": { "mood": "happy", "lines": ["{left} to go on your goal. You got this!", "{left} more and you get a star!", "Keep going, {left} left!"] },
+  "statusGoalDone": { "mood": "proud", "lines": ["Goal done today! Great job!", "You already crushed today's goal!", "Goal complete. Extra time is a bonus!"] },
+  "statusCompanion": { "mood": "happy", "lines": ["Just hanging out. ⭐ {stars}", "Beep! {streak} day streak so far.", "I'm here if you need me."] },
+  "statusNight": { "mood": "sleepy", "lines": ["It's {time}... sleep is a great website too.", "{time}?! YouTube can wait, sleep can't.", "Late-night scrolling is a trap. Ask me how I know."] },
+
+  "limit50": { "mood": "neutral", "lines": ["Halfway through your {m} minutes. Just checking in!", "Half your time is gone. Still having fun?", "That's 50%! Beepo is keeping score."] },
+  "limit80": { "mood": "worried", "lines": ["Only {left} left... maybe wrap up soon?", "Almost there! {left} to go.", "Psst. {left} left. Time to find a stopping point."] },
+  "limit100": { "mood": "angry", "lines": ["That's your {m} minutes! Time to go do something else.", "STOP! Limit reached. Go stretch!", "Time's up! I believe in you, close this tab."] },
+  "over": { "mood": "sad", "lines": ["You're {over} over. Beepo is sad :(", "Still here? {over} over the limit...", "{over} over. Pretty please, take a break?"] },
+  "snoozeOver": { "mood": "worried", "lines": ["Snooze time's up!", "That was your extra time. For real now!", "Snooze over. Beep beep beep!"] },
+  "snooze1": { "mood": "neutral", "lines": ["Okay, 5 more minutes. I'm watching!", "Fine, 5 more. Make them count.", "5 minutes. Then we go, deal?"] },
+  "snooze2": { "mood": "worried", "lines": ["That's snooze #2 today...", "Another 5? Okay, but I'm keeping track.", "Snooze number two. Hmm."] },
+  "snooze3": { "mood": "sad", "lines": ["Snooze #{n}. We both know where this is going.", "That's {n} snoozes. Beepo is getting worried.", "Snooze #{n}... maybe the limit should be honest?"] },
+
+  "goal50": { "mood": "happy", "lines": ["Halfway to your goal, keep going!", "50% done! You're doing great.", "Half way! Beepo is proud already."] },
+  "goal100": { "mood": "party", "lines": ["You did {m} minutes! Here's a star ⭐", "GOAL! Star for you ⭐", "Goal complete! ⭐ +1, you rock!"] },
+  "night": { "mood": "sleepy", "lines": ["It's past midnight... let's get some sleep soon?", "Late night, huh? Your bed misses you.", "Night owl alert! Sleep is a superpower."] },
+
+  "kept": { "mood": "party", "lines": ["Yesterday you stayed under your limit on {n} site(s)! +{n} ⭐", "You kept {n} limit(s) yesterday! +{n} ⭐", "Great self-control yesterday! +{n} ⭐"] },
+  "streak": { "mood": "proud", "lines": ["{n} day streak! Keep it going!", "That's {n} days in a row. Wow!", "Streak: {n} days. Beepo is beaming."] },
+  "badge": { "mood": "party", "lines": ["New badge: {name}! +3 ⭐", "You unlocked {name}! +3 ⭐", "Badge get: {name}! +3 ⭐"] },
+  "evolve": { "mood": "proud", "lines": ["Whoa, I feel different! ({name})", "Look at me! {name}!", "Your streak changed me: {name}!"] },
+
+  "blocked": { "mood": "angry", "lines": ["Limit reached for {name}. This page is off for today.", "That's all for {name} today. Come back tomorrow!", "{name} is closed. Beepo is guarding the door."] },
+  "focus": { "mood": "worried", "lines": ["It's focus time! {name} is off-limits until {until}.", "No {name} until {until}. You've got this.", "Focus hours! See you after {until}."] },
+  "unlock": { "mood": "neutral", "lines": ["Unlocked for 5 minutes. Use them wisely!", "Okay, 5 minutes. Clock's ticking!", "Door's open for 5. Then I lock it again."] },
+
+  "bored": { "mood": "bored", "lines": ["Hello? Anybody there?", "*taps screen*", "I'm bored... wanna go outside?"] },
+  "sleepy": { "mood": "sleepy", "lines": ["Zzz...", "*snore*", "Zzz... beep... zzz..."] },
+  "scroll": { "mood": "worried", "lines": ["Whoa, slow down!", "Doomscroll detected!", "Wheee— hey, careful!"] },
+  "poke": { "mood": "happy", "lines": ["Hehe, that tickles!", "Beep boop!", "You poked me!"] }
+}

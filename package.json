@@ -1,0 +1,11 @@
+{
+  "name": "beepo",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test tests/*.test.js",
+    "check": "for f in extension/*.js extension/*/*.js; do node --check \"$f\" || exit 1; done",
+    "icons": "node scripts/make-icons.js",
+    "build": "node scripts/build.js"
+  }
+}

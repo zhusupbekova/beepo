@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Beepo sprite editor</title>
+    <link rel="stylesheet" href="ui/ui.css" />
+    <style>
+      body { padding: 24px; }
+      main { display: flex; gap: 20px; align-items: flex-start; flex-wrap: wrap; }
+      #grid { border: 3px solid var(--ink); cursor: crosshair; background: repeating-conic-gradient(#eee 0 25%, #fff 0 50%) 0 0 / 20px 20px; }
+      .side { display: flex; flex-direction: column; gap: 10px; width: 280px; }
+      .swatches { display: grid; grid-template-columns: repeat(6, 1fr); gap: 4px; }
+      .sw { height: 28px; border: 2px solid var(--ink); cursor: pointer; font-size: 10px; display: flex; align-items: center; justify-content: center; box-shadow: none; padding: 0; }
+      .sw.on { outline: 3px solid var(--gold); outline-offset: 1px; }
+      .preview { display: flex; gap: 8px; align-items: flex-end; padding: 8px; background: var(--paper); border: 2px solid var(--ink); }
+      .customs .row { padding: 3px 0; }
+      .hint { font-size: 11px; color: var(--muted); }
+    </style>
+  </head>
+  <body>
+    <h1 style="margin-bottom: 4px">✏ Beepo sprite editor</h1>
+    <p class="hint">Paint an overlay on top of Beepo. Left-click paints, right-click resets a pixel to "unchanged". <b>⌫</b> erases Beepo's own pixels underneath.</p>
+    <main>
+      <canvas id="grid"></canvas>
+      <div class="side">
+        <div class="box">
+          <div class="swatches" id="swatches"></div>
+        </div>
+        <div class="box">
+          <label class="field">Name <input id="name" placeholder="My cool hat" /></label>
+          <label class="field" style="margin-top: 6px">Slot
+            <select id="slot"><option value="hat">Hat</option><option value="accessory">Accessory</option><option value="antenna">Antenna</option></select>
+          </label>
+          <label class="field" style="margin-top: 6px">Start from
+            <select id="base"><option value="">Blank</option></select>
+          </label>
+          <div class="row" style="margin-top: 8px">
+            <button id="save">Save to shop</button>
+            <button id="copy" class="ghost" title="JSON for data/sprites.json">Copy JSON</button>
+            <button id="clear" class="ghost">Clear</button>
+          </div>
+          <div class="hint" id="msg"></div>
+        </div>
+        <div class="box">
+          <h2>Preview</h2>
+          <div class="preview" id="preview"></div>
+        </div>
+        <div class="box customs">
+          <h2>Your creations</h2>
+          <div id="customs"></div>
+        </div>
+      </div>
+    </main>
+    <script src="render/sprite.js"></script>
+    <script type="module" src="ui/editor.js"></script>
+  </body>
+</html>

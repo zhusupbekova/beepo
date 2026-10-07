@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Beepo settings</title>
+    <link rel="stylesheet" href="ui/ui.css" />
+    <style>
+      body { max-width: 560px; margin: 0 auto; padding: 24px 16px; }
+      header { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+      form { display: grid; grid-template-columns: 1fr 1fr; gap: 10px 16px; }
+      .hint { font-size: 11px; color: var(--muted); }
+      .saved { color: #2a8a55; min-height: 1em; }
+      .row { flex-wrap: wrap; }
+    </style>
+  </head>
+  <body>
+    <header>
+      <canvas id="beepo"></canvas>
+      <div>
+        <h1>Beepo settings</h1>
+        <div class="saved" id="saved"></div>
+      </div>
+    </header>
+
+    <div class="box">
+      <h2>Beepo</h2>
+      <form id="settings">
+        <label class="field">Home corner
+          <select name="side"><option value="right">Bottom right</option><option value="left">Bottom left</option></select>
+        </label>
+        <label class="field">Size
+          <select name="scale"><option value="3">Small</option><option value="4">Medium</option><option value="5">Large</option></select>
+        </label>
+        <label class="field">Nag every (minutes over limit)
+          <input name="nagMinutes" type="number" min="0" max="60" />
+          <span class="hint">0 = only once</span>
+        </label>
+        <label class="field">New day starts at
+          <select name="resetHour"></select>
+          <span class="hint">So late nights count as "yesterday"</span>
+        </label>
+        <label class="field">Pause counting after idle (seconds)
+          <input name="idleSeconds" type="number" min="15" max="3600" />
+          <span class="hint">Playing videos always count</span>
+        </label>
+        <div></div>
+        <label class="check"><input type="checkbox" name="wander" /> Wander around the page</label>
+        <label class="check"><input type="checkbox" name="sound" /> 8-bit sounds</label>
+        <label class="check"><input type="checkbox" name="quiet" /> Quiet mode (only important stuff)</label>
+        <label class="check"><input type="checkbox" name="everywhere" /> Show Beepo on every site</label>
+      </form>
+    </div>
+
+    <div class="box">
+      <h2>Your data</h2>
+      <p class="hint">Everything stays in your browser. Rules, settings and stars sync through your Chrome profile; usage history stays on this device.</p>
+      <div class="row">
+        <button id="export">Export JSON</button>
+        <button id="import" class="ghost">Import JSON…</button>
+        <input type="file" id="file" accept="application/json" hidden />
+        <a href="editor.html">✏ Sprite editor</a>
+      </div>
+    </div>
+
+    <script src="render/sprite.js"></script>
+    <script type="module" src="ui/options.js"></script>
+  </body>
+</html>
