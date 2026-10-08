@@ -33,12 +33,14 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.repeatOnLifecycle
 import studio.panikka.beepo.data.AppInfo
 import studio.panikka.beepo.data.Apps
+import studio.panikka.beepo.data.Plus
 import studio.panikka.beepo.data.Store
 import studio.panikka.beepo.ui.BadgesScreen
 import studio.panikka.beepo.ui.Header
 import studio.panikka.beepo.ui.Onboarding
 import studio.panikka.beepo.ui.Paper
 import studio.panikka.beepo.ui.PixelChip
+import studio.panikka.beepo.ui.PlusDialog
 import studio.panikka.beepo.ui.ReportScreen
 import studio.panikka.beepo.ui.SettingsScreen
 import studio.panikka.beepo.ui.ShopScreen
@@ -53,6 +55,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         val store = Store.get(this)
+        Plus.init(this, store)
         setContent { App(store) }
     }
 }
@@ -65,9 +68,11 @@ private val TABS = listOf("today", "report", "shop", "badges")
 private fun App(store: Store) {
     val context = LocalContext.current
     val state by store.state.collectAsStateWithLifecycle()
+    val plus by store.plus.collectAsStateWithLifecycle()
     val i18n = remember(state.settings.lang) { I18n.load(context.assets, state.settings.lang) }
     var tab by rememberSaveable { mutableStateOf("today") }
     var settingsOpen by rememberSaveable { mutableStateOf(false) }
+    var plusOpen by rememberSaveable { mutableStateOf(false) }
     var granted by remember { mutableStateOf(UsageAccess.granted(context)) }
     var apps by remember { mutableStateOf(emptyMap<String, AppInfo>()) }
 
@@ -108,6 +113,7 @@ private fun App(store: Store) {
                 for (name in TABS) PixelChip(i18n.t("tab_$name"), tab == name) { tab = name }
             }
         }
-        if (settingsOpen) SettingsScreen(state.settings, i18n, store::setSettings) { settingsOpen = false }
+        if (settingsOpen) SettingsScreen(state.settings, i18n, store::setSettings, onPlus = { plusOpen = true }, plus, store::setPlus) { settingsOpen = false }
+        if (plusOpen) PlusDialog(store, i18n) { plusOpen = false }
     }
 }

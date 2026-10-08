@@ -479,7 +479,7 @@
     "obGoals": "Metas: mais tempo nos apps que fazem bem pra você.",
     "obStars": "Cumpra um limite o dia todo e ganhe uma estrela. Gaste estrelas em chapéus e cores pra mim.",
     "obStreaks": "Mantenha isso por alguns dias seguidos e eu também vou mudar.",
-    "obOffline": "O Beepo não tem acesso à internet, então nada sai do seu celular.",
+    "obOffline": "Seu tempo nos apps nunca sai do seu celular. O Beepo só fica online para verificar compras do Beepo Plus.",
     "privacyPolicy": "Política de privacidade",
     "obGranted": "Acesso ao uso ativado ✓",
     "obPickTitle": "Quais apps devo vigiar?",
@@ -489,6 +489,14 @@
     "next": "Próximo",
     "back": "Voltar",
     "notNow": "Agora não",
-    "start": "Vamos lá!"
+    "start": "Vamos lá!",
+    "plusTitle": "Beepo Plus",
+    "plusBody": "Um desbloqueio único: todos os bichinhos vêm me fazer companhia, e você ajuda um estúdio pequeno a continuar fazendo o Beepo.",
+    "plusBuy": "Desbloquear por {price}",
+    "plusRestore": "Restaurar compra",
+    "plusActive": "Plus está ativo. Obrigado! 💛",
+    "plusOffline": "Não dá para acessar a loja agora. Tente mais tarde.",
+    "plusFailed": "Não deu certo. Tentar de novo?",
+    "plusNothing": "Nenhuma compra do Plus encontrada nesta conta."
   }
 }

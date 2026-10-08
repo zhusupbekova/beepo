@@ -33,7 +33,7 @@ Removing the extension deletes all of its data. Use **Settings → Your data →
 
 ## Android app
 
-The Android app has no internet permission: it cannot send anything anywhere.
+Your rules, app usage and everything Beepo shows you stay on your phone. The app only goes online for **Beepo Plus**, the optional in-app purchase, which is handled by [RevenueCat](https://www.revenuecat.com/privacy) together with Google Play. For that, RevenueCat receives a random app user ID it creates, your purchases and receipts, basic device info (app version, OS version, country/store, language) and your IP address. It does not receive your rules, app usage or anything about other apps.
 
 ### What is stored, and where
 
@@ -49,6 +49,7 @@ Beepo records **app package names and seconds spent**, not what you do inside ap
 ### Permissions
 
 - **Usage access** (you turn it on in Android's settings): to read Android's own record of which app was on screen and when. Beepo only turns it into seconds per app, for the apps you track and for the "Today on your phone" list. If Beepo isn't opened for a few days, it uses the same record to fill in those days (Android keeps about a week).
+- **Internet:** only to load Beepo Plus prices and check Beepo Plus purchases (see above).
 - **List of installed apps with a launcher icon:** to show app names and icons when you pick apps for a rule. Only the package names you pick are saved.
 
 ### Deleting your data

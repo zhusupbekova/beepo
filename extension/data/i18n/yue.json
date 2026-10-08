@@ -479,7 +479,7 @@
     "obGoals": "目標：多啲時間喺對你有益嘅 App 度。",
     "obStars": "成日守住一個限制就有一粒星星。用星星幫我買帽同顏色啦。",
     "obStreaks": "連續堅持幾日，我都會跟住變。",
-    "obOffline": "Beepo 冇得上網，所以咩資料都唔會離開你部手機。",
+    "obOffline": "你嘅 app 使用時間永遠唔會離開你部手機。Beepo 只會為咗檢查 Beepo Plus 購買先上網。",
     "privacyPolicy": "私隱政策",
     "obGranted": "使用情況存取權已經開咗 ✓",
     "obPickTitle": "我應該留意邊啲 App？",
@@ -489,6 +489,14 @@
     "next": "下一步",
     "back": "返回",
     "notNow": "住先",
-    "start": "開始啦！"
+    "start": "開始啦！",
+    "plusTitle": "Beepo Plus",
+    "plusBody": "一次過解鎖：所有寵物都會嚟陪我，你仲可以支持一間細細嘅工作室繼續整 Beepo。",
+    "plusBuy": "以 {price} 解鎖",
+    "plusRestore": "還原購買",
+    "plusActive": "Plus 已開啟。多謝你！💛",
+    "plusOffline": "而家連唔到商店，遲啲再試吓。",
+    "plusFailed": "唔成功，再試多次？",
+    "plusNothing": "呢個帳戶搵唔到 Plus 購買紀錄。"
   }
 }

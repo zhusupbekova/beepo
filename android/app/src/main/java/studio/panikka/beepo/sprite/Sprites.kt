@@ -13,6 +13,8 @@ class Item(
     val colors: Map<Char, Int>,
     val rows: Rows,
     val frames: List<List<String>>,
+    /** Comes with Beepo Plus (Android) instead of being bought with stars. */
+    val plus: Boolean = false,
 )
 
 /** `rows` is null for steps that only change size (grow). */
@@ -61,6 +63,7 @@ class Sprites(
             colors = o.optJSONObject("colors")?.let(::colors).orEmpty(),
             rows = rows(o.optJSONObject("rows")),
             frames = o.optJSONArray("frames")?.let { f -> (0 until f.length()).map { strings(f.getJSONArray(it)) } }.orEmpty(),
+            plus = o.optBoolean("plus"),
         )
 
         private fun strings(a: JSONArray) = (0 until a.length()).map { a.getString(it) }

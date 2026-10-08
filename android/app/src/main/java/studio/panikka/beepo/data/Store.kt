@@ -54,6 +54,22 @@ class Store private constructor(private val context: Context) {
     )
     val state: StateFlow<State> = _state
 
+    private val _plus = MutableStateFlow(false)
+
+    /** Beepo Plus is active (set from RevenueCat by [Plus]). Plus items count as owned while it is. */
+    val plus: StateFlow<Boolean> = _plus
+
+    fun owns(itemId: String) = itemId in _state.value.wallet.owned || (_plus.value && sprites.items[itemId]?.plus == true)
+
+    /** RevenueCat's answer; if Plus is gone (refund), Plus items come off. */
+    @Synchronized
+    fun setPlus(active: Boolean) {
+        _plus.value = active
+        if (active) return
+        val e = _state.value.wallet.equipped
+        e.toMap().forEach { (slot, id) -> if (sprites.items[id]?.plus == true && !owns(id)) equip(slot, null) }
+    }
+
     /**
      * Rolls the day over if needed, then rebuilds today's usage from the system log. Call on
      * resume and periodically; it reads the log, so not on the main thread.
@@ -100,7 +116,7 @@ class Store private constructor(private val context: Context) {
         val st = _state.value
         val item = sprites.items[itemId] ?: return false
         val w = st.wallet
-        if (itemId in w.owned || w.stars < item.price) return false
+        if (item.plus || itemId in w.owned || w.stars < item.price) return false
         val bought = st.copy(wallet = w.copy(stars = w.stars - item.price, owned = w.owned + itemId))
         save(checkBadges(bought, bought.day?.date ?: dateKey(System.currentTimeMillis(), st.settings.resetHour)))
         equip(item.slot, itemId)
@@ -111,7 +127,7 @@ class Store private constructor(private val context: Context) {
     @Synchronized
     fun equip(slot: String, itemId: String?) {
         val st = _state.value
-        if (itemId != null && itemId !in st.wallet.owned) return
+        if (itemId != null && !owns(itemId)) return
         val e = st.wallet.equipped
         val equipped = when (slot) {
             "color" -> e.copy(color = itemId ?: "color-blue")

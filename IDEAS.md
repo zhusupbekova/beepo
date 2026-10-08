@@ -48,6 +48,7 @@ Status: ✅ done (v0.2) · 🚧 in progress · ⏳ not started
   - ✅ Per-app time from the system usage log (Usage access card → settings), Today screen: rules with bars, "today on your phone" with 15/30/60 quick limits, rule editor (name, apps, limit/goal, minutes, weekend). Rules/settings saved as JSON.
   - ✅ Day rollover (missed days rebuilt from the usage log), stars, goal stars, streak / evolve / badge news in a bubble, Report / Shop / Badges tabs, settings (language, reset hour), generated launcher icon, privacy policy section.
   - ✅ App id `studio.panikka.beepo`. Onboarding: hello → how it works → usage access (prominent disclosure, privacy policy link) → pick the week's top apps with a daily limit; skippable. Privacy link in settings.
+  - ✅ Beepo Plus via RevenueCat (entitlement `beepo_pro`, current offering's lifetime package): pets come with Plus instead of stars (`"plus": true` in sprites.json). Pixel paywall from the Shop and Settings, restore. Debug builds use the Test Store key; release needs `revenuecatKey` (Play key) in gradle properties.
   - ⏳ Custom cosmetics (editor), export / import, suggestions from history, snooze / unlock (need the overlay).
   - ⏳ Foreground service + overlay Beepo (`SYSTEM_ALERT_WINDOW`) walking along the bottom with bubbles.
   - ⏳ Block screen, home-screen widget. Play policy declarations for usage access / overlay / FGS.

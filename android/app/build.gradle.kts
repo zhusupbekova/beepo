@@ -16,6 +16,17 @@ android {
         versionName = "0.1.0"
     }
 
+    // RevenueCat public SDK keys. Debug uses the Test Store (fake purchases, no Play needed); release
+    // needs the Play key (goog_...) as `revenuecatKey` in ~/.gradle/gradle.properties, else Plus stays hidden.
+    buildTypes {
+        getByName("debug") {
+            buildConfigField("String", "REVENUECAT_KEY", "\"test_HEQWOfmDhacpFwFOXQzmuqjLoCt\"")
+        }
+        getByName("release") {
+            buildConfigField("String", "REVENUECAT_KEY", "\"${providers.gradleProperty("revenuecatKey").getOrElse("")}\"")
+        }
+    }
+
     // Sprites and translations are shared with the extension, read straight from extension/data.
     sourceSets {
         getByName("main") {
@@ -37,6 +48,7 @@ dependencies {
     implementation(libs.androidx.compose.foundation)
     implementation(libs.androidx.compose.material3)
     implementation(libs.kotlinx.serialization.json)
+    implementation(libs.revenuecat.purchases)
 
     testImplementation(libs.junit)
     // org.json is part of Android but stubbed in local unit tests.

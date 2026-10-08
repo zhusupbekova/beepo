@@ -479,7 +479,7 @@
     "obGoals": "Hedefler: sana iyi gelen uygulamalarda daha çok zaman.",
     "obStars": "Bir sınıra bütün gün uy, bir yıldız kazan. Yıldızları benim için şapkalara ve renklere harca.",
     "obStreaks": "Birkaç gün üst üste devam edersen ben de değişirim.",
-    "obOffline": "Beepo'nun internet erişimi yok, yani hiçbir şey telefonundan çıkmaz.",
+    "obOffline": "Uygulama süren asla telefonundan çıkmaz. Beepo yalnızca Beepo Plus satın alımlarını kontrol etmek için internete bağlanır.",
     "privacyPolicy": "Gizlilik politikası",
     "obGranted": "Kullanım erişimi açık ✓",
     "obPickTitle": "Hangi uygulamalara göz kulak olayım?",
@@ -489,6 +489,14 @@
     "next": "İleri",
     "back": "Geri",
     "notNow": "Şimdi değil",
-    "start": "Hadi başlayalım!"
+    "start": "Hadi başlayalım!",
+    "plusTitle": "Beepo Plus",
+    "plusBody": "Tek seferlik kilit açma: tüm evcil hayvanlar bana arkadaşlık etmeye gelir, sen de küçük bir stüdyonun Beepo'yu geliştirmeye devam etmesine destek olursun.",
+    "plusBuy": "{price} karşılığında aç",
+    "plusRestore": "Satın alımı geri yükle",
+    "plusActive": "Plus açık. Teşekkürler! 💛",
+    "plusOffline": "Mağazaya şu an ulaşılamıyor. Daha sonra tekrar dene.",
+    "plusFailed": "Bu olmadı. Tekrar denemek ister misin?",
+    "plusNothing": "Bu hesapta Plus satın alımı bulunamadı."
   }
 }

@@ -479,7 +479,7 @@
     "obGoals": "Target: lebih banyak waktu di aplikasi yang baik untukmu.",
     "obStars": "Patuhi batas seharian penuh untuk dapat bintang. Pakai bintang untuk topi dan warna buatku.",
     "obStreaks": "Pertahankan beberapa hari berturut-turut, aku juga akan berubah.",
-    "obOffline": "Beepo tidak punya akses internet, jadi tidak ada yang keluar dari ponselmu.",
+    "obOffline": "Waktu aplikasimu tidak pernah keluar dari ponselmu. Beepo hanya online untuk memeriksa pembelian Beepo Plus.",
     "privacyPolicy": "Kebijakan privasi",
     "obGranted": "Akses penggunaan sudah aktif ✓",
     "obPickTitle": "Aplikasi mana yang harus kuawasi?",
@@ -489,6 +489,14 @@
     "next": "Lanjut",
     "back": "Kembali",
     "notNow": "Nanti saja",
-    "start": "Ayo mulai!"
+    "start": "Ayo mulai!",
+    "plusTitle": "Beepo Plus",
+    "plusBody": "Buka sekali saja: semua hewan peliharaan datang menemaniku, dan kamu membantu studio kecil terus membuat Beepo.",
+    "plusBuy": "Buka seharga {price}",
+    "plusRestore": "Pulihkan pembelian",
+    "plusActive": "Plus aktif. Terima kasih! 💛",
+    "plusOffline": "Tidak bisa terhubung ke toko sekarang. Coba lagi nanti.",
+    "plusFailed": "Itu belum berhasil. Coba lagi?",
+    "plusNothing": "Tidak ada pembelian Plus di akun ini."
   }
 }

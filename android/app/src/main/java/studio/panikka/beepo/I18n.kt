@@ -18,8 +18,8 @@ class I18n(private val sections: Map<String, Map<String, Any>>, val lang: String
     /** A `ui` string (shared with the extension), with {var}s filled in. */
     fun t(key: String, vararg vars: Pair<String, Any?>) = fillTemplate(get("ui", key), vars.toMap())
 
-    /** An Android-only string. */
-    fun android(key: String) = get("android", key)
+    /** An Android-only string, with {var}s filled in. */
+    fun android(key: String, vararg vars: Pair<String, Any?>) = fillTemplate(get("android", key), vars.toMap())
 
     /** Locale for dates (weekday names in the report). */
     val locale: Locale get() = Locale.forLanguageTag(string("locale") ?: "en")

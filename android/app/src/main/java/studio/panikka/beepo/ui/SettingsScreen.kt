@@ -26,10 +26,11 @@ import studio.panikka.beepo.PRIVACY_URL
 import studio.panikka.beepo.openUrl
 import studio.panikka.beepo.core.LANGUAGES
 import studio.panikka.beepo.core.Settings
+import studio.panikka.beepo.data.Plus
 
 /** The options page's settings that matter without the overlay: language and when the day starts. */
 @Composable
-fun SettingsScreen(settings: Settings, i18n: I18n, onChange: (Settings) -> Unit, onClose: () -> Unit) {
+fun SettingsScreen(settings: Settings, i18n: I18n, onChange: (Settings) -> Unit, onPlus: () -> Unit, plus: Boolean, onSetPlus: (Boolean) -> Unit, onClose: () -> Unit) {
     val context = LocalContext.current
     Dialog(onClose, DialogProperties(usePlatformDefaultWidth = false)) {
         Column(
@@ -49,6 +50,8 @@ fun SettingsScreen(settings: Settings, i18n: I18n, onChange: (Settings) -> Unit,
                 }
             }
 
+            if (Plus.available) PixelButton("✨ " + i18n.android("plusTitle"), fill = Gold, onClick = onPlus)
+
             Text(
                 i18n.android("privacyPolicy"),
                 Modifier.clickable { openUrl(context, PRIVACY_URL) }.padding(vertical = 4.dp),
@@ -63,6 +66,9 @@ fun SettingsScreen(settings: Settings, i18n: I18n, onChange: (Settings) -> Unit,
                     onChange(settings.copy(onboarded = false))
                     onClose()
                 }
+                // Local only: RevenueCat's next update (purchase, restore, relaunch) sets it back.
+                PixelButton("Dev: Plus ${if (plus) "on → off" else "off → on"}", fill = Card) { onSetPlus(!plus) }
+                PixelButton("Dev: show paywall", fill = Card, onClick = onPlus)
             }
         }
     }

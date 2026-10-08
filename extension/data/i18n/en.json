@@ -479,7 +479,7 @@
     "obGoals": "Goals: more time in apps that are good for you.",
     "obStars": "Keep a limit for a whole day to earn a star. Spend stars on hats and colors for me.",
     "obStreaks": "Keep it up a few days in a row and I'll change, too.",
-    "obOffline": "Beepo has no internet access, so nothing ever leaves your phone.",
+    "obOffline": "Your app time never leaves your phone. Beepo only goes online to check Beepo Plus purchases.",
     "privacyPolicy": "Privacy policy",
     "obGranted": "Usage access is on ✓",
     "obPickTitle": "Which apps should I watch?",
@@ -489,6 +489,14 @@
     "next": "Next",
     "back": "Back",
     "notNow": "Not now",
-    "start": "Let's go!"
+    "start": "Let's go!",
+    "plusTitle": "Beepo Plus",
+    "plusBody": "A one-time unlock: all the pets come to keep me company, and you help a tiny studio keep making Beepo.",
+    "plusBuy": "Unlock for {price}",
+    "plusRestore": "Restore purchase",
+    "plusActive": "Plus is on. Thank you! 💛",
+    "plusOffline": "Can't reach the store right now. Try again later.",
+    "plusFailed": "That didn't go through. Try again?",
+    "plusNothing": "No Plus purchase found on this account."
   }
 }
