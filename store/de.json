@@ -1,0 +1,14 @@
+{
+  "name": "Beepo – dein Pixel-Buddy für die Bildschirmzeit",
+  "short": "Ein kleiner Pixel-Roboter wohnt unten auf deinen Websites, stupst dich an, wenn die Zeit um ist, und jubelt bei erreichten Zielen.",
+  "description": "Das ist Beepo, ein kleiner Pixel-Roboter, der dir auf den Seiten deiner Wahl Gesellschaft leistet.\n\n• Lege Tageslimits (weniger Zeit) oder Ziele (mehr Zeit) fest – für jede Seite, Gruppen von Seiten oder sogar Pfade wie youtube.com/shorts\n• Beepo meldet sich bei 50 % und 80 %, hält ein STOPP-Schild hoch, wenn die Zeit um ist, und erinnert dich sanft, wenn du bleibst\n• „Noch 5 Minuten“-Schlummern – Beepo merkt sich, wie oft du es drückst\n• Optionale harte Sperre und Fokuszeiten, mit 5-Minuten-Freischaltung per Stern\n• Sammle Sterne fürs Einhalten von Limits und Erreichen von Zielen; baue Serien auf; schalte Abzeichen frei\n• Gib Sterne für Hüte, Farben, Antennen, Extras und Haustiere aus (Katze Mochi sagt Hallo)\n• Beepo entwickelt sich mit deinen Serien – und wird ein bisschen zerzaust, wenn du mal danebenliegst\n• Wochenbericht: Zeit pro Tag, pro Seite und gesparte Zeit im Vergleich zur Vorwoche\n• Male eigene Hüte im eingebauten Sprite-Editor\n• Limits für Werktage/Wochenende, Inaktivitätserkennung, Ruhemodus, 8-Bit-Sounds, eigene Uhrzeit für den Tageswechsel\n• Spricht 17 Sprachen\n\nPrivatsphäre von Anfang an: keine Konten, keine Server, keine Analyse. Alles bleibt in deinem Browser.",
+  "tagline": "Dein Pixel-Buddy für die Bildschirmzeit",
+  "captions": {
+    "page": "Ein kleiner Pixel-Buddy wohnt unten auf deinen Seiten",
+    "stop": "Zeit um? Beepo hält ein STOPP-Schild hoch",
+    "block": "Optionale harte Sperre, mit Freischaltung per Stern",
+    "today": "Limits und Ziele für jede Seite festlegen",
+    "shop": "Sterne sammeln, Beepo einkleiden, ein Haustier adoptieren",
+    "report": "Wochenbericht: Sieh, wie viel Zeit du gespart hast"
+  }
+}

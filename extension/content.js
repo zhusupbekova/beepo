@@ -24,6 +24,13 @@
     }
   }
 
+  // After an install/update the worker re-injects this script into open tabs. The newest
+  // copy claims the page; an older (orphaned) copy sees that and retires.
+  const token = Math.random().toString(36).slice(2);
+  document.documentElement.dataset.beepo = token;
+  document.querySelectorAll("beepo-buddy").forEach((el) => el.remove());
+  const alive = () => document.documentElement.dataset.beepo === token && !!chrome.runtime?.id;
+
   let assets = await send({ type: "assets" });
   if (!assets) return;
 
@@ -48,7 +55,12 @@
     return a + Math.random() * (b - a);
   }
   const pick = (arr) => arr[Math.floor(Math.random() * arr.length)];
-  const fmtMin = (secs) => `${Math.max(0, Math.round(secs / 60))} min`;
+  const t = (key, vars = {}) => (assets.i18n.ui[key] ?? key).replace(/\{(\w+)\}/g, (_, k) => vars[k] ?? "");
+  // Under a minute shows seconds, so "0 min over" never happens.
+  const fmtMin = (secs) => {
+    secs = Math.max(0, Math.round(secs));
+    return secs > 0 && secs < 60 ? t("sec", { n: secs }) : t("min", { n: Math.round(secs / 60) });
+  };
   const settings = () => view?.settings || {};
   const scale = () => Math.min(8, (settings().scale || 4) + (view?.look?.grow || 0));
   const isBlocked = () => !!view?.rule && view.state !== "ok";
@@ -72,7 +84,7 @@
   }
 
   function statusLine() {
-    const time = new Date().toLocaleTimeString([], { hour: "numeric", minute: "2-digit" });
+    const time = new Date().toLocaleTimeString(assets.i18n.locale, { hour: "numeric", minute: "2-digit" });
     if (!view.rule) return line("statusCompanion", { stars: view.stars, streak: view.look.limitStreak });
     const { rule, used, limit } = view;
     const left = limit - used;
@@ -175,6 +187,8 @@
       gap: 14px; text-align: center; font: 14px/1.5 ui-monospace, Menlo, monospace; color: #1b1b2f;
     }
     .block[hidden] { display: none; }
+    /* Monospace fonts have no Arabic, and the fallback breaks letter joining. */
+    [dir="rtl"], [dir="rtl"] h1 { font-family: system-ui, "Segoe UI", Tahoma, sans-serif; }
     .block h1 { font-size: 22px; margin: 0; max-width: 520px; }
     .block p { margin: 0; opacity: .7; }
     .block .btns { display: flex; gap: 10px; }
@@ -185,11 +199,11 @@
     if (ui) return;
     const host = document.createElement("beepo-buddy");
     const shadow = host.attachShadow({ mode: "closed" });
+    // Static markup only; text and styles are set below (no interpolation into innerHTML).
     shadow.innerHTML = `
-      <style>${CSS}</style>
       <div class="stage">
         <div class="bubble r" hidden>
-          <span class="close" title="Close">×</span>
+          <span class="close">×</span>
           <div class="text"></div>
           <div class="actions"></div>
           <div class="meta"></div>
@@ -197,10 +211,10 @@
         <div class="row">
           <canvas class="pet" hidden></canvas>
           <div style="position:relative">
-            <canvas class="beepo" title="Beepo (double-click to tuck away)"></canvas>
+            <canvas class="beepo"></canvas>
             <span class="zzz" hidden>z</span>
           </div>
-          <div class="sign" hidden><b>STOP</b><i></i></div>
+          <div class="sign" hidden><b></b><i></i></div>
         </div>
       </div>
       <div class="block" hidden>
@@ -209,10 +223,18 @@
         <p class="binfo"></p>
         <div class="btns">
           <button class="unlockBtn"></button>
-          <button class="ghost closeBtn">Close tab</button>
+          <button class="ghost closeBtn"></button>
         </div>
       </div>`;
+    const style = document.createElement("style");
+    style.textContent = CSS;
+    shadow.prepend(style);
     const $ = (s) => shadow.querySelector(s);
+    $(".bubble").dir = $(".block").dir = assets.i18n.dir;
+    $(".close").title = t("close");
+    $(".beepo").title = t("beepoTitle");
+    $(".sign b").textContent = t("stop");
+    $(".closeBtn").textContent = t("closeTab");
     ui = {
       host,
       shadow,
@@ -372,8 +394,8 @@
     const flame = streak >= 2 ? ` · 🔥 ${streak}` : "";
     if (!view.rule) return stars + flame;
     const { rule, used, limit } = view;
-    const unlock = view.unlockLeft > 0 ? ` · 🔓 ${Math.ceil(view.unlockLeft / 60000)}m` : "";
-    return `${fmtMin(used)} / ${fmtMin(limit)} ${rule.mode} · ${stars}${flame}${unlock}`;
+    const unlock = view.unlockLeft > 0 ? ` · 🔓 ${t("m", { m: Math.ceil(view.unlockLeft / 60000) })}` : "";
+    return `${fmtMin(used)} / ${fmtMin(limit)} ${t("mode_" + rule.mode)} · ${stars}${flame}${unlock}`;
   }
 
   // ---------- speech & reactions ----------
@@ -401,10 +423,9 @@
 
   function snoozeActions() {
     if (!overLimit() || isBlocked()) return [];
-    const n = view.snoozes ? ` (#${view.snoozes + 1})` : "";
     return [
       [
-        `5 more min${n}`,
+        view.snoozes ? t("snoozeBtnN", { n: view.snoozes + 1 }) : t("snoozeBtn"),
         async () => {
           const v = await send({ type: "snooze", href: location.href, ruleId: view.rule.id });
           apply(v);
@@ -471,6 +492,8 @@
     eventBusy = true;
     const e = eventQueue.shift();
     const vars = { ...e.vars };
+    // Badge/evolve news is queued with an id so it shows in the current language.
+    if (vars.id) vars.name = (e.key === "badge" ? assets.i18n.badges[vars.id]?.name : assets.i18n.evolve[vars.id]) ?? vars.name;
     if (view.rule) {
       vars.name ??= view.rule.name;
       vars.left ??= fmtMin(view.limit - view.used);
@@ -497,11 +520,11 @@
     const m = line(focus ? "focus" : "blocked", { name: view.rule.name, until: view.rule.focus?.end || "" });
     ui.btitle.textContent = m.text;
     ui.binfo.textContent = focus
-      ? `Focus hours ${view.rule.focus.start}–${view.rule.focus.end}. ⭐ ${view.stars}`
-      : `${fmtMin(view.used)} used of ${fmtMin(view.base)} today. ⭐ ${view.stars}`;
-    ui.unlockBtn.textContent = `Unlock 5 min (⭐1)`;
+      ? t("blockFocus", { start: view.rule.focus.start, end: view.rule.focus.end, stars: view.stars })
+      : t("blockUsed", { used: fmtMin(view.used), base: fmtMin(view.base), stars: view.stars });
+    ui.unlockBtn.textContent = t("unlock");
     ui.unlockBtn.disabled = view.stars < 1;
-    ui.unlockBtn.title = view.stars < 1 ? "No stars left. Earn some by keeping limits!" : "";
+    ui.unlockBtn.title = view.stars < 1 ? t("noStars") : "";
     BeepoSprite.draw(ui.big, assets, { mood: m.mood, look: view.look, scale: 10 });
     const pause = () => document.querySelectorAll("video, audio").forEach((el) => el.pause());
     pause();
@@ -540,12 +563,20 @@
 
   // ---------- loops & listeners ----------
 
-  setInterval(async () => {
+  function retire() {
+    clearInterval(tickTimer);
+    clearInterval(frameTimer);
+    unmount();
+  }
+
+  const tickTimer = setInterval(async () => {
+    if (!alive()) return retire();
     if (document.visibilityState !== "visible") return;
     apply(await send({ type: "tick", href: location.href, seconds: TICK_SECS, media: mediaPlaying() }));
   }, TICK_SECS * 1000);
 
-  setInterval(() => {
+  const frameTimer = setInterval(() => {
+    if (!alive()) return retire();
     if (!ui || !view) return;
     frame++;
     drawBeepo();
@@ -590,8 +621,18 @@
     placeStage(0);
   });
 
+  // Switching back to a tab: show fresh numbers now, not on the next tick.
+  document.addEventListener("visibilitychange", () => {
+    if (document.visibilityState === "visible" && alive()) refresh();
+  });
+
   chrome.storage.onChanged.addListener(async (changes) => {
-    if (changes.custom) assets = (await send({ type: "assets" })) || assets;
+    if (!alive()) return;
+    if (changes.custom || changes.settings) {
+      const lang = assets.i18n.lang;
+      assets = (await send({ type: "assets" })) || assets;
+      if (assets.i18n.lang !== lang) unmount(); // rebuilt in the new language by refresh()
+    }
     if (changes.rules || changes.settings || changes.wallet || changes.custom) {
       const sideChanged = changes.settings && changes.settings.oldValue?.side !== changes.settings.newValue?.side;
       await refresh();

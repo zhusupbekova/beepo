@@ -1,0 +1,494 @@
+{
+  "name": "日本語",
+  "locale": "ja",
+  "dir": "ltr",
+  "ui": {
+    "min": "{n}分",
+    "sec": "{n}秒",
+    "hm": "{h}時間{m}分",
+    "m": "{m}分",
+    "close": "閉じる",
+    "beepoTitle": "Beepo（ダブルクリックでしまう）",
+    "stop": "止まれ",
+    "closeTab": "タブを閉じる",
+    "unlock": "5分だけ解除（⭐1）",
+    "noStars": "スターがありません。制限を守ってためよう！",
+    "snoozeBtn": "あと5分",
+    "snoozeBtnN": "あと5分（#{n}）",
+    "blockFocus": "集中タイム {start}–{end}。⭐ {stars}",
+    "blockUsed": "今日は{base}中{used}使用。⭐ {stars}",
+    "mode_limit": "制限",
+    "mode_goal": "目標",
+    "settings": "設定",
+    "tab_today": "今日",
+    "tab_report": "レポート",
+    "tab_shop": "ショップ",
+    "tab_badges": "バッジ",
+    "quickLimit": "制限",
+    "customRule": "+ カスタムルール／グループ…",
+    "loadError": "Beepoがコードにつまずいちゃいました。拡張機能を再読み込みしてみてください。詳細はService Workerのコンソールにあります。",
+    "streakRough": "ちょっと不調：{n}日オーバー 😿",
+    "streakLine": "🔥 制限 {limit}日 · 🎯 目標 {goal}日",
+    "suggest": "Beepoより：最近{domain}を1日約{n}分見ているみたい。制限を追加する？",
+    "suggestAdd": "30分に制限",
+    "suggestNo": "いいえ",
+    "noRulesYet": "サイトを追加すると、Beepoがそこで一緒にいてくれます。",
+    "flagBlock": "🔒 ブロック",
+    "flagHidden": "🙈 非表示",
+    "flagWeekend": "週末 {m}分",
+    "edit": "編集",
+    "remove": "削除",
+    "delete": "削除",
+    "snoozedTime": "スヌーズした時間",
+    "editRule": "ルールを編集",
+    "newRule": "新しいルール",
+    "fieldSites": "サイト（1行に1つ。パスもOK：例 youtube.com/shorts）",
+    "fieldName": "名前",
+    "namePlaceholder": "自動",
+    "fieldType": "種類",
+    "typeLimit": "制限（減らす）",
+    "typeGoal": "目標（増やす）",
+    "fieldMinutes": "1日の分数",
+    "fieldWeekend": "週末の分数",
+    "weekendPlaceholder": "同じ",
+    "blockWhenOver": "超えたらブロック",
+    "hideHere": "ここではBeepoを隠す",
+    "focusLegend": "集中タイム（サイト利用不可）",
+    "weekdays": "平日",
+    "save": "保存",
+    "cancel": "キャンセル",
+    "errSites": "有効なサイトを1つ以上入力してください。",
+    "thisWeek": "今週",
+    "onTracked": "記録中のサイト",
+    "saved": "節約",
+    "extra": "増加",
+    "vsLastWeek": "先週比",
+    "bestDay": "ベストな日",
+    "rulesKept": "{of}件中{score}件達成",
+    "notEnough": "データ不足",
+    "perDay": "1日ごとの記録時間",
+    "perDayAria": "1日ごとの記録時間（過去7日間）",
+    "today": "今日",
+    "perRule": "ルール別",
+    "colRule": "ルール",
+    "colThisWk": "今週",
+    "colLastWk": "先週",
+    "noRules": "ルールはまだありません。",
+    "slot_color": "カラー",
+    "slot_hat": "ぼうし",
+    "slot_antenna": "アンテナ",
+    "slot_accessory": "アクセ",
+    "slot_pet": "ペット",
+    "wearing": "装備中",
+    "takeOff": "外す",
+    "wear": "装備",
+    "drawOwn": "✏ ぼうし・アクセを自分で描く",
+    "evoTitle": "Beepoの進化",
+    "evoIntro": "連続記録でBeepoの見た目が変わります。現在の最長記録：{n}日。",
+    "evoStep": "{name} — {n}日連続",
+    "scruffy": "制限オーバーが2日以上続くとボサボサに（いい日が1日あれば元どおり）",
+    "optTitle": "Beepoの設定",
+    "language": "言語",
+    "langAuto": "自動（ブラウザの言語）",
+    "homeCorner": "定位置",
+    "bottomRight": "右下",
+    "bottomLeft": "左下",
+    "size": "サイズ",
+    "small": "小",
+    "medium": "中",
+    "large": "大",
+    "nagEvery": "お知らせ間隔（制限超過後の分数）",
+    "nagHint": "0 = 1回だけ",
+    "newDay": "1日の始まり",
+    "newDayHint": "夜ふかしは「前日」としてカウント",
+    "idle": "操作がないとカウント停止（秒）",
+    "idleHint": "動画の再生中は常にカウント",
+    "wander": "ページ内をうろうろする",
+    "sounds": "8ビットサウンド",
+    "quiet": "おだやかモード（大事なことだけ）",
+    "everywhere": "すべてのサイトにBeepoを表示",
+    "yourData": "あなたのデータ",
+    "dataHint": "データはすべてブラウザ内に保存されます。ルール・設定・スターはブラウザのプロフィールで同期され、利用履歴はこの端末にだけ残ります。",
+    "export": "JSONを書き出す",
+    "import": "JSONを読み込む…",
+    "spriteEditor": "✏ スプライトエディタ",
+    "savedTick": "保存しました ✓",
+    "badJson": "このファイルは有効なJSONではありません。",
+    "confirmImport": "Beepoのデータ（ルール・スター・履歴）をすべてこのファイルの内容に置き換えますか？",
+    "imported": "読み込みました ✓",
+    "notExport": "Beepoの書き出しファイルではないようです。",
+    "edTitle": "✏ Beepoスプライトエディタ",
+    "edHint": "Beepoの上に重ねて描きます。左クリックで塗り、右クリックでピクセルを「変更なし」に戻します。⌫ で下にあるBeepo自身のピクセルを消せます。",
+    "edName": "名前",
+    "edNamePh": "かっこいいぼうし",
+    "edSlot": "スロット",
+    "edSlotHat": "ぼうし",
+    "edSlotAccessory": "アクセ",
+    "edSlotAntenna": "アンテナ",
+    "edStart": "ベース",
+    "edBlank": "白紙",
+    "edSave": "ショップに保存",
+    "edCopy": "JSONをコピー",
+    "edCopyTitle": "data/sprites.json 用のJSON",
+    "edClear": "クリア",
+    "edPreview": "プレビュー",
+    "edCreations": "あなたの作品",
+    "edNothing": "まだ何もありません。ぼうしを描いてみよう！",
+    "edCopied": "コピーしました！data/sprites.json → items に貼り付けてください。",
+    "edDrawFirst": "まず何か描いてね！",
+    "edSaved": "保存しました！ショップのタブから装備できます。",
+    "edDefaultName": "マイ作品",
+    "edErase": "Beepoのピクセルを消す"
+  },
+  "badges": {
+    "first_star": {
+      "name": "はじめてのスター",
+      "desc": "最初のスターを手に入れる。"
+    },
+    "streak3": {
+      "name": "ウォーミングアップ",
+      "desc": "3日連続ですべての制限を守る。"
+    },
+    "week_clean": {
+      "name": "はじめての1週間",
+      "desc": "7日間すべての制限を守る。"
+    },
+    "month_clean": {
+      "name": "鉄の意志",
+      "desc": "30日間すべての制限を守る。"
+    },
+    "goal_crusher": {
+      "name": "目標クラッシャー",
+      "desc": "毎日の目標を10回達成する。"
+    },
+    "on_a_roll": {
+      "name": "絶好調",
+      "desc": "7日連続ですべての目標を達成する。"
+    },
+    "night_owl_reformed": {
+      "name": "夜ふかし卒業",
+      "desc": "1週間、深夜0時以降に記録中のサイトを見ない。"
+    },
+    "unsnoozable": {
+      "name": "スヌーズ知らず",
+      "desc": "1週間スヌーズを使わない。"
+    },
+    "fashionista": {
+      "name": "おしゃれさん",
+      "desc": "ショップのアイテムを3つ持つ。"
+    }
+  },
+  "items": {
+    "color-blue": "スカイブルー",
+    "color-pink": "バブルガム",
+    "color-mint": "ミント",
+    "color-purple": "グレープ",
+    "color-gold": "純金",
+    "antenna-heart": "ハートのアンテナ",
+    "antenna-star": "星のアンテナ",
+    "hat-cap": "赤いキャップ",
+    "hat-party": "パーティーハット",
+    "hat-top": "シルクハット",
+    "hat-crown": "王冠",
+    "acc-shades": "クールなサングラス",
+    "acc-scarf": "ぬくぬくマフラー",
+    "pet-cat": "ねこのモチ",
+    "pet-ghost": "おばけのブー",
+    "pet-slime": "スライムのグロップ"
+  },
+  "evolve": {
+    "cheeks": "ほっぺがピンクに",
+    "grow": "ぐんぐん成長",
+    "collar": "金の首輪"
+  },
+  "messages": {
+    "greetMorning": {
+      "mood": "happy",
+      "lines": [
+        "おはよう！今日もいい日にしよう。",
+        "おはよう！とっておきのビープを持ってきたよ。",
+        "おはよう！さあ、起きて起きて！"
+      ]
+    },
+    "greetAfternoon": {
+      "mood": "happy",
+      "lines": [
+        "やあ！Beepo、ただいま参上！",
+        "こんにちは！水分補給、忘れないでね。",
+        "あ、いたんだ！気づかなかった。"
+      ]
+    },
+    "greetEvening": {
+      "mood": "happy",
+      "lines": [
+        "こんばんは！そろそろひと休みする？",
+        "やあ！日が沈んできたね、ピポパ。",
+        "おつかれさま！今日はいい日だった？"
+      ]
+    },
+    "greetNight": {
+      "mood": "sleepy",
+      "lines": [
+        "もう遅いね…ふわぁ。やあ。",
+        "ぼくたち、もう寝てる時間じゃない？",
+        "夜ふかしモードかな？"
+      ]
+    },
+    "statusLimit": {
+      "mood": "happy",
+      "lines": [
+        "今日の{name}はあと{left}だよ。",
+        "ここではあと{left}。大事に使ってね！",
+        "{name}はあと{left}。ちゃんと数えてるよ！"
+      ]
+    },
+    "statusOver": {
+      "mood": "angry",
+      "lines": [
+        "{name}、{over}オーバーしてるよ。",
+        "制限をすぎてから{over}たったよ…",
+        "{over}オーバー。何かほかのことしない？"
+      ]
+    },
+    "statusGoal": {
+      "mood": "happy",
+      "lines": [
+        "目標まであと{left}。きみならできる！",
+        "あと{left}でスターがもらえるよ！",
+        "その調子、あと{left}！"
+      ]
+    },
+    "statusGoalDone": {
+      "mood": "proud",
+      "lines": [
+        "今日の目標クリア！よくがんばったね！",
+        "今日の目標はもう達成ずみ！",
+        "目標達成。ここからはボーナスタイム！"
+      ]
+    },
+    "statusCompanion": {
+      "mood": "happy",
+      "lines": [
+        "ここでのんびりしてるよ。⭐ {stars}",
+        "ピッ！いま{streak}日連続だよ。",
+        "用があったら呼んでね。"
+      ]
+    },
+    "statusNight": {
+      "mood": "sleepy",
+      "lines": [
+        "もう{time}…睡眠もなかなかいいサイトだよ。",
+        "{time}！？YouTubeは待ってくれるけど、睡眠は待ってくれないよ。",
+        "夜中のスクロールはワナだよ。経験者は語る。"
+      ]
+    },
+    "limit50": {
+      "mood": "neutral",
+      "lines": [
+        "{m}分のうち半分がすぎたよ。ちょっと様子見！",
+        "時間の半分がすぎたよ。まだ楽しい？",
+        "50%到達！Beepoがちゃんと記録してるよ。"
+      ]
+    },
+    "limit80": {
+      "mood": "worried",
+      "lines": [
+        "あと{left}だけ…そろそろ切り上げる？",
+        "もうすぐだよ！あと{left}。",
+        "ねえねえ、あと{left}。キリのいいところを探そう。"
+      ]
+    },
+    "limit100": {
+      "mood": "angry",
+      "lines": [
+        "{m}分たったよ！何かほかのことをしよう。",
+        "ストップ！制限到達。ストレッチしよう！",
+        "時間だよ！きみならできる、このタブを閉じよう。"
+      ]
+    },
+    "over": {
+      "mood": "sad",
+      "lines": [
+        "{over}オーバーだよ。Beepo、しょんぼり…",
+        "まだいるの？制限を{over}すぎてるよ…",
+        "{over}オーバー。お願い、ひと休みしよ？"
+      ]
+    },
+    "snoozeOver": {
+      "mood": "worried",
+      "lines": [
+        "スヌーズ終了！",
+        "おまけの時間はおしまい。今度こそ本当だよ！",
+        "スヌーズ終わり。ピピピピッ！"
+      ]
+    },
+    "snooze1": {
+      "mood": "neutral",
+      "lines": [
+        "わかった、あと5分ね。見てるからね！",
+        "しかたないなあ、あと5分。大事に使ってね。",
+        "5分ね。そしたら終わりにしよう、約束？"
+      ]
+    },
+    "snooze2": {
+      "mood": "worried",
+      "lines": [
+        "今日2回目のスヌーズだよ…",
+        "また5分？いいけど、ちゃんと数えてるからね。",
+        "スヌーズ2回目。うーん。"
+      ]
+    },
+    "snooze3": {
+      "mood": "sad",
+      "lines": [
+        "スヌーズ#{n}。この先どうなるか、わかってるよね。",
+        "スヌーズ{n}回目。Beepo、心配になってきたよ。",
+        "スヌーズ#{n}…制限、見直したほうがいいかも？"
+      ]
+    },
+    "goal50": {
+      "mood": "happy",
+      "lines": [
+        "目標まであと半分、その調子！",
+        "50%達成！いい感じだよ。",
+        "半分きた！Beepo、もう誇らしいよ。"
+      ]
+    },
+    "goal100": {
+      "mood": "party",
+      "lines": [
+        "{m}分達成！スターをどうぞ ⭐",
+        "ゴール！きみにスター ⭐",
+        "目標達成！⭐ +1、さすが！"
+      ]
+    },
+    "night": {
+      "mood": "sleepy",
+      "lines": [
+        "もう0時すぎだよ…そろそろ寝ない？",
+        "夜ふかしだね。おふとんがさみしがってるよ。",
+        "夜ふかし警報！睡眠はスーパーパワーだよ。"
+      ]
+    },
+    "kept": {
+      "mood": "party",
+      "lines": [
+        "昨日は{n}サイトで制限を守れたね！+{n} ⭐",
+        "昨日は制限を{n}つ守ったよ！+{n} ⭐",
+        "昨日はよくがまんできたね！+{n} ⭐"
+      ]
+    },
+    "streak": {
+      "mood": "proud",
+      "lines": [
+        "{n}日連続！この調子でいこう！",
+        "{n}日連続だよ。すごい！",
+        "連続記録{n}日。Beepo、にっこにこ。"
+      ]
+    },
+    "badge": {
+      "mood": "party",
+      "lines": [
+        "新しいバッジ：{name}！+3 ⭐",
+        "「{name}」をゲット！+3 ⭐",
+        "バッジ獲得：{name}！+3 ⭐"
+      ]
+    },
+    "evolve": {
+      "mood": "proud",
+      "lines": [
+        "わあ、なんだか変わった気がする！（{name}）",
+        "見て見て！{name}！",
+        "きみの連続記録でぼく変わったよ：{name}！"
+      ]
+    },
+    "blocked": {
+      "mood": "angry",
+      "lines": [
+        "{name}の制限に到達。今日はこのページはおやすみ。",
+        "今日の{name}はここまで。また明日ね！",
+        "{name}は閉店中。Beepoが入り口を見張ってるよ。"
+      ]
+    },
+    "focus": {
+      "mood": "worried",
+      "lines": [
+        "集中タイムだよ！{until}まで{name}はおあずけ。",
+        "{until}まで{name}はなし。きみならできる。",
+        "集中タイム！{until}すぎにまた会おうね。"
+      ]
+    },
+    "unlock": {
+      "mood": "neutral",
+      "lines": [
+        "5分間だけ解除したよ。大事に使ってね！",
+        "わかった、5分ね。時計は動いてるよ！",
+        "5分だけドアを開けるよ。そのあとはまたカギをかけるね。"
+      ]
+    },
+    "bored": {
+      "mood": "bored",
+      "lines": [
+        "もしもーし？だれかいる？",
+        "＊画面をトントン＊",
+        "ひまだなあ…外に行かない？"
+      ]
+    },
+    "sleepy": {
+      "mood": "sleepy",
+      "lines": [
+        "Zzz…",
+        "＊すぴー＊",
+        "Zzz…ピッ…zzz…"
+      ]
+    },
+    "scroll": {
+      "mood": "worried",
+      "lines": [
+        "わわ、ゆっくり！",
+        "無限スクロール発見！",
+        "わーい— ちょっと、気をつけて！"
+      ]
+    },
+    "poke": {
+      "mood": "happy",
+      "lines": [
+        "えへへ、くすぐったい！",
+        "ピポパ！",
+        "つっついたなー！"
+      ]
+    }
+  },
+  "android": {
+    "usageTitle": "Beepoには使用状況へのアクセスが必要です",
+    "usageBody": "各アプリでどれくらい過ごしたかを知るために、Beepoには使用状況へのアクセスが必要です。数えるのは時間だけで、データはすべてスマホの中に残ります。",
+    "usageGrant": "設定を開く",
+    "usageFind": "リストからBeepoを探してオンにしてね。",
+    "noRules": "下からアプリを選ぶと、Beepoがそこでそばにいるよ。",
+    "phoneToday": "今日のスマホ",
+    "noUsage": "今日はまだアプリの利用時間がありません。",
+    "fieldApps": "アプリ",
+    "errApps": "アプリを1つ以上選んでね。",
+    "searchApps": "アプリを検索",
+    "langAuto": "自動（スマホの言語）",
+    "onTracked": "追跡中のアプリで",
+    "obHello": "やあ、ぼくはBeepo！",
+    "obIntro": "ぼくは小さなピクセルの相棒。選んだアプリでそばにいて、時間を見守るお手伝いをするよ。",
+    "obHowTitle": "しくみ",
+    "obLimits": "リミット：一日を食いつぶすアプリの時間を減らす。",
+    "obGoals": "ゴール：自分のためになるアプリの時間を増やす。",
+    "obStars": "一日リミットを守るとスターがもらえるよ。スターはぼくの帽子や色に使ってね。",
+    "obStreaks": "何日か続けると、ぼくも変わっていくよ。",
+    "obOffline": "Beepoはインターネットにアクセスしないので、データがスマホの外に出ることはありません。",
+    "privacyPolicy": "プライバシーポリシー",
+    "obGranted": "使用状況へのアクセスがオンになりました ✓",
+    "obPickTitle": "どのアプリを見守ろうか？",
+    "obPickHint": "今週よく使ったアプリだよ。あとでいつでも変えられるよ。",
+    "obMinutes": "1日のリミット",
+    "obNoApps": "まだアプリの利用時間がありません。あとで「今日」タブから追加できます。",
+    "next": "次へ",
+    "back": "戻る",
+    "notNow": "今はしない",
+    "start": "はじめよう！"
+  }
+}

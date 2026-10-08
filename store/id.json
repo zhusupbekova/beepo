@@ -1,0 +1,14 @@
+{
+  "name": "Beepo — teman piksel untuk waktu layarmu",
+  "short": "Robot piksel mungil tinggal di bawah situs favoritmu, mengingatkan saat waktu habis, dan bersorak saat targetmu tercapai.",
+  "description": "Kenalan dengan Beepo, robot piksel kecil yang menemanimu di situs pilihanmu.\n\n• Atur batas harian (kurangi) atau target (tambah) untuk situs apa pun, grup situs, bahkan path seperti youtube.com/shorts\n• Beepo menyapa di 50% dan 80%, mengangkat papan STOP saat waktu habis, dan mengingatkan pelan-pelan kalau kamu masih di sana\n• Tunda \"5 menit lagi\" — Beepo ingat berapa kali kamu menekannya\n• Blokir penuh dan jam fokus (opsional), dengan buka kunci 5 menit pakai bintang\n• Kumpulkan bintang dengan menjaga batas dan mencapai target; bangun streak; buka lencana\n• Belanjakan bintang untuk topi, warna, antena, aksesori, dan peliharaan (Mochi si kucing titip salam)\n• Beepo berevolusi bersama streak-mu — dan jadi sedikit kusut kalau kamu tergelincir\n• Laporan mingguan: waktu per hari, per situs, dan waktu yang dihemat dibanding minggu lalu\n• Gambar topimu sendiri di editor sprite bawaan\n• Batas hari kerja/akhir pekan, deteksi diam, mode tenang, suara 8-bit, jam reset hari sesuka hati\n• Bisa 17 bahasa\n\nPrivasi sejak awal: tanpa akun, tanpa server, tanpa analitik. Semuanya tetap di browsermu.",
+  "tagline": "Teman piksel untuk waktu layarmu",
+  "captions": {
+    "page": "Teman piksel mungil tinggal di bawah situs-situsmu",
+    "stop": "Waktu habis? Beepo mengangkat papan STOP",
+    "block": "Blokir penuh opsional, dengan buka kunci pakai bintang",
+    "today": "Atur batas dan target untuk situs apa pun",
+    "shop": "Kumpulkan bintang, dandani Beepo, pelihara hewan",
+    "report": "Laporan mingguan: lihat waktu yang kamu hemat"
+  }
+}

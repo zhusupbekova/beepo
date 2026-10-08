@@ -4,7 +4,7 @@ Status: ✅ done (v0.2) · ⏳ not started
 
 ## 1. Beepo's personality
 
-- ✅ **Lots more lines.** Random pools per event in `data/messages.json`, time-of-day greetings, late-night lines.
+- ✅ **Lots more lines.** Random pools per event in `data/i18n/<lang>.json`, time-of-day greetings, late-night lines.
 - ✅ **Toolbar icon** generated from the sprite (`npm run icons`).
 - ✅ **More moods & animations.** Sleepy, bored, proud, sad, look-left/right; blinking, waving, sitting, "z z z" when idle.
 - ✅ **Walking along the bottom.** Wanders, sits, runs home when you scroll fast (toggle in settings).
@@ -42,7 +42,7 @@ Status: ✅ done (v0.2) · ⏳ not started
 ## 5. Cross-device & Android
 
 - ✅ **Sync** rules, settings and wallet via `chrome.storage.sync`; usage stays per device.
-- ⏳ **Android app (Kotlin + Compose).** `UsageStatsManager` for per-app time, overlay (`SYSTEM_ALERT_WINDOW`) or notification/widget for Beepo; reuse `data/sprites.json` + `data/messages.json`.
+- ⏳ **Android app (Kotlin + Compose).** `UsageStatsManager` for per-app time, overlay (`SYSTEM_ALERT_WINDOW`) or notification/widget for Beepo; reuse `data/sprites.json` + `data/i18n/`.
 - ⏳ **Shared account** so stars/cosmetics follow you across browser + phone (needs a backend).
 
 ## 6. Technical
@@ -51,7 +51,9 @@ Status: ✅ done (v0.2) · ⏳ not started
 - ✅ **Sprites/messages as data files.**
 - ✅ **Sprite editor** (`editor.html`) — custom hats/accessories saved into the shop, or copy JSON for `sprites.json`.
 - ✅ **Firefox / Edge builds** (`npm run build`). Firefox build untested in a real Firefox yet.
-- ⏳ **Store release.** Listing copy + privacy policy ready in `docs/`; publishing needs a developer account.
+- ✅ **17 languages** incl. Arabic (RTL), Chinese (Simplified, Taiwan) and Cantonese; language picker in settings.
+- ✅ **Store assets** (`npm run store`): localized screenshots, promo tiles, listing text.
+- ⏳ **Store release.** Everything is in `docs/STORE.md` + `dist/store/`; publishing needs the developer accounts.
 
 ## New ideas (from building v0.2)
 

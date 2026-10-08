@@ -12,7 +12,43 @@ export const DEFAULT_SETTINGS = {
   everywhere: false, // show Beepo on untracked sites too
   idleSeconds: 60,
   dismissed: [], // suggestion domains the user said no to
+  lang: "auto", // or a key of LANGUAGES
 };
+
+// ---------- languages ----------
+
+/** App languages (data/i18n/<key>.json), by native name. */
+export const LANGUAGES = {
+  en: "English",
+  es: "Español",
+  fr: "Français",
+  de: "Deutsch",
+  it: "Italiano",
+  pt_BR: "Português (Brasil)",
+  ru: "Русский",
+  uk: "Українська",
+  tr: "Türkçe",
+  ar: "العربية",
+  hi: "हिन्दी",
+  id: "Bahasa Indonesia",
+  ja: "日本語",
+  ko: "한국어",
+  zh_CN: "简体中文",
+  zh_TW: "繁體中文（台灣）",
+  yue: "粵語（香港）",
+};
+
+/** Picks the app language from the setting, falling back to the browser's UI language. */
+export function resolveLang(pref, uiLang = "en") {
+  if (pref && pref !== "auto" && LANGUAGES[pref]) return pref;
+  const [base, region = ""] = String(uiLang).replace("_", "-").split("-");
+  const b = base.toLowerCase();
+  const r = region.toUpperCase();
+  if (b === "yue" || (b === "zh" && (r === "HK" || r === "MO"))) return "yue";
+  if (b === "zh") return r === "TW" || /hant/i.test(uiLang) ? "zh_TW" : "zh_CN";
+  if (b === "pt") return "pt_BR";
+  return LANGUAGES[b] ? b : "en";
+}
 
 export const DEFAULT_WALLET = {
   stars: 0, // spendable

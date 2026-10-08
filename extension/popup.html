@@ -13,26 +13,26 @@
         <div class="muted" id="streak"></div>
       </div>
       <span class="stars" id="stars">⭐ 0</span>
-      <button class="icon" id="openOptions" title="Settings">⚙</button>
+      <button class="icon" id="openOptions" data-i18n-title="settings">⚙</button>
     </header>
 
     <nav>
-      <button data-tab="today" class="on">Today</button>
-      <button data-tab="report">Report</button>
-      <button data-tab="shop">Shop</button>
-      <button data-tab="badges">Badges</button>
+      <button data-tab="today" class="on" data-i18n="tab_today"></button>
+      <button data-tab="report" data-i18n="tab_report"></button>
+      <button data-tab="shop" data-i18n="tab_shop"></button>
+      <button data-tab="badges" data-i18n="tab_badges"></button>
     </nav>
 
     <section id="tab-today">
       <div class="box" id="quick">
         <div class="row">
           <b class="grow" id="quickDomain"></b>
-          <span class="muted">limit</span>
+          <span class="muted" data-i18n="quickLimit"></span>
           <button data-min="15">15</button>
           <button data-min="30">30</button>
           <button data-min="60">60</button>
         </div>
-        <button class="ghost linkish" id="customBtn">+ custom rule / group…</button>
+        <button class="ghost linkish" id="customBtn" data-i18n="customRule"></button>
       </div>
       <div id="suggestions"></div>
       <form class="box" id="editor" hidden></form>

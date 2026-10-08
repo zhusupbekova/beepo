@@ -1,8 +1,11 @@
+import { localize } from "./i18n.js";
+
 const $ = (id) => document.getElementById(id);
 const send = (msg) => chrome.runtime.sendMessage(msg);
 const CELL = 20;
 
 let assets = await send({ type: "assets" });
+const t = localize(assets.i18n);
 const { width: W, height: H, palette } = assets.sprites;
 
 let overlay = blank();
@@ -111,7 +114,7 @@ function renderSwatches() {
     ...entries.map(([k, color]) => {
       const b = document.createElement("button");
       b.className = "sw" + (k === brush ? " on" : "");
-      b.title = k === "_" ? "Erase Beepo pixel" : `${k} ${color}`;
+      b.title = k === "_" ? t("edErase") : `${k} ${color}`;
       if (color) b.style.background = color;
       else b.textContent = "⌫";
       b.addEventListener("click", () => {
@@ -124,7 +127,7 @@ function renderSwatches() {
 }
 
 for (const [id, it] of Object.entries(assets.sprites.items)) {
-  if (it.rows) $("base").append(new Option(`${it.name} (${it.slot})`, id));
+  if (it.rows) $("base").append(new Option(assets.i18n.items[id] ?? it.name, id));
 }
 $("base").addEventListener("change", (e) => {
   const it = assets.sprites.items[e.target.value];
@@ -143,15 +146,15 @@ $("clear").addEventListener("click", () => {
 $("copy").addEventListener("click", async () => {
   const json = JSON.stringify({ slot: $("slot").value, name: $("name").value || "Untitled", price: 5, rows: sparseRows() }, null, 2);
   await navigator.clipboard.writeText(json);
-  $("msg").textContent = "Copied! Paste it into data/sprites.json → items.";
+  $("msg").textContent = t("edCopied");
 });
 
 $("save").addEventListener("click", async () => {
   const rows = sparseRows();
-  if (!Object.keys(rows).length) return ($("msg").textContent = "Draw something first!");
-  const item = { id: editingId, slot: $("slot").value, name: $("name").value.trim() || "My creation", rows };
+  if (!Object.keys(rows).length) return ($("msg").textContent = t("edDrawFirst"));
+  const item = { id: editingId, slot: $("slot").value, name: $("name").value.trim() || t("edDefaultName"), rows };
   editingId = (await send({ type: "saveCustom", item }))?.id ?? editingId;
-  $("msg").textContent = "Saved! Wear it from the Shop tab.";
+  $("msg").textContent = t("edSaved");
   await reloadCustoms();
 });
 
@@ -164,8 +167,8 @@ async function reloadCustoms() {
           row.className = "row";
           const name = document.createElement("span");
           name.className = "grow";
-          name.textContent = `${c.name} (${c.slot})`;
-          const edit = Object.assign(document.createElement("button"), { className: "icon", textContent: "✎", title: "Edit" });
+          name.textContent = c.name;
+          const edit = Object.assign(document.createElement("button"), { className: "icon", textContent: "✎", title: t("edit") });
           edit.addEventListener("click", () => {
             editingId = c.id;
             $("name").value = c.name;
@@ -173,7 +176,7 @@ async function reloadCustoms() {
             loadRows(c.rows);
             draw();
           });
-          const del = Object.assign(document.createElement("button"), { className: "icon", textContent: "×", title: "Delete" });
+          const del = Object.assign(document.createElement("button"), { className: "icon", textContent: "×", title: t("delete") });
           del.addEventListener("click", async () => {
             await send({ type: "deleteCustom", id: c.id });
             if (editingId === c.id) editingId = null;
@@ -182,7 +185,7 @@ async function reloadCustoms() {
           row.append(name, edit, del);
           return row;
         })
-      : [Object.assign(document.createElement("div"), { className: "hint", textContent: "Nothing yet. Draw a hat!" })])
+      : [Object.assign(document.createElement("div"), { className: "hint", textContent: t("edNothing") })])
   );
 }
 

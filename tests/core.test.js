@@ -169,3 +169,17 @@ test("v0.1 day migrates to rule ids and keeps fired milestones", () => {
   assert.equal(d.domains["x.com"], 5);
   assert.equal(core.milestone({ mode: "limit", used: 900, base: 600, notified: d.notified.abc }), null);
 });
+
+test("resolveLang: explicit setting wins, otherwise browser language", () => {
+  assert.equal(core.resolveLang("ja", "de-DE"), "ja");
+  assert.equal(core.resolveLang("auto", "de-DE"), "de");
+  assert.equal(core.resolveLang("auto", "zh-HK"), "yue");
+  assert.equal(core.resolveLang("auto", "zh-TW"), "zh_TW");
+  assert.equal(core.resolveLang("auto", "zh-Hant"), "zh_TW");
+  assert.equal(core.resolveLang("auto", "zh-CN"), "zh_CN");
+  assert.equal(core.resolveLang("auto", "zh"), "zh_CN");
+  assert.equal(core.resolveLang("auto", "pt-PT"), "pt_BR");
+  assert.equal(core.resolveLang("auto", "uk"), "uk");
+  assert.equal(core.resolveLang("auto", "nl-NL"), "en");
+  assert.equal(core.resolveLang("xx", "fr"), "fr");
+});

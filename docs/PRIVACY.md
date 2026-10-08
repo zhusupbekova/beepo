@@ -1,6 +1,6 @@
 # Beepo Privacy Policy
 
-_Last updated: 2026-10-02_
+_Last updated: 2026-10-08_
 
 Beepo is a browser extension that shows a pixel companion on websites and tracks how much time you spend on them.
 
@@ -19,7 +19,8 @@ Beepo records **domain names and seconds spent**, not page contents, full URLs, 
 
 ## Permissions
 
-- **Read website data (content script on all sites):** to show Beepo and measure time on the sites you choose. Untracked sites are measured by domain only, to power "Beepo noticed you spend a lot of time on…" suggestions.
+- **Read and change website data (host access to all http/https sites):** to show Beepo and measure time on the sites you choose. Untracked sites are measured by domain only, to power "Beepo noticed you spend a lot of time on…" suggestions.
+- **scripting:** after installing or updating, add Beepo to tabs that were already open, so they're tracked without a reload.
 - **storage:** save your settings and usage.
 - **idle:** pause counting when you're away from the computer.
 - **activeTab:** prefill the current site when you open the popup.
@@ -30,4 +31,4 @@ Removing the extension deletes all of its data. Use **Settings → Your data →
 
 ## Contact
 
-_TODO: add a contact email before publishing._
+Questions: [beepo@panikka.studio](mailto:beepo@panikka.studio)

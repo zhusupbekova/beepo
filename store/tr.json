@@ -1,0 +1,14 @@
+{
+  "name": "Beepo — ekran süren için piksel dostun",
+  "short": "Minik bir piksel robot sitelerinin altında yaşar; süre dolunca seni dürter, hedeflerine ulaşınca sevinçten zıplar.",
+  "description": "Beepo ile tanış: seçtiğin sitelerde sana eşlik eden minik bir piksel robot.\n\n• Her site, site grubu, hatta youtube.com/shorts gibi bir yol için günlük limit (daha az) veya hedef (daha çok) belirle\n• Beepo %50 ve %80'de haber verir, süre dolunca DUR tabelasını kaldırır, devam edersen nazikçe hatırlatır\n• \"5 dakika daha\" ertelemesi — Beepo kaç kez bastığını unutmaz\n• İsteğe bağlı kesin engel ve odak saatleri, yıldızla 5 dakikalık kilit açma\n• Limitlere uyup hedeflere ulaştıkça yıldız kazan; seri yap; rozetlerin kilidini aç\n• Yıldızlarını şapkalara, renklere, antenlere, aksesuarlara ve evcil dostlara harca (Kedi Mochi selam söylüyor)\n• Beepo serilerinle birlikte evrimleşir — sen tökezleyince de biraz dağılır\n• Haftalık rapor: günlük ve site bazında süre, geçen haftaya göre kazandığın zaman\n• Dahili sprite düzenleyiciyle kendi şapkanı çiz\n• Hafta içi/hafta sonu limitleri, hareketsizlik algılama, sessiz mod, 8-bit sesler, günün başlangıç saatini ayarlama\n• 17 dil konuşur\n\nGizlilik en baştan: hesap yok, sunucu yok, analiz yok. Her şey tarayıcında kalır.",
+  "tagline": "Ekran süren için piksel dostun",
+  "captions": {
+    "page": "Minik bir piksel dost sitelerinin altında yaşıyor",
+    "stop": "Süre doldu mu? Beepo DUR tabelasını kaldırır",
+    "block": "İsteğe bağlı kesin engel, yıldızla kilit açma",
+    "today": "Her site için limit ve hedef belirle",
+    "shop": "Yıldız kazan, Beepo'yu giydir, evcil dost sahiplen",
+    "report": "Haftalık rapor: kazandığın zamanı gör"
+  }
+}

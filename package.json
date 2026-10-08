@@ -6,6 +6,12 @@
     "test": "node --test tests/*.test.js",
     "check": "for f in extension/*.js extension/*/*.js; do node --check \"$f\" || exit 1; done",
     "icons": "node scripts/make-icons.js",
-    "build": "node scripts/build.js"
+    "build": "node scripts/build.js",
+    "locales": "node scripts/make-locales.js",
+    "store": "node scripts/store-assets.js",
+    "social": "node scripts/social-assets.js"
+  },
+  "devDependencies": {
+    "playwright": "^1.63.0"
   }
 }

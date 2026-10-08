@@ -1,0 +1,14 @@
+{
+  "name": "Beepo — tu compañero pixelado para el tiempo de pantalla",
+  "short": "Un pequeño robot pixelado vive al pie de tus sitios web, te avisa cuando se acaba el tiempo y celebra cuando cumples tus metas.",
+  "description": "Te presentamos a Beepo, un pequeño robot pixelado que te hace compañía en los sitios que elijas.\n\n• Pon límites diarios (para usar menos) o metas (para usar más) en cualquier sitio, grupo de sitios o incluso una ruta como youtube.com/shorts\n• Beepo te avisa al 50% y al 80%, saca una señal de ALTO cuando se acaba el tiempo y te insiste con cariño si te quedas\n• Botón \"5 minutos más\": Beepo recuerda cuántas veces lo usaste\n• Bloqueo total y horas de enfoque opcionales, con desbloqueo de 5 minutos a cambio de una estrella\n• Gana estrellas por cumplir límites y alcanzar metas; arma rachas; desbloquea insignias\n• Gasta estrellas en sombreros, colores, antenas, accesorios y mascotas (Mochi el gato te manda saludos)\n• Beepo evoluciona con tus rachas y se despeina un poquito cuando te descuidas\n• Resumen semanal: tiempo por día, por sitio y tiempo ahorrado frente a la semana pasada\n• Dibuja tus propios sombreros en el editor de sprites integrado\n• Límites entre semana y fin de semana, detección de inactividad, modo silencioso, sonidos de 8 bits y hora de inicio del día personalizable\n• Habla 17 idiomas\n\nPrivado por diseño: sin cuentas, sin servidores, sin analíticas. Todo se queda en tu navegador.",
+  "tagline": "Tu compañero pixelado para el tiempo de pantalla",
+  "captions": {
+    "page": "Un pequeño compañero pixelado vive al pie de tus sitios",
+    "stop": "¿Se acabó el tiempo? Beepo saca su señal de ALTO",
+    "block": "Bloqueo total opcional, con desbloqueo a cambio de estrellas",
+    "today": "Pon límites y metas en cualquier sitio",
+    "shop": "Gana estrellas, viste a Beepo y adopta una mascota",
+    "report": "Resumen semanal: mira cuánto tiempo ahorraste"
+  }
+}

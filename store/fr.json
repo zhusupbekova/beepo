@@ -1,0 +1,14 @@
+{
+  "name": "Beepo — ton compagnon pixel pour le temps d'écran",
+  "short": "Un petit robot pixel vit en bas de tes sites, te prévient quand le temps est écoulé et t'encourage quand tu atteins tes objectifs.",
+  "description": "Voici Beepo, un petit robot en pixel art qui te tient compagnie sur les sites de ton choix.\n\n• Fixe des limites quotidiennes (moins de temps) ou des objectifs (plus de temps) pour un site, un groupe de sites ou même un chemin comme youtube.com/shorts\n• Beepo fait le point à 50 % et 80 %, brandit un panneau STOP quand le temps est écoulé et insiste gentiment si tu restes\n• Bouton « Encore 5 min » — Beepo se souvient du nombre de fois où tu l'as utilisé\n• Blocage strict et heures de concentration en option, avec un déblocage de 5 minutes contre une étoile\n• Gagne des étoiles en respectant tes limites et en atteignant tes objectifs ; enchaîne les séries ; débloque des badges\n• Dépense tes étoiles en chapeaux, couleurs, antennes, accessoires et compagnons (Mochi le chat te dit bonjour)\n• Beepo évolue avec tes séries — et devient un peu ébouriffé quand tu flanches\n• Bilan hebdo : temps par jour, par site, et temps gagné par rapport à la semaine dernière\n• Dessine tes propres chapeaux dans l'éditeur de sprites intégré\n• Limites semaine/week-end, détection d'inactivité, mode discret, sons 8 bits, heure de début de journée personnalisable\n• Parle 17 langues\n\nConfidentiel par conception : pas de compte, pas de serveur, pas de statistiques. Tout reste dans ton navigateur.",
+  "tagline": "Ton compagnon pixel pour le temps d'écran",
+  "captions": {
+    "page": "Un petit compagnon pixel vit en bas de tes sites",
+    "stop": "Temps écoulé ? Beepo brandit un panneau STOP",
+    "block": "Blocage strict en option, avec déblocage contre une étoile",
+    "today": "Fixe des limites et des objectifs pour n'importe quel site",
+    "shop": "Gagne des étoiles, habille Beepo, adopte un compagnon",
+    "report": "Bilan hebdo : vois le temps que tu as gagné"
+  }
+}

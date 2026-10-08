@@ -1,0 +1,14 @@
+{
+  "name": "Beepo — il tuo amico pixel per il tempo davanti allo schermo",
+  "short": "Un piccolo robot pixel vive in fondo ai tuoi siti, ti avvisa quando il tempo è scaduto e fa il tifo per i tuoi obiettivi.",
+  "description": "Ecco Beepo, un piccolo robot in pixel art che ti fa compagnia sui siti che scegli tu.\n\n• Imposta limiti giornalieri (meno tempo) o obiettivi (più tempo) per qualsiasi sito, gruppo di siti o perfino un percorso come youtube.com/shorts\n• Beepo si fa sentire al 50% e all'80%, alza un cartello STOP quando il tempo è scaduto e insiste con gentilezza se resti\n• Pulsante \"Altri 5 minuti\" — Beepo ricorda quante volte lo premi\n• Blocco totale e ore di concentrazione facoltativi, con sblocco di 5 minuti in cambio di una stella\n• Guadagna stelle rispettando i limiti e raggiungendo gli obiettivi; costruisci serie; sblocca medaglie\n• Spendi le stelle in cappelli, colori, antenne, accessori e cuccioli (Mochi il gatto ti saluta)\n• Beepo si evolve con le tue serie — e diventa un po' arruffato quando sgarri\n• Resoconto settimanale: tempo al giorno, per sito e tempo risparmiato rispetto alla settimana scorsa\n• Disegna i tuoi cappelli nell'editor di sprite integrato\n• Limiti per giorni feriali/weekend, rilevamento inattività, modalità silenziosa, suoni a 8 bit, ora di inizio giornata personalizzabile\n• Parla 17 lingue\n\nPrivato per natura: niente account, niente server, niente statistiche. Tutto resta nel tuo browser.",
+  "tagline": "Il tuo amico pixel per il tempo davanti allo schermo",
+  "captions": {
+    "page": "Un piccolo amico pixel vive in fondo ai tuoi siti",
+    "stop": "Tempo scaduto? Beepo alza un cartello STOP",
+    "block": "Blocco totale facoltativo, con sblocco a stelle",
+    "today": "Imposta limiti e obiettivi per qualsiasi sito",
+    "shop": "Guadagna stelle, vesti Beepo, adotta un cucciolo",
+    "report": "Resoconto settimanale: guarda quanto tempo hai risparmiato"
+  }
+}

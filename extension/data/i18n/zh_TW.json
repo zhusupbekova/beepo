@@ -1,0 +1,494 @@
+{
+  "name": "繁體中文（台灣）",
+  "locale": "zh-TW",
+  "dir": "ltr",
+  "ui": {
+    "min": "{n}分鐘",
+    "sec": "{n}秒",
+    "hm": "{h}小時{m}分",
+    "m": "{m}分",
+    "close": "關閉",
+    "beepoTitle": "Beepo（點兩下先收起來）",
+    "stop": "停",
+    "closeTab": "關閉分頁",
+    "unlock": "解鎖5分鐘（⭐1）",
+    "noStars": "星星用完了。守住限制就能再賺喔！",
+    "snoozeBtn": "再5分鐘",
+    "snoozeBtnN": "再5分鐘（第#{n}次）",
+    "blockFocus": "專注時段 {start}–{end}。⭐ {stars}",
+    "blockUsed": "今天已用 {used}／{base}。⭐ {stars}",
+    "mode_limit": "限制",
+    "mode_goal": "目標",
+    "settings": "設定",
+    "tab_today": "今天",
+    "tab_report": "報告",
+    "tab_shop": "商店",
+    "tab_badges": "徽章",
+    "quickLimit": "限制",
+    "customRule": "+ 自訂規則／群組…",
+    "loadError": "Beepo 被電線絆倒了。試著重新載入擴充功能，詳細資訊在 service worker 主控台裡。",
+    "streakRough": "低潮期：已超過 {n} 天 😿",
+    "streakLine": "🔥 限制連續 {limit} 天 · 🎯 目標連續 {goal} 天",
+    "suggest": "Beepo 發現你最近常逛 {domain}（每天約 {n} 分鐘）。要加個限制嗎？",
+    "suggestAdd": "限制30分",
+    "suggestNo": "不用了",
+    "noRulesYet": "加個網站，Beepo 就會在那裡陪你。",
+    "flagBlock": "🔒 封鎖",
+    "flagHidden": "🙈 隱藏",
+    "flagWeekend": "週末 {m}分",
+    "edit": "編輯",
+    "remove": "移除",
+    "delete": "刪除",
+    "snoozedTime": "延長的時間",
+    "editRule": "編輯規則",
+    "newRule": "新增規則",
+    "fieldSites": "網站（一行一個；可加路徑，例如 youtube.com/shorts）",
+    "fieldName": "名稱",
+    "namePlaceholder": "自動",
+    "fieldType": "類型",
+    "typeLimit": "限制（少用）",
+    "typeGoal": "目標（多用）",
+    "fieldMinutes": "每天分鐘數",
+    "fieldWeekend": "週末分鐘數",
+    "weekendPlaceholder": "相同",
+    "blockWhenOver": "超過時封鎖",
+    "hideHere": "在這裡隱藏 Beepo",
+    "focusLegend": "專注時段（暫停使用網站）",
+    "weekdays": "平日",
+    "save": "儲存",
+    "cancel": "取消",
+    "errSites": "請至少輸入一個有效的網站。",
+    "thisWeek": "本週",
+    "onTracked": "在追蹤的網站上",
+    "saved": "省下",
+    "extra": "多用",
+    "vsLastWeek": "比上週",
+    "bestDay": "最佳的一天",
+    "rulesKept": "守住 {score}/{of} 條規則",
+    "notEnough": "資料還不夠",
+    "perDay": "每日追蹤時間",
+    "perDayAria": "每日追蹤時間，最近7天",
+    "today": "今天",
+    "perRule": "各規則",
+    "colRule": "規則",
+    "colThisWk": "本週",
+    "colLastWk": "上週",
+    "noRules": "還沒有規則。",
+    "slot_color": "顏色",
+    "slot_hat": "帽子",
+    "slot_antenna": "天線",
+    "slot_accessory": "配件",
+    "slot_pet": "寵物",
+    "wearing": "穿戴中",
+    "takeOff": "脫下",
+    "wear": "穿上",
+    "drawOwn": "✏ 自己畫帽子／配件",
+    "evoTitle": "Beepo 的進化",
+    "evoIntro": "連續紀錄會改變 Beepo 的樣子。目前最佳連續紀錄：{n} 天。",
+    "evoStep": "{name} — 連續 {n} 天",
+    "scruffy": "連續 2 天以上超過限制會變得亂糟糟（過一個好日子就會恢復）",
+    "optTitle": "Beepo 設定",
+    "language": "語言",
+    "langAuto": "自動（瀏覽器語言）",
+    "homeCorner": "待機角落",
+    "bottomRight": "右下角",
+    "bottomLeft": "左下角",
+    "size": "大小",
+    "small": "小",
+    "medium": "中",
+    "large": "大",
+    "nagEvery": "提醒間隔（超過限制後幾分鐘）",
+    "nagHint": "0 = 只提醒一次",
+    "newDay": "新的一天開始於",
+    "newDayHint": "這樣熬夜的時間會算進「昨天」",
+    "idle": "閒置多久後暫停計時（秒）",
+    "idleHint": "播放中的影片一律計時",
+    "wander": "在頁面上散步",
+    "sounds": "8-bit 音效",
+    "quiet": "安靜模式（只說重要的事）",
+    "everywhere": "在所有網站顯示 Beepo",
+    "yourData": "你的資料",
+    "dataHint": "所有資料都留在你的瀏覽器裡。規則、設定和星星會透過瀏覽器設定檔同步；使用紀錄只存在這台裝置上。",
+    "export": "匯出 JSON",
+    "import": "匯入 JSON…",
+    "spriteEditor": "✏ 角色編輯器",
+    "savedTick": "已儲存 ✓",
+    "badJson": "這個檔案不是有效的 JSON。",
+    "confirmImport": "要用這個檔案取代所有 Beepo 資料（規則、星星、紀錄）嗎？",
+    "imported": "已匯入 ✓",
+    "notExport": "這看起來不像 Beepo 匯出的檔案。",
+    "edTitle": "✏ Beepo 角色編輯器",
+    "edHint": "在 Beepo 身上畫一層裝飾。左鍵上色，右鍵把像素恢復成「不變」。⌫ 會擦掉 Beepo 底下原本的像素。",
+    "edName": "名稱",
+    "edNamePh": "我的超酷帽子",
+    "edSlot": "部位",
+    "edSlotHat": "帽子",
+    "edSlotAccessory": "配件",
+    "edSlotAntenna": "天線",
+    "edStart": "起始",
+    "edBlank": "空白",
+    "edSave": "存到商店",
+    "edCopy": "複製 JSON",
+    "edCopyTitle": "給 data/sprites.json 用的 JSON",
+    "edClear": "清除",
+    "edPreview": "預覽",
+    "edCreations": "你的作品",
+    "edNothing": "還沒有作品。畫頂帽子吧！",
+    "edCopied": "已複製！貼到 data/sprites.json → items 裡。",
+    "edDrawFirst": "先畫點東西吧！",
+    "edSaved": "已儲存！到商店分頁就能穿上。",
+    "edDefaultName": "我的作品",
+    "edErase": "擦掉 Beepo 像素"
+  },
+  "badges": {
+    "first_star": {
+      "name": "第一顆星",
+      "desc": "賺到你的第一顆星星。"
+    },
+    "streak3": {
+      "name": "暖身完成",
+      "desc": "連續 3 天守住所有限制。"
+    },
+    "week_clean": {
+      "name": "完美一週",
+      "desc": "連續 7 天守住所有限制。"
+    },
+    "month_clean": {
+      "name": "鋼鐵意志",
+      "desc": "連續 30 天守住所有限制。"
+    },
+    "goal_crusher": {
+      "name": "目標終結者",
+      "desc": "達成 10 次每日目標。"
+    },
+    "on_a_roll": {
+      "name": "手感正熱",
+      "desc": "連續 7 天達成所有目標。"
+    },
+    "night_owl_reformed": {
+      "name": "夜貓子改邪歸正",
+      "desc": "整整一週午夜過後都沒逛追蹤的網站。"
+    },
+    "unsnoozable": {
+      "name": "絕不賴床",
+      "desc": "整整一週都沒按「再5分鐘」。"
+    },
+    "fashionista": {
+      "name": "時尚達人",
+      "desc": "在商店擁有 3 件裝扮。"
+    }
+  },
+  "items": {
+    "color-blue": "天空藍",
+    "color-pink": "泡泡糖粉",
+    "color-mint": "薄荷綠",
+    "color-purple": "葡萄紫",
+    "color-gold": "純金",
+    "antenna-heart": "愛心天線",
+    "antenna-star": "星星天線",
+    "hat-cap": "紅色棒球帽",
+    "hat-party": "派對帽",
+    "hat-top": "紳士高帽",
+    "hat-crown": "皇冠",
+    "acc-shades": "酷酷墨鏡",
+    "acc-scarf": "暖暖圍巾",
+    "pet-cat": "貓咪麻糬",
+    "pet-ghost": "小幽靈 Boo",
+    "pet-slime": "史萊姆咕嚕"
+  },
+  "evolve": {
+    "cheeks": "紅通通臉頰",
+    "grow": "長高高",
+    "collar": "金色項圈"
+  },
+  "messages": {
+    "greetMorning": {
+      "mood": "happy",
+      "lines": [
+        "早安！今天也要好好過喔。",
+        "早～我帶了最棒的嗶嗶聲來！",
+        "起床囉，朋友！"
+      ]
+    },
+    "greetAfternoon": {
+      "mood": "happy",
+      "lines": [
+        "嗨！Beepo 報到！",
+        "午安！記得喝點水喔。",
+        "喔嗨！剛剛沒看到你欸。"
+      ]
+    },
+    "greetEvening": {
+      "mood": "happy",
+      "lines": [
+        "晚安！差不多要放鬆了嗎？",
+        "嗨！太陽下山囉，嗶嗶啵。",
+        "嘿！希望今天過得不錯。"
+      ]
+    },
+    "greetNight": {
+      "mood": "sleepy",
+      "lines": [
+        "好晚了…*打呵欠*。嗨。",
+        "我們不是都該睡了嗎？",
+        "夜貓子模式開啟，嗯？"
+      ]
+    },
+    "statusLimit": {
+      "mood": "happy",
+      "lines": [
+        "今天 {name} 還剩 {left}。",
+        "這裡還剩 {left}，好好用喔！",
+        "{name} 還有 {left}，我在數喔！"
+      ]
+    },
+    "statusOver": {
+      "mood": "angry",
+      "lines": [
+        "{name} 已經超過 {over} 了。",
+        "我們 {over} 前就超過限制了…",
+        "超過 {over} 了。去做點別的好不好？"
+      ]
+    },
+    "statusGoal": {
+      "mood": "happy",
+      "lines": [
+        "離目標還有 {left}，你可以的！",
+        "再 {left} 就有星星拿囉！",
+        "繼續加油，還剩 {left}！"
+      ]
+    },
+    "statusGoalDone": {
+      "mood": "proud",
+      "lines": [
+        "今天的目標達成！超棒的！",
+        "今天的目標早就被你搞定啦！",
+        "目標完成。多出來的都是賺到！"
+      ]
+    },
+    "statusCompanion": {
+      "mood": "happy",
+      "lines": [
+        "我只是在這裡晃晃。⭐ {stars}",
+        "嗶！目前連續 {streak} 天囉。",
+        "需要我的話我都在喔。"
+      ]
+    },
+    "statusNight": {
+      "mood": "sleepy",
+      "lines": [
+        "已經 {time} 了…睡覺也是很棒的網站喔。",
+        "{time}？！YouTube 可以等，睡眠不行啦。",
+        "半夜滑手機是陷阱。別問我怎麼知道的。"
+      ]
+    },
+    "limit50": {
+      "mood": "neutral",
+      "lines": [
+        "你的 {m} 分鐘用掉一半了。只是來問候一下！",
+        "時間過一半囉。還玩得開心嗎？",
+        "50% 了！Beepo 有在記分喔。"
+      ]
+    },
+    "limit80": {
+      "mood": "worried",
+      "lines": [
+        "只剩 {left} 了…要不要準備收尾？",
+        "快到了！還剩 {left}。",
+        "噓～還剩 {left}。找個地方停下來吧。"
+      ]
+    },
+    "limit100": {
+      "mood": "angry",
+      "lines": [
+        "{m} 分鐘到囉！該去做點別的事了。",
+        "停！到達限制。起來伸展一下！",
+        "時間到！我相信你，把這個分頁關掉吧。"
+      ]
+    },
+    "over": {
+      "mood": "sad",
+      "lines": [
+        "超過 {over} 了。Beepo 好難過 :(",
+        "還在這裡？已經超過限制 {over} 了…",
+        "超過 {over} 了。拜託拜託，休息一下好嗎？"
+      ]
+    },
+    "snoozeOver": {
+      "mood": "worried",
+      "lines": [
+        "延長時間結束囉！",
+        "那是你的額外時間。這次是真的喔！",
+        "延長結束。嗶嗶嗶！"
+      ]
+    },
+    "snooze1": {
+      "mood": "neutral",
+      "lines": [
+        "好啦，再 5 分鐘。我在看喔！",
+        "好吧，再 5 分鐘。要好好把握。",
+        "5 分鐘。然後就走，說好囉？"
+      ]
+    },
+    "snooze2": {
+      "mood": "worried",
+      "lines": [
+        "這是今天第 2 次延長了…",
+        "再 5 分鐘？好啦，但我有在記喔。",
+        "第二次延長。嗯…"
+      ]
+    },
+    "snooze3": {
+      "mood": "sad",
+      "lines": [
+        "第 #{n} 次延長。我們都知道接下來會怎樣。",
+        "已經延長 {n} 次了。Beepo 開始擔心了。",
+        "第 #{n} 次延長…也許限制該設得誠實一點？"
+      ]
+    },
+    "goal50": {
+      "mood": "happy",
+      "lines": [
+        "目標完成一半了，繼續加油！",
+        "50% 完成！你做得很好。",
+        "過半了！Beepo 已經在為你驕傲了。"
+      ]
+    },
+    "goal100": {
+      "mood": "party",
+      "lines": [
+        "你完成了 {m} 分鐘！送你一顆星 ⭐",
+        "達標！星星給你 ⭐",
+        "目標完成！⭐ +1，你超讚！"
+      ]
+    },
+    "night": {
+      "mood": "sleepy",
+      "lines": [
+        "已經過午夜了…我們早點睡好不好？",
+        "這麼晚了啊？你的床在想你喔。",
+        "夜貓子警報！睡覺是一種超能力。"
+      ]
+    },
+    "kept": {
+      "mood": "party",
+      "lines": [
+        "昨天你在 {n} 個網站都守住限制了！+{n} ⭐",
+        "昨天守住了 {n} 個限制！+{n} ⭐",
+        "昨天的自制力超強！+{n} ⭐"
+      ]
+    },
+    "streak": {
+      "mood": "proud",
+      "lines": [
+        "連續 {n} 天！繼續保持！",
+        "已經連續 {n} 天了，哇！",
+        "連續紀錄：{n} 天。Beepo 笑得合不攏嘴。"
+      ]
+    },
+    "badge": {
+      "mood": "party",
+      "lines": [
+        "新徽章：{name}！+3 ⭐",
+        "你解鎖了「{name}」！+3 ⭐",
+        "獲得徽章：{name}！+3 ⭐"
+      ]
+    },
+    "evolve": {
+      "mood": "proud",
+      "lines": [
+        "哇，我覺得自己不一樣了！（{name}）",
+        "你看我！{name}！",
+        "你的連續紀錄改變了我：{name}！"
+      ]
+    },
+    "blocked": {
+      "mood": "angry",
+      "lines": [
+        "{name} 已到達限制。今天這個頁面先休息囉。",
+        "{name} 今天就到這裡。明天再來吧！",
+        "{name} 打烊了。Beepo 在門口站崗。"
+      ]
+    },
+    "focus": {
+      "mood": "worried",
+      "lines": [
+        "專注時間！{until} 之前先別碰 {name}。",
+        "{until} 之前不開 {name}。你可以的。",
+        "專注時段！{until} 之後見。"
+      ]
+    },
+    "unlock": {
+      "mood": "neutral",
+      "lines": [
+        "解鎖 5 分鐘。好好利用喔！",
+        "好，5 分鐘。開始倒數！",
+        "門開 5 分鐘。之後我會再鎖起來。"
+      ]
+    },
+    "bored": {
+      "mood": "bored",
+      "lines": [
+        "哈囉？有人在嗎？",
+        "*敲敲螢幕*",
+        "好無聊喔…要不要出去走走？"
+      ]
+    },
+    "sleepy": {
+      "mood": "sleepy",
+      "lines": [
+        "Zzz…",
+        "*打呼*",
+        "Zzz…嗶…zzz…"
+      ]
+    },
+    "scroll": {
+      "mood": "worried",
+      "lines": [
+        "哇，慢一點！",
+        "偵測到無限滑！",
+        "咻～欸，小心啦！"
+      ]
+    },
+    "poke": {
+      "mood": "happy",
+      "lines": [
+        "嘿嘿，好癢喔！",
+        "嗶嗶啵！",
+        "你戳我！"
+      ]
+    }
+  },
+  "android": {
+    "usageTitle": "Beepo 需要使用情形存取權",
+    "usageBody": "為了知道你在每個 App 上花了多少時間，Beepo 需要使用情形存取權。它只計算時間，所有資料都留在你的手機上。",
+    "usageGrant": "開啟設定",
+    "usageFind": "在清單中找到 Beepo 並開啟。",
+    "noRules": "在下方選一個 App，Beepo 會在那裡陪著你。",
+    "phoneToday": "今天的手機使用",
+    "noUsage": "今天還沒有 App 使用時間。",
+    "fieldApps": "App",
+    "errApps": "請至少選擇一個 App。",
+    "searchApps": "搜尋 App",
+    "langAuto": "自動（手機語言）",
+    "onTracked": "在追蹤的 App 上",
+    "obHello": "嗨，我是 Beepo！",
+    "obIntro": "我是一個小小的像素夥伴。我會在你選擇的 App 裡陪著你，幫你留意時間。",
+    "obHowTitle": "怎麼運作",
+    "obLimits": "限制：減少花在吞噬你一天的 App 上的時間。",
+    "obGoals": "目標：增加花在對你有益的 App 上的時間。",
+    "obStars": "整天守住一個限制就能獲得一顆星星。用星星幫我買帽子和顏色吧。",
+    "obStreaks": "連續堅持幾天，我也會跟著改變。",
+    "obOffline": "Beepo 無法存取網路，所以任何資料都不會離開你的手機。",
+    "privacyPolicy": "隱私權政策",
+    "obGranted": "使用情形存取權已開啟 ✓",
+    "obPickTitle": "我該留意哪些 App？",
+    "obPickHint": "這是你本週最常用的 App。你可以隨時更改。",
+    "obMinutes": "每日限制",
+    "obNoApps": "還沒有 App 使用時間。之後可以在「今天」分頁新增 App。",
+    "next": "下一步",
+    "back": "返回",
+    "notNow": "先不要",
+    "start": "開始吧！"
+  }
+}

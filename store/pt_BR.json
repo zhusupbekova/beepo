@@ -1,0 +1,14 @@
+{
+  "name": "Beepo — seu parceiro pixelado para o tempo de tela",
+  "short": "Um robozinho pixelado mora no rodapé dos seus sites, avisa quando o tempo acaba e comemora quando você bate suas metas.",
+  "description": "Conheça o Beepo, um robozinho pixelado que te faz companhia nos sites que você escolher.\n\n• Defina limites diários (para usar menos) ou metas (para usar mais) para qualquer site, grupo de sites ou até um caminho como youtube.com/shorts\n• O Beepo dá um toque aos 50% e aos 80%, levanta uma placa de PARE quando o tempo acaba e insiste com carinho se você continuar\n• Soneca de \"mais 5 minutos\" — o Beepo lembra quantas vezes você apertou\n• Bloqueio total e horário de foco opcionais, com liberação de 5 minutos paga com estrelas\n• Ganhe estrelas respeitando limites e batendo metas; faça sequências; desbloqueie conquistas\n• Gaste estrelas em chapéus, cores, antenas, acessórios e pets (o Mochi, o gato, manda um oi)\n• O Beepo evolui com suas sequências — e fica meio descabelado quando você escorrega\n• Relatório semanal: tempo por dia, por site e tempo economizado em relação à semana passada\n• Desenhe seus próprios chapéus no editor de sprites embutido\n• Limites para dias úteis e fim de semana, detecção de inatividade, modo silencioso, sons de 8 bits e horário de virada do dia personalizável\n• Fala 17 idiomas\n\nPrivado por natureza: sem contas, sem servidores, sem rastreamento. Tudo fica no seu navegador.",
+  "tagline": "Seu parceiro pixelado para o tempo de tela",
+  "captions": {
+    "page": "Um parceirinho pixelado mora no rodapé dos seus sites",
+    "stop": "Acabou o tempo? O Beepo levanta a placa de PARE",
+    "block": "Bloqueio total opcional, com liberação paga com estrelas",
+    "today": "Defina limites e metas para qualquer site",
+    "shop": "Ganhe estrelas, vista o Beepo e adote um pet",
+    "report": "Relatório semanal: veja o tempo que você economizou"
+  }
+}

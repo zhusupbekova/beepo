@@ -12,6 +12,8 @@
 * { box-sizing: border-box; }
 [hidden] { display: none !important; }
 body { margin: 0; font: 12px/1.4 ui-monospace, Menlo, monospace; background: var(--paper); color: var(--ink); }
+/* Monospace fonts have no Arabic, and the fallback breaks letter joining. */
+html[dir="rtl"] body { font-family: system-ui, "Segoe UI", Tahoma, sans-serif; }
 h1, h2, h3 { margin: 0; }
 h2 { font-size: 13px; margin-bottom: 6px; }
 a { color: var(--ink); }

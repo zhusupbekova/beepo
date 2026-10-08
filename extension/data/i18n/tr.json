@@ -1,0 +1,494 @@
+{
+  "name": "Türkçe",
+  "locale": "tr",
+  "dir": "ltr",
+  "ui": {
+    "min": "{n} dk",
+    "sec": "{n} sn",
+    "hm": "{h} sa {m} dk",
+    "m": "{m} dk",
+    "close": "Kapat",
+    "beepoTitle": "Beepo (gizlemek için çift tıkla)",
+    "stop": "DUR",
+    "closeTab": "Sekmeyi kapat",
+    "unlock": "5 dk aç (⭐1)",
+    "noStars": "Hiç yıldız kalmadı. Limitlere uyarak yenilerini kazan!",
+    "snoozeBtn": "5 dk daha",
+    "snoozeBtnN": "5 dk daha (#{n})",
+    "blockFocus": "Odak saatleri: {start}–{end}. ⭐ {stars}",
+    "blockUsed": "Bugün kullanılan: {used} / {base}. ⭐ {stars}",
+    "mode_limit": "limit",
+    "mode_goal": "hedef",
+    "settings": "Ayarlar",
+    "tab_today": "Bugün",
+    "tab_report": "Rapor",
+    "tab_shop": "Mağaza",
+    "tab_badges": "Rozetler",
+    "quickLimit": "limit",
+    "customRule": "+ özel kural / grup…",
+    "loadError": "Beepo bir kabloya takıldı. Eklentiyi yeniden yüklemeyi dene — ayrıntılar service worker konsolunda.",
+    "streakRough": "Zor günler: {n} gündür limit aşıldı 😿",
+    "streakLine": "🔥 {limit} gün limit · 🎯 {goal} gün hedef",
+    "suggest": "Beepo şu siteyi fark etti: {domain} (son günlerde ~{n} dk/gün). Limit ekleyelim mi?",
+    "suggestAdd": "30 dk limit",
+    "suggestNo": "Gerek yok",
+    "noRulesYet": "Bir site ekle, Beepo orada sana eşlik etsin.",
+    "flagBlock": "🔒 engel",
+    "flagHidden": "🙈 gizli",
+    "flagWeekend": "hafta sonu {m} dk",
+    "edit": "Düzenle",
+    "remove": "Kaldır",
+    "delete": "Sil",
+    "snoozedTime": "Ertelenen süre",
+    "editRule": "Kuralı düzenle",
+    "newRule": "Yeni kural",
+    "fieldSites": "Siteler (her satıra bir tane; yol da olur, ör. youtube.com/shorts)",
+    "fieldName": "Ad",
+    "namePlaceholder": "otomatik",
+    "fieldType": "Tür",
+    "typeLimit": "Limit (daha az)",
+    "typeGoal": "Hedef (daha çok)",
+    "fieldMinutes": "Dakika / gün",
+    "fieldWeekend": "Hafta sonu dakikası",
+    "weekendPlaceholder": "aynı",
+    "blockWhenOver": "Aşınca engelle",
+    "hideHere": "Beepo'yu burada gizle",
+    "focusLegend": "Odak saatleri (site kapalı)",
+    "weekdays": "hafta içi",
+    "save": "Kaydet",
+    "cancel": "Vazgeç",
+    "errSites": "En az bir geçerli site gir.",
+    "thisWeek": "Bu hafta",
+    "onTracked": "takip edilen sitelerde",
+    "saved": "Kazanılan",
+    "extra": "Fazla",
+    "vsLastWeek": "geçen haftaya göre",
+    "bestDay": "En iyi gün",
+    "rulesKept": "{score}/{of} kurala uyuldu",
+    "notEnough": "yeterli veri yok",
+    "perDay": "Günlük takip edilen süre",
+    "perDayAria": "Günlük takip edilen süre, son 7 gün",
+    "today": "bugün",
+    "perRule": "Kural bazında",
+    "colRule": "Kural",
+    "colThisWk": "Bu hf.",
+    "colLastWk": "Geçen hf.",
+    "noRules": "Henüz kural yok.",
+    "slot_color": "Renkler",
+    "slot_hat": "Şapkalar",
+    "slot_antenna": "Antenler",
+    "slot_accessory": "Aksesuarlar",
+    "slot_pet": "Evcil dostlar",
+    "wearing": "Takılı",
+    "takeOff": "Çıkar",
+    "wear": "Tak",
+    "drawOwn": "✏ Kendi şapkanı / aksesuarını çiz",
+    "evoTitle": "Beepo'nun evrimi",
+    "evoIntro": "Seriler Beepo'nun görünüşünü değiştirir. Şu anki en iyi seri: {n} gün.",
+    "evoStep": "{name} — {n} günlük seri",
+    "scruffy": "2+ gün limit aşılınca biraz dağılır (iyi bir gün düzeltir)",
+    "optTitle": "Beepo ayarları",
+    "language": "Dil",
+    "langAuto": "Otomatik (tarayıcı dili)",
+    "homeCorner": "Ev köşesi",
+    "bottomRight": "Sağ alt",
+    "bottomLeft": "Sol alt",
+    "size": "Boyut",
+    "small": "Küçük",
+    "medium": "Orta",
+    "large": "Büyük",
+    "nagEvery": "Hatırlatma sıklığı (limit aşımında, dakika)",
+    "nagHint": "0 = yalnızca bir kez",
+    "newDay": "Yeni gün başlangıcı",
+    "newDayHint": "Gece geç saatler \"dün\" sayılsın diye",
+    "idle": "Hareketsizlikte saymayı duraklat (saniye)",
+    "idleHint": "Oynayan videolar her zaman sayılır",
+    "wander": "Sayfada gezinsin",
+    "sounds": "8-bit sesler",
+    "quiet": "Sessiz mod (yalnızca önemli şeyler)",
+    "everywhere": "Beepo'yu her sitede göster",
+    "yourData": "Verilerin",
+    "dataHint": "Her şey tarayıcında kalır. Kurallar, ayarlar ve yıldızlar tarayıcı profilin üzerinden eşitlenir; kullanım geçmişi bu cihazda kalır.",
+    "export": "JSON dışa aktar",
+    "import": "JSON içe aktar…",
+    "spriteEditor": "✏ Sprite düzenleyici",
+    "savedTick": "Kaydedildi ✓",
+    "badJson": "Bu dosya geçerli bir JSON değil.",
+    "confirmImport": "Tüm Beepo verileri (kurallar, yıldızlar, geçmiş) bu dosyayla değiştirilsin mi?",
+    "imported": "İçe aktarıldı ✓",
+    "notExport": "Bu bir Beepo yedeğine benzemiyor.",
+    "edTitle": "✏ Beepo sprite düzenleyici",
+    "edHint": "Beepo'nun üstüne bir katman çiz. Sol tık boyar, sağ tık pikseli \"değişmedi\" durumuna döndürür. ⌫ alttaki Beepo piksellerini siler.",
+    "edName": "Ad",
+    "edNamePh": "Havalı şapkam",
+    "edSlot": "Yuva",
+    "edSlotHat": "Şapka",
+    "edSlotAccessory": "Aksesuar",
+    "edSlotAntenna": "Anten",
+    "edStart": "Başlangıç",
+    "edBlank": "Boş",
+    "edSave": "Mağazaya kaydet",
+    "edCopy": "JSON kopyala",
+    "edCopyTitle": "data/sprites.json için JSON",
+    "edClear": "Temizle",
+    "edPreview": "Önizleme",
+    "edCreations": "Tasarımların",
+    "edNothing": "Henüz bir şey yok. Bir şapka çiz!",
+    "edCopied": "Kopyalandı! data/sprites.json → items içine yapıştır.",
+    "edDrawFirst": "Önce bir şey çiz!",
+    "edSaved": "Kaydedildi! Mağaza sekmesinden takabilirsin.",
+    "edDefaultName": "Tasarımım",
+    "edErase": "Beepo pikselini sil"
+  },
+  "badges": {
+    "first_star": {
+      "name": "İlk Yıldız",
+      "desc": "İlk yıldızını kazan."
+    },
+    "streak3": {
+      "name": "Isınıyoruz",
+      "desc": "3 gün üst üste tüm limitlere uy."
+    },
+    "week_clean": {
+      "name": "Tertemiz İlk Hafta",
+      "desc": "7 gün boyunca tüm limitlere uy."
+    },
+    "month_clean": {
+      "name": "Çelik İrade",
+      "desc": "30 gün boyunca tüm limitlere uy."
+    },
+    "goal_crusher": {
+      "name": "Hedef Avcısı",
+      "desc": "10 günlük hedefe ulaş."
+    },
+    "on_a_roll": {
+      "name": "Durdurulamaz",
+      "desc": "7 gün üst üste tüm hedeflere ulaş."
+    },
+    "night_owl_reformed": {
+      "name": "Tövbekâr Gece Kuşu",
+      "desc": "Gece yarısından sonra takip edilen sitelere girmeden koca bir hafta."
+    },
+    "unsnoozable": {
+      "name": "Ertelemesiz",
+      "desc": "Hiç ertelemeden koca bir hafta."
+    },
+    "fashionista": {
+      "name": "Moda İkonu",
+      "desc": "Mağazadan 3 kozmetik edin."
+    }
+  },
+  "items": {
+    "color-blue": "Gök Mavisi",
+    "color-pink": "Sakız Pembe",
+    "color-mint": "Nane",
+    "color-purple": "Üzüm",
+    "color-gold": "Som Altın",
+    "antenna-heart": "Kalp Anten",
+    "antenna-star": "Yıldız Anten",
+    "hat-cap": "Kırmızı Kep",
+    "hat-party": "Parti Şapkası",
+    "hat-top": "Silindir Şapka",
+    "hat-crown": "Taç",
+    "acc-shades": "Havalı Gözlük",
+    "acc-scarf": "Sıcacık Atkı",
+    "pet-cat": "Kedi Mochi",
+    "pet-ghost": "Hayalet Boo",
+    "pet-slime": "Balçık Gloop"
+  },
+  "evolve": {
+    "cheeks": "Pembe yanaklar",
+    "grow": "Büyüme atağı",
+    "collar": "Altın yaka"
+  },
+  "messages": {
+    "greetMorning": {
+      "mood": "happy",
+      "lines": [
+        "Günaydın! Güzel bir gün geçirelim.",
+        "Günaydın! En güzel biplerimi getirdim.",
+        "Uyan bakalım, dostum!"
+      ]
+    },
+    "greetAfternoon": {
+      "mood": "happy",
+      "lines": [
+        "Selam! Beepo göreve hazır.",
+        "İyi günler! Biraz su içmeyi unutma.",
+        "Aa, selam! Seni fark etmemişim."
+      ]
+    },
+    "greetEvening": {
+      "mood": "happy",
+      "lines": [
+        "İyi akşamlar! Yavaş yavaş dinlenme vakti mi?",
+        "Selam! Güneş batıyor, bip bop.",
+        "Hey! Umarım bugün güzel geçmiştir."
+      ]
+    },
+    "greetNight": {
+      "mood": "sleepy",
+      "lines": [
+        "Geç oldu... *esneme*. Selam.",
+        "İkimizin de uyuyor olması gerekmiyor muydu?",
+        "Gece kuşu modu, ha?"
+      ]
+    },
+    "statusLimit": {
+      "mood": "happy",
+      "lines": [
+        "Bugün {name} için kalan süre: {left}.",
+        "Burada {left} süren kaldı. İyi değerlendir!",
+        "{name} için {left} kaldı. Sayıyorum!"
+      ]
+    },
+    "statusOver": {
+      "mood": "angry",
+      "lines": [
+        "{name} için limiti {over} aştın.",
+        "Limiti geçeli {over} oldu...",
+        "Limit {over} aşıldı. Başka bir şey yapalım mı?"
+      ]
+    },
+    "statusGoal": {
+      "mood": "happy",
+      "lines": [
+        "Hedefine {left} kaldı. Yaparsın!",
+        "{left} daha, sonra yıldız senin!",
+        "Devam, kalan süre: {left}!"
+      ]
+    },
+    "statusGoalDone": {
+      "mood": "proud",
+      "lines": [
+        "Bugünün hedefi tamam! Harika iş!",
+        "Bugünkü hedefi çoktan devirdin!",
+        "Hedef tamam. Fazlası bonus!"
+      ]
+    },
+    "statusCompanion": {
+      "mood": "happy",
+      "lines": [
+        "Öylesine takılıyorum. ⭐ {stars}",
+        "Bip! Şu ana kadar {streak} günlük seri.",
+        "Lazım olursam buradayım."
+      ]
+    },
+    "statusNight": {
+      "mood": "sleepy",
+      "lines": [
+        "Saat {time}... uyku da harika bir web sitesi.",
+        "Saat {time}?! YouTube bekler, uyku beklemez.",
+        "Gece kaydırması bir tuzak. Nereden bildiğimi sorma."
+      ]
+    },
+    "limit50": {
+      "mood": "neutral",
+      "lines": [
+        "{m} dakikanın yarısı bitti. Sadece haber veriyorum!",
+        "Sürenin yarısı gitti. Hâlâ eğleniyor musun?",
+        "Yüzde 50 oldu! Beepo hesabı tutuyor."
+      ]
+    },
+    "limit80": {
+      "mood": "worried",
+      "lines": [
+        "Sadece {left} kaldı... toparlamaya başlasak mı?",
+        "Az kaldı! Kalan süre: {left}.",
+        "Psst. {left} kaldı. Bırakmak için güzel bir an bul."
+      ]
+    },
+    "limit100": {
+      "mood": "angry",
+      "lines": [
+        "{m} dakikan doldu! Başka bir şey yapma vakti.",
+        "DUR! Limit doldu. Hadi biraz esne!",
+        "Süre bitti! Sana inanıyorum, kapat bu sekmeyi."
+      ]
+    },
+    "over": {
+      "mood": "sad",
+      "lines": [
+        "Limiti {over} aştın. Beepo üzgün :(",
+        "Hâlâ burada mısın? Limit {over} aşıldı...",
+        "Limit {over} aşıldı. Ne olur, biraz mola ver?"
+      ]
+    },
+    "snoozeOver": {
+      "mood": "worried",
+      "lines": [
+        "Erteleme süresi bitti!",
+        "Ek süren buydu. Bu sefer gerçekten!",
+        "Erteleme bitti. Bip bip bip!"
+      ]
+    },
+    "snooze1": {
+      "mood": "neutral",
+      "lines": [
+        "Tamam, 5 dakika daha. Gözüm üstünde!",
+        "Peki, 5 dakika daha. İyi değerlendir.",
+        "5 dakika. Sonra kalkıyoruz, anlaştık mı?"
+      ]
+    },
+    "snooze2": {
+      "mood": "worried",
+      "lines": [
+        "Bugünkü 2. erteleme bu...",
+        "5 dakika daha mı? Olur, ama sayıyorum.",
+        "İkinci erteleme. Hmm."
+      ]
+    },
+    "snooze3": {
+      "mood": "sad",
+      "lines": [
+        "Erteleme #{n}. Bunun nereye gittiğini ikimiz de biliyoruz.",
+        "Toplam erteleme: {n}. Beepo endişelenmeye başladı.",
+        "Erteleme #{n}... belki de limit biraz daha dürüst olmalı?"
+      ]
+    },
+    "goal50": {
+      "mood": "happy",
+      "lines": [
+        "Hedefin yarısındasın, devam!",
+        "Yüzde 50 tamam! Harika gidiyorsun.",
+        "Yarı yoldasın! Beepo şimdiden gururlu."
+      ]
+    },
+    "goal100": {
+      "mood": "party",
+      "lines": [
+        "{m} dakikayı tamamladın! Al sana yıldız ⭐",
+        "GOOOL! Yıldız senin ⭐",
+        "Hedef tamam! ⭐ +1, harikasın!"
+      ]
+    },
+    "night": {
+      "mood": "sleepy",
+      "lines": [
+        "Gece yarısı geçti... yakında uyusak mı?",
+        "Geç oldu, ha? Yatağın seni özledi.",
+        "Gece kuşu alarmı! Uyku bir süper güç."
+      ]
+    },
+    "kept": {
+      "mood": "party",
+      "lines": [
+        "Dün {n} sitede limitin altında kaldın! +{n} ⭐",
+        "Dün {n} limite uydun! +{n} ⭐",
+        "Dün müthiş bir irade gösterdin! +{n} ⭐"
+      ]
+    },
+    "streak": {
+      "mood": "proud",
+      "lines": [
+        "{n} günlük seri! Böyle devam!",
+        "Tam {n} gün üst üste. Vay be!",
+        "Seri: {n} gün. Beepo'nun gözleri parlıyor."
+      ]
+    },
+    "badge": {
+      "mood": "party",
+      "lines": [
+        "Yeni rozet: {name}! +3 ⭐",
+        "Kilidi açıldı: {name}! +3 ⭐",
+        "Rozet kaptın: {name}! +3 ⭐"
+      ]
+    },
+    "evolve": {
+      "mood": "proud",
+      "lines": [
+        "Vay, kendimi farklı hissediyorum! ({name})",
+        "Şuna bak! {name}!",
+        "Serin beni değiştirdi: {name}!"
+      ]
+    },
+    "blocked": {
+      "mood": "angry",
+      "lines": [
+        "{name} için limit doldu. Bu sayfa bugünlük kapalı.",
+        "{name} için bugünlük bu kadar. Yarın görüşürüz!",
+        "{name} kapalı. Kapıda Beepo nöbette."
+      ]
+    },
+    "focus": {
+      "mood": "worried",
+      "lines": [
+        "Odak zamanı! {name} saat {until} olana kadar kapalı.",
+        "Saat {until} olana kadar {name} yok. Sen yaparsın.",
+        "Odak saatleri! Saat {until} sonrası görüşürüz."
+      ]
+    },
+    "unlock": {
+      "mood": "neutral",
+      "lines": [
+        "5 dakikalığına açıldı. İyi değerlendir!",
+        "Tamam, 5 dakika. Saat işliyor!",
+        "Kapı 5 dakika açık. Sonra yine kilitliyorum."
+      ]
+    },
+    "bored": {
+      "mood": "bored",
+      "lines": [
+        "Alo? Kimse yok mu?",
+        "*ekrana tıklar*",
+        "Sıkıldım... dışarı çıkalım mı?"
+      ]
+    },
+    "sleepy": {
+      "mood": "sleepy",
+      "lines": [
+        "Zzz...",
+        "*horlama*",
+        "Zzz... bip... zzz..."
+      ]
+    },
+    "scroll": {
+      "mood": "worried",
+      "lines": [
+        "Oha, yavaş!",
+        "Sonsuz kaydırma tespit edildi!",
+        "Vıııın— hey, dikkat!"
+      ]
+    },
+    "poke": {
+      "mood": "happy",
+      "lines": [
+        "Hihi, gıdıklanıyorum!",
+        "Bip bop!",
+        "Beni dürttün!"
+      ]
+    }
+  },
+  "android": {
+    "usageTitle": "Beepo'nun kullanım erişimine ihtiyacı var",
+    "usageBody": "Her uygulamada ne kadar zaman geçirdiğini görmek için Beepo'nun kullanım erişimine ihtiyacı var. Sadece süreyi sayar ve her şey telefonunda kalır.",
+    "usageGrant": "Ayarları aç",
+    "usageFind": "Listede Beepo'yu bul ve aç.",
+    "noRules": "Aşağıdan bir uygulama seç, Beepo orada sana eşlik etsin.",
+    "phoneToday": "Bugün telefonunda",
+    "noUsage": "Bugün henüz uygulama süresi yok.",
+    "fieldApps": "Uygulamalar",
+    "errApps": "En az bir uygulama seç.",
+    "searchApps": "Uygulama ara",
+    "langAuto": "Otomatik (telefon dili)",
+    "onTracked": "takip edilen uygulamalarda",
+    "obHello": "Merhaba, ben Beepo!",
+    "obIntro": "Minik bir piksel arkadaşım. Seçtiğin uygulamalarda sana eşlik eder, zamanı takip etmene yardım ederim.",
+    "obHowTitle": "Nasıl çalışır",
+    "obLimits": "Sınırlar: gününü yiyip bitiren uygulamalarda daha az zaman.",
+    "obGoals": "Hedefler: sana iyi gelen uygulamalarda daha çok zaman.",
+    "obStars": "Bir sınıra bütün gün uy, bir yıldız kazan. Yıldızları benim için şapkalara ve renklere harca.",
+    "obStreaks": "Birkaç gün üst üste devam edersen ben de değişirim.",
+    "obOffline": "Beepo'nun internet erişimi yok, yani hiçbir şey telefonundan çıkmaz.",
+    "privacyPolicy": "Gizlilik politikası",
+    "obGranted": "Kullanım erişimi açık ✓",
+    "obPickTitle": "Hangi uygulamalara göz kulak olayım?",
+    "obPickHint": "Bu hafta en çok kullandığın uygulamalar. Bunu istediğin zaman değiştirebilirsin.",
+    "obMinutes": "Günlük sınır",
+    "obNoApps": "Henüz uygulama süresi yok. Uygulamaları daha sonra Bugün sekmesinden ekleyebilirsin.",
+    "next": "İleri",
+    "back": "Geri",
+    "notNow": "Şimdi değil",
+    "start": "Hadi başlayalım!"
+  }
+}

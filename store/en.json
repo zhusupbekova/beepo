@@ -1,0 +1,14 @@
+{
+  "name": "Beepo — pixel buddy for your screen time",
+  "short": "A tiny pixel robot lives at the bottom of your websites, nudges you when time's up, and cheers when you hit your goals.",
+  "description": "Meet Beepo, a little pixel robot who keeps you company on the sites you choose.\n\n• Set daily limits (spend less) or goals (spend more) for any site, group of sites, or even a path like youtube.com/shorts\n• Beepo checks in at 50% and 80%, holds up a STOP sign when time's up, and gently nags if you stay\n• \"5 more minutes\" snooze — Beepo remembers how many times you hit it\n• Optional hard block and focus hours, with a star-powered 5-minute unlock\n• Earn stars for keeping limits and hitting goals; build streaks; unlock badges\n• Spend stars on hats, colors, antennas, accessories, and pets (Mochi the cat says hi)\n• Beepo evolves with your streaks — and gets a little scruffy when you slip\n• Weekly report: time per day, per site, and time saved vs last week\n• Draw your own hats in the built-in sprite editor\n• Weekday/weekend limits, idle detection, quiet mode, 8-bit sounds, custom day reset hour\n• Speaks 17 languages\n\nPrivate by design: no accounts, no servers, no analytics. Everything stays in your browser.",
+  "tagline": "Your pixel buddy for screen time",
+  "captions": {
+    "page": "A tiny pixel buddy lives at the bottom of your sites",
+    "stop": "Time's up? Beepo holds up a STOP sign",
+    "block": "Optional hard block, with a star-powered unlock",
+    "today": "Set limits and goals for any site",
+    "shop": "Earn stars, dress up Beepo, adopt a pet",
+    "report": "Weekly report: see the time you saved"
+  }
+}

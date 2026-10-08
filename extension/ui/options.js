@@ -1,8 +1,13 @@
-import { DEFAULT_SETTINGS } from "../lib/core.js";
+import { DEFAULT_SETTINGS, LANGUAGES } from "../lib/core.js";
+import { localize } from "./i18n.js";
 
 const $ = (id) => document.getElementById(id);
 const form = $("settings");
 const send = (msg) => chrome.runtime.sendMessage(msg);
+const assets = await send({ type: "assets" });
+const t = localize(assets.i18n);
+
+for (const [code, name] of Object.entries(LANGUAGES)) form.elements.lang.append(new Option(name, code));
 
 for (let h = 0; h < 12; h++) {
   form.resetHour.append(new Option(`${String(h).padStart(2, "0")}:00`, h));
@@ -37,8 +42,10 @@ form.addEventListener("change", async () => {
     else s[el.name] = el.value;
   }
   s.idleSeconds = Math.max(15, s.idleSeconds || 60);
+  const langChanged = s.lang !== (await getSettings()).lang;
   await chrome.storage.sync.set({ settings: s });
-  flash("Saved ✓");
+  if (langChanged) return location.reload();
+  flash(t("savedTick"));
 });
 
 $("export").addEventListener("click", async () => {
@@ -57,14 +64,13 @@ $("file").addEventListener("change", async (e) => {
   try {
     data = JSON.parse(await file.text());
   } catch {
-    return flash("That file isn't valid JSON.");
+    return flash(t("badJson"));
   }
-  if (!confirm("Replace all Beepo data (rules, stars, history) with this file?")) return;
+  if (!confirm(t("confirmImport"))) return;
   const res = await send({ type: "importData", data });
-  flash(res?.ok ? "Imported ✓" : "That doesn't look like a Beepo export.");
+  flash(res?.ok ? t("imported") : t("notExport"));
   fill();
 });
 
-const assets = await send({ type: "assets" });
 BeepoSprite.draw($("beepo"), assets, { mood: "happy", scale: 3 });
 fill();

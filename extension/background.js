@@ -9,12 +9,31 @@ import * as core from "./lib/core.js";
 let queue = Promise.resolve();
 const serial = (fn) => (queue = queue.then(fn, fn));
 
+const getJSON = (path) => fetch(chrome.runtime.getURL(path)).then((r) => r.json());
+
 let assetsPromise = null;
 function loadAssets() {
-  assetsPromise ||= Promise.all(
-    ["sprites", "messages"].map((n) => fetch(chrome.runtime.getURL(`data/${n}.json`)).then((r) => r.json()))
-  ).then(([sprites, messages]) => ({ sprites, messages }));
+  assetsPromise ||= getJSON("data/sprites.json").then((sprites) => ({ sprites }));
   return assetsPromise;
+}
+
+// Strings for one language, with English filling any gaps (per key, per message pool).
+const i18nCache = {};
+function loadI18n(lang) {
+  i18nCache[lang] ||= Promise.all([getJSON("data/i18n/en.json"), lang === "en" ? null : getJSON(`data/i18n/${lang}.json`).catch(() => null)]).then(
+    ([en, t]) => {
+      if (!t) return { lang: "en", ...en };
+      const merged = { lang, name: t.name, locale: t.locale, dir: t.dir };
+      for (const k of ["ui", "badges", "items", "evolve", "messages"]) merged[k] = { ...en[k], ...t[k] };
+      return merged;
+    }
+  );
+  return i18nCache[lang];
+}
+
+async function currentI18n() {
+  const { settings } = await chrome.storage.sync.get("settings");
+  return loadI18n(core.resolveLang(settings?.lang, chrome.i18n.getUILanguage()));
 }
 
 // ---------- state ----------
@@ -82,7 +101,7 @@ async function rollover(st) {
     for (const e of sprites.evolve) {
       const was = e.grow ? before.grow : before.evolve.includes(e.id);
       const is = e.grow ? after.grow : after.evolve.includes(e.id);
-      if (is && !was) st.pending.push({ key: "evolve", vars: { name: e.name } });
+      if (is && !was) st.pending.push({ key: "evolve", vars: { id: e.id, name: e.name } });
     }
     checkBadges(st, s);
   }
@@ -100,7 +119,7 @@ function checkBadges(st, s = core.streaks(st.history, st.today)) {
     for (const b of fresh) {
       st.wallet.badges.push(b.id);
       award(st, core.BADGE_REWARD);
-      st.pending.push({ key: "badge", vars: { name: b.name } });
+      st.pending.push({ key: "badge", vars: { id: b.id, name: b.name } });
       st.pendingDirty = true;
     }
   }
@@ -162,10 +181,21 @@ async function isIdle(st, media) {
   }
 }
 
-async function tick(href, seconds, media) {
+// Only one tab counts at a time: the active tab of the last-focused window. Otherwise two
+// visible windows (side by side, or one behind another) would both add time.
+async function isCounting(tab) {
+  if (!tab?.active) return false;
+  try {
+    return (await chrome.windows.getLastFocused()).id === tab.windowId;
+  } catch {
+    return true;
+  }
+}
+
+async function tick(href, seconds, media, tab) {
   const st = await loadState();
   const host = core.hostOf(href);
-  if (!host || (await isIdle(st, media))) return view(st, href);
+  if (!host || !(await isCounting(tab)) || (await isIdle(st, media))) return view(st, href);
 
   const now = Date.now();
   const rule = core.matchRule(st.rules, href);
@@ -301,9 +331,12 @@ async function importData(data) {
 }
 
 const handlers = {
-  assets: async () => ({ ...(await loadAssets()), custom: (await chrome.storage.local.get("custom")).custom || [] }),
+  assets: async () => {
+    const [{ sprites }, i18n, { custom }] = await Promise.all([loadAssets(), currentI18n(), chrome.storage.local.get("custom")]);
+    return { sprites, i18n, messages: i18n.messages, custom: custom || [] };
+  },
   status: (m) => loadState().then((st) => view(st, m.href)),
-  tick: (m) => tick(m.href, m.seconds, m.media),
+  tick: (m, sender) => tick(m.href, m.seconds, m.media, sender.tab),
   snooze: (m) => snooze(m.href, m.ruleId),
   unlock: (m) => unlock(m.href, m.ruleId),
   closeTab: (_m, sender) => chrome.tabs.remove(sender.tab.id),
@@ -326,4 +359,14 @@ chrome.runtime.onMessage.addListener((msg, sender, reply) => {
       reply(null);
     });
   return true; // async reply
+});
+
+// Chrome only injects content scripts into pages loaded after install/update, so tabs
+// that were already open would show no Beepo (or a dead one) and count nothing.
+chrome.runtime.onInstalled.addListener(async ({ reason }) => {
+  if (reason !== "install" && reason !== "update") return;
+  const tabs = await chrome.tabs.query({ url: ["http://*/*", "https://*/*"], discarded: false });
+  for (const t of tabs) {
+    chrome.scripting.executeScript({ target: { tabId: t.id }, files: ["render/sprite.js", "content.js"] }).catch(() => {});
+  }
 });

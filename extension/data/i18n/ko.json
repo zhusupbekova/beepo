@@ -1,0 +1,494 @@
+{
+  "name": "한국어",
+  "locale": "ko",
+  "dir": "ltr",
+  "ui": {
+    "min": "{n}분",
+    "sec": "{n}초",
+    "hm": "{h}시간 {m}분",
+    "m": "{m}분",
+    "close": "닫기",
+    "beepoTitle": "Beepo (더블클릭하면 숨어요)",
+    "stop": "멈춰",
+    "closeTab": "탭 닫기",
+    "unlock": "5분 잠금 해제 (⭐1)",
+    "noStars": "별이 없어요. 제한을 지키면 모을 수 있어요!",
+    "snoozeBtn": "5분만 더",
+    "snoozeBtnN": "5분만 더 (#{n})",
+    "blockFocus": "집중 시간 {start}–{end}. ⭐ {stars}",
+    "blockUsed": "오늘 {base} 중 {used} 사용. ⭐ {stars}",
+    "mode_limit": "제한",
+    "mode_goal": "목표",
+    "settings": "설정",
+    "tab_today": "오늘",
+    "tab_report": "리포트",
+    "tab_shop": "상점",
+    "tab_badges": "배지",
+    "quickLimit": "제한",
+    "customRule": "+ 맞춤 규칙 / 그룹…",
+    "loadError": "Beepo가 전선에 걸려 넘어졌어요. 확장 프로그램을 다시 로드해 보세요. 자세한 내용은 서비스 워커 콘솔에 있어요.",
+    "streakRough": "잠깐 주춤: {n}일째 초과 😿",
+    "streakLine": "🔥 제한 {limit}일 · 🎯 목표 {goal}일",
+    "suggest": "요즘 {domain}에서 하루 약 {n}분을 보내고 있네요. 제한을 추가할까요?",
+    "suggestAdd": "30분 제한",
+    "suggestNo": "괜찮아요",
+    "noRulesYet": "사이트를 추가하면 Beepo가 거기서 함께해 줄게요.",
+    "flagBlock": "🔒 차단",
+    "flagHidden": "🙈 숨김",
+    "flagWeekend": "주말 {m}분",
+    "edit": "편집",
+    "remove": "삭제",
+    "delete": "삭제",
+    "snoozedTime": "스누즈한 시간",
+    "editRule": "규칙 편집",
+    "newRule": "새 규칙",
+    "fieldSites": "사이트 (한 줄에 하나, 경로도 가능: 예) youtube.com/shorts)",
+    "fieldName": "이름",
+    "namePlaceholder": "자동",
+    "fieldType": "유형",
+    "typeLimit": "제한 (줄이기)",
+    "typeGoal": "목표 (늘리기)",
+    "fieldMinutes": "하루 분",
+    "fieldWeekend": "주말 분",
+    "weekendPlaceholder": "동일",
+    "blockWhenOver": "초과하면 차단",
+    "hideHere": "여기서 Beepo 숨기기",
+    "focusLegend": "집중 시간 (사이트 이용 불가)",
+    "weekdays": "평일",
+    "save": "저장",
+    "cancel": "취소",
+    "errSites": "올바른 사이트를 하나 이상 입력하세요.",
+    "thisWeek": "이번 주",
+    "onTracked": "추적 중인 사이트",
+    "saved": "절약",
+    "extra": "증가",
+    "vsLastWeek": "지난주 대비",
+    "bestDay": "최고의 날",
+    "rulesKept": "규칙 {of}개 중 {score}개 지킴",
+    "notEnough": "데이터 부족",
+    "perDay": "일별 추적 시간",
+    "perDayAria": "일별 추적 시간, 최근 7일",
+    "today": "오늘",
+    "perRule": "규칙별",
+    "colRule": "규칙",
+    "colThisWk": "이번 주",
+    "colLastWk": "지난주",
+    "noRules": "아직 규칙이 없어요.",
+    "slot_color": "색상",
+    "slot_hat": "모자",
+    "slot_antenna": "안테나",
+    "slot_accessory": "액세서리",
+    "slot_pet": "펫",
+    "wearing": "착용 중",
+    "takeOff": "벗기",
+    "wear": "착용",
+    "drawOwn": "✏ 모자 / 액세서리 직접 그리기",
+    "evoTitle": "Beepo의 진화",
+    "evoIntro": "연속 기록에 따라 Beepo의 모습이 바뀌어요. 현재 최고 연속 기록: {n}일.",
+    "evoStep": "{name} — {n}일 연속",
+    "scruffy": "제한을 2일 이상 넘기면 꾀죄죄해져요 (좋은 하루면 다시 깔끔해져요)",
+    "optTitle": "Beepo 설정",
+    "language": "언어",
+    "langAuto": "자동 (브라우저 언어)",
+    "homeCorner": "기본 위치",
+    "bottomRight": "오른쪽 아래",
+    "bottomLeft": "왼쪽 아래",
+    "size": "크기",
+    "small": "작게",
+    "medium": "보통",
+    "large": "크게",
+    "nagEvery": "알림 간격 (제한 초과 후, 분)",
+    "nagHint": "0 = 한 번만",
+    "newDay": "하루 시작 시각",
+    "newDayHint": "늦은 밤은 \"어제\"로 계산돼요",
+    "idle": "자리 비움 시 카운트 일시정지 (초)",
+    "idleHint": "동영상 재생 중에는 항상 카운트돼요",
+    "wander": "페이지 위를 돌아다니기",
+    "sounds": "8비트 사운드",
+    "quiet": "조용 모드 (중요한 것만)",
+    "everywhere": "모든 사이트에 Beepo 표시",
+    "yourData": "내 데이터",
+    "dataHint": "모든 데이터는 브라우저에만 저장돼요. 규칙, 설정, 별은 브라우저 프로필로 동기화되고 사용 기록은 이 기기에만 남아요.",
+    "export": "JSON 내보내기",
+    "import": "JSON 가져오기…",
+    "spriteEditor": "✏ 스프라이트 에디터",
+    "savedTick": "저장됨 ✓",
+    "badJson": "올바른 JSON 파일이 아니에요.",
+    "confirmImport": "Beepo 데이터(규칙, 별, 기록)를 모두 이 파일로 바꿀까요?",
+    "imported": "가져옴 ✓",
+    "notExport": "Beepo에서 내보낸 파일이 아닌 것 같아요.",
+    "edTitle": "✏ Beepo 스프라이트 에디터",
+    "edHint": "Beepo 위에 덧그림을 그려요. 왼쪽 클릭은 칠하기, 오른쪽 클릭은 픽셀을 \"변경 없음\"으로 되돌려요. ⌫ 는 아래에 있는 Beepo 자체 픽셀을 지워요.",
+    "edName": "이름",
+    "edNamePh": "멋진 모자",
+    "edSlot": "슬롯",
+    "edSlotHat": "모자",
+    "edSlotAccessory": "액세서리",
+    "edSlotAntenna": "안테나",
+    "edStart": "시작 템플릿",
+    "edBlank": "빈 캔버스",
+    "edSave": "상점에 저장",
+    "edCopy": "JSON 복사",
+    "edCopyTitle": "data/sprites.json 용 JSON",
+    "edClear": "지우기",
+    "edPreview": "미리보기",
+    "edCreations": "내 작품",
+    "edNothing": "아직 아무것도 없어요. 모자를 그려 보세요!",
+    "edCopied": "복사했어요! data/sprites.json → items 에 붙여 넣으세요.",
+    "edDrawFirst": "먼저 뭔가 그려 주세요!",
+    "edSaved": "저장했어요! 상점 탭에서 착용할 수 있어요.",
+    "edDefaultName": "내 작품",
+    "edErase": "Beepo 픽셀 지우기"
+  },
+  "badges": {
+    "first_star": {
+      "name": "첫 번째 별",
+      "desc": "처음으로 별을 얻어요."
+    },
+    "streak3": {
+      "name": "몸풀기",
+      "desc": "3일 연속으로 모든 제한을 지켜요."
+    },
+    "week_clean": {
+      "name": "깔끔한 첫 주",
+      "desc": "7일 동안 모든 제한을 지켜요."
+    },
+    "month_clean": {
+      "name": "강철 의지",
+      "desc": "30일 동안 모든 제한을 지켜요."
+    },
+    "goal_crusher": {
+      "name": "목표 파괴자",
+      "desc": "하루 목표를 10번 달성해요."
+    },
+    "on_a_roll": {
+      "name": "승승장구",
+      "desc": "7일 연속으로 모든 목표를 달성해요."
+    },
+    "night_owl_reformed": {
+      "name": "올빼미 졸업",
+      "desc": "일주일 내내 자정 이후에 추적 사이트를 보지 않아요."
+    },
+    "unsnoozable": {
+      "name": "스누즈 없는 사람",
+      "desc": "일주일 동안 스누즈를 누르지 않아요."
+    },
+    "fashionista": {
+      "name": "패셔니스타",
+      "desc": "상점 아이템을 3개 모아요."
+    }
+  },
+  "items": {
+    "color-blue": "하늘색",
+    "color-pink": "풍선껌",
+    "color-mint": "민트",
+    "color-purple": "포도",
+    "color-gold": "순금",
+    "antenna-heart": "하트 안테나",
+    "antenna-star": "별 안테나",
+    "hat-cap": "빨간 모자",
+    "hat-party": "파티 모자",
+    "hat-top": "실크햇",
+    "hat-crown": "왕관",
+    "acc-shades": "멋진 선글라스",
+    "acc-scarf": "포근한 목도리",
+    "pet-cat": "고양이 모찌",
+    "pet-ghost": "유령 부",
+    "pet-slime": "슬라임 글룹"
+  },
+  "evolve": {
+    "cheeks": "발그레한 볼",
+    "grow": "폭풍 성장",
+    "collar": "황금 목걸이"
+  },
+  "messages": {
+    "greetMorning": {
+      "mood": "happy",
+      "lines": [
+        "좋은 아침이에요! 오늘도 좋은 하루 보내요.",
+        "안녕! 제일 좋은 삐빅을 가져왔어요.",
+        "일어나요, 친구! 아침이에요!"
+      ]
+    },
+    "greetAfternoon": {
+      "mood": "happy",
+      "lines": [
+        "안녕하세요! Beepo, 근무 시작합니다.",
+        "좋은 오후예요! 물 마시는 거 잊지 마요.",
+        "어, 안녕! 거기 있는 줄 몰랐어요."
+      ]
+    },
+    "greetEvening": {
+      "mood": "happy",
+      "lines": [
+        "좋은 저녁이에요! 슬슬 마무리할까요?",
+        "안녕! 해가 지고 있어요, 삐빅 뽀.",
+        "안녕! 오늘 하루 괜찮았길 바라요."
+      ]
+    },
+    "greetNight": {
+      "mood": "sleepy",
+      "lines": [
+        "늦었네요... *하암*. 안녕.",
+        "우리 둘 다 자고 있어야 하지 않아요?",
+        "올빼미 모드인가요?"
+      ]
+    },
+    "statusLimit": {
+      "mood": "happy",
+      "lines": [
+        "오늘 {name}에서 {left} 남았어요.",
+        "여기서는 {left} 남았어요. 알차게 써요!",
+        "{name}에서 앞으로 {left}. 제가 세고 있어요!"
+      ]
+    },
+    "statusOver": {
+      "mood": "angry",
+      "lines": [
+        "{name}에서 {over} 초과했어요.",
+        "제한을 넘긴 지 {over} 지났어요...",
+        "{over} 초과. 다른 거 하러 갈까요?"
+      ]
+    },
+    "statusGoal": {
+      "mood": "happy",
+      "lines": [
+        "목표까지 {left} 남았어요. 할 수 있어요!",
+        "{left}만 더 하면 별을 받아요!",
+        "계속 가요, {left} 남았어요!"
+      ]
+    },
+    "statusGoalDone": {
+      "mood": "proud",
+      "lines": [
+        "오늘 목표 달성! 정말 잘했어요!",
+        "오늘 목표는 벌써 끝냈어요!",
+        "목표 완료. 이제부터는 보너스 시간이에요!"
+      ]
+    },
+    "statusCompanion": {
+      "mood": "happy",
+      "lines": [
+        "그냥 놀고 있어요. ⭐ {stars}",
+        "삐빅! 지금까지 {streak}일 연속이에요.",
+        "필요하면 언제든 불러요."
+      ]
+    },
+    "statusNight": {
+      "mood": "sleepy",
+      "lines": [
+        "벌써 {time}... 잠도 꽤 좋은 사이트예요.",
+        "{time}?! 유튜브는 기다려 주지만 잠은 아니에요.",
+        "새벽 스크롤은 함정이에요. 제가 겪어 봐서 알아요."
+      ]
+    },
+    "limit50": {
+      "mood": "neutral",
+      "lines": [
+        "{m}분 중 절반이 지났어요. 그냥 확인차!",
+        "시간의 절반이 지났어요. 아직 재밌어요?",
+        "50% 지점! Beepo가 기록하고 있어요."
+      ]
+    },
+    "limit80": {
+      "mood": "worried",
+      "lines": [
+        "{left}밖에 안 남았어요... 슬슬 마무리할까요?",
+        "거의 다 왔어요! {left} 남았어요.",
+        "저기요. {left} 남았어요. 멈출 타이밍을 찾아봐요."
+      ]
+    },
+    "limit100": {
+      "mood": "angry",
+      "lines": [
+        "{m}분 다 됐어요! 다른 거 하러 가요.",
+        "멈춰! 제한 도달. 스트레칭해요!",
+        "시간 끝! 믿어요, 이 탭을 닫아 봐요."
+      ]
+    },
+    "over": {
+      "mood": "sad",
+      "lines": [
+        "{over} 초과했어요. Beepo 슬퍼요 :(",
+        "아직 여기 있어요? 제한을 {over} 넘겼어요...",
+        "{over} 초과. 제발, 잠깐 쉬어 갈래요?"
+      ]
+    },
+    "snoozeOver": {
+      "mood": "worried",
+      "lines": [
+        "스누즈 끝!",
+        "추가 시간 끝났어요. 이번엔 진짜예요!",
+        "스누즈 종료. 삐삐삐삑!"
+      ]
+    },
+    "snooze1": {
+      "mood": "neutral",
+      "lines": [
+        "알았어요, 5분 더. 지켜보고 있을게요!",
+        "좋아요, 5분만 더. 알차게 써요.",
+        "5분이에요. 그다음엔 가는 거예요, 약속?"
+      ]
+    },
+    "snooze2": {
+      "mood": "worried",
+      "lines": [
+        "오늘 두 번째 스누즈예요...",
+        "또 5분이요? 좋아요, 근데 세고 있어요.",
+        "스누즈 두 번째. 흐음."
+      ]
+    },
+    "snooze3": {
+      "mood": "sad",
+      "lines": [
+        "스누즈 #{n}. 어떻게 될지 우리 둘 다 알잖아요.",
+        "스누즈 {n}번째예요. Beepo 걱정되기 시작했어요.",
+        "스누즈 #{n}... 제한을 솔직하게 바꿔 볼까요?"
+      ]
+    },
+    "goal50": {
+      "mood": "happy",
+      "lines": [
+        "목표의 절반! 계속 가요!",
+        "50% 달성! 아주 잘하고 있어요.",
+        "반이나 왔어요! Beepo 벌써 뿌듯해요."
+      ]
+    },
+    "goal100": {
+      "mood": "party",
+      "lines": [
+        "{m}분 해냈어요! 별 받아요 ⭐",
+        "골인! 별 하나 드려요 ⭐",
+        "목표 달성! ⭐ +1, 최고예요!"
+      ]
+    },
+    "night": {
+      "mood": "sleepy",
+      "lines": [
+        "자정이 지났어요... 슬슬 잘까요?",
+        "늦은 밤이네요. 침대가 기다리고 있어요.",
+        "올빼미 경보! 잠은 슈퍼파워예요."
+      ]
+    },
+    "kept": {
+      "mood": "party",
+      "lines": [
+        "어제 사이트 {n}곳에서 제한을 지켰어요! +{n} ⭐",
+        "어제 제한을 {n}개 지켰어요! +{n} ⭐",
+        "어제 자제력 최고였어요! +{n} ⭐"
+      ]
+    },
+    "streak": {
+      "mood": "proud",
+      "lines": [
+        "{n}일 연속! 계속 가 봐요!",
+        "벌써 {n}일 연속이에요. 와!",
+        "연속 기록: {n}일. Beepo 싱글벙글."
+      ]
+    },
+    "badge": {
+      "mood": "party",
+      "lines": [
+        "새 배지: {name}! +3 ⭐",
+        "'{name}' 배지를 열었어요! +3 ⭐",
+        "배지 획득: {name}! +3 ⭐"
+      ]
+    },
+    "evolve": {
+      "mood": "proud",
+      "lines": [
+        "우와, 뭔가 달라진 느낌이에요! ({name})",
+        "저 좀 보세요! {name}!",
+        "연속 기록 덕분에 변했어요: {name}!"
+      ]
+    },
+    "blocked": {
+      "mood": "angry",
+      "lines": [
+        "{name} 제한에 도달했어요. 오늘은 이 페이지 쉬어요.",
+        "오늘 {name}에서는 여기까지예요. 내일 또 봐요!",
+        "{name} 영업 종료. Beepo가 문을 지키고 있어요."
+      ]
+    },
+    "focus": {
+      "mood": "worried",
+      "lines": [
+        "집중 시간이에요! {until}까지 {name} 금지예요.",
+        "{until}까지 {name} 쉬어요. 할 수 있어요.",
+        "집중 시간! {until} 이후에 만나요."
+      ]
+    },
+    "unlock": {
+      "mood": "neutral",
+      "lines": [
+        "5분 동안 잠금 해제했어요. 알차게 써요!",
+        "좋아요, 5분이에요. 시계는 가고 있어요!",
+        "5분 동안 문 열어 둘게요. 그다음엔 다시 잠가요."
+      ]
+    },
+    "bored": {
+      "mood": "bored",
+      "lines": [
+        "여보세요? 아무도 없어요?",
+        "*화면 톡톡*",
+        "심심해요... 밖에 나갈래요?"
+      ]
+    },
+    "sleepy": {
+      "mood": "sleepy",
+      "lines": [
+        "Zzz...",
+        "*드르렁*",
+        "Zzz... 삐빅... zzz..."
+      ]
+    },
+    "scroll": {
+      "mood": "worried",
+      "lines": [
+        "워워, 천천히요!",
+        "둠스크롤링 감지!",
+        "우와아— 잠깐, 조심해요!"
+      ]
+    },
+    "poke": {
+      "mood": "happy",
+      "lines": [
+        "히히, 간지러워요!",
+        "삐빅 뽀!",
+        "저 찔렀죠!"
+      ]
+    }
+  },
+  "android": {
+    "usageTitle": "Beepo에게 사용 기록 접근 권한이 필요해요",
+    "usageBody": "앱마다 얼마나 시간을 보내는지 알려면 Beepo에게 사용 기록 접근 권한이 필요해요. 시간만 세고, 모든 데이터는 휴대폰에만 남아요.",
+    "usageGrant": "설정 열기",
+    "usageFind": "목록에서 Beepo를 찾아 켜 주세요.",
+    "noRules": "아래에서 앱을 고르면 Beepo가 거기서 함께해요.",
+    "phoneToday": "오늘 휴대폰에서",
+    "noUsage": "오늘은 아직 앱 사용 시간이 없어요.",
+    "fieldApps": "앱",
+    "errApps": "앱을 하나 이상 골라 주세요.",
+    "searchApps": "앱 검색",
+    "langAuto": "자동 (휴대폰 언어)",
+    "onTracked": "추적 중인 앱에서",
+    "obHello": "안녕, 나는 Beepo야!",
+    "obIntro": "나는 작은 픽셀 친구야. 네가 고른 앱에서 함께하면서 시간을 챙기도록 도와줄게.",
+    "obHowTitle": "이렇게 작동해요",
+    "obLimits": "제한: 하루를 잡아먹는 앱은 덜 쓰기.",
+    "obGoals": "목표: 나에게 좋은 앱은 더 쓰기.",
+    "obStars": "하루 종일 제한을 지키면 별을 받아요. 별로 내 모자랑 색을 사 줘.",
+    "obStreaks": "며칠 연속으로 지키면 나도 변해.",
+    "obOffline": "Beepo는 인터넷에 접속하지 않아서 아무것도 휴대폰 밖으로 나가지 않아요.",
+    "privacyPolicy": "개인정보처리방침",
+    "obGranted": "사용 기록 접근이 켜졌어요 ✓",
+    "obPickTitle": "어떤 앱을 지켜볼까?",
+    "obPickHint": "이번 주에 가장 많이 쓴 앱이에요. 언제든 바꿀 수 있어요.",
+    "obMinutes": "하루 제한",
+    "obNoApps": "아직 앱 사용 시간이 없어요. 나중에 오늘 탭에서 앱을 추가할 수 있어요.",
+    "next": "다음",
+    "back": "뒤로",
+    "notNow": "나중에",
+    "start": "시작하자!"
+  }
+}

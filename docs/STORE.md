@@ -1,47 +1,73 @@
-# Store listing (Chrome Web Store / Edge Add-ons / Firefox AMO)
+# Store release (Chrome Web Store / Edge Add-ons / Firefox AMO)
 
-Release checklist and copy. Publishing itself is manual (needs the developer account).
+Publishing itself is manual (needs the developer accounts).
 
 ## Checklist
 
 1. Bump `version` in `extension/manifest.json`.
 2. `npm test && npm run check`
-3. `npm run icons` (if the sprite changed) and `npm run build`
-4. Upload `dist/beepo-chrome.zip` to Chrome Web Store and Edge Add-ons; `dist/beepo-firefox.zip` to AMO.
-5. Privacy policy URL → host `docs/PRIVACY.md` (e.g. GitHub Pages / gist).
-6. Screenshots (1280×800): page with Beepo + bubble, STOP sign, block screen, popup Today, popup Shop.
-7. Promo tile 440×280: Beepo at scale 10 on `#f4f1e8`, wordmark "Beepo" in a monospace font.
+3. `npm run icons` (if the sprite changed), `npm run locales` (if `store/*.json` changed)
+4. `npm run build` → `dist/beepo-chrome.zip` (Chrome + Edge), `dist/beepo-firefox.zip` (AMO)
+5. `npm run store` → `dist/store/` (screenshots, tiles, listing text for every language)
+6. Privacy policy URL (all three stores): https://panikka.studio/apps/privacy-policy — keep it in sync with `docs/PRIVACY.md`. Support email: beepo@panikka.studio
 
-## Name
-Beepo — pixel buddy for your screen time
+## What's in dist/store/
 
-## Short description (≤132 chars)
-A tiny pixel robot lives at the bottom of your websites, nudges you when time's up, and cheers when you hit your goals.
+| File | Size | Used by |
+|---|---|---|
+| `icon-128.png` | 128×128 | Chrome store icon |
+| `logo-300.png` | 300×300 | Edge extension logo |
+| `<lang>/1-page.png` … `6-report.png` | 1280×800 | Screenshots (all stores) |
+| `<lang>/promo-440x280.png` | 440×280 | Chrome small promo tile (required), Edge small promo tile |
+| `<lang>/marquee-1400x560.png` | 1400×560 | Chrome marquee, Edge large promo tile (both optional) |
+| `<lang>/listing.txt` | | Name, short description / summary, full description |
 
-## Description
-Meet Beepo, a little pixel robot who keeps you company on the sites you choose.
+Chrome takes at most 5 screenshots: use 1, 2, 4, 5, 6 (skip `3-block`). Edge and AMO take all 6.
 
-• Set daily limits (spend less) or goals (spend more) for any site, group of sites, or even a path like youtube.com/shorts
-• Beepo checks in at 50% and 80%, holds up a STOP sign when time's up, and gently nags if you stay
-• "5 more minutes" snooze — Beepo remembers how many times you hit it
-• Optional hard block and focus hours, with a star-powered 5-minute unlock
-• Earn stars for keeping limits and hitting goals; build streaks; unlock badges
-• Spend stars on hats, colors, antennas, accessories, and pets (Mochi the cat says hi)
-• Beepo evolves with your streaks — and gets a little scruffy when you slip
-• Weekly report: time per day, per site, and time saved vs last week
-• Draw your own hats in the built-in sprite editor
-• Weekday/weekend limits, idle detection, quiet mode, 8-bit sounds, custom day reset hour
+## Languages
 
-Private by design: no accounts, no servers, no analytics. Everything stays in your browser.
+Default listing language is English. Add each translation in the store's listing-language picker and paste `listing.txt` + upload that folder's images.
+
+| Folder | Chrome / Edge | AMO |
+|---|---|---|
+| `en` | English | English (US) |
+| `es` | Spanish (Latin America `es_419` and Spain `es`) | Español (es-ES, es-MX…) |
+| `fr` | French | Français |
+| `de` | German | Deutsch |
+| `it` | Italian | Italiano |
+| `pt_BR` | Portuguese (Brazil) | Português (do Brasil) |
+| `ru` | Russian | Русский |
+| `uk` | Ukrainian | Українська |
+| `tr` | Turkish | Türkçe |
+| `ar` | Arabic | عربي |
+| `hi` | Hindi | हिन्दी |
+| `id` | Indonesian | Bahasa Indonesia |
+| `ja` | Japanese | 日本語 |
+| `ko` | Korean | 한국어 |
+| `zh_CN` | Chinese (Simplified) | 中文 (简体) |
+| `zh_TW` | Chinese (Traditional) | 正體中文 (繁體) |
+| `yue` | Chinese (Hong Kong) if the store offers it | — |
+
+The name and short description are also in `extension/_locales/`, so the stores pick them up from the package automatically. Cantonese isn't a Chrome locale: it works inside Beepo (auto-picked for zh-HK/zh-MO browsers) but has no package locale.
 
 ## Category
-Productivity (Chrome) / Productivity (AMO)
+Productivity (all three stores).
 
 ## Single purpose (Chrome)
 Help users manage time spent on websites with an on-page companion that shows reminders and rewards.
 
-## Permission justifications (Chrome)
-- Host permissions / content script on all sites: show the companion and measure time on user-chosen sites; domain-level time on other sites for local-only suggestions.
-- storage: persist rules, settings and usage locally.
-- idle: stop counting when the user is away.
-- activeTab: prefill the current site in the popup.
+## Permission justifications (Chrome / Edge)
+- **Host permissions (http/https) and content script on all sites:** show the companion and measure time on user-chosen sites; domain-level time on other sites for local-only suggestions.
+- **scripting:** on install/update, inject the companion into tabs that were already open so they're tracked without a reload.
+- **storage:** persist rules, settings and usage locally.
+- **idle:** stop counting when the user is away.
+- **activeTab:** prefill the current site in the popup.
+- **Remote code:** none. All code ships in the package.
+
+## Data usage (Chrome privacy tab)
+Collects nothing. Tick none of the data categories, and certify: not sold, not used for unrelated purposes, not used for creditworthiness. Firefox: the manifest declares `data_collection_permissions: { required: ["none"] }`.
+
+## Firefox notes
+- Upload `dist/beepo-firefox.zip`. No source-code upload needed: the code isn't minified or bundled.
+- "Summary" = the short description.
+- Host permissions are shown in the install prompt (Firefox 127+); users can revoke them in about:addons, which would stop Beepo from showing.

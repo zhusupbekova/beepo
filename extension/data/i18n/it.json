@@ -1,0 +1,494 @@
+{
+  "name": "Italiano",
+  "locale": "it",
+  "dir": "ltr",
+  "ui": {
+    "min": "{n} min",
+    "sec": "{n} s",
+    "hm": "{h} h {m} min",
+    "m": "{m} min",
+    "close": "Chiudi",
+    "beepoTitle": "Beepo (doppio clic per metterlo via)",
+    "stop": "STOP",
+    "closeTab": "Chiudi scheda",
+    "unlock": "Sblocca 5 min (⭐1)",
+    "noStars": "Stelle finite! Guadagnane altre rispettando i limiti.",
+    "snoozeBtn": "Altri 5 min",
+    "snoozeBtnN": "Altri 5 min (#{n})",
+    "blockFocus": "Ore di concentrazione {start}–{end}. ⭐ {stars}",
+    "blockUsed": "Già {used} su {base} oggi. ⭐ {stars}",
+    "mode_limit": "limite",
+    "mode_goal": "obiettivo",
+    "settings": "Impostazioni",
+    "tab_today": "Oggi",
+    "tab_report": "Resoconto",
+    "tab_shop": "Negozio",
+    "tab_badges": "Medaglie",
+    "quickLimit": "limite",
+    "customRule": "+ regola / gruppo personalizzato…",
+    "loadError": "Beepo è inciampato in un filo. Prova a ricaricare l'estensione — i dettagli sono nella console del service worker.",
+    "streakRough": "Periodo no: {n} giorni oltre il limite 😿",
+    "streakLine": "🔥 {limit} g limiti · 🎯 {goal} g obiettivi",
+    "suggest": "Beepo ha notato {domain} (~{n} min/giorno ultimamente). Aggiungere un limite?",
+    "suggestAdd": "Limite 30 min",
+    "suggestNo": "No, grazie",
+    "noRulesYet": "Aggiungi un sito e Beepo ti terrà compagnia lì.",
+    "flagBlock": "🔒 blocco",
+    "flagHidden": "🙈 nascosto",
+    "flagWeekend": "weekend {m} min",
+    "edit": "Modifica",
+    "remove": "Rimuovi",
+    "delete": "Elimina",
+    "snoozedTime": "Tempo extra",
+    "editRule": "Modifica regola",
+    "newRule": "Nuova regola",
+    "fieldSites": "Siti (uno per riga; anche percorsi, es. youtube.com/shorts)",
+    "fieldName": "Nome",
+    "namePlaceholder": "auto",
+    "fieldType": "Tipo",
+    "typeLimit": "Limite (meno)",
+    "typeGoal": "Obiettivo (di più)",
+    "fieldMinutes": "Minuti / giorno",
+    "fieldWeekend": "Minuti nel weekend",
+    "weekendPlaceholder": "uguale",
+    "blockWhenOver": "Blocca quando superato",
+    "hideHere": "Nascondi Beepo qui",
+    "focusLegend": "Ore di concentrazione (sito vietato)",
+    "weekdays": "giorni feriali",
+    "save": "Salva",
+    "cancel": "Annulla",
+    "errSites": "Inserisci almeno un sito valido.",
+    "thisWeek": "Questa settimana",
+    "onTracked": "sui siti monitorati",
+    "saved": "Risparmiato",
+    "extra": "In più",
+    "vsLastWeek": "vs settimana scorsa",
+    "bestDay": "Giorno migliore",
+    "rulesKept": "{score}/{of} regole rispettate",
+    "notEnough": "dati insufficienti",
+    "perDay": "Tempo monitorato al giorno",
+    "perDayAria": "Tempo monitorato al giorno, ultimi 7 giorni",
+    "today": "oggi",
+    "perRule": "Per regola",
+    "colRule": "Regola",
+    "colThisWk": "Questa sett.",
+    "colLastWk": "Sett. scorsa",
+    "noRules": "Ancora nessuna regola.",
+    "slot_color": "Colori",
+    "slot_hat": "Cappelli",
+    "slot_antenna": "Antenne",
+    "slot_accessory": "Accessori",
+    "slot_pet": "Cuccioli",
+    "wearing": "Indossato",
+    "takeOff": "Togli",
+    "wear": "Indossa",
+    "drawOwn": "✏ Disegna il tuo cappello / accessorio",
+    "evoTitle": "L'evoluzione di Beepo",
+    "evoIntro": "Le serie cambiano l'aspetto di Beepo. Serie migliore in corso: {n} giorno/i.",
+    "evoStep": "{name} — serie di {n} giorni",
+    "scruffy": "Diventa tutto arruffato dopo 2+ giorni oltre un limite (una bella giornata lo sistema)",
+    "optTitle": "Impostazioni di Beepo",
+    "language": "Lingua",
+    "langAuto": "Automatica (lingua del browser)",
+    "homeCorner": "Angolo preferito",
+    "bottomRight": "In basso a destra",
+    "bottomLeft": "In basso a sinistra",
+    "size": "Dimensione",
+    "small": "Piccolo",
+    "medium": "Medio",
+    "large": "Grande",
+    "nagEvery": "Ricordamelo ogni (minuti oltre il limite)",
+    "nagHint": "0 = solo una volta",
+    "newDay": "Il nuovo giorno inizia alle",
+    "newDayHint": "Così le nottate contano come \"ieri\"",
+    "idle": "Pausa dopo inattività (secondi)",
+    "idleHint": "I video in riproduzione contano sempre",
+    "wander": "Gironzola per la pagina",
+    "sounds": "Suoni a 8 bit",
+    "quiet": "Modalità silenziosa (solo le cose importanti)",
+    "everywhere": "Mostra Beepo su tutti i siti",
+    "yourData": "I tuoi dati",
+    "dataHint": "Tutto resta nel tuo browser. Regole, impostazioni e stelle si sincronizzano tramite il tuo profilo del browser; la cronologia d'uso resta su questo dispositivo.",
+    "export": "Esporta JSON",
+    "import": "Importa JSON…",
+    "spriteEditor": "✏ Editor di sprite",
+    "savedTick": "Salvato ✓",
+    "badJson": "Questo file non è un JSON valido.",
+    "confirmImport": "Sostituire tutti i dati di Beepo (regole, stelle, cronologia) con questo file?",
+    "imported": "Importato ✓",
+    "notExport": "Non sembra un'esportazione di Beepo.",
+    "edTitle": "✏ Editor di sprite di Beepo",
+    "edHint": "Dipingi un livello sopra Beepo. Clic sinistro per dipingere, clic destro per riportare un pixel a \"invariato\". ⌫ cancella i pixel di Beepo sottostanti.",
+    "edName": "Nome",
+    "edNamePh": "Il mio cappello figo",
+    "edSlot": "Posizione",
+    "edSlotHat": "Cappello",
+    "edSlotAccessory": "Accessorio",
+    "edSlotAntenna": "Antenna",
+    "edStart": "Parti da",
+    "edBlank": "Vuoto",
+    "edSave": "Salva nel negozio",
+    "edCopy": "Copia JSON",
+    "edCopyTitle": "JSON per data/sprites.json",
+    "edClear": "Pulisci",
+    "edPreview": "Anteprima",
+    "edCreations": "Le tue creazioni",
+    "edNothing": "Ancora niente. Disegna un cappello!",
+    "edCopied": "Copiato! Incollalo in data/sprites.json → items.",
+    "edDrawFirst": "Prima disegna qualcosa!",
+    "edSaved": "Salvato! Indossalo dalla scheda Negozio.",
+    "edDefaultName": "La mia creazione",
+    "edErase": "Cancella pixel di Beepo"
+  },
+  "badges": {
+    "first_star": {
+      "name": "Prima stella",
+      "desc": "Guadagna la tua primissima stella."
+    },
+    "streak3": {
+      "name": "Riscaldamento",
+      "desc": "Rispetta tutti i limiti per 3 giorni di fila."
+    },
+    "week_clean": {
+      "name": "Prima settimana pulita",
+      "desc": "Rispetta tutti i limiti per 7 giorni."
+    },
+    "month_clean": {
+      "name": "Volontà di ferro",
+      "desc": "Rispetta tutti i limiti per 30 giorni."
+    },
+    "goal_crusher": {
+      "name": "Macina obiettivi",
+      "desc": "Raggiungi 10 obiettivi giornalieri."
+    },
+    "on_a_roll": {
+      "name": "Inarrestabile",
+      "desc": "Raggiungi tutti gli obiettivi per 7 giorni di fila."
+    },
+    "night_owl_reformed": {
+      "name": "Nottambulo pentito",
+      "desc": "Una settimana intera senza siti monitorati dopo mezzanotte."
+    },
+    "unsnoozable": {
+      "name": "Niente rinvii",
+      "desc": "Una settimana intera senza chiedere altri 5 minuti."
+    },
+    "fashionista": {
+      "name": "Fashionista",
+      "desc": "Possiedi 3 oggetti del negozio."
+    }
+  },
+  "items": {
+    "color-blue": "Azzurro cielo",
+    "color-pink": "Gomma da masticare",
+    "color-mint": "Menta",
+    "color-purple": "Uva",
+    "color-gold": "Oro massiccio",
+    "antenna-heart": "Antenna a cuore",
+    "antenna-star": "Antenna a stella",
+    "hat-cap": "Cappellino rosso",
+    "hat-party": "Cappello da festa",
+    "hat-top": "Cilindro",
+    "hat-crown": "Corona",
+    "acc-shades": "Occhiali da sole",
+    "acc-scarf": "Sciarpa calda",
+    "pet-cat": "Mochi il gatto",
+    "pet-ghost": "Boo il fantasma",
+    "pet-slime": "Gloop la gelatina"
+  },
+  "evolve": {
+    "cheeks": "Guance rosee",
+    "grow": "Scatto di crescita",
+    "collar": "Collare d'oro"
+  },
+  "messages": {
+    "greetMorning": {
+      "mood": "happy",
+      "lines": [
+        "Buongiorno! Facciamo che sia una bella giornata.",
+        "Giorno! Ho portato i miei bip migliori.",
+        "Sveglia, amico mio!"
+      ]
+    },
+    "greetAfternoon": {
+      "mood": "happy",
+      "lines": [
+        "Ciao! Beepo a rapporto.",
+        "Buon pomeriggio! Ricordati di bere un po' d'acqua.",
+        "Oh, ciao! Non ti avevo visto."
+      ]
+    },
+    "greetEvening": {
+      "mood": "happy",
+      "lines": [
+        "Buonasera! Si comincia a rallentare?",
+        "Ciao! Il sole tramonta, bip bop.",
+        "Ehi! Spero sia stata una bella giornata."
+      ]
+    },
+    "greetNight": {
+      "mood": "sleepy",
+      "lines": [
+        "È tardi... *sbadiglio*. Ciao.",
+        "Non dovremmo dormire tutti e due?",
+        "Modalità nottambulo, eh?"
+      ]
+    },
+    "statusLimit": {
+      "mood": "happy",
+      "lines": [
+        "Ti restano {left} su {name} oggi.",
+        "Hai ancora {left} qui. Usali bene!",
+        "Ancora {left} su {name}. Sto contando!"
+      ]
+    },
+    "statusOver": {
+      "mood": "angry",
+      "lines": [
+        "Sei {over} oltre il limite su {name}.",
+        "Abbiamo superato il limite {over} fa...",
+        "{over} di troppo. Andiamo a fare altro?"
+      ]
+    },
+    "statusGoal": {
+      "mood": "happy",
+      "lines": [
+        "Ancora {left} per il tuo obiettivo. Ce la fai!",
+        "Ancora {left} e ti becchi una stella!",
+        "Dai che ci sei, mancano {left}!"
+      ]
+    },
+    "statusGoalDone": {
+      "mood": "proud",
+      "lines": [
+        "Obiettivo di oggi raggiunto! Grande!",
+        "Hai già stracciato l'obiettivo di oggi!",
+        "Obiettivo completato. Il resto è tutto bonus!"
+      ]
+    },
+    "statusCompanion": {
+      "mood": "happy",
+      "lines": [
+        "Sono qui in giro. ⭐ {stars}",
+        "Bip! Serie di {streak} giorni finora.",
+        "Sono qui se hai bisogno."
+      ]
+    },
+    "statusNight": {
+      "mood": "sleepy",
+      "lines": [
+        "Sono le {time}... anche il sonno è un gran bel sito.",
+        "Le {time}?! YouTube può aspettare, il sonno no.",
+        "Scrollare a notte fonda è una trappola. Fidati, lo so bene."
+      ]
+    },
+    "limit50": {
+      "mood": "neutral",
+      "lines": [
+        "Sei a metà dei tuoi {m} minuti. Solo per dire!",
+        "Metà del tempo è andata. Ti stai ancora divertendo?",
+        "Siamo al 50%! Beepo tiene il conto."
+      ]
+    },
+    "limit80": {
+      "mood": "worried",
+      "lines": [
+        "Restano solo {left}... iniziamo a chiudere?",
+        "Ci siamo quasi! Ancora {left}.",
+        "Psst. Restano {left}. Trova un buon punto per fermarti."
+      ]
+    },
+    "limit100": {
+      "mood": "angry",
+      "lines": [
+        "I tuoi {m} minuti sono finiti! Ora vai a fare altro.",
+        "STOP! Limite raggiunto. Vai a sgranchirti!",
+        "Tempo scaduto! Credo in te, chiudi questa scheda."
+      ]
+    },
+    "over": {
+      "mood": "sad",
+      "lines": [
+        "Sei {over} oltre il limite. Beepo è triste :(",
+        "Ancora qui? {over} oltre il limite...",
+        "{over} di troppo. Ti prego, ti prego, una pausa?"
+      ]
+    },
+    "snoozeOver": {
+      "mood": "worried",
+      "lines": [
+        "Tempo extra finito!",
+        "Quello era il tuo tempo extra. Ora sul serio!",
+        "Rinvio finito. Bip bip bip!"
+      ]
+    },
+    "snooze1": {
+      "mood": "neutral",
+      "lines": [
+        "Va bene, altri 5 minuti. Ti tengo d'occhio!",
+        "E va bene, altri 5. Falli valere.",
+        "5 minuti. Poi andiamo, affare fatto?"
+      ]
+    },
+    "snooze2": {
+      "mood": "worried",
+      "lines": [
+        "È il 2º rinvio di oggi...",
+        "Altri 5? Va bene, ma me lo segno.",
+        "Rinvio numero due. Mmh."
+      ]
+    },
+    "snooze3": {
+      "mood": "sad",
+      "lines": [
+        "Rinvio #{n}. Sappiamo tutti e due come va a finire.",
+        "Sono {n} rinvii. Beepo inizia a preoccuparsi.",
+        "Rinvio #{n}... e se il limite fosse più sincero?"
+      ]
+    },
+    "goal50": {
+      "mood": "happy",
+      "lines": [
+        "A metà strada dal tuo obiettivo, continua!",
+        "50% fatto! Stai andando alla grande.",
+        "Metà! Beepo è già orgoglioso."
+      ]
+    },
+    "goal100": {
+      "mood": "party",
+      "lines": [
+        "Hai fatto {m} minuti! Ecco una stella ⭐",
+        "OBIETTIVO! Una stella per te ⭐",
+        "Obiettivo raggiunto! ⭐ +1, sei un mito!"
+      ]
+    },
+    "night": {
+      "mood": "sleepy",
+      "lines": [
+        "È passata mezzanotte... andiamo a dormire presto?",
+        "Nottata lunga, eh? Il tuo letto sente la tua mancanza.",
+        "Allerta nottambulo! Dormire è un superpotere."
+      ]
+    },
+    "kept": {
+      "mood": "party",
+      "lines": [
+        "Ieri sei rimasto nei limiti su {n} sito/i! +{n} ⭐",
+        "Ieri hai rispettato {n} limite/i! +{n} ⭐",
+        "Che autocontrollo ieri! +{n} ⭐"
+      ]
+    },
+    "streak": {
+      "mood": "proud",
+      "lines": [
+        "Serie di {n} giorni! Continua così!",
+        "Sono {n} giorni di fila. Wow!",
+        "Serie: {n} giorni. Beepo è raggiante."
+      ]
+    },
+    "badge": {
+      "mood": "party",
+      "lines": [
+        "Nuova medaglia: {name}! +3 ⭐",
+        "Hai sbloccato {name}! +3 ⭐",
+        "Medaglia conquistata: {name}! +3 ⭐"
+      ]
+    },
+    "evolve": {
+      "mood": "proud",
+      "lines": [
+        "Ehi, mi sento diverso! ({name})",
+        "Guardami! {name}!",
+        "La tua serie mi ha cambiato: {name}!"
+      ]
+    },
+    "blocked": {
+      "mood": "angry",
+      "lines": [
+        "Limite raggiunto per {name}. Questa pagina è chiusa per oggi.",
+        "Per oggi {name} è finito. Torna domani!",
+        "{name} è chiuso. Beepo fa la guardia alla porta."
+      ]
+    },
+    "focus": {
+      "mood": "worried",
+      "lines": [
+        "È ora di concentrarsi! {name} è vietato fino alle {until}.",
+        "Niente {name} fino alle {until}. Ce la puoi fare.",
+        "Ore di concentrazione! Ci vediamo dopo le {until}."
+      ]
+    },
+    "unlock": {
+      "mood": "neutral",
+      "lines": [
+        "Sbloccato per 5 minuti. Usali bene!",
+        "Ok, 5 minuti. Il tempo scorre!",
+        "Porta aperta per 5 minuti. Poi richiudo."
+      ]
+    },
+    "bored": {
+      "mood": "bored",
+      "lines": [
+        "Pronto? C'è qualcuno?",
+        "*picchietta lo schermo*",
+        "Mi annoio... usciamo un po'?"
+      ]
+    },
+    "sleepy": {
+      "mood": "sleepy",
+      "lines": [
+        "Zzz...",
+        "*russa*",
+        "Zzz... bip... zzz..."
+      ]
+    },
+    "scroll": {
+      "mood": "worried",
+      "lines": [
+        "Ehi, piano!",
+        "Doomscrolling in corso!",
+        "Wiii— ehi, attenzione!"
+      ]
+    },
+    "poke": {
+      "mood": "happy",
+      "lines": [
+        "Ihih, mi fai il solletico!",
+        "Bip bop!",
+        "Mi hai punzecchiato!"
+      ]
+    }
+  },
+  "android": {
+    "usageTitle": "Beepo ha bisogno dell'accesso ai dati di utilizzo",
+    "usageBody": "Per sapere quanto tempo passi in ogni app, Beepo ha bisogno dell'accesso ai dati di utilizzo. Conta solo il tempo e tutto resta sul tuo telefono.",
+    "usageGrant": "Apri impostazioni",
+    "usageFind": "Trova Beepo nell'elenco e attivalo.",
+    "noRules": "Scegli un'app qui sotto e Beepo ti farà compagnia lì.",
+    "phoneToday": "Oggi sul tuo telefono",
+    "noUsage": "Ancora nessun tempo nelle app oggi.",
+    "fieldApps": "App",
+    "errApps": "Scegli almeno un'app.",
+    "searchApps": "Cerca app",
+    "langAuto": "Automatica (lingua del telefono)",
+    "onTracked": "nelle app monitorate",
+    "obHello": "Ciao, sono Beepo!",
+    "obIntro": "Sono un piccolo amico di pixel. Ti faccio compagnia nelle app che scegli e ti aiuto a tenere d'occhio il tempo.",
+    "obHowTitle": "Come funziona",
+    "obLimits": "Limiti: meno tempo nelle app che ti mangiano la giornata.",
+    "obGoals": "Obiettivi: più tempo nelle app che ti fanno bene.",
+    "obStars": "Rispetta un limite per tutto il giorno e guadagni una stella. Spendi le stelle in cappelli e colori per me.",
+    "obStreaks": "Continua così per qualche giorno di fila e cambierò anch'io.",
+    "obOffline": "Beepo non ha accesso a internet, quindi niente lascia mai il tuo telefono.",
+    "privacyPolicy": "Informativa sulla privacy",
+    "obGranted": "Accesso ai dati di utilizzo attivo ✓",
+    "obPickTitle": "Quali app devo tenere d'occhio?",
+    "obPickHint": "Le app che hai usato di più questa settimana. Puoi cambiarle quando vuoi.",
+    "obMinutes": "Limite giornaliero",
+    "obNoApps": "Ancora nessun tempo nelle app. Potrai aggiungerle più tardi nella scheda Oggi.",
+    "next": "Avanti",
+    "back": "Indietro",
+    "notNow": "Non ora",
+    "start": "Andiamo!"
+  }
+}

@@ -1,0 +1,494 @@
+{
+  "name": "Bahasa Indonesia",
+  "locale": "id",
+  "dir": "ltr",
+  "ui": {
+    "min": "{n} mnt",
+    "sec": "{n} dtk",
+    "hm": "{h} j {m} m",
+    "m": "{m} m",
+    "close": "Tutup",
+    "beepoTitle": "Beepo (klik dua kali untuk sembunyi)",
+    "stop": "STOP",
+    "closeTab": "Tutup tab",
+    "unlock": "Buka 5 mnt (⭐1)",
+    "noStars": "Bintangmu habis. Kumpulkan lagi dengan menjaga batas!",
+    "snoozeBtn": "5 mnt lagi",
+    "snoozeBtnN": "5 mnt lagi (#{n})",
+    "blockFocus": "Jam fokus {start}–{end}. ⭐ {stars}",
+    "blockUsed": "{used} terpakai dari {base} hari ini. ⭐ {stars}",
+    "mode_limit": "batas",
+    "mode_goal": "target",
+    "settings": "Pengaturan",
+    "tab_today": "Hari ini",
+    "tab_report": "Laporan",
+    "tab_shop": "Toko",
+    "tab_badges": "Lencana",
+    "quickLimit": "batas",
+    "customRule": "+ aturan / grup sendiri…",
+    "loadError": "Beepo tersandung kabel. Coba muat ulang ekstensinya — detailnya ada di konsol service worker.",
+    "streakRough": "Lagi kurang lancar: {n} hari kelewatan 😿",
+    "streakLine": "🔥 batas {limit} hr · 🎯 target {goal} hr",
+    "suggest": "Beepo lihat kamu sering di {domain} (~{n} mnt/hari belakangan ini). Mau pasang batas?",
+    "suggestAdd": "Batas 30 m",
+    "suggestNo": "Nggak dulu",
+    "noRulesYet": "Tambahkan situs, nanti Beepo temani kamu di sana.",
+    "flagBlock": "🔒 blokir",
+    "flagHidden": "🙈 sembunyi",
+    "flagWeekend": "akhir pekan {m} m",
+    "edit": "Ubah",
+    "remove": "Hapus",
+    "delete": "Hapus",
+    "snoozedTime": "Waktu tunda",
+    "editRule": "Ubah aturan",
+    "newRule": "Aturan baru",
+    "fieldSites": "Situs (satu per baris; boleh pakai path, mis. youtube.com/shorts)",
+    "fieldName": "Nama",
+    "namePlaceholder": "otomatis",
+    "fieldType": "Jenis",
+    "typeLimit": "Batas (kurangi)",
+    "typeGoal": "Target (tambah)",
+    "fieldMinutes": "Menit / hari",
+    "fieldWeekend": "Menit akhir pekan",
+    "weekendPlaceholder": "sama",
+    "blockWhenOver": "Blokir kalau lewat batas",
+    "hideHere": "Sembunyikan Beepo di sini",
+    "focusLegend": "Jam fokus (situs ditutup)",
+    "weekdays": "hari kerja",
+    "save": "Simpan",
+    "cancel": "Batal",
+    "errSites": "Masukkan minimal satu situs yang valid.",
+    "thisWeek": "Minggu ini",
+    "onTracked": "di situs yang dipantau",
+    "saved": "Dihemat",
+    "extra": "Lebih",
+    "vsLastWeek": "vs minggu lalu",
+    "bestDay": "Hari terbaik",
+    "rulesKept": "{score}/{of} aturan terjaga",
+    "notEnough": "data belum cukup",
+    "perDay": "Waktu terpantau per hari",
+    "perDayAria": "Waktu terpantau per hari, 7 hari terakhir",
+    "today": "hari ini",
+    "perRule": "Per aturan",
+    "colRule": "Aturan",
+    "colThisWk": "Mg ini",
+    "colLastWk": "Mg lalu",
+    "noRules": "Belum ada aturan.",
+    "slot_color": "Warna",
+    "slot_hat": "Topi",
+    "slot_antenna": "Antena",
+    "slot_accessory": "Aksesori",
+    "slot_pet": "Peliharaan",
+    "wearing": "Dipakai",
+    "takeOff": "Lepas",
+    "wear": "Pakai",
+    "drawOwn": "✏ Gambar topi / aksesori sendiri",
+    "evoTitle": "Evolusi Beepo",
+    "evoIntro": "Streak mengubah penampilan Beepo. Streak terbaik saat ini: {n} hari.",
+    "evoStep": "{name} — streak {n} hari",
+    "scruffy": "Jadi kusut setelah 2+ hari lewat batas (satu hari baik langsung memperbaikinya)",
+    "optTitle": "Pengaturan Beepo",
+    "language": "Bahasa",
+    "langAuto": "Otomatis (bahasa browser)",
+    "homeCorner": "Pojok rumah",
+    "bottomRight": "Kanan bawah",
+    "bottomLeft": "Kiri bawah",
+    "size": "Ukuran",
+    "small": "Kecil",
+    "medium": "Sedang",
+    "large": "Besar",
+    "nagEvery": "Ingatkan tiap (menit lewat batas)",
+    "nagHint": "0 = sekali saja",
+    "newDay": "Hari baru mulai jam",
+    "newDayHint": "Biar begadang tetap dihitung \"kemarin\"",
+    "idle": "Jeda hitungan setelah diam (detik)",
+    "idleHint": "Video yang diputar selalu dihitung",
+    "wander": "Jalan-jalan di halaman",
+    "sounds": "Suara 8-bit",
+    "quiet": "Mode tenang (hanya yang penting)",
+    "everywhere": "Tampilkan Beepo di semua situs",
+    "yourData": "Datamu",
+    "dataHint": "Semuanya tetap di browsermu. Aturan, pengaturan, dan bintang disinkronkan lewat profil browsermu; riwayat pemakaian tetap di perangkat ini.",
+    "export": "Ekspor JSON",
+    "import": "Impor JSON…",
+    "spriteEditor": "✏ Editor sprite",
+    "savedTick": "Tersimpan ✓",
+    "badJson": "File itu bukan JSON yang valid.",
+    "confirmImport": "Ganti semua data Beepo (aturan, bintang, riwayat) dengan file ini?",
+    "imported": "Terimpor ✓",
+    "notExport": "Sepertinya itu bukan file ekspor Beepo.",
+    "edTitle": "✏ Editor sprite Beepo",
+    "edHint": "Lukis lapisan di atas Beepo. Klik kiri untuk melukis, klik kanan untuk mengembalikan piksel ke \"tidak diubah\". ⌫ menghapus piksel asli Beepo di bawahnya.",
+    "edName": "Nama",
+    "edNamePh": "Topi kerenku",
+    "edSlot": "Slot",
+    "edSlotHat": "Topi",
+    "edSlotAccessory": "Aksesori",
+    "edSlotAntenna": "Antena",
+    "edStart": "Mulai dari",
+    "edBlank": "Kosong",
+    "edSave": "Simpan ke toko",
+    "edCopy": "Salin JSON",
+    "edCopyTitle": "JSON untuk data/sprites.json",
+    "edClear": "Bersihkan",
+    "edPreview": "Pratinjau",
+    "edCreations": "Kreasimu",
+    "edNothing": "Belum ada. Ayo gambar topi!",
+    "edCopied": "Tersalin! Tempel ke data/sprites.json → items.",
+    "edDrawFirst": "Gambar sesuatu dulu!",
+    "edSaved": "Tersimpan! Pakai dari tab Toko.",
+    "edDefaultName": "Kreasiku",
+    "edErase": "Hapus piksel Beepo"
+  },
+  "badges": {
+    "first_star": {
+      "name": "Bintang Pertama",
+      "desc": "Dapatkan bintang pertamamu."
+    },
+    "streak3": {
+      "name": "Mulai Panas",
+      "desc": "Jaga semua batas 3 hari berturut-turut."
+    },
+    "week_clean": {
+      "name": "Seminggu Bersih",
+      "desc": "Jaga semua batas selama 7 hari."
+    },
+    "month_clean": {
+      "name": "Tekad Baja",
+      "desc": "Jaga semua batas selama 30 hari."
+    },
+    "goal_crusher": {
+      "name": "Penakluk Target",
+      "desc": "Capai 10 target harian."
+    },
+    "on_a_roll": {
+      "name": "Lagi Jaya",
+      "desc": "Capai semua target 7 hari berturut-turut."
+    },
+    "night_owl_reformed": {
+      "name": "Mantan Burung Hantu",
+      "desc": "Seminggu penuh tanpa situs terpantau lewat tengah malam."
+    },
+    "unsnoozable": {
+      "name": "Anti Tunda",
+      "desc": "Seminggu penuh tanpa menekan tunda."
+    },
+    "fashionista": {
+      "name": "Fashionista",
+      "desc": "Punya 3 kosmetik dari toko."
+    }
+  },
+  "items": {
+    "color-blue": "Biru Langit",
+    "color-pink": "Permen Karet",
+    "color-mint": "Mint",
+    "color-purple": "Anggur",
+    "color-gold": "Emas Murni",
+    "antenna-heart": "Antena Hati",
+    "antenna-star": "Antena Bintang",
+    "hat-cap": "Topi Merah",
+    "hat-party": "Topi Pesta",
+    "hat-top": "Topi Tinggi",
+    "hat-crown": "Mahkota",
+    "acc-shades": "Kacamata Keren",
+    "acc-scarf": "Syal Hangat",
+    "pet-cat": "Mochi si Kucing",
+    "pet-ghost": "Boo si Hantu",
+    "pet-slime": "Gloop si Slime"
+  },
+  "evolve": {
+    "cheeks": "Pipi merona",
+    "grow": "Tambah tinggi",
+    "collar": "Kalung emas"
+  },
+  "messages": {
+    "greetMorning": {
+      "mood": "happy",
+      "lines": [
+        "Selamat pagi! Semoga harimu seru.",
+        "Pagi! Aku bawa beep terbaikku.",
+        "Ayo bangun, kawan!"
+      ]
+    },
+    "greetAfternoon": {
+      "mood": "happy",
+      "lines": [
+        "Halo! Beepo siap bertugas.",
+        "Siang! Jangan lupa minum air, ya.",
+        "Eh, hai! Nggak lihat kamu datang."
+      ]
+    },
+    "greetEvening": {
+      "mood": "happy",
+      "lines": [
+        "Sore! Sebentar lagi santai, kan?",
+        "Hai! Mataharinya mau terbenam, beep boop.",
+        "Hai! Semoga harimu menyenangkan."
+      ]
+    },
+    "greetNight": {
+      "mood": "sleepy",
+      "lines": [
+        "Udah malam... *hoahm*. Hai.",
+        "Bukannya kita berdua harusnya udah tidur?",
+        "Mode kalong, ya?"
+      ]
+    },
+    "statusLimit": {
+      "mood": "happy",
+      "lines": [
+        "Sisa {left} di {name} hari ini.",
+        "Masih ada {left} di sini. Pakai baik-baik, ya!",
+        "{left} lagi di {name}. Aku hitungin!"
+      ]
+    },
+    "statusOver": {
+      "mood": "angry",
+      "lines": [
+        "Kamu sudah lewat {over} di {name}.",
+        "Batasnya sudah lewat {over} yang lalu...",
+        "Lewat {over}. Yuk, cari kegiatan lain?"
+      ]
+    },
+    "statusGoal": {
+      "mood": "happy",
+      "lines": [
+        "{left} lagi menuju target. Kamu pasti bisa!",
+        "{left} lagi dan kamu dapat bintang!",
+        "Terus, tinggal {left}!"
+      ]
+    },
+    "statusGoalDone": {
+      "mood": "proud",
+      "lines": [
+        "Target hari ini tercapai! Hebat!",
+        "Target hari ini sudah kamu libas!",
+        "Target beres. Waktu tambahan itu bonus!"
+      ]
+    },
+    "statusCompanion": {
+      "mood": "happy",
+      "lines": [
+        "Cuma nongkrong aja. ⭐ {stars}",
+        "Beep! Streak {streak} hari sejauh ini.",
+        "Aku di sini kalau kamu butuh."
+      ]
+    },
+    "statusNight": {
+      "mood": "sleepy",
+      "lines": [
+        "Udah jam {time}... tidur juga situs yang bagus, lho.",
+        "Jam {time}?! YouTube bisa nunggu, tidur nggak.",
+        "Scroll tengah malam itu jebakan. Aku tahu dari pengalaman."
+      ]
+    },
+    "limit50": {
+      "mood": "neutral",
+      "lines": [
+        "Sudah separuh dari {m} menitmu. Cuma mampir menyapa!",
+        "Separuh waktumu sudah lewat. Masih seru?",
+        "Sudah 50%! Beepo mencatat, ya."
+      ]
+    },
+    "limit80": {
+      "mood": "worried",
+      "lines": [
+        "Tinggal {left}... mungkin sudah waktunya beres-beres?",
+        "Hampir sampai! {left} lagi.",
+        "Psst. Sisa {left}. Cari titik berhenti, yuk."
+      ]
+    },
+    "limit100": {
+      "mood": "angry",
+      "lines": [
+        "{m} menitmu sudah habis! Yuk, kerjakan hal lain.",
+        "STOP! Batas tercapai. Ayo peregangan!",
+        "Waktu habis! Aku percaya kamu bisa tutup tab ini."
+      ]
+    },
+    "over": {
+      "mood": "sad",
+      "lines": [
+        "Kamu sudah lewat {over}. Beepo sedih :(",
+        "Masih di sini? Lewat {over} dari batas...",
+        "Lewat {over}. Pleaseee, istirahat dulu, ya?"
+      ]
+    },
+    "snoozeOver": {
+      "mood": "worried",
+      "lines": [
+        "Waktu tundanya habis!",
+        "Itu tadi waktu tambahanmu. Sekarang beneran, ya!",
+        "Tunda selesai. Beep beep beep!"
+      ]
+    },
+    "snooze1": {
+      "mood": "neutral",
+      "lines": [
+        "Oke, 5 menit lagi. Aku awasi, lho!",
+        "Ya udah, 5 lagi. Manfaatkan baik-baik.",
+        "5 menit. Habis itu kita cabut, deal?"
+      ]
+    },
+    "snooze2": {
+      "mood": "worried",
+      "lines": [
+        "Itu tunda ke-2 hari ini...",
+        "5 lagi? Oke, tapi aku catat, ya.",
+        "Tunda yang kedua. Hmm."
+      ]
+    },
+    "snooze3": {
+      "mood": "sad",
+      "lines": [
+        "Tunda #{n}. Kita sama-sama tahu ujungnya ke mana.",
+        "Sudah {n} kali tunda. Beepo mulai khawatir.",
+        "Tunda #{n}... mungkin batasnya perlu lebih jujur?"
+      ]
+    },
+    "goal50": {
+      "mood": "happy",
+      "lines": [
+        "Setengah jalan ke target, terus!",
+        "50% beres! Kamu keren.",
+        "Setengah jalan! Beepo sudah bangga."
+      ]
+    },
+    "goal100": {
+      "mood": "party",
+      "lines": [
+        "Kamu berhasil {m} menit! Ini bintang buatmu ⭐",
+        "GOL! Bintang untukmu ⭐",
+        "Target tercapai! ⭐ +1, kamu mantap!"
+      ]
+    },
+    "night": {
+      "mood": "sleepy",
+      "lines": [
+        "Sudah lewat tengah malam... tidur sebentar lagi, yuk?",
+        "Begadang, ya? Kasurmu kangen, tuh.",
+        "Awas, ada kalong! Tidur itu kekuatan super."
+      ]
+    },
+    "kept": {
+      "mood": "party",
+      "lines": [
+        "Kemarin kamu tetap di bawah batas di {n} situs! +{n} ⭐",
+        "Kamu menjaga {n} batas kemarin! +{n} ⭐",
+        "Kemarin kamu jago menahan diri! +{n} ⭐"
+      ]
+    },
+    "streak": {
+      "mood": "proud",
+      "lines": [
+        "Streak {n} hari! Lanjutkan!",
+        "Sudah {n} hari berturut-turut. Wow!",
+        "Streak: {n} hari. Beepo senyum lebar."
+      ]
+    },
+    "badge": {
+      "mood": "party",
+      "lines": [
+        "Lencana baru: {name}! +3 ⭐",
+        "Kamu membuka {name}! +3 ⭐",
+        "Dapat lencana: {name}! +3 ⭐"
+      ]
+    },
+    "evolve": {
+      "mood": "proud",
+      "lines": [
+        "Wah, aku merasa beda! ({name})",
+        "Lihat aku! {name}!",
+        "Streak-mu mengubahku: {name}!"
+      ]
+    },
+    "blocked": {
+      "mood": "angry",
+      "lines": [
+        "Batas {name} tercapai. Halaman ini tutup untuk hari ini.",
+        "Segitu dulu {name} hari ini. Balik lagi besok, ya!",
+        "{name} tutup. Beepo jaga pintunya."
+      ]
+    },
+    "focus": {
+      "mood": "worried",
+      "lines": [
+        "Waktunya fokus! {name} ditutup sampai {until}.",
+        "Nggak ada {name} sampai {until}. Kamu pasti bisa.",
+        "Jam fokus! Sampai jumpa setelah {until}."
+      ]
+    },
+    "unlock": {
+      "mood": "neutral",
+      "lines": [
+        "Terbuka selama 5 menit. Pakai dengan bijak!",
+        "Oke, 5 menit. Jam terus berdetak!",
+        "Pintu terbuka 5 menit. Habis itu aku kunci lagi."
+      ]
+    },
+    "bored": {
+      "mood": "bored",
+      "lines": [
+        "Halo? Ada orang?",
+        "*ketuk-ketuk layar*",
+        "Aku bosan... main ke luar, yuk?"
+      ]
+    },
+    "sleepy": {
+      "mood": "sleepy",
+      "lines": [
+        "Zzz...",
+        "*ngorok*",
+        "Zzz... beep... zzz..."
+      ]
+    },
+    "scroll": {
+      "mood": "worried",
+      "lines": [
+        "Wah, pelan-pelan!",
+        "Doomscroll terdeteksi!",
+        "Wiii— eh, hati-hati!"
+      ]
+    },
+    "poke": {
+      "mood": "happy",
+      "lines": [
+        "Hihi, geli!",
+        "Beep boop!",
+        "Kamu colek aku!"
+      ]
+    }
+  },
+  "android": {
+    "usageTitle": "Beepo perlu akses penggunaan",
+    "usageBody": "Untuk tahu berapa lama kamu di tiap aplikasi, Beepo perlu akses penggunaan. Beepo hanya menghitung waktu, dan semuanya tetap di ponselmu.",
+    "usageGrant": "Buka setelan",
+    "usageFind": "Cari Beepo di daftar lalu aktifkan.",
+    "noRules": "Pilih aplikasi di bawah dan Beepo akan menemanimu di sana.",
+    "phoneToday": "Hari ini di ponselmu",
+    "noUsage": "Belum ada waktu aplikasi hari ini.",
+    "fieldApps": "Aplikasi",
+    "errApps": "Pilih setidaknya satu aplikasi.",
+    "searchApps": "Cari aplikasi",
+    "langAuto": "Otomatis (bahasa ponsel)",
+    "onTracked": "di aplikasi yang dipantau",
+    "obHello": "Hai, aku Beepo!",
+    "obIntro": "Aku teman piksel kecil. Aku menemanimu di aplikasi pilihanmu dan membantumu memantau waktu.",
+    "obHowTitle": "Cara kerjanya",
+    "obLimits": "Batas: lebih sedikit waktu di aplikasi yang menghabiskan harimu.",
+    "obGoals": "Target: lebih banyak waktu di aplikasi yang baik untukmu.",
+    "obStars": "Patuhi batas seharian penuh untuk dapat bintang. Pakai bintang untuk topi dan warna buatku.",
+    "obStreaks": "Pertahankan beberapa hari berturut-turut, aku juga akan berubah.",
+    "obOffline": "Beepo tidak punya akses internet, jadi tidak ada yang keluar dari ponselmu.",
+    "privacyPolicy": "Kebijakan privasi",
+    "obGranted": "Akses penggunaan sudah aktif ✓",
+    "obPickTitle": "Aplikasi mana yang harus kuawasi?",
+    "obPickHint": "Aplikasi yang paling sering kamu pakai minggu ini. Bisa diubah kapan saja.",
+    "obMinutes": "Batas harian",
+    "obNoApps": "Belum ada waktu aplikasi. Kamu bisa menambah aplikasi nanti di tab Hari ini.",
+    "next": "Lanjut",
+    "back": "Kembali",
+    "notNow": "Nanti saja",
+    "start": "Ayo mulai!"
+  }
+}

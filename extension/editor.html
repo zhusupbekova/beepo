@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>Beepo sprite editor</title>
+    <title data-i18n="edTitle">Beepo</title>
     <link rel="stylesheet" href="ui/ui.css" />
     <style>
       body { padding: 24px; }
@@ -18,8 +18,8 @@
     </style>
   </head>
   <body>
-    <h1 style="margin-bottom: 4px">✏ Beepo sprite editor</h1>
-    <p class="hint">Paint an overlay on top of Beepo. Left-click paints, right-click resets a pixel to "unchanged". <b>⌫</b> erases Beepo's own pixels underneath.</p>
+    <h1 style="margin-bottom: 4px" data-i18n="edTitle"></h1>
+    <p class="hint" data-i18n="edHint"></p>
     <main>
       <canvas id="grid"></canvas>
       <div class="side">
@@ -27,26 +27,26 @@
           <div class="swatches" id="swatches"></div>
         </div>
         <div class="box">
-          <label class="field">Name <input id="name" placeholder="My cool hat" /></label>
-          <label class="field" style="margin-top: 6px">Slot
-            <select id="slot"><option value="hat">Hat</option><option value="accessory">Accessory</option><option value="antenna">Antenna</option></select>
+          <label class="field"><span data-i18n="edName"></span> <input id="name" data-i18n-placeholder="edNamePh" /></label>
+          <label class="field" style="margin-top: 6px"><span data-i18n="edSlot"></span>
+            <select id="slot"><option value="hat" data-i18n="edSlotHat"></option><option value="accessory" data-i18n="edSlotAccessory"></option><option value="antenna" data-i18n="edSlotAntenna"></option></select>
           </label>
-          <label class="field" style="margin-top: 6px">Start from
-            <select id="base"><option value="">Blank</option></select>
+          <label class="field" style="margin-top: 6px"><span data-i18n="edStart"></span>
+            <select id="base"><option value="" data-i18n="edBlank"></option></select>
           </label>
           <div class="row" style="margin-top: 8px">
-            <button id="save">Save to shop</button>
-            <button id="copy" class="ghost" title="JSON for data/sprites.json">Copy JSON</button>
-            <button id="clear" class="ghost">Clear</button>
+            <button id="save" data-i18n="edSave"></button>
+            <button id="copy" class="ghost" data-i18n-title="edCopyTitle" data-i18n="edCopy"></button>
+            <button id="clear" class="ghost" data-i18n="edClear"></button>
           </div>
           <div class="hint" id="msg"></div>
         </div>
         <div class="box">
-          <h2>Preview</h2>
+          <h2 data-i18n="edPreview"></h2>
           <div class="preview" id="preview"></div>
         </div>
         <div class="box customs">
-          <h2>Your creations</h2>
+          <h2 data-i18n="edCreations"></h2>
           <div id="customs"></div>
         </div>
       </div>
