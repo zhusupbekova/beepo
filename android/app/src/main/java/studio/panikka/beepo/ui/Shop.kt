@@ -55,7 +55,7 @@ fun ShopScreen(state: State, store: Store, i18n: I18n) {
         }
 
         for (slot in SLOTS) {
-            val items = sprites.items.values.filter { it.slot == slot }
+            val items = sprites.items.values.filter { it.slot == slot && (it.season == null || it.id in w.seen) }
             if (items.isEmpty()) continue
             Column(Modifier.fillMaxWidth().pixelBox().padding(8.dp), verticalArrangement = Arrangement.spacedBy(6.dp)) {
                 Text(i18n.t("slot_$slot"), style = PixelText.copy(fontWeight = FontWeight.Bold))

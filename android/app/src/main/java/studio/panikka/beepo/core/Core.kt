@@ -66,6 +66,19 @@ fun isWeekend(key: String) = LocalDate.parse(key).dayOfWeek.let { it == DayOfWee
 fun dayStart(key: String, resetHour: Int = 0, zone: ZoneId = ZoneId.systemDefault()): Long =
     LocalDate.parse(key).atTime(resetHour, 0).atZone(zone).toInstant().toEpochMilli()
 
+/** Whether `key` (YYYY-MM-DD) is in `season` ["MM-DD", "MM-DD"], both ends included; may wrap the new year. */
+fun inSeason(season: List<String>, key: String): Boolean {
+    val (from, to) = season
+    val md = key.substring(5)
+    return if (from <= to) md in from..to else md >= from || md <= to
+}
+
+/** `seen` plus the seasonal items (`seasons`: id → season) in season on `key`. Once seen, always in the shop. */
+fun revealSeasonal(seasons: Map<String, List<String>>, key: String, seen: List<String> = emptyList()): List<String> {
+    val add = seasons.keys.filter { it !in seen && inSeason(seasons.getValue(it), key) }
+    return if (add.isEmpty()) seen else seen + add
+}
+
 // ---------- matching ----------
 
 /** The rule tracking this app package, if any. */

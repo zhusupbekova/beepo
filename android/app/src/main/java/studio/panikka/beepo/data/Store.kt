@@ -16,6 +16,7 @@ import studio.panikka.beepo.core.checkBadges
 import studio.panikka.beepo.core.dateKey
 import studio.panikka.beepo.core.dayStart
 import studio.panikka.beepo.core.dayUsage
+import studio.panikka.beepo.core.revealSeasonal
 import studio.panikka.beepo.core.rollover
 import studio.panikka.beepo.sprite.Sprites
 import studio.panikka.beepo.usage.UsageAccess
@@ -86,6 +87,8 @@ class Store private constructor(private val context: Context) {
             if (granted) secs(dayStart(key, resetHour), dayStart(addDays(key, 1), resetHour)) else null
         }
         if (granted) next = applyUsage(next, secs(dayStart(today, resetHour), now))
+        val seen = revealSeasonal(sprites.seasons, today, next.wallet.seen)
+        if (seen !== next.wallet.seen) next = next.copy(wallet = next.wallet.copy(seen = seen))
         save(next)
     }
 
@@ -116,7 +119,7 @@ class Store private constructor(private val context: Context) {
         val st = _state.value
         val item = sprites.items[itemId] ?: return false
         val w = st.wallet
-        if (item.plus || itemId in w.owned || w.stars < item.price) return false
+        if (item.plus || itemId in w.owned || (item.season != null && itemId !in w.seen) || w.stars < item.price) return false
         val bought = st.copy(wallet = w.copy(stars = w.stars - item.price, owned = w.owned + itemId))
         save(checkBadges(bought, bought.day?.date ?: dateKey(System.currentTimeMillis(), st.settings.resetHour)))
         equip(item.slot, itemId)

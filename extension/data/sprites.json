@@ -120,6 +120,134 @@
       "rows": { "3": "....y..yy..y....", "4": "....yyyrryyy....", "5": "....yyyyyyyy...." }
     },
 
+    "hat-witch": {
+      "slot": "hat", "name": "Witch Hat", "price": 15, "plus": true, "season": ["10-01", "10-31"],
+      "rows": {
+        "0": ".........kk.....",
+        "1": "........kvk.....",
+        "2": ".......kvvk.....",
+        "3": ".....kvvvvk.....",
+        "4": "....kvvvvvvk....",
+        "5": "...kooooooook...",
+        "6": ".kkkkkkkkkkkkkk."
+      }
+    },
+    "hat-santa": {
+      "slot": "hat", "name": "Santa Hat", "price": 15, "plus": true, "season": ["12-01", "01-06"],
+      "rows": {
+        "1": "...........xx...",
+        "2": "......kkkkkxx...",
+        "3": ".....krrrrk.....",
+        "4": "....krrrrrrk....",
+        "5": "...krrrrrrrrk...",
+        "6": "..kxxxxxxxxxxk.."
+      }
+    },
+    "hat-newyear": {
+      "slot": "hat", "name": "New Year Hat", "price": 15, "plus": true, "season": ["12-26", "01-07"],
+      "rows": {
+        "0": "..x.........y...",
+        "1": ".xxx.kkkkkkyyy..",
+        "2": "..x..kkkkkk.y...",
+        "3": ".....kkkkkk.....",
+        "4": ".....kyyyyk.....",
+        "5": "...kkkkkkkkkk..."
+      }
+    },
+    "hat-lunar": {
+      "slot": "hat", "name": "Lucky Red Hat", "price": 15, "plus": true, "season": ["01-20", "02-24"],
+      "rows": {
+        "2": ".......yy.......",
+        "3": ".....krrrrk.....",
+        "4": "....krryyrrk....",
+        "5": "...krrrrrrrrk...",
+        "6": "...kyyyyyyyyk..."
+      }
+    },
+    "hat-hearts": {
+      "slot": "hat", "name": "Heart Boppers", "price": 15, "plus": true, "season": ["02-01", "02-15"],
+      "rows": {
+        "0": ".rr.rr....rr.rr.",
+        "1": ".rrrrr....rrrrr.",
+        "2": "..rrr......rrr..",
+        "3": "...r........r...",
+        "4": "....k..__..k....",
+        "5": "...kppppppppk..."
+      }
+    },
+    "hat-leprechaun": {
+      "slot": "hat", "name": "Leprechaun Hat", "price": 15, "plus": true, "season": ["03-10", "03-18"],
+      "rows": {
+        "0": ".....kkkkkk.....",
+        "1": ".....knnnnk.....",
+        "2": ".....knnnnk.....",
+        "3": ".....knnnnk.....",
+        "4": ".....kkyykk.....",
+        "5": "...knnnnnnnnk..."
+      }
+    },
+    "hat-bunny": {
+      "slot": "hat", "name": "Bunny Ears", "price": 15, "plus": true, "season": ["03-20", "04-26"],
+      "rows": {
+        "0": "....kk....kk....",
+        "1": "...kxxk..kxxk...",
+        "2": "...kxpk..kpxk...",
+        "3": "...kxpk..kpxk...",
+        "4": "....kxk__kxk....",
+        "5": ".....kk__kk....."
+      }
+    },
+    "hat-straw": {
+      "slot": "hat", "name": "Straw Sun Hat", "price": 15, "plus": true, "season": ["06-01", "08-31"],
+      "rows": {
+        "2": ".....kkkkkk.....",
+        "3": "....kyyyyyyk....",
+        "4": "....krrrrrrk....",
+        "5": "kyyyyyyyyyyyyyyk",
+        "6": ".kkkkkkkkkkkkkk."
+      }
+    },
+    "hat-flowers": {
+      "slot": "hat", "name": "Flower Crown", "price": 15, "plus": true, "season": ["06-15", "06-30"],
+      "rows": {
+        "3": "...p..x..x..p...",
+        "4": "..pypxyxxyxpyp..",
+        "5": "...pnnxnnxnnp..."
+      }
+    },
+    "hat-snorkel": {
+      "slot": "hat", "name": "Snorkel & Goggles", "price": 15, "plus": true, "season": ["07-01", "08-31"],
+      "rows": {
+        "0": ".............oo.",
+        "1": "..............o.",
+        "2": "..............o.",
+        "3": "..kkkkk..kkkkko.",
+        "4": "..kxddk__kxddko.",
+        "5": "..kdddkkkkdddko.",
+        "6": "..kkkkkkkkkkkko.",
+        "7": "..kbbbbbbbbbbko."
+      }
+    },
+    "hat-lantern": {
+      "slot": "hat", "name": "Moon Lantern", "price": 15, "plus": true, "season": ["09-05", "10-08"],
+      "rows": {
+        "0": ".......kk.......",
+        "1": "......kyyk......",
+        "2": ".....krrrrk.....",
+        "3": ".....kryyrk.....",
+        "4": ".....krrrrk.....",
+        "5": "......kyyk......"
+      }
+    },
+    "hat-marigold": {
+      "slot": "hat", "name": "Marigold Crown", "price": 15, "plus": true, "season": ["10-15", "11-16"],
+      "rows": {
+        "2": ".......yy.......",
+        "3": "......kook......",
+        "4": "...oyooyooyoo...",
+        "5": "...oooooooooo..."
+      }
+    },
     "acc-shades": {
       "slot": "accessory", "name": "Cool Shades", "price": 6,
       "rows": { "9": "....kkkkkkkk....", "10": "....kkk..kkk...." }

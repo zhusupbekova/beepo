@@ -26,6 +26,7 @@ import kotlinx.coroutines.launch
 import studio.panikka.beepo.I18n
 import studio.panikka.beepo.data.Plus
 import studio.panikka.beepo.data.Store
+import studio.panikka.beepo.sprite.Look
 import studio.panikka.beepo.sprite.compose
 import studio.panikka.beepo.sprite.pet
 
@@ -47,6 +48,9 @@ fun PlusDialog(store: Store, i18n: I18n, onClose: () -> Unit) {
 
     val sprites = store.sprites
     val pets = sprites.items.values.filter { it.plus && it.slot == "pet" }
+    // Wearing this season's hat (or the latest one seen).
+    val seen = store.state.collectAsStateWithLifecycle().value.wallet.seen
+    val hat = seen.lastOrNull { sprites.items[it]?.let { i -> i.plus && i.slot == "hat" } == true }
 
     Dialog(onClose) {
         Column(
@@ -56,7 +60,7 @@ fun PlusDialog(store: Store, i18n: I18n, onClose: () -> Unit) {
         ) {
             Text("✨ " + i18n.android("plusTitle"), style = PixelText.copy(fontWeight = FontWeight.Bold))
             Row(horizontalArrangement = Arrangement.spacedBy(8.dp), verticalAlignment = Alignment.Bottom) {
-                PixelCanvas(sprites.compose("proud"), 4.dp)
+                PixelCanvas(sprites.compose("proud", look = Look(hat?.let { mapOf("hat" to it) }.orEmpty())), 4.dp)
                 for (p in pets) sprites.pet(p.id, 0)?.let { PixelCanvas(it, 4.dp) }
             }
             Text(i18n.android("plusBody"), style = PixelText, textAlign = TextAlign.Center)

@@ -108,6 +108,15 @@ for (let i = 0; i < 14; i++) {
   run("isWeekend", { key }, () => core.isWeekend(key));
 }
 
+const seasons = { "hat-witch": ["10-01", "10-31"], "hat-santa": ["12-01", "01-06"], "x-day": ["02-14", "02-14"] };
+for (const key of ["2026-09-30", "2026-10-01", "2026-10-31", "2026-11-01", "2026-11-30", "2026-12-01", "2026-12-31",
+  "2027-01-01", "2027-01-06", "2027-01-07", "2027-02-13", "2027-02-14", "2027-02-15"]) {
+  for (const id of Object.keys(seasons)) run("inSeason", { season: seasons[id], key }, () => core.inSeason(seasons[id], key));
+  for (const seen of [[], ["hat-witch"], ["hat-santa", "x-day"]]) {
+    run("revealSeasonal", { seasons, key, seen }, () => core.revealSeasonal(seasons, key, seen));
+  }
+}
+
 for (const r of [rule(), rule({ weekendMinutes: 60 }), rule({ weekendMinutes: 0 }), rule({ minutes: 0, weekendMinutes: 15 })]) {
   for (const key of ["2026-10-03", "2026-10-04", "2026-10-05", "2026-10-09"]) {
     run("baseLimitSecs", { rule: r, key }, () => core.baseLimitSecs(r, key));

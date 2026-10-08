@@ -255,8 +255,19 @@ async function unlock(href, ruleId) {
   return view(st, href, [{ key: "unlock" }]);
 }
 
+// Seasonal shop items appear in their season and stay in the shop afterwards.
+async function revealSeasonal(st) {
+  const { sprites } = await loadAssets();
+  const seasons = Object.fromEntries(Object.entries(sprites.items).filter(([, it]) => it.season).map(([id, it]) => [id, it.season]));
+  const seen = core.revealSeasonal(seasons, st.today, st.wallet.seen);
+  if (seen === st.wallet.seen) return;
+  st.wallet.seen = seen;
+  await saveWallet(st);
+}
+
 async function popupState() {
   const st = await loadState();
+  await revealSeasonal(st);
   const s = core.streaks(st.history, st.today);
   const today = Object.fromEntries(
     st.rules.map((r) => [
@@ -282,7 +293,7 @@ async function buy(itemId) {
   const st = await loadState();
   const { sprites } = await loadAssets();
   const item = sprites.items[itemId];
-  if (!item || st.wallet.owned.includes(itemId)) return { ok: false };
+  if (!item || st.wallet.owned.includes(itemId) || (item.season && !st.wallet.seen.includes(itemId))) return { ok: false };
   if (st.wallet.stars < item.price) return { ok: false, reason: "stars" };
   st.wallet.stars -= item.price;
   st.wallet.owned.push(itemId);

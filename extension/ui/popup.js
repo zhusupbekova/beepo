@@ -289,7 +289,7 @@ function renderShop() {
   $("tab-shop").replaceChildren(
     el("div", { class: "preview", id: "shopPreview" }),
     ...SLOTS.map((slot) => {
-      const items = Object.entries(all).filter(([, it]) => it.slot === slot);
+      const items = Object.entries(all).filter(([id, it]) => it.slot === slot && (!it.season || w.seen.includes(id)));
       if (!items.length) return null;
       return el("div", { class: "box" },
         el("h2", {}, t("slot_" + slot)),

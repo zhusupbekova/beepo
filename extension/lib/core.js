@@ -57,6 +57,7 @@ export const DEFAULT_WALLET = {
   owned: ["color-blue"],
   equipped: { color: "color-blue", hat: null, antenna: null, accessory: null, pet: null },
   badges: [],
+  seen: [], // seasonal items that have been in the shop (they stay after the season)
 };
 
 export const SNOOZE_SECS = 5 * 60;
@@ -84,6 +85,18 @@ export function isWeekend(key) {
   const [y, m, d] = key.split("-").map(Number);
   const day = new Date(y, m - 1, d).getDay();
   return day === 0 || day === 6;
+}
+
+/** Whether `key` (YYYY-MM-DD) is in `season` ["MM-DD", "MM-DD"], both ends included; may wrap the new year. */
+export function inSeason([from, to], key) {
+  const md = key.slice(5);
+  return from <= to ? md >= from && md <= to : md >= from || md <= to;
+}
+
+/** `seen` plus the seasonal items (`seasons`: { id: season }) in season on `key`. Once seen, always in the shop. */
+export function revealSeasonal(seasons, key, seen = []) {
+  const add = Object.keys(seasons).filter((id) => !seen.includes(id) && inSeason(seasons[id], key));
+  return add.length ? [...seen, ...add] : seen;
 }
 
 // ---------- matching ----------

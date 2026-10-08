@@ -60,6 +60,10 @@ class CoreTest {
 
     @Test fun isWeekend() = each("isWeekend") { isWeekend(it.str("key")) }
 
+    @Test fun inSeason() = each("inSeason") { inSeason(it.arg("season"), it.str("key")) }
+
+    @Test fun revealSeasonal() = each("revealSeasonal") { out(revealSeasonal(it.arg("seasons"), it.str("key"), it.arg("seen"))) }
+
     @Test fun baseLimitSecs() = each("baseLimitSecs") { baseLimitSecs(it.arg("rule"), it.str("key")) }
 
     @Test fun inFocus() = each("inFocus") { inFocus(it.arg("focus"), it.time("now"), zone) }

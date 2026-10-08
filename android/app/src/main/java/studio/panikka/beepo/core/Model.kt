@@ -74,6 +74,8 @@ data class Wallet(
     val owned: List<String> = listOf("color-blue"),
     val equipped: Equipped = Equipped(),
     val badges: List<String> = emptyList(),
+    /** Seasonal items that have been in the shop (they stay after the season). */
+    val seen: List<String> = emptyList(),
 )
 
 /**

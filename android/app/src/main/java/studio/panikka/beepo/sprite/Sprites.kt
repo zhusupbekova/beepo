@@ -15,6 +15,8 @@ class Item(
     val frames: List<List<String>>,
     /** Comes with Beepo Plus (Android) instead of being bought with stars. */
     val plus: Boolean = false,
+    /** ["MM-DD", "MM-DD"]: only in the shop from its first season on. */
+    val season: List<String>? = null,
 )
 
 /** `rows` is null for steps that only change size (grow). */
@@ -34,6 +36,8 @@ class Sprites(
     val scruffy: Rows,
     val items: Map<String, Item>,
 ) {
+    val seasons: Map<String, List<String>> get() = items.values.mapNotNull { i -> i.season?.let { i.id to it } }.toMap()
+
     companion object {
         fun parse(json: String): Sprites {
             val o = JSONObject(json)
@@ -64,6 +68,7 @@ class Sprites(
             rows = rows(o.optJSONObject("rows")),
             frames = o.optJSONArray("frames")?.let { f -> (0 until f.length()).map { strings(f.getJSONArray(it)) } }.orEmpty(),
             plus = o.optBoolean("plus"),
+            season = o.optJSONArray("season")?.let(::strings),
         )
 
         private fun strings(a: JSONArray) = (0 until a.length()).map { a.getString(it) }
