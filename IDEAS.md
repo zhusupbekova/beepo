@@ -1,6 +1,6 @@
 # Beepo — Improvement Ideas
 
-Status: ✅ done (v0.2) · ⏳ not started
+Status: ✅ done (v0.2) · 🚧 in progress · ⏳ not started
 
 ## 1. Beepo's personality
 
@@ -42,7 +42,15 @@ Status: ✅ done (v0.2) · ⏳ not started
 ## 5. Cross-device & Android
 
 - ✅ **Sync** rules, settings and wallet via `chrome.storage.sync`; usage stays per device.
-- ⏳ **Android app (Kotlin + Compose).** `UsageStatsManager` for per-app time, overlay (`SYSTEM_ALERT_WINDOW`) or notification/widget for Beepo; reuse `data/sprites.json` + `data/i18n/`.
+- 🚧 **Android app (Kotlin + Compose)** in `android/`. Rules are per app, not per site.
+  - ✅ Project, shared `extension/data` assets, sprite renderer port (checked against `tests/fixtures/`), i18n loading.
+  - ✅ `lib/core.js` ported to Kotlin (`core/`), checked against ~1,200 cases recorded from the JS (`tests/fixtures/core-cases.json`). Same JSON shapes as extension storage; rules gain `apps` (package names).
+  - ✅ Per-app time from the system usage log (Usage access card → settings), Today screen: rules with bars, "today on your phone" with 15/30/60 quick limits, rule editor (name, apps, limit/goal, minutes, weekend). Rules/settings saved as JSON.
+  - ✅ Day rollover (missed days rebuilt from the usage log), stars, goal stars, streak / evolve / badge news in a bubble, Report / Shop / Badges tabs, settings (language, reset hour), generated launcher icon, privacy policy section.
+  - ✅ App id `studio.panikka.beepo`. Onboarding: hello → how it works → usage access (prominent disclosure, privacy policy link) → pick the week's top apps with a daily limit; skippable. Privacy link in settings.
+  - ⏳ Custom cosmetics (editor), export / import, suggestions from history, snooze / unlock (need the overlay).
+  - ⏳ Foreground service + overlay Beepo (`SYSTEM_ALERT_WINDOW`) walking along the bottom with bubbles.
+  - ⏳ Block screen, home-screen widget. Play policy declarations for usage access / overlay / FGS.
 - ⏳ **Shared account** so stars/cosmetics follow you across browser + phone (needs a backend).
 
 ## 6. Technical

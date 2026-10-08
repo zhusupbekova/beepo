@@ -5,11 +5,12 @@
   "scripts": {
     "test": "node --test tests/*.test.js",
     "check": "for f in extension/*.js extension/*/*.js; do node --check \"$f\" || exit 1; done",
-    "icons": "node scripts/make-icons.js",
+    "icons": "node scripts/make-icons.js && node scripts/make-android-icon.js",
     "build": "node scripts/build.js",
     "locales": "node scripts/make-locales.js",
     "store": "node scripts/store-assets.js",
-    "social": "node scripts/social-assets.js"
+    "social": "node scripts/social-assets.js",
+    "fixtures": "node scripts/make-fixtures.js"
   },
   "devDependencies": {
     "playwright": "^1.63.0"
