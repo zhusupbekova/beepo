@@ -49,6 +49,12 @@ data class Settings(
     val lang: String = "auto",
     /** Android only: the intro has been shown. */
     val onboarded: Boolean = false,
+    /** Android only: Beepo pops up over tracked apps (needs "display over other apps"). */
+    val overlay: Boolean = true,
+    /** Android only, Plus: he stays out in tracked apps instead of only popping up. */
+    val stayOut: Boolean = false,
+    /** Android only, Plus: "light", "dark" or "system" (follows the phone). */
+    val theme: String = "light",
 )
 
 @Serializable
@@ -58,8 +64,10 @@ data class Equipped(
     val antenna: String? = null,
     val accessory: String? = null,
     val pet: String? = null,
+    /** Android only (Plus): the widget's background. */
+    val scene: String? = null,
 ) {
-    fun toMap() = listOf("color" to color, "hat" to hat, "antenna" to antenna, "accessory" to accessory, "pet" to pet)
+    fun toMap() = listOf("color" to color, "hat" to hat, "antenna" to antenna, "accessory" to accessory, "pet" to pet, "scene" to scene)
         .mapNotNull { (slot, id) -> id?.let { slot to it } }
         .toMap()
 }
@@ -130,3 +138,14 @@ data class BestDay(val date: String, val score: Int, val of: Int, val limitTime:
 data class WeeklyReport(val days: List<ReportDay>, val perRule: List<RuleWeek>, val bestDay: BestDay?, val savedSecs: Long)
 
 enum class BlockState { OK, BLOCKED_LIMIT, BLOCKED_FOCUS }
+
+/** A cosmetic made in the editor (storage.local `custom` in the extension). Plus on Android. */
+@Serializable
+data class CustomItem(
+    val id: String,
+    val slot: String,
+    val name: String,
+    /** Row index → 16 chars, like a shop item's `rows`. */
+    val rows: Map<String, String>,
+    val custom: Boolean = true,
+)

@@ -17,6 +17,8 @@ class Item(
     val plus: Boolean = false,
     /** ["MM-DD", "MM-DD"]: only in the shop from its first season on. */
     val season: List<String>? = null,
+    /** Android only, slot "scene": the widget background (32×24, `colors` has its uppercase keys). */
+    val scene: List<String> = emptyList(),
 )
 
 /** `rows` is null for steps that only change size (grow). */
@@ -69,6 +71,7 @@ class Sprites(
             frames = o.optJSONArray("frames")?.let { f -> (0 until f.length()).map { strings(f.getJSONArray(it)) } }.orEmpty(),
             plus = o.optBoolean("plus"),
             season = o.optJSONArray("season")?.let(::strings),
+            scene = o.optJSONArray("scene")?.let(::strings).orEmpty(),
         )
 
         private fun strings(a: JSONArray) = (0 until a.length()).map { a.getString(it) }

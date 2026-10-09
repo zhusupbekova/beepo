@@ -30,6 +30,7 @@ import studio.panikka.beepo.core.matchApp
 import studio.panikka.beepo.core.newId
 import studio.panikka.beepo.data.AppInfo
 import studio.panikka.beepo.data.Store
+import studio.panikka.beepo.overlay.Overlay
 import studio.panikka.beepo.usage.UsageAccess
 
 private const val PHONE_TODAY_MAX = 12
@@ -39,7 +40,7 @@ private const val PHONE_TODAY_MAX = 12
  * popup). Usage comes from [Store.refresh], which MainActivity runs while the app is open.
  */
 @Composable
-fun TodayScreen(state: State, store: Store, apps: Map<String, AppInfo>, granted: Boolean, i18n: I18n) {
+fun TodayScreen(state: State, store: Store, apps: Map<String, AppInfo>, granted: Boolean, overlayOk: Boolean, i18n: I18n) {
     val context = LocalContext.current
     val rules = state.rules
     val key = state.today()
@@ -53,6 +54,9 @@ fun TodayScreen(state: State, store: Store, apps: Map<String, AppInfo>, granted:
 
     Column(verticalArrangement = Arrangement.spacedBy(10.dp)) {
         if (!granted) UsageAccessCard(i18n) { UsageAccess.openSettings(context) }
+        else if (rules.isNotEmpty() && state.settings.overlay && !overlayOk) {
+            OverlayCard(i18n, onGrant = { Overlay.openSettings(context) }, onLater = { store.setSettings(state.settings.copy(overlay = false)) })
+        }
 
         // The empty hint points at "Today on your phone", which needs usage access.
         if (rules.isNotEmpty() || granted) {
@@ -115,6 +119,20 @@ private fun UsageAccessCard(i18n: I18n, onGrant: () -> Unit) {
         Text(i18n.android("usageBody"), style = PixelText)
         Text(i18n.android("usageFind"), style = PixelText.copy(color = Muted))
         PixelButton(i18n.android("usageGrant"), fill = Card, onClick = onGrant)
+    }
+}
+
+/** Beepo can't pop up without "display over other apps"; "not now" turns him off on screen (settings). */
+@Composable
+private fun OverlayCard(i18n: I18n, onGrant: () -> Unit, onLater: () -> Unit) {
+    Column(Modifier.fillMaxWidth().pixelBox(Gold).padding(10.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
+        Text(i18n.android("overlayTitle"), style = PixelText.copy(fontWeight = FontWeight.Bold))
+        Text(i18n.android("overlayBody"), style = PixelText)
+        Text(i18n.android("overlayHint"), style = PixelText.copy(color = Muted))
+        Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+            PixelButton(i18n.android("usageGrant"), fill = Card, onClick = onGrant)
+            PixelButton(i18n.android("notNow"), fill = Paper, onClick = onLater)
+        }
     }
 }
 

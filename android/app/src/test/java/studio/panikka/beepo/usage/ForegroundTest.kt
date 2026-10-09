@@ -56,4 +56,30 @@ class ForegroundTest {
         // And a second pause doesn't count again.
         assertEquals(mapOf("ig" to 10L), run(ev(70, "ig", RESUMED), ev(80, "ig", PAUSED), ev(85, "ig", PAUSED)))
     }
+
+    @Test
+    fun trackerFollowsTheAppInFront() {
+        val t = ForegroundTracker()
+        fun feed(vararg e: UsageEvent) = e.forEach(t::feed)
+        feed(ev(1, "ig", RESUMED))
+        assertEquals("ig", t.top)
+        // Switching apps: the old one's pause can come after the new one's resume.
+        feed(ev(2, "yt", RESUMED), ev(2, "ig", PAUSED))
+        assertEquals("yt", t.top)
+        // Moving between two activities of one app keeps it in front.
+        feed(ev(3, "yt", RESUMED, "Player"), ev(3, "yt", PAUSED, "Main"))
+        assertEquals("yt", t.top)
+        feed(ev(4, "yt", PAUSED, "Player"))
+        assertEquals(null, t.top)
+        feed(ev(5, "ig", RESUMED), ev(6, "x", SCREEN_OFF))
+        assertEquals(null, t.top)
+    }
+
+    @Test
+    fun takenBackHomeSwipeLeavesTheAppInFront() {
+        val t = ForegroundTracker()
+        // The launcher shows for a moment, then goes; the app never paused.
+        listOf(ev(1, "yt", RESUMED), ev(2, "launcher", RESUMED), ev(2, "launcher", PAUSED)).forEach(t::feed)
+        assertEquals("yt", t.top)
+    }
 }

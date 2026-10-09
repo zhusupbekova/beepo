@@ -29,14 +29,15 @@ test("every language has an app and a store file", () => {
 for (const lang of Object.keys(LANGUAGES)) {
   test(`${lang}: same keys and placeholders as English`, () => {
     const t = flat(load(`extension/data/i18n/${lang}.json`));
-    // Message pools may have a different number of lines; everything else must match.
-    const shape = (o) => Object.keys(o).filter((k) => !/^messages\.\w+\.lines\./.test(k)).sort();
+    // Message pools (and their app variants) may have a different number of lines; everything else must match.
+    const pools = /^(messages|appMessages)\.(\w+)\.lines\./;
+    const shape = (o) => Object.keys(o).filter((k) => !pools.test(k)).sort();
     assert.deepEqual(shape(t), shape(en));
     for (const [k, v] of Object.entries(t)) {
       assert.ok(typeof v !== "string" || v.trim(), `${k} is empty`);
-      if (/^messages\.(\w+)\.lines\./.test(k)) {
-        const pool = k.split(".")[1];
-        const allowed = new Set(Object.entries(en).filter(([ek]) => ek.startsWith(`messages.${pool}.lines.`)).flatMap(([, ev]) => vars(ev).split(",")));
+      if (pools.test(k)) {
+        const [section, pool] = k.split(".");
+        const allowed = new Set(Object.entries(en).filter(([ek]) => ek.startsWith(`${section}.${pool}.lines.`)).flatMap(([, ev]) => vars(ev).split(",")));
         for (const name of vars(v).split(",").filter(Boolean)) assert.ok(allowed.has(name), `${k}: unknown {${name}}`);
       } else if (k.endsWith(".mood")) {
         assert.equal(v, en[k], `${k}: moods are sprite names, keep them in English`);

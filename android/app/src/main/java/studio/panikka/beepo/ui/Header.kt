@@ -17,7 +17,6 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import studio.panikka.beepo.I18n
-import studio.panikka.beepo.core.News
 import studio.panikka.beepo.core.State
 import studio.panikka.beepo.sprite.Sprites
 import studio.panikka.beepo.sprite.compose
@@ -28,7 +27,7 @@ fun Header(state: State, sprites: Sprites, i18n: I18n, onSettings: () -> Unit, o
     val look = state.beepoLook(sprites)
     val s = look.streaks
     // Pick the lines once per batch of news, not on every recomposition.
-    val news = remember(state.pending, i18n) { state.pending.mapNotNull { newsLine(it, i18n) } }
+    val news = remember(state.pending, i18n) { state.pending.mapNotNull { i18n.news(it.key, it.vars) } }
 
     Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
         Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(10.dp)) {
@@ -56,11 +55,4 @@ fun Header(state: State, sprites: Sprites, i18n: I18n, onSettings: () -> Unit, o
             }
         }
     }
-}
-
-/** Text + mood for one piece of news; badge / evolve ids become names in the current language. */
-private fun newsLine(n: News, i18n: I18n): Pair<String, String>? {
-    val vars = n.vars.toMutableMap<String, Any?>()
-    n.vars["id"]?.let { vars["name"] = if (n.key == "badge") i18n.badgeName(it) else i18n.get("evolve", it) }
-    return i18n.line(n.key, vars)
 }

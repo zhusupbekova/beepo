@@ -206,7 +206,20 @@
     "acc-scarf": "Syal Hangat",
     "pet-cat": "Mochi si Kucing",
     "pet-ghost": "Boo si Hantu",
-    "pet-slime": "Gloop si Slime"
+    "pet-slime": "Gloop si Slime",
+    "pet-bat": "Fang si Kelelawar",
+    "pet-reindeer": "Dasher si Rusa Kutub",
+    "pet-dragon": "Ember si Naga",
+    "pet-lovebird": "Cupid si Lovebird",
+    "pet-chick": "Peep si Anak Ayam",
+    "pet-crab": "Pinchy si Kepiting",
+    "pet-moonrabbit": "Jade si Kelinci Bulan",
+    "scene-meadow": "Padang Cerah",
+    "scene-night": "Malam Berbintang",
+    "scene-beach": "Hari di Pantai",
+    "scene-snow": "Bukit Bersalju",
+    "scene-room": "Kamar Nyaman",
+    "scene-space": "Luar Angkasa"
   },
   "evolve": {
     "cheeks": "Pipi merona",
@@ -471,6 +484,40 @@
       ]
     }
   },
+  "appMessages": {
+    "statusNight": {
+      "mood": "sleepy",
+      "lines": [
+        "Udah jam {time}... tidur juga aplikasi yang bagus, lho.",
+        "Jam {time}?! YouTube bisa nunggu, tidur nggak.",
+        "Scroll tengah malam itu jebakan. Aku tahu dari pengalaman."
+      ]
+    },
+    "limit100": {
+      "mood": "angry",
+      "lines": [
+        "{m} menitmu sudah habis! Yuk, kerjakan hal lain.",
+        "STOP! Batas tercapai. Ayo peregangan!",
+        "Waktu habis! Aku percaya kamu bisa tutup aplikasi ini."
+      ]
+    },
+    "kept": {
+      "mood": "party",
+      "lines": [
+        "Kemarin kamu tetap di bawah batas di {n} aplikasi! +{n} ⭐",
+        "Kamu menjaga {n} batas kemarin! +{n} ⭐",
+        "Kemarin kamu jago menahan diri! +{n} ⭐"
+      ]
+    },
+    "blocked": {
+      "mood": "angry",
+      "lines": [
+        "Batas {name} tercapai. Aplikasi ini tutup untuk hari ini.",
+        "Segitu dulu {name} hari ini. Balik lagi besok, ya!",
+        "{name} tutup. Beepo jaga pintunya."
+      ]
+    }
+  },
   "android": {
     "usageTitle": "Beepo perlu akses penggunaan",
     "usageBody": "Untuk tahu berapa lama kamu di tiap aplikasi, Beepo perlu akses penggunaan. Beepo hanya menghitung waktu, dan semuanya tetap di ponselmu.",
@@ -503,12 +550,39 @@
     "notNow": "Nanti saja",
     "start": "Ayo mulai!",
     "plusTitle": "Beepo Plus",
-    "plusBody": "Buka sekali saja: semua hewan peliharaan datang menemaniku, plus topi baru setiap musim. Dan kamu membantu studio kecil terus membuat Beepo.",
+    "plusGet": "Dapatkan Beepo Plus",
+    "plusBody": "Buka sekali saja: aku tetap di layarmu dan jalan-jalan, semua peliharaan ikut, topi baru setiap musim, topi buatanmu sendiri di editor, mode gelap, widget layar utama dengan latar, dan seluruh riwayat laporanmu. Dan kamu membantu studio kecil terus membuat Beepo.",
     "plusBuy": "Buka seharga {price}",
     "plusRestore": "Pulihkan pembelian",
     "plusActive": "Plus aktif. Terima kasih! 💛",
     "plusOffline": "Tidak bisa terhubung ke toko sekarang. Coba lagi nanti.",
     "plusFailed": "Itu belum berhasil. Coba lagi?",
-    "plusNothing": "Tidak ada pembelian Plus di akun ini."
+    "plusNothing": "Tidak ada pembelian Plus di akun ini.",
+    "overlayTitle": "Biarkan aku muncul di atas aplikasimu",
+    "overlayBody": "Aku akan muncul di bawah aplikasi yang dipantau saat waktunya mengingatkan, dan menutup aplikasi yang kamu pilih untuk diblokir. Aku tidak membaca apa pun di layarmu.",
+    "overlayHint": "Aktifkan “Tampilkan di atas aplikasi lain” untuk Beepo.",
+    "overlaySection": "Beepo di layar",
+    "overlayOn": "Muncul di atas aplikasiku",
+    "stayOut": "Selalu di luar",
+    "stayOutHint": "Di aplikasi yang dipantau, aku tetap di layar, jalan-jalan, dan membawa peliharaanku.",
+    "notifChannel": "Beepo di layar",
+    "notifText": "Beepo sedang memantau waktu",
+    "closeApp": "Tutup aplikasi",
+    "overlayGranted": "Tampilkan di atas aplikasi lain sudah aktif ✓",
+    "edHint": "Ketuk atau seret untuk melukis di atas Beepo. ⌫ menghapus piksel Beepo sendiri, · membiarkan piksel apa adanya.",
+    "edSaved": "Tersimpan, dan sudah kupakai! Ada di toko juga.",
+    "edMake": "✏ Buat sendiri",
+    "thatWeek": "Minggu itu",
+    "vsWeekBefore": "vs minggu sebelumnya",
+    "weekByWeek": "Minggu demi minggu",
+    "widgetPlus": "Dengan Beepo Plus aku tinggal di layar utamamu.",
+    "scenes": "Latar",
+    "sceneHint": "Tampil di belakangku di widget layar utama.",
+    "sceneUse": "Pakai",
+    "sceneOff": "Lepas",
+    "theme": "Mode gelap",
+    "themeLight": "Terang",
+    "themeDark": "Gelap",
+    "themeSystem": "Ikuti ponsel"
   }
 }

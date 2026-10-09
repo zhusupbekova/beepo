@@ -206,7 +206,20 @@
     "acc-scarf": "暖暖圍巾",
     "pet-cat": "貓咪麻糬",
     "pet-ghost": "小幽靈 Boo",
-    "pet-slime": "史萊姆咕嚕"
+    "pet-slime": "史萊姆咕嚕",
+    "pet-bat": "蝙蝠阿牙",
+    "pet-reindeer": "馴鹿閃電",
+    "pet-dragon": "小龍火火",
+    "pet-lovebird": "愛情鳥邱比",
+    "pet-chick": "小雞啾啾",
+    "pet-crab": "螃蟹鉗鉗",
+    "pet-moonrabbit": "玉兔",
+    "scene-meadow": "陽光草地",
+    "scene-night": "星空之夜",
+    "scene-beach": "海灘一日",
+    "scene-snow": "雪山坡",
+    "scene-room": "溫馨小屋",
+    "scene-space": "外太空"
   },
   "evolve": {
     "cheeks": "紅通通臉頰",
@@ -471,6 +484,40 @@
       ]
     }
   },
+  "appMessages": {
+    "statusNight": {
+      "mood": "sleepy",
+      "lines": [
+        "已經 {time} 了…睡覺也是很棒的應用程式喔。",
+        "{time}？！YouTube 可以等，睡眠不行啦。",
+        "半夜滑手機是陷阱。別問我怎麼知道的。"
+      ]
+    },
+    "limit100": {
+      "mood": "angry",
+      "lines": [
+        "{m} 分鐘到囉！該去做點別的事了。",
+        "停！到達限制。起來伸展一下！",
+        "時間到！我相信你，把這個應用程式關掉吧。"
+      ]
+    },
+    "kept": {
+      "mood": "party",
+      "lines": [
+        "昨天你在 {n} 個應用程式都守住限制了！+{n} ⭐",
+        "昨天守住了 {n} 個限制！+{n} ⭐",
+        "昨天的自制力超強！+{n} ⭐"
+      ]
+    },
+    "blocked": {
+      "mood": "angry",
+      "lines": [
+        "{name} 已到達限制。今天這個應用程式先休息囉。",
+        "{name} 今天就到這裡。明天再來吧！",
+        "{name} 打烊了。Beepo 在門口站崗。"
+      ]
+    }
+  },
   "android": {
     "usageTitle": "Beepo 需要使用情形存取權",
     "usageBody": "為了知道你在每個 App 上花了多少時間，Beepo 需要使用情形存取權。它只計算時間，所有資料都留在你的手機上。",
@@ -503,12 +550,39 @@
     "notNow": "先不要",
     "start": "開始吧！",
     "plusTitle": "Beepo Plus",
-    "plusBody": "一次性解鎖：所有寵物都會來陪我，每個季節還有新帽子。你也能支持一個小工作室繼續做 Beepo。",
+    "plusGet": "取得 Beepo Plus",
+    "plusBody": "一次性解鎖：我會一直待在你的螢幕上走來走去，所有寵物都來陪我，每一季有新帽子，還有編輯器裡你自己做的帽子、深色模式、附場景的主畫面小工具和完整的報告紀錄。你也在幫助一間小小工作室繼續做 Beepo。",
     "plusBuy": "以 {price} 解鎖",
     "plusRestore": "恢復購買",
     "plusActive": "Plus 已開啟。謝謝你！💛",
     "plusOffline": "暫時無法連線到商店，請稍後再試。",
     "plusFailed": "沒有成功，再試一次？",
-    "plusNothing": "此帳號沒有找到 Plus 購買紀錄。"
+    "plusNothing": "此帳號沒有找到 Plus 購買紀錄。",
+    "overlayTitle": "讓我在你的 App 上出現吧",
+    "overlayBody": "該提醒的時候，我會出現在你關注的 App 底部，並關掉你設為封鎖的 App。我不會讀取螢幕上的任何內容。",
+    "overlayHint": "為 Beepo 開啟「顯示在其他應用程式上層」。",
+    "overlaySection": "螢幕上的 Beepo",
+    "overlayOn": "在我的 App 上出現",
+    "stayOut": "一直待在外面",
+    "stayOutHint": "在關注的 App 裡，我會一直待在螢幕上，到處走走，還會帶上我的寵物。",
+    "notifChannel": "螢幕上的 Beepo",
+    "notifText": "Beepo 正在幫你留意時間",
+    "closeApp": "關閉 App",
+    "overlayGranted": "已開啟「顯示在其他應用程式上層」✓",
+    "edHint": "點按或拖曳，在 Beepo 身上作畫。⌫ 擦掉 Beepo 自己的像素，· 保持像素不變。",
+    "edSaved": "已儲存，我已經戴上囉！商店裡也有。",
+    "edMake": "✏ 自己做",
+    "thatWeek": "那一週",
+    "vsWeekBefore": "對比再前一週",
+    "weekByWeek": "逐週趨勢",
+    "widgetPlus": "有了 Beepo Plus，我就能住在你的主畫面上。",
+    "scenes": "場景",
+    "sceneHint": "在主畫面小工具裡顯示在我身後。",
+    "sceneUse": "使用",
+    "sceneOff": "移除",
+    "theme": "深色模式",
+    "themeLight": "淺色",
+    "themeDark": "深色",
+    "themeSystem": "跟隨手機"
   }
 }

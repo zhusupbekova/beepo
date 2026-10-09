@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Beepo (or his scene) on the left; stars, streak and today's rules on the right. BeepoWidget
+     shows as many rule rows as fit the widget's height. -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@android:id/background"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/widget_bg_auto"
+    android:clipToOutline="true"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:padding="12dp">
+
+    <ImageView
+        android:id="@+id/beepo"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="2"
+        android:importantForAccessibility="no"
+        android:scaleType="fitCenter" />
+
+    <!-- With a scene (Plus): Beepo and his pet standing in it, instead of Beepo alone. -->
+    <ImageView
+        android:id="@+id/scene"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="2"
+        android:importantForAccessibility="no"
+        android:scaleType="fitCenter"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_weight="3"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/header"
+            style="@style/WidgetText"
+            android:layout_width="match_parent"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/note"
+            style="@style/WidgetText"
+            android:layout_width="match_parent"
+            android:layout_marginTop="4dp"
+            android:singleLine="false"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:id="@+id/r1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/r1name"
+                    style="@style/WidgetText"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:ellipsize="end" />
+
+                <TextView
+                    android:id="@+id/r1time"
+                    style="@style/WidgetText"
+                    android:textColor="@color/widget_muted"
+                    android:layout_width="wrap_content"
+                    android:layout_marginStart="6dp" />
+            </LinearLayout>
+
+            <ProgressBar
+                android:id="@+id/r1bar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:layout_marginTop="2dp"
+                android:max="100"
+                android:progressDrawable="@drawable/widget_bar" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/r2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/r2name"
+                    style="@style/WidgetText"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:ellipsize="end" />
+
+                <TextView
+                    android:id="@+id/r2time"
+                    style="@style/WidgetText"
+                    android:textColor="@color/widget_muted"
+                    android:layout_width="wrap_content"
+                    android:layout_marginStart="6dp" />
+            </LinearLayout>
+
+            <ProgressBar
+                android:id="@+id/r2bar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:layout_marginTop="2dp"
+                android:max="100"
+                android:progressDrawable="@drawable/widget_bar" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/r3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/r3name"
+                    style="@style/WidgetText"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:ellipsize="end" />
+
+                <TextView
+                    android:id="@+id/r3time"
+                    style="@style/WidgetText"
+                    android:textColor="@color/widget_muted"
+                    android:layout_width="wrap_content"
+                    android:layout_marginStart="6dp" />
+            </LinearLayout>
+
+            <ProgressBar
+                android:id="@+id/r3bar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:layout_marginTop="2dp"
+                android:max="100"
+                android:progressDrawable="@drawable/widget_bar" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/r4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/r4name"
+                    style="@style/WidgetText"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:ellipsize="end" />
+
+                <TextView
+                    android:id="@+id/r4time"
+                    style="@style/WidgetText"
+                    android:textColor="@color/widget_muted"
+                    android:layout_width="wrap_content"
+                    android:layout_marginStart="6dp" />
+            </LinearLayout>
+
+            <ProgressBar
+                android:id="@+id/r4bar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:layout_marginTop="2dp"
+                android:max="100"
+                android:progressDrawable="@drawable/widget_bar" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/r5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/r5name"
+                    style="@style/WidgetText"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:ellipsize="end" />
+
+                <TextView
+                    android:id="@+id/r5time"
+                    style="@style/WidgetText"
+                    android:textColor="@color/widget_muted"
+                    android:layout_width="wrap_content"
+                    android:layout_marginStart="6dp" />
+            </LinearLayout>
+
+            <ProgressBar
+                android:id="@+id/r5bar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:layout_marginTop="2dp"
+                android:max="100"
+                android:progressDrawable="@drawable/widget_bar" />
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>

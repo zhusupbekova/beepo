@@ -206,7 +206,20 @@
     "acc-scarf": "Cachecol quentinho",
     "pet-cat": "Mochi, o gato",
     "pet-ghost": "Boo, o fantasma",
-    "pet-slime": "Gloop, a gosma"
+    "pet-slime": "Gloop, a gosma",
+    "pet-bat": "Fang, o morcego",
+    "pet-reindeer": "Dasher, a rena",
+    "pet-dragon": "Ember, o dragão",
+    "pet-lovebird": "Cupid, o pássaro-do-amor",
+    "pet-chick": "Peep, o pintinho",
+    "pet-crab": "Pinchy, o caranguejo",
+    "pet-moonrabbit": "Jade, o coelho da lua",
+    "scene-meadow": "Campo ensolarado",
+    "scene-night": "Noite estrelada",
+    "scene-beach": "Dia de praia",
+    "scene-snow": "Colina nevada",
+    "scene-room": "Quarto aconchegante",
+    "scene-space": "Espaço sideral"
   },
   "evolve": {
     "cheeks": "Bochechas rosadas",
@@ -471,6 +484,40 @@
       ]
     }
   },
+  "appMessages": {
+    "statusNight": {
+      "mood": "sleepy",
+      "lines": [
+        "Já são {time}... dormir também é um ótimo app.",
+        "{time}?! O YouTube pode esperar, o sono não.",
+        "Rolar a tela de madrugada é cilada. Falo por experiência."
+      ]
+    },
+    "limit100": {
+      "mood": "angry",
+      "lines": [
+        "Deu seus {m} minutos! Hora de fazer outra coisa.",
+        "PARE! Limite atingido. Vai se alongar!",
+        "Acabou o tempo! Eu confio em você, fecha esse app."
+      ]
+    },
+    "kept": {
+      "mood": "party",
+      "lines": [
+        "Ontem você ficou dentro do limite em {n} app(s)! +{n} ⭐",
+        "Você respeitou {n} limite(s) ontem! +{n} ⭐",
+        "Que autocontrole ontem! +{n} ⭐"
+      ]
+    },
+    "blocked": {
+      "mood": "angry",
+      "lines": [
+        "Limite atingido em {name}. Este app tá de folga hoje.",
+        "Chega de {name} por hoje. Volta amanhã!",
+        "{name} está fechado. O Beepo tá de guarda na porta."
+      ]
+    }
+  },
   "android": {
     "usageTitle": "O Beepo precisa de acesso ao uso",
     "usageBody": "Para saber quanto tempo você passa em cada app, o Beepo precisa de acesso ao uso. Ele só conta o tempo, e tudo fica no seu celular.",
@@ -503,12 +550,39 @@
     "notNow": "Agora não",
     "start": "Vamos lá!",
     "plusTitle": "Beepo Plus",
-    "plusBody": "Um desbloqueio único: todos os bichinhos vêm me fazer companhia, e um chapéu novo a cada estação. E você ajuda um estúdio pequeno a continuar fazendo o Beepo.",
+    "plusGet": "Obter o Beepo Plus",
+    "plusBody": "Um desbloqueio único: eu fico na sua tela passeando, todos os bichinhos vêm junto, um chapéu novo a cada estação, seus próprios chapéus no editor, modo escuro, um widget com cenários na tela inicial e todo o seu histórico de relatórios. E você ajuda um estúdio pequenininho a continuar fazendo o Beepo.",
     "plusBuy": "Desbloquear por {price}",
     "plusRestore": "Restaurar compra",
     "plusActive": "Plus está ativo. Obrigado! 💛",
     "plusOffline": "Não dá para acessar a loja agora. Tente mais tarde.",
     "plusFailed": "Não deu certo. Tentar de novo?",
-    "plusNothing": "Nenhuma compra do Plus encontrada nesta conta."
+    "plusNothing": "Nenhuma compra do Plus encontrada nesta conta.",
+    "overlayTitle": "Deixa eu aparecer sobre seus apps",
+    "overlayBody": "Vou aparecer embaixo nos apps monitorados quando for hora de um empurrãozinho, e fechar os apps que você mandar bloquear. Não leio nada da sua tela.",
+    "overlayHint": "Ative “Sobrepor a outros apps” para o Beepo.",
+    "overlaySection": "Beepo na tela",
+    "overlayOn": "Aparecer sobre meus apps",
+    "stayOut": "Ficar sempre na tela",
+    "stayOutHint": "Nos apps monitorados eu fico na tela, passeio e trago meu bichinho.",
+    "notifChannel": "Beepo na tela",
+    "notifText": "Beepo está de olho no tempo",
+    "closeApp": "Fechar app",
+    "overlayGranted": "Sobrepor a outros apps está ativado ✓",
+    "edHint": "Toque ou arraste para pintar por cima do Beepo. ⌫ apaga os pixels do próprio Beepo, · deixa o pixel como está.",
+    "edSaved": "Salvo, e já tô usando! Tá na loja também.",
+    "edMake": "✏ Crie o seu",
+    "thatWeek": "Aquela semana",
+    "vsWeekBefore": "vs. a semana anterior",
+    "weekByWeek": "Semana a semana",
+    "widgetPlus": "Com o Beepo Plus eu moro na sua tela inicial.",
+    "scenes": "Cenários",
+    "sceneHint": "Aparecem atrás de mim no widget da tela inicial.",
+    "sceneUse": "Usar",
+    "sceneOff": "Remover",
+    "theme": "Modo escuro",
+    "themeLight": "Claro",
+    "themeDark": "Escuro",
+    "themeSystem": "Igual ao celular"
   }
 }

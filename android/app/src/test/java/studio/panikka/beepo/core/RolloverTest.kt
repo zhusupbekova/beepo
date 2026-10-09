@@ -107,4 +107,44 @@ class RolloverTest {
         assertEquals(listOf("goal50", "goal100"), st.day!!.notified["duo"])
         assertNull(st.day!!.notified["yt"])
     }
+
+    @Test
+    fun milestonesBecomeNudgesOnce() {
+        var st = state(Day("2026-10-05"), yt, duo)
+        val out = mutableListOf<Nudge>()
+        st = applyUsage(st, mapOf("yt" to 16 * min, "duo" to 5 * min), out)
+        assertEquals(listOf(Nudge("yt", "limit50", mapOf("m" to "30", "name" to "YouTube")), Nudge("duo", "goal50", mapOf("m" to "10", "name" to "Duolingo"))), out)
+        out.clear()
+        st = applyUsage(st, mapOf("yt" to 20 * min, "duo" to 6 * min), out)
+        assertTrue(out.isEmpty())
+        // Jumping past several steps fires only the latest.
+        st = applyUsage(st, mapOf("yt" to 31 * min), out)
+        assertEquals(listOf("limit100"), out.map { it.key })
+        out.clear()
+        st = applyUsage(st, mapOf("yt" to 36 * min), out)
+        assertEquals(listOf("over"), out.map { it.key })
+    }
+
+    @Test
+    fun snoozeAddsTimeAndCounts() {
+        var st = state(Day("2026-10-05"))
+        val (a, first) = snooze(st, "yt")
+        assertEquals("snooze1", first.key)
+        val (b, second) = snooze(a, "yt")
+        st = b
+        assertEquals("snooze2", second.key)
+        assertEquals(2L * SNOOZE_SECS, st.day!!.bonus["yt"])
+        assertEquals(2, st.day!!.snoozes["yt"])
+        assertEquals("snooze3", snooze(snooze(st, "yt").first, "yt").second.key)
+    }
+
+    @Test
+    fun unlockCostsAStarAndNeedsOne() {
+        val st = state(Day("2026-10-05"))
+        assertNull(unlock(st, "yt", 1000))
+        val open = unlock(st.copy(wallet = Wallet(stars = 2)), "yt", 1000)!!
+        assertEquals(1, open.wallet.stars)
+        assertEquals(1000 + UNLOCK_SECS * 1000L, open.day!!.unlockUntil["yt"])
+        assertEquals(1, open.day!!.snoozes["yt"])
+    }
 }

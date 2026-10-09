@@ -206,7 +206,20 @@
     "acc-scarf": "Écharpe douillette",
     "pet-cat": "Mochi le chat",
     "pet-ghost": "Boo le fantôme",
-    "pet-slime": "Gloop le slime"
+    "pet-slime": "Gloop le slime",
+    "pet-bat": "Fang la chauve-souris",
+    "pet-reindeer": "Dasher le renne",
+    "pet-dragon": "Ember le dragon",
+    "pet-lovebird": "Cupid l'inséparable",
+    "pet-chick": "Peep le poussin",
+    "pet-crab": "Pinchy le crabe",
+    "pet-moonrabbit": "Jade le lapin de lune",
+    "scene-meadow": "Prairie ensoleillée",
+    "scene-night": "Nuit étoilée",
+    "scene-beach": "Journée à la plage",
+    "scene-snow": "Colline enneigée",
+    "scene-room": "Chambre douillette",
+    "scene-space": "Espace"
   },
   "evolve": {
     "cheeks": "Joues roses",
@@ -471,6 +484,40 @@
       ]
     }
   },
+  "appMessages": {
+    "statusNight": {
+      "mood": "sleepy",
+      "lines": [
+        "Il est {time}... le sommeil aussi, c'est une super appli.",
+        "{time} ?! YouTube peut attendre, le sommeil non.",
+        "Scroller tard le soir, c'est un piège. Crois-moi, je sais."
+      ]
+    },
+    "limit100": {
+      "mood": "angry",
+      "lines": [
+        "Tes {m} minutes sont passées ! Place à autre chose.",
+        "STOP ! Limite atteinte. Va t'étirer !",
+        "C'est l'heure ! Je crois en toi, ferme cette appli."
+      ]
+    },
+    "kept": {
+      "mood": "party",
+      "lines": [
+        "Hier, tu es resté sous ta limite dans {n} appli(s) ! +{n} ⭐",
+        "Tu as respecté {n} limite(s) hier ! +{n} ⭐",
+        "Super maîtrise de toi hier ! +{n} ⭐"
+      ]
+    },
+    "blocked": {
+      "mood": "angry",
+      "lines": [
+        "Limite atteinte pour {name}. Cette appli est fermée pour aujourd'hui.",
+        "C'est tout pour {name} aujourd'hui. Reviens demain !",
+        "{name} est fermé. Beepo garde la porte."
+      ]
+    }
+  },
   "android": {
     "usageTitle": "Beepo a besoin de l'accès aux données d'utilisation",
     "usageBody": "Pour savoir combien de temps tu passes dans chaque appli, Beepo a besoin de l'accès aux données d'utilisation. Il ne compte que le temps, et tout reste sur ton téléphone.",
@@ -503,12 +550,39 @@
     "notNow": "Plus tard",
     "start": "C'est parti !",
     "plusTitle": "Beepo Plus",
-    "plusBody": "Un déblocage unique : tous les compagnons viennent me tenir compagnie, et un nouveau chapeau à chaque saison. Et tu aides un petit studio à continuer Beepo.",
+    "plusGet": "Obtenir Beepo Plus",
+    "plusBody": "Un achat unique : je reste sur ton écran et je me promène, tous les animaux viennent avec moi, un nouveau chapeau à chaque saison, tes propres chapeaux avec l'éditeur, un mode sombre, un widget avec décors pour l'écran d'accueil et tout l'historique de tes bilans. Et tu aides un tout petit studio à continuer Beepo.",
     "plusBuy": "Débloquer pour {price}",
     "plusRestore": "Restaurer l'achat",
     "plusActive": "Plus est activé. Merci ! 💛",
     "plusOffline": "Impossible de joindre la boutique pour l'instant. Réessaie plus tard.",
     "plusFailed": "Ça n'a pas marché. Réessayer ?",
-    "plusNothing": "Aucun achat Plus trouvé sur ce compte."
+    "plusNothing": "Aucun achat Plus trouvé sur ce compte.",
+    "overlayTitle": "Laisse-moi apparaître sur tes apps",
+    "overlayBody": "J'apparais en bas de tes apps suivies quand c'est l'heure d'un petit rappel, et je ferme les apps que tu as choisi de bloquer. Je ne lis rien sur ton écran.",
+    "overlayHint": "Active « Afficher par-dessus les autres applis » pour Beepo.",
+    "overlaySection": "Beepo à l'écran",
+    "overlayOn": "Apparaître sur mes apps",
+    "stayOut": "Rester dehors tout le temps",
+    "stayOutHint": "Dans les apps suivies, je reste à l'écran, je me promène et j'emmène mon animal.",
+    "notifChannel": "Beepo à l'écran",
+    "notifText": "Beepo garde un œil sur le temps",
+    "closeApp": "Fermer l'app",
+    "overlayGranted": "Superposition sur d'autres applis activée ✓",
+    "edHint": "Touche ou glisse pour peindre par-dessus Beepo. ⌫ efface les pixels de Beepo, · laisse un pixel tel quel.",
+    "edSaved": "Enregistré, et je le porte déjà ! Il est aussi dans la boutique.",
+    "edMake": "✏ Crée le tien",
+    "thatWeek": "Cette semaine-là",
+    "vsWeekBefore": "vs la semaine d'avant",
+    "weekByWeek": "Semaine par semaine",
+    "widgetPlus": "Avec Beepo Plus, je m'installe sur ton écran d'accueil.",
+    "scenes": "Décors",
+    "sceneHint": "Derrière moi, sur le widget de ton écran d'accueil.",
+    "sceneUse": "Utiliser",
+    "sceneOff": "Retirer",
+    "theme": "Mode sombre",
+    "themeLight": "Clair",
+    "themeDark": "Sombre",
+    "themeSystem": "Comme le téléphone"
   }
 }

@@ -206,7 +206,20 @@
     "acc-scarf": "Cozy Scarf",
     "pet-cat": "Mochi the Cat",
     "pet-ghost": "Boo the Ghost",
-    "pet-slime": "Gloop the Slime"
+    "pet-slime": "Gloop the Slime",
+    "pet-bat": "Fang the Bat",
+    "pet-reindeer": "Dasher the Reindeer",
+    "pet-dragon": "Ember the Dragon",
+    "pet-lovebird": "Cupid the Lovebird",
+    "pet-chick": "Peep the Chick",
+    "pet-crab": "Pinchy the Crab",
+    "pet-moonrabbit": "Jade the Moon Rabbit",
+    "scene-meadow": "Sunny Meadow",
+    "scene-night": "Starry Night",
+    "scene-beach": "Beach Day",
+    "scene-snow": "Snowy Hill",
+    "scene-room": "Cozy Room",
+    "scene-space": "Outer Space"
   },
   "evolve": {
     "cheeks": "Rosy cheeks",
@@ -471,6 +484,40 @@
       ]
     }
   },
+  "appMessages": {
+    "statusNight": {
+      "mood": "sleepy",
+      "lines": [
+        "It's {time}... sleep is a great app too.",
+        "{time}?! YouTube can wait, sleep can't.",
+        "Late-night scrolling is a trap. Ask me how I know."
+      ]
+    },
+    "limit100": {
+      "mood": "angry",
+      "lines": [
+        "That's all {m} min for today! Time to go do something else.",
+        "STOP! Limit reached. Go stretch!",
+        "Time's up! I believe in you, close this app."
+      ]
+    },
+    "kept": {
+      "mood": "party",
+      "lines": [
+        "Yesterday you stayed under your limit in {n} app(s)! +{n} ⭐",
+        "You kept {n} limit(s) yesterday! +{n} ⭐",
+        "Great self-control yesterday! +{n} ⭐"
+      ]
+    },
+    "blocked": {
+      "mood": "angry",
+      "lines": [
+        "Limit reached for {name}. This app is off for today.",
+        "That's all for {name} today. Come back tomorrow!",
+        "{name} is closed. Beepo is guarding the door."
+      ]
+    }
+  },
   "android": {
     "usageTitle": "Beepo needs Usage access",
     "usageBody": "To see how long you spend in each app, Beepo needs Usage access. It only counts time, and everything stays on your phone.",
@@ -503,12 +550,39 @@
     "notNow": "Not now",
     "start": "Let's go!",
     "plusTitle": "Beepo Plus",
-    "plusBody": "A one-time unlock: all the pets come to keep me company, plus a new hat every season. And you help a tiny studio keep making Beepo.",
+    "plusGet": "Get Beepo Plus",
+    "plusBody": "A one-time unlock: I stay out on your screen and walk around, all the pets come along, a new hat every season, your own hats from the editor, dark mode, a home-screen widget with scenes and your whole report history. And you help a tiny studio keep making Beepo.",
     "plusBuy": "Unlock for {price}",
     "plusRestore": "Restore purchase",
     "plusActive": "Plus is on. Thank you! 💛",
     "plusOffline": "Can't reach the store right now. Try again later.",
     "plusFailed": "That didn't go through. Try again?",
-    "plusNothing": "No Plus purchase found on this account."
+    "plusNothing": "No Plus purchase found on this account.",
+    "overlayTitle": "Let me pop up over your apps",
+    "overlayBody": "I'll show up at the bottom of your tracked apps when it's time for a nudge, and close apps you set to block. I don't read anything on your screen.",
+    "overlayHint": "Switch on “Display over other apps” for Beepo.",
+    "overlaySection": "Beepo on screen",
+    "overlayOn": "Pop up over my apps",
+    "stayOut": "Stay out all the time",
+    "stayOutHint": "In tracked apps I stay on screen, walk around and bring my pet along.",
+    "notifChannel": "Beepo on screen",
+    "notifText": "Beepo is keeping an eye on the time",
+    "closeApp": "Close app",
+    "overlayGranted": "Display over other apps is on ✓",
+    "edHint": "Tap or drag to paint on top of Beepo. ⌫ erases Beepo's own pixels, · leaves a pixel as it is.",
+    "edSaved": "Saved, and I'm wearing it! It's in the shop too.",
+    "edMake": "✏ Make your own",
+    "thatWeek": "That week",
+    "vsWeekBefore": "vs the week before",
+    "weekByWeek": "Week by week",
+    "widgetPlus": "Beepo Plus puts me on your home screen.",
+    "scenes": "Scenes",
+    "sceneHint": "Shown behind me on your home-screen widget.",
+    "sceneUse": "Use",
+    "sceneOff": "Remove",
+    "theme": "Dark mode",
+    "themeLight": "Light",
+    "themeDark": "Dark",
+    "themeSystem": "Match phone"
   }
 }

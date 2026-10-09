@@ -48,11 +48,18 @@ Status: ✅ done (v0.2) · 🚧 in progress · ⏳ not started
   - ✅ Per-app time from the system usage log (Usage access card → settings), Today screen: rules with bars, "today on your phone" with 15/30/60 quick limits, rule editor (name, apps, limit/goal, minutes, weekend). Rules/settings saved as JSON.
   - ✅ Day rollover (missed days rebuilt from the usage log), stars, goal stars, streak / evolve / badge news in a bubble, Report / Shop / Badges tabs, settings (language, reset hour), generated launcher icon, privacy policy section.
   - ✅ App id `studio.panikka.beepo`. Onboarding: hello → how it works → usage access (prominent disclosure, privacy policy link) → pick the week's top apps with a daily limit; skippable. Privacy link in settings.
-  - ✅ Beepo Plus via RevenueCat (entitlement `beepo_pro`, current offering's lifetime package): pets come with Plus instead of stars (`"plus": true` in sprites.json). Pixel paywall from the Shop and Settings, restore. Seasonal Plus hats, one per major holiday (New Year, Lunar New Year, Valentine's, St Patrick's, Easter, summer (straw hat Jun–Aug, flower crown late June, snorkel Jul–Aug), Mid-Autumn, Halloween, Diwali, Christmas; windows wide enough for holidays that move). Ramadan/Eid not done: it drifts through the year, would need per-year dates: `"season": ["MM-DD", "MM-DD"]` in sprites.json; an item enters the shop in its season and stays (`wallet.seen`), extension included (there for stars). Debug builds use the Test Store key; release needs `revenuecatKey` (Play key) in gradle properties.
-  - ⏳ Custom cosmetics (editor), export / import, suggestions from history, snooze / unlock (need the overlay).
-  - ⏳ Foreground service + overlay Beepo (`SYSTEM_ALERT_WINDOW`) walking along the bottom with bubbles.
-  - ⏳ Block screen, home-screen widget. Play policy declarations for usage access / overlay / FGS.
-- ⏳ **Shared account** so stars/cosmetics follow you across browser + phone (needs a backend).
+  - ✅ Beepo Plus via RevenueCat (entitlement `beepo_pro`, current offering's lifetime package): pets come with Plus instead of stars (`"plus": true` in sprites.json). Pixel paywall from the Shop and Settings, restore. Seasonal Plus hats, one per major holiday (New Year, Lunar New Year, Valentine's, St Patrick's, Easter, summer (straw hat Jun–Aug, flower crown late June, snorkel Jul–Aug), Mid-Autumn, Halloween, Diwali, Christmas; windows wide enough for holidays that move). Seasonal Plus pets with the same windows: Fang the Bat (Halloween), Dasher the Reindeer (Christmas), Ember the Dragon (Lunar New Year), Cupid the Lovebird (Valentine's), Peep the Chick in its eggshell (Easter), Pinchy the Crab (summer), Jade the Moon Rabbit (Mid-Autumn). Palette gained `u` (brown). `"season": ["MM-DD", "MM-DD"]` in sprites.json; an item enters the shop in its season and stays (`wallet.seen`), extension included (there for stars). Debug builds use the Test Store key; release needs `revenuecatKey` (Play key) in gradle properties.
+  - ✅ Foreground service (`specialUse`) + overlay Beepo (`SYSTEM_ALERT_WINDOW`) with bubbles, STOP sign and snooze. Free: he pops up at milestones (50/80/100%, over, goals, news) and when you open an app that's already over. Plus ("stay out"): he stays in tracked apps, greets, walks along the bottom, pet in tow. Settings: on/off, quiet, corner, size, nag interval. Restarts after boot / update.
+  - ✅ Beepo stands on the bottom edge. Long press: he jumps up the screen, shrinking, into the camera hole (display cutout; top center without one) and hangs there upside down, head out. While hidden he drops out on a thread to talk (STOP sign when over), then climbs back. Tapping his head brings him back down. Hidden stays across apps.
+  - ✅ Block screen (free): sends the blocked app to the background so its time stops, unlock 5 min for ⭐1 reopens it.
+  - ✅ Overlay polish: confetti, 8-bit sounds (setting; silent when the phone is), app versions of the lines that say "page"/"tab" (`appMessages`), onboarding step for the overlay permission.
+  - ⏳ Suggestions from history, export / import (free).
+  - ✅ Plus: sprite editor (Shop → "Make your own"; creations in `custom.json`, worn with Plus, kept if Plus goes), home-screen widget (Beepo, stars, today's time on the first rules; free shows a Plus invite), Report history (‹ › week by week + a week-by-week chart; free keeps this week vs last). Android keeps ~400 days of history (`KEEP_DAYS`).
+  - ✅ Play policy notes in `docs/PLAY.md`: FGS `specialUse` declaration text, usage access / overlay disclosures, data safety answers. Privacy policy covers the overlay, FGS and boot. Still to do in the console: the FGS demo video.
+  - ✅ Plus: background scenes for the widget (Sunny Meadow, Starry Night, Beach Day, Snowy Hill, Cozy Room, Outer Space). Shop items with `"slot": "scene"`, a 32×24 `scene` grid and their own uppercase `colors`; Beepo stands on row 20, his pet beside him facing him (`sprite/Scene.kt`). Only on the widget; the extension ignores them.
+  - ✅ Plus: dark mode (Settings → Light / Dark / Match phone). Colors in `ui/Pixel.kt` follow `Theme.dark` (app, overlay bubbles, widget); fills get deeper shades so light text reads on them. Widget redone: rounded border on the launcher's radius, as many rule rows (with pixel bars) as fit its height, "Match phone" via night-qualified resources.
+  - ⏳ Plus ideas: Beepo reacts to apps (sunglasses in YouTube, a book in Kindle, headphones in Spotify), saved outfits, seasonal accessories. Never for sale: stars, streak repairs, evolution. Not doing: alternate launcher icons.
+- ⏳ **Shared account** so stars/cosmetics follow you across browser + phone (needs a backend). Maybe, not soon: it would break "your app time never leaves your phone".
 
 ## 6. Technical
 
@@ -62,7 +69,7 @@ Status: ✅ done (v0.2) · 🚧 in progress · ⏳ not started
 - ✅ **Firefox / Edge builds** (`npm run build`). Firefox build untested in a real Firefox yet.
 - ✅ **17 languages** incl. Arabic (RTL), Chinese (Simplified, Taiwan) and Cantonese; language picker in settings.
 - ✅ **Store assets** (`npm run store`): localized screenshots, promo tiles, listing text.
-- ⏳ **Store release.** Everything is in `docs/STORE.md` + `dist/store/`; publishing needs the developer accounts.
+- 🚧 **Store release.** Extension submitted 2026-10-08 (everything in `docs/STORE.md` + `dist/store/`), waiting for reviews. Android: `docs/PLAY.md`.
 
 ## New ideas (from building v0.2)
 

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Widget text; values-night has the dark ones (theme "system" follows the phone this way). -->
+    <color name="widget_ink">#1B1B2F</color>
+    <color name="widget_muted">#991B1B2F</color>
+</resources>

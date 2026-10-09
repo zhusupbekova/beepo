@@ -31,6 +31,9 @@ import studio.panikka.beepo.sprite.compose
 import studio.panikka.beepo.sprite.pet
 
 /** Beepo Plus: what it brings, buy (price from RevenueCat), restore. */
+/** Pets in the paywall's row (more don't fit next to Beepo). */
+private const val PAYWALL_PETS = 4
+
 @Composable
 fun PlusDialog(store: Store, i18n: I18n, onClose: () -> Unit) {
     val activity = LocalActivity.current
@@ -47,9 +50,10 @@ fun PlusDialog(store: Store, i18n: I18n, onClose: () -> Unit) {
     }
 
     val sprites = store.sprites
-    val pets = sprites.items.values.filter { it.plus && it.slot == "pet" }
     // Wearing this season's hat (or the latest one seen).
     val seen = store.state.collectAsStateWithLifecycle().value.wallet.seen
+    // As many pets as fit in a row: the year-round ones, then seasonal ones already in the shop.
+    val pets = sprites.items.values.filter { it.plus && it.slot == "pet" && (it.season == null || it.id in seen) }.take(PAYWALL_PETS)
     val hat = seen.lastOrNull { sprites.items[it]?.let { i -> i.plus && i.slot == "hat" } == true }
 
     Dialog(onClose) {

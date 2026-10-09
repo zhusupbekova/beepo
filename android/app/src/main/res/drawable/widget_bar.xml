@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Pixel bar: grey frame (reads on light and dark), blue time used, red when over (secondary progress). -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@android:id/background">
+        <shape android:shape="rectangle">
+            <solid android:color="#00000000" />
+            <stroke android:width="2dp" android:color="#8A8A9E" />
+        </shape>
+    </item>
+    <item android:id="@android:id/secondaryProgress" android:bottom="3dp" android:left="3dp" android:right="3dp" android:top="3dp">
+        <clip><shape android:shape="rectangle"><solid android:color="#FF5C7A" /></shape></clip>
+    </item>
+    <item android:id="@android:id/progress" android:bottom="3dp" android:left="3dp" android:right="3dp" android:top="3dp">
+        <clip><shape android:shape="rectangle"><solid android:color="#7AD1FF" /></shape></clip>
+    </item>
+</layer-list>

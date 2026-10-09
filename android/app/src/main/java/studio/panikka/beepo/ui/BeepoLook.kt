@@ -1,10 +1,12 @@
 package studio.panikka.beepo.ui
 
+import studio.panikka.beepo.core.CustomItem
 import studio.panikka.beepo.core.State
 import studio.panikka.beepo.core.Streaks
 import studio.panikka.beepo.core.dateKey
 import studio.panikka.beepo.core.evolution
 import studio.panikka.beepo.core.streaks
+import studio.panikka.beepo.sprite.Item
 import studio.panikka.beepo.sprite.Look
 import studio.panikka.beepo.sprite.Sprites
 
@@ -15,7 +17,7 @@ class BeepoLook(val look: Look, val grow: Int, val streaks: Streaks) {
     /** Same look wearing `itemId` instead (shop preview). Hats cover the antenna. */
     fun wearing(slot: String, itemId: String): Look {
         val eq = look.equipped + (slot to itemId)
-        return Look(if (slot == "antenna") eq - "hat" else eq, look.evolve, look.scruffy)
+        return Look(if (slot == "antenna") eq - "hat" else eq, look.evolve, look.scruffy, look.custom)
     }
 }
 
@@ -24,5 +26,7 @@ fun State.today(now: Long = System.currentTimeMillis()) = day?.date ?: dateKey(n
 fun State.beepoLook(sprites: Sprites): BeepoLook {
     val s = streaks(history, today())
     val evo = evolution(sprites.evolve, s)
-    return BeepoLook(Look(wallet.equipped.toMap(), evo.evolve, evo.scruffy), evo.grow, s)
+    return BeepoLook(Look(wallet.equipped.toMap(), evo.evolve, evo.scruffy, custom.map { it.toItem() }), evo.grow, s)
 }
+
+fun CustomItem.toItem() = Item(id, slot, 0, emptyMap(), rows.mapKeys { it.key.toInt() }, emptyList())

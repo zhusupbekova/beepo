@@ -41,14 +41,16 @@ Everything is kept in the app's private storage on your phone:
 
 | Data | Purpose |
 |---|---|
-| Your rules (apps, limits, goals), settings, stars, cosmetics, badges | Your setup. |
-| Time spent per rule and per app (today + last 60 days) | Today's progress, reports, streaks and stars. |
+| Your rules (apps, limits, goals), settings, stars, cosmetics (including ones you draw), badges | Your setup. |
+| Time spent per rule and per app (today + about the last year) | Today's progress, reports, streaks and stars. |
 
 Beepo records **app package names and seconds spent**, not what you do inside apps, notifications, messages or keystrokes.
 
 ### Permissions
 
 - **Usage access** (you turn it on in Android's settings): to read Android's own record of which app was on screen and when. Beepo only turns it into seconds per app, for the apps you track and for the "Today on your phone" list. If Beepo isn't opened for a few days, it uses the same record to fill in those days (Android keeps about a week).
+- **Display over other apps:** so Beepo can pop up over the apps you track (reminders, the STOP sign, the block screen). He never reads what's on your screen. You can switch this off in Beepo's settings or Android's.
+- **Foreground service** (a silent notification while Beepo is on screen) and **start after a restart:** to notice which app is open while you use your phone, so Beepo can show up in the apps you track. Turning off "Beepo on screen" stops it.
 - **Internet:** only to load Beepo Plus prices and check Beepo Plus purchases (see above).
 - **List of installed apps with a launcher icon:** to show app names and icons when you pick apps for a rule. Only the package names you pick are saved.
 

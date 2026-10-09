@@ -206,7 +206,20 @@
     "acc-scarf": "暖暖围巾",
     "pet-cat": "猫咪麻薯 Mochi",
     "pet-ghost": "小幽灵 Boo",
-    "pet-slime": "史莱姆 Gloop"
+    "pet-slime": "史莱姆 Gloop",
+    "pet-bat": "蝙蝠 Fang",
+    "pet-reindeer": "驯鹿 Dasher",
+    "pet-dragon": "小龙 Ember",
+    "pet-lovebird": "爱情鸟 Cupid",
+    "pet-chick": "小鸡 Peep",
+    "pet-crab": "螃蟹 Pinchy",
+    "pet-moonrabbit": "玉兔 Jade",
+    "scene-meadow": "阳光草地",
+    "scene-night": "星空之夜",
+    "scene-beach": "海滩一日",
+    "scene-snow": "雪山坡",
+    "scene-room": "温馨小屋",
+    "scene-space": "外太空"
   },
   "evolve": {
     "cheeks": "红扑扑脸蛋",
@@ -471,6 +484,40 @@
       ]
     }
   },
+  "appMessages": {
+    "statusNight": {
+      "mood": "sleepy",
+      "lines": [
+        "都 {time} 了……睡觉也是个很棒的应用哦。",
+        "{time}？！视频可以等，睡觉不能等。",
+        "深夜刷手机是个陷阱。别问我怎么知道的。"
+      ]
+    },
+    "limit100": {
+      "mood": "angry",
+      "lines": [
+        "{m} 分钟到啦！去做点别的吧。",
+        "停！到限额了，起来伸个懒腰！",
+        "时间到！我相信你，关掉这个应用吧。"
+      ]
+    },
+    "kept": {
+      "mood": "party",
+      "lines": [
+        "昨天你在 {n} 个应用上都没超额！+{n} ⭐",
+        "昨天守住了 {n} 个限额！+{n} ⭐",
+        "昨天自控力满分！+{n} ⭐"
+      ]
+    },
+    "blocked": {
+      "mood": "angry",
+      "lines": [
+        "{name} 已到限额，这个应用今天关门啦。",
+        "{name} 今天就到这儿，明天再来吧！",
+        "{name} 已关闭，Beepo 在门口站岗。"
+      ]
+    }
+  },
   "android": {
     "usageTitle": "Beepo 需要使用情况访问权限",
     "usageBody": "为了知道你在每个应用上花了多少时间，Beepo 需要使用情况访问权限。它只统计时间，所有数据都留在你的手机上。",
@@ -503,12 +550,39 @@
     "notNow": "暂时不要",
     "start": "开始吧！",
     "plusTitle": "Beepo Plus",
-    "plusBody": "一次性解锁：所有宠物都会来陪我，每个季节还有新帽子。你也能支持一个小工作室继续做 Beepo。",
+    "plusGet": "获取 Beepo Plus",
+    "plusBody": "一次性解锁：我会一直待在你的屏幕上走来走去，所有宠物都来陪我，每个季节有新帽子，还有编辑器里你自己做的帽子、深色模式、带场景的主屏幕小组件和完整的报告历史。你也在帮助一个小小工作室继续做 Beepo。",
     "plusBuy": "以 {price} 解锁",
     "plusRestore": "恢复购买",
     "plusActive": "Plus 已开启。谢谢你！💛",
     "plusOffline": "暂时无法连接商店，请稍后再试。",
     "plusFailed": "没有成功，再试一次？",
-    "plusNothing": "此账号下没有找到 Plus 购买记录。"
+    "plusNothing": "此账号下没有找到 Plus 购买记录。",
+    "overlayTitle": "让我在你的应用上出现吧",
+    "overlayBody": "该提醒的时候，我会出现在你关注的应用底部，并关掉你设为屏蔽的应用。我不会读取屏幕上的任何内容。",
+    "overlayHint": "为 Beepo 打开“显示在其他应用的上层”。",
+    "overlaySection": "屏幕上的 Beepo",
+    "overlayOn": "在我的应用上出现",
+    "stayOut": "一直待在外面",
+    "stayOutHint": "在关注的应用里，我会一直待在屏幕上，到处走走，还会带上我的宠物。",
+    "notifChannel": "屏幕上的 Beepo",
+    "notifText": "Beepo 正在帮你留意时间",
+    "closeApp": "关闭应用",
+    "overlayGranted": "已开启“显示在其他应用的上层” ✓",
+    "edHint": "点按或拖动，在 Beepo 身上作画。⌫ 擦掉 Beepo 自己的像素，· 保持像素不变。",
+    "edSaved": "已保存，我已经戴上啦！商店里也有。",
+    "edMake": "✏ 自己做",
+    "thatWeek": "那一周",
+    "vsWeekBefore": "对比再前一周",
+    "weekByWeek": "逐周趋势",
+    "widgetPlus": "有了 Beepo Plus，我就能住在你的主屏幕上。",
+    "scenes": "场景",
+    "sceneHint": "在主屏幕小组件里显示在我身后。",
+    "sceneUse": "使用",
+    "sceneOff": "移除",
+    "theme": "深色模式",
+    "themeLight": "浅色",
+    "themeDark": "深色",
+    "themeSystem": "跟随手机"
   }
 }

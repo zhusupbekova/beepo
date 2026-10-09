@@ -39,6 +39,19 @@ class I18n(private val sections: Map<String, Map<String, Any>>, val lang: String
         return fillTemplate(lines.getString(random.nextInt(lines.length())), vars) to pool.optString("mood", "happy")
     }
 
+    /** Beepo's line for queued news or a nudge; badge / evolve ids become names in this language. */
+    fun news(key: String, vars: Map<String, String>): Pair<String, String>? {
+        val all = vars.toMutableMap<String, Any?>()
+        vars["id"]?.let { all["name"] = if (key == "badge") badgeName(it) else get("evolve", it) }
+        return line(key, all)
+    }
+
+    /** "12 min", or seconds under a minute (so "0 min over" never happens), like the page bubble. */
+    fun minutes(secs: Long): String {
+        val s = maxOf(0L, secs)
+        return if (s in 1..59) t("sec", "n" to s) else t("min", "n" to Math.round(s / 60.0))
+    }
+
     /** "42m" or "1h 5m", like the popup. */
     fun duration(secs: Long): String {
         val m = Math.round(secs / 60.0)
@@ -51,7 +64,10 @@ class I18n(private val sections: Map<String, Map<String, Any>>, val lang: String
             val read = { l: String -> JSONObject(assets.open("i18n/$l.json").bufferedReader().use { it.readText() }) }
             val en = sections(read("en"))
             val local = if (lang == "en") emptyMap() else sections(read(lang))
-            return I18n((en.keys + local.keys).associateWith { en[it].orEmpty() + local[it].orEmpty() }, lang)
+            val merged = (en.keys + local.keys).associateWith { en[it].orEmpty() + local[it].orEmpty() }.toMutableMap()
+            // Pools whose lines talk about pages and tabs have app versions.
+            merged["messages"] = merged["messages"].orEmpty() + merged["appMessages"].orEmpty()
+            return I18n(merged, lang)
         }
 
         private fun uiLang(l: Locale) =

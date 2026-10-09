@@ -3,7 +3,10 @@ package studio.panikka.beepo
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.activity.SystemBarStyle
 import androidx.activity.enableEdgeToEdge
+import android.graphics.Color
+import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -17,6 +20,7 @@ import androidx.compose.foundation.verticalScroll
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.SideEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -35,10 +39,12 @@ import studio.panikka.beepo.data.AppInfo
 import studio.panikka.beepo.data.Apps
 import studio.panikka.beepo.data.Plus
 import studio.panikka.beepo.data.Store
+import studio.panikka.beepo.overlay.Overlay
 import studio.panikka.beepo.ui.BadgesScreen
 import studio.panikka.beepo.ui.Header
 import studio.panikka.beepo.ui.Onboarding
 import studio.panikka.beepo.ui.Paper
+import studio.panikka.beepo.ui.Theme
 import studio.panikka.beepo.ui.PixelChip
 import studio.panikka.beepo.ui.PlusDialog
 import studio.panikka.beepo.ui.ReportScreen
@@ -74,6 +80,7 @@ private fun App(store: Store) {
     var settingsOpen by rememberSaveable { mutableStateOf(false) }
     var plusOpen by rememberSaveable { mutableStateOf(false) }
     var granted by remember { mutableStateOf(UsageAccess.granted(context)) }
+    var overlayOk by remember { mutableStateOf(Overlay.allowed(context)) }
     var apps by remember { mutableStateOf(emptyMap<String, AppInfo>()) }
 
     LaunchedEffect(Unit) { apps = withContext(Dispatchers.IO) { Apps.launchable(context) } }
@@ -85,26 +92,42 @@ private fun App(store: Store) {
         lifecycle.repeatOnLifecycle(Lifecycle.State.RESUMED) {
             while (true) {
                 granted = UsageAccess.granted(context)
+                overlayOk = Overlay.allowed(context)
                 withContext(Dispatchers.IO) { store.refresh() }
+                Overlay.sync(context, store.state.value)
                 delay(REFRESH_MS)
             }
         }
     }
     // A different reset hour can mean a different day.
     LaunchedEffect(state.settings.resetHour) { withContext(Dispatchers.IO) { store.refresh() } }
+    // Beepo on screen follows the setting and whether there's anything to watch.
+    LaunchedEffect(state.settings.overlay, state.rules.isEmpty()) { Overlay.sync(context, store.state.value) }
+
+    // Dark mode (Plus); the status and navigation bar icons follow it.
+    val dark = Theme.isDark(state.settings, plus, isSystemInDarkTheme())
+    SideEffect { Theme.dark = dark }
+    LaunchedEffect(dark) {
+        val bars = if (dark) SystemBarStyle.dark(Color.TRANSPARENT) else SystemBarStyle.light(Color.TRANSPARENT, Color.TRANSPARENT)
+        (context as? ComponentActivity)?.enableEdgeToEdge(bars, bars)
+    }
 
     val dir = if (i18n.rtl) LayoutDirection.Rtl else LayoutDirection.Ltr
     CompositionLocalProvider(LocalLayoutDirection provides dir) {
         if (!state.settings.onboarded) {
-            Onboarding(state, store.sprites, apps, granted, i18n, store::finishOnboarding)
+            Onboarding(
+                state, store.sprites, apps, granted, overlayOk, i18n,
+                onOverlay = { store.setSettings(store.state.value.settings.copy(overlay = it)) },
+                onDone = store::finishOnboarding,
+            )
             return@CompositionLocalProvider
         }
         Column(Modifier.fillMaxSize().background(Paper).safeDrawingPadding()) {
             Column(Modifier.weight(1f).verticalScroll(rememberScrollState()).padding(12.dp), verticalArrangement = Arrangement.spacedBy(10.dp)) {
                 Header(state, store.sprites, i18n, onSettings = { settingsOpen = true }, onNewsSeen = store::clearNews)
                 when (tab) {
-                    "today" -> TodayScreen(state, store, apps, granted, i18n)
-                    "report" -> ReportScreen(state, i18n)
+                    "today" -> TodayScreen(state, store, apps, granted, overlayOk, i18n)
+                    "report" -> ReportScreen(state, i18n, plus) { plusOpen = true }
                     "shop" -> ShopScreen(state, store, i18n)
                     "badges" -> BadgesScreen(state, store.sprites, i18n)
                 }
@@ -113,7 +136,7 @@ private fun App(store: Store) {
                 for (name in TABS) PixelChip(i18n.t("tab_$name"), tab == name) { tab = name }
             }
         }
-        if (settingsOpen) SettingsScreen(state.settings, i18n, store::setSettings, onPlus = { plusOpen = true }, plus, store::setPlus) { settingsOpen = false }
+        if (settingsOpen) SettingsScreen(state.settings, i18n, store::setSettings, onPlus = { plusOpen = true }, plus, overlayOk, store::setPlus) { settingsOpen = false }
         if (plusOpen) PlusDialog(store, i18n) { plusOpen = false }
     }
 }

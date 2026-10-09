@@ -11,16 +11,17 @@ import androidx.compose.foundation.layout.size
 import studio.panikka.beepo.sprite.Frame
 import kotlin.math.floor
 
-/** Draws a sprite frame as hard-edged squares, `cell` per pixel. */
+/** Draws a sprite frame as hard-edged squares, `cell` per pixel; `flipY` draws it upside down. */
 @Composable
-fun PixelCanvas(frame: Frame, cell: Dp, modifier: Modifier = Modifier, flip: Boolean = false) {
+fun PixelCanvas(frame: Frame, cell: Dp, modifier: Modifier = Modifier, flip: Boolean = false, flipY: Boolean = false) {
     Canvas(modifier.size(cell * frame.width, cell * frame.height)) {
         val s = floor(size.width / frame.width)
         for ((y, row) in frame.grid.withIndex()) {
             for ((x, c) in row.withIndex()) {
                 val argb = frame.palette[c] ?: continue
                 val col = if (flip) frame.width - 1 - x else x
-                drawRect(Color(argb), Offset(col * s, y * s), Size(s, s))
+                val line = if (flipY) frame.height - 1 - y else y
+                drawRect(Color(argb), Offset(col * s, line * s), Size(s, s))
             }
         }
     }

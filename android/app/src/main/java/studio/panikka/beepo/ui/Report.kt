@@ -1,6 +1,8 @@
 package studio.panikka.beepo.ui
 
+import android.text.format.DateFormat
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -11,6 +13,10 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableIntStateOf
+import androidx.compose.runtime.saveable.rememberSaveable
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.semantics.contentDescription
@@ -21,25 +27,64 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import studio.panikka.beepo.I18n
 import studio.panikka.beepo.core.Day
+import studio.panikka.beepo.core.HistoryEntry
+import studio.panikka.beepo.core.addDays
 import studio.panikka.beepo.core.Mode
 import studio.panikka.beepo.core.State
 import studio.panikka.beepo.core.weeklyReport
+import studio.panikka.beepo.data.Plus
 import java.time.LocalDate
+import java.time.format.DateTimeFormatter
 import java.time.format.TextStyle
 
-/** Report tab: this week vs last, tracked time per day, per rule (like the popup's). */
+/** How many weeks the week-by-week chart shows. */
+private const val TREND_WEEKS = 12
+
+/**
+ * Report tab: this week vs last, tracked time per day, per rule (like the popup's). With Plus you
+ * can go back week by week through the whole history, and see the weeks side by side.
+ */
 @Composable
-fun ReportScreen(state: State, i18n: I18n) {
+fun ReportScreen(state: State, i18n: I18n, plus: Boolean, onPlus: () -> Unit) {
     val today = state.today()
-    val r = weeklyReport(state.history, state.day ?: Day(today), state.rules, today)
+    val day = state.day ?: Day(today)
+    /** Weeks back from this one (the last 7 days). */
+    var back by rememberSaveable { mutableIntStateOf(0) }
+    if (!plus) back = 0
+    val end = addDays(today, -7 * back)
+    val oldest = state.history.firstOrNull()?.date ?: today
+    val r = weeklyReport(state.history, day, state.rules, end)
     val max = maxOf(60L, r.days.maxOf { it.total })
     val weekTotal = r.days.sumOf { it.total }
     fun dayName(key: String) = LocalDate.parse(key).dayOfWeek.getDisplayName(TextStyle.SHORT, i18n.locale)
+    val dateFormat = DateTimeFormatter.ofPattern(DateFormat.getBestDateTimePattern(i18n.locale, "MMMd"), i18n.locale)
+    fun range(endKey: String) = "${LocalDate.parse(addDays(endKey, -6)).format(dateFormat)} – ${LocalDate.parse(endKey).format(dateFormat)}"
 
     Column(verticalArrangement = Arrangement.spacedBy(10.dp)) {
+        if (Plus.available) {
+            Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                // Going back is Plus; free keeps this week vs last.
+                PixelButton(if (plus) "‹" else "‹ ✨", fill = Card, enabled = !plus || oldest <= addDays(end, -7)) {
+                    if (plus) back++ else onPlus()
+                }
+                Text(
+                    if (back == 0) i18n.t("thisWeek") else range(end),
+                    Modifier.weight(1f),
+                    style = PixelText.copy(fontWeight = FontWeight.Bold),
+                    textAlign = TextAlign.Center,
+                )
+                PixelButton("›", fill = Card, enabled = back > 0) { back-- }
+            }
+        }
+
         Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-            Stat(i18n.t("thisWeek"), i18n.duration(weekTotal), i18n.android("onTracked"), Modifier.weight(1f))
-            Stat(i18n.t(if (r.savedSecs >= 0) "saved" else "extra"), i18n.duration(kotlin.math.abs(r.savedSecs)), i18n.t("vsLastWeek"), Modifier.weight(1f))
+            Stat(if (back == 0) i18n.t("thisWeek") else i18n.android("thatWeek"), i18n.duration(weekTotal), i18n.android("onTracked"), Modifier.weight(1f))
+            Stat(
+                i18n.t(if (r.savedSecs >= 0) "saved" else "extra"),
+                i18n.duration(kotlin.math.abs(r.savedSecs)),
+                if (back == 0) i18n.t("vsLastWeek") else i18n.android("vsWeekBefore"),
+                Modifier.weight(1f),
+            )
             val best = r.bestDay
             Stat(
                 i18n.t("bestDay"),
@@ -60,7 +105,7 @@ fun ReportScreen(state: State, i18n: I18n) {
                     Column(Modifier.weight(1f).fillMaxHeight(), verticalArrangement = Arrangement.Bottom, horizontalAlignment = Alignment.CenterHorizontally) {
                         if (d.total > 0) Text(i18n.duration(d.total), style = PixelText.copy(color = Muted, fontSize = PixelText.fontSize * 0.75f), maxLines = 1)
                         if (d.total > 0) {
-                            Box(Modifier.fillMaxWidth().fillMaxHeight(0.8f * d.total / max).pixelBox(if (i == r.days.lastIndex) Gold else Blue, shadow = false))
+                            Box(Modifier.fillMaxWidth().fillMaxHeight(0.8f * d.total / max).pixelBox(if (back == 0 && i == r.days.lastIndex) Gold else Blue, shadow = false))
                         }
                     }
                 }
@@ -68,7 +113,7 @@ fun ReportScreen(state: State, i18n: I18n) {
             Row(horizontalArrangement = Arrangement.spacedBy(6.dp)) {
                 r.days.forEachIndexed { i, d ->
                     Text(
-                        if (i == r.days.lastIndex) i18n.t("today") else dayName(d.date),
+                        if (back == 0 && i == r.days.lastIndex) i18n.t("today") else dayName(d.date),
                         Modifier.weight(1f),
                         style = PixelText.copy(color = Muted, fontSize = PixelText.fontSize * 0.8f),
                         textAlign = TextAlign.Center,
@@ -93,6 +138,42 @@ fun ReportScreen(state: State, i18n: I18n) {
                 }
             }
         }
+
+        if (plus) Trend(state, day, today, oldest, back, i18n, ::range) { back = it }
+    }
+}
+
+/** Tracked time per week, oldest on the left; tap a week to look at it. */
+@Composable
+private fun Trend(state: State, day: Day, today: String, oldest: String, selected: Int, i18n: I18n, range: (String) -> String, onPick: (Int) -> Unit) {
+    val byDate = state.history.associateBy { it.date } + (day.date to HistoryEntry(day.date, day.usage, results = null))
+    val weeks = (0 until TREND_WEEKS)
+        .map { it to addDays(today, -7 * it) }
+        .filter { (_, end) -> end >= oldest }
+        .map { (back, end) -> Triple(back, end, (0..6).sumOf { byDate[addDays(end, -it)]?.usage?.values?.sum() ?: 0L }) }
+        .reversed()
+    if (weeks.size < 2) return
+    val max = maxOf(60L, weeks.maxOf { it.third })
+    Column(Modifier.fillMaxWidth().pixelBox().padding(8.dp), verticalArrangement = Arrangement.spacedBy(6.dp)) {
+        Text(i18n.android("weekByWeek"), style = PixelText.copy(fontWeight = FontWeight.Bold))
+        Row(
+            Modifier.fillMaxWidth().height(90.dp),
+            horizontalArrangement = Arrangement.spacedBy(4.dp),
+            verticalAlignment = Alignment.Bottom,
+        ) {
+            for ((back, end, total) in weeks) {
+                Column(
+                    Modifier.weight(1f).fillMaxHeight().clickable { onPick(back) }.semantics { contentDescription = "${range(end)}: ${i18n.duration(total)}" },
+                    verticalArrangement = Arrangement.Bottom,
+                ) {
+                    if (total > 0) Box(Modifier.fillMaxWidth().fillMaxHeight(maxOf(0.02f, total.toFloat() / max)).pixelBox(if (back == selected) Gold else Blue, shadow = false))
+                }
+            }
+        }
+        Text(
+            "${range(weeks.first().second).substringBefore(" – ")} – ${i18n.t("today")}",
+            style = PixelText.copy(color = Muted, fontSize = PixelText.fontSize * 0.8f),
+        )
     }
 }
 

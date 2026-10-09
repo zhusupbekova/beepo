@@ -45,22 +45,33 @@ import studio.panikka.beepo.core.matchApp
 import studio.panikka.beepo.core.newId
 import studio.panikka.beepo.data.AppInfo
 import studio.panikka.beepo.openUrl
+import studio.panikka.beepo.overlay.Overlay
 import studio.panikka.beepo.sprite.Sprites
 import studio.panikka.beepo.sprite.compose
 import studio.panikka.beepo.usage.UsageAccess
 
-private const val STEPS = 4
+private const val STEPS = 5
 private const val WEEK_MS = 7 * 24 * 3_600_000L
 private const val PICK_MAX = 8
 private const val PRESELECT = 3
 
 /**
  * First-run intro: hello, how it works, usage access (with the privacy promise, before sending
- * anyone to system settings), then a few of the week's most used apps to limit right away.
- * `onDone` gets the rules to add (none if skipped).
+ * anyone to system settings), showing up over other apps, then a few of the week's most used apps
+ * to limit right away. `onOverlay` turns Beepo on screen on or off ("not now"); `onDone` gets the
+ * rules to add (none if skipped).
  */
 @Composable
-fun Onboarding(state: State, sprites: Sprites, apps: Map<String, AppInfo>, granted: Boolean, i18n: I18n, onDone: (List<Rule>) -> Unit) {
+fun Onboarding(
+    state: State,
+    sprites: Sprites,
+    apps: Map<String, AppInfo>,
+    granted: Boolean,
+    overlayOk: Boolean,
+    i18n: I18n,
+    onOverlay: (Boolean) -> Unit,
+    onDone: (List<Rule>) -> Unit,
+) {
     val context = LocalContext.current
     var step by rememberSaveable { mutableIntStateOf(0) }
     var minutes by rememberSaveable { mutableIntStateOf(30) }
@@ -90,6 +101,7 @@ fun Onboarding(state: State, sprites: Sprites, apps: Map<String, AppInfo>, grant
         0 -> "happy" to if (tick % 4 < 2) "wave" else null
         1 -> "proud" to null
         2 -> (if (granted) "party" else if (tick % 12 == 0) "blink" else "neutral") to null
+        3 -> (if (overlayOk) "party" else "happy") to if (!overlayOk && tick % 4 < 2) "wave" else null
         else -> "happy" to null
     }
 
@@ -129,6 +141,12 @@ fun Onboarding(state: State, sprites: Sprites, apps: Map<String, AppInfo>, grant
                     }
                     if (granted) Text(i18n.android("obGranted"), style = PixelText.copy(fontWeight = FontWeight.Bold))
                     else Body(i18n.android("usageFind"), muted = true)
+                }
+                3 -> {
+                    Title(i18n.android("overlayTitle"))
+                    Body(i18n.android("overlayBody"))
+                    if (overlayOk) Text(i18n.android("overlayGranted"), style = PixelText.copy(fontWeight = FontWeight.Bold))
+                    else Body(i18n.android("overlayHint"), muted = true)
                 }
                 else -> {
                     Title(i18n.android("obPickTitle"))
@@ -174,6 +192,20 @@ fun Onboarding(state: State, sprites: Sprites, apps: Map<String, AppInfo>, grant
                     PixelButton(i18n.android("usageGrant")) { UsageAccess.openSettings(context) }
                 }
                 step == 2 -> PixelButton(i18n.android("next")) { step++ }
+                step == 3 && !overlayOk -> {
+                    PixelButton(i18n.android("notNow"), fill = Card) {
+                        onOverlay(false)
+                        step++
+                    }
+                    PixelButton(i18n.android("usageGrant")) {
+                        onOverlay(true)
+                        Overlay.openSettings(context)
+                    }
+                }
+                step == 3 -> PixelButton(i18n.android("next")) {
+                    onOverlay(true)
+                    step++
+                }
                 else -> PixelButton(i18n.android("start")) {
                     onDone(top.filter { it.first.pkg in selected }.map { (app) -> Rule(newId(), app.label, apps = listOf(app.pkg), minutes = minutes) })
                 }

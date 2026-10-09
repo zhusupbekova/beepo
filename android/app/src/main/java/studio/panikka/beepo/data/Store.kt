@@ -2,10 +2,12 @@ package studio.panikka.beepo.data
 
 import android.content.Context
 import android.util.AtomicFile
+import studio.panikka.beepo.core.CustomItem
 import studio.panikka.beepo.core.Day
-import studio.panikka.beepo.core.HISTORY_DAYS
 import studio.panikka.beepo.core.HistoryEntry
+import studio.panikka.beepo.core.KEEP_DAYS
 import studio.panikka.beepo.core.News
+import studio.panikka.beepo.core.Nudge
 import studio.panikka.beepo.core.Rule
 import studio.panikka.beepo.core.Settings
 import studio.panikka.beepo.core.State
@@ -16,11 +18,17 @@ import studio.panikka.beepo.core.checkBadges
 import studio.panikka.beepo.core.dateKey
 import studio.panikka.beepo.core.dayStart
 import studio.panikka.beepo.core.dayUsage
+import studio.panikka.beepo.core.newId
 import studio.panikka.beepo.core.revealSeasonal
 import studio.panikka.beepo.core.rollover
+import studio.panikka.beepo.core.snooze as snoozed
+import studio.panikka.beepo.core.unlock as unlocked
 import studio.panikka.beepo.sprite.Sprites
 import studio.panikka.beepo.usage.UsageAccess
+import studio.panikka.beepo.widget.BeepoWidget
+import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.SharedFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.serialization.KSerializer
 import kotlinx.serialization.builtins.ListSerializer
@@ -29,7 +37,7 @@ import java.io.File
 
 /**
  * The single owner of Beepo's data (what background.js is in the extension). JSON files in
- * filesDir, same shapes as the extension's storage: rules, settings, wallet, day, history, pending.
+ * filesDir, same shapes as the extension's storage: rules, settings, wallet, day, history, pending, custom.
  * Every change goes through a synchronized method; screens read [state] and call these.
  */
 class Store private constructor(private val context: Context) {
@@ -42,6 +50,7 @@ class Store private constructor(private val context: Context) {
     private val dayFile = file("day.json", Day.serializer())
     private val historyFile = file("history.json", ListSerializer(HistoryEntry.serializer()))
     private val pendingFile = file("pending.json", ListSerializer(News.serializer()))
+    private val customFile = file("custom.json", ListSerializer(CustomItem.serializer()))
 
     private val _state = MutableStateFlow(
         State(
@@ -51,6 +60,7 @@ class Store private constructor(private val context: Context) {
             day = dayFile.read(),
             history = historyFile.read() ?: emptyList(),
             pending = pendingFile.read() ?: emptyList(),
+            custom = customFile.read() ?: emptyList(),
         ),
     )
     val state: StateFlow<State> = _state
@@ -60,15 +70,28 @@ class Store private constructor(private val context: Context) {
     /** Beepo Plus is active (set from RevenueCat by [Plus]). Plus items count as owned while it is. */
     val plus: StateFlow<Boolean> = _plus
 
-    fun owns(itemId: String) = itemId in _state.value.wallet.owned || (_plus.value && sprites.items[itemId]?.plus == true)
+    private val _nudges = MutableSharedFlow<Nudge>(extraBufferCapacity = 16)
 
-    /** RevenueCat's answer; if Plus is gone (refund), Plus items come off. */
+    /** Milestones as they fire, for the overlay. Nobody listening (overlay off) means nobody sees them. */
+    val nudges: SharedFlow<Nudge> = _nudges
+
+    /** Plus items and editor creations are worn with Plus. */
+    fun owns(itemId: String) = itemId in _state.value.wallet.owned ||
+        (_plus.value && (sprites.items[itemId]?.plus == true || _state.value.custom.any { it.id == itemId }))
+
+    /** RevenueCat's answer; if Plus is gone (refund), Plus items and creations come off (creations stay saved). */
     @Synchronized
     fun setPlus(active: Boolean) {
-        _plus.value = active
+        if (_plus.value != active) {
+            _plus.value = active
+            BeepoWidget.update(context)
+        }
         if (active) return
         val e = _state.value.wallet.equipped
-        e.toMap().forEach { (slot, id) -> if (sprites.items[id]?.plus == true && !owns(id)) equip(slot, null) }
+        val custom = _state.value.custom
+        e.toMap().forEach { (slot, id) ->
+            if ((sprites.items[id]?.plus == true || custom.any { it.id == id }) && !owns(id)) equip(slot, null)
+        }
     }
 
     /**
@@ -86,10 +109,27 @@ class Store private constructor(private val context: Context) {
         var next = rollover(st, today, sprites.evolve) { key ->
             if (granted) secs(dayStart(key, resetHour), dayStart(addDays(key, 1), resetHour)) else null
         }
-        if (granted) next = applyUsage(next, secs(dayStart(today, resetHour), now))
+        val fired = mutableListOf<Nudge>()
+        if (granted) next = applyUsage(next, secs(dayStart(today, resetHour), now), fired)
         val seen = revealSeasonal(sprites.seasons, today, next.wallet.seen)
         if (seen !== next.wallet.seen) next = next.copy(wallet = next.wallet.copy(seen = seen))
         save(next)
+        fired.forEach { _nudges.tryEmit(it) }
+    }
+
+    /** "5 more minutes" for a rule over its limit; returns what Beepo says about it. */
+    @Synchronized
+    fun snooze(ruleId: String): Nudge {
+        val (next, said) = snoozed(_state.value, ruleId)
+        save(next)
+        return said
+    }
+
+    /** Opens a blocked rule for 5 minutes for a star; false without stars. */
+    @Synchronized
+    fun unlock(ruleId: String, now: Long = System.currentTimeMillis()): Boolean {
+        save(unlocked(_state.value, ruleId, now) ?: return false)
+        return true
     }
 
     /** Today's per-rule totals follow right away (per-app seconds are already known). */
@@ -126,6 +166,23 @@ class Store private constructor(private val context: Context) {
         return true
     }
 
+    /** Saves an editor creation (new if `item.id` is empty) and wears it; returns its id. */
+    @Synchronized
+    fun saveCustom(item: CustomItem): String {
+        val st = _state.value
+        val id = item.id.ifEmpty { "custom-" + newId() }
+        save(st.copy(custom = st.custom.filter { it.id != id } + item.copy(id = id)))
+        equip(item.slot, id)
+        return id
+    }
+
+    @Synchronized
+    fun deleteCustom(id: String) {
+        val st = _state.value
+        st.wallet.equipped.toMap().forEach { (slot, worn) -> if (worn == id) equip(slot, null) }
+        save(_state.value.copy(custom = st.custom.filter { it.id != id }))
+    }
+
     /** Wears an owned item, or takes the slot off (`itemId` null; colors go back to blue). */
     @Synchronized
     fun equip(slot: String, itemId: String?) {
@@ -138,6 +195,7 @@ class Store private constructor(private val context: Context) {
             "antenna" -> e.copy(antenna = itemId)
             "accessory" -> e.copy(accessory = itemId)
             "pet" -> e.copy(pet = itemId)
+            "scene" -> e.copy(scene = itemId)
             else -> return
         }
         save(st.copy(wallet = st.wallet.copy(equipped = equipped)))
@@ -150,9 +208,11 @@ class Store private constructor(private val context: Context) {
         if (next.settings != prev.settings) settingsFile.write(next.settings)
         if (next.wallet != prev.wallet) walletFile.write(next.wallet)
         if (next.day != prev.day) next.day?.let { dayFile.write(it) }
-        if (next.history != prev.history) historyFile.write(next.history.takeLast(HISTORY_DAYS))
+        if (next.history != prev.history) historyFile.write(next.history.takeLast(KEEP_DAYS))
         if (next.pending != prev.pending) pendingFile.write(next.pending)
+        if (next.custom != prev.custom) customFile.write(next.custom)
         _state.value = next
+        if (next != prev) BeepoWidget.update(context)
     }
 
     private fun <T> file(name: String, serializer: KSerializer<T>) = JsonFile(AtomicFile(File(dir, name)), serializer)

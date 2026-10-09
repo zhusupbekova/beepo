@@ -8,6 +8,8 @@ class Look(
     val equipped: Map<String, String> = emptyMap(),
     val evolve: List<String> = emptyList(),
     val scruffy: Boolean = false,
+    /** Editor items the equipped ids may point to. */
+    val custom: List<Item> = emptyList(),
 )
 
 /** A grid of palette keys ('.' = transparent) plus the palette to draw it with. */
@@ -38,7 +40,8 @@ fun Sprites.compose(
     custom: List<Item> = emptyList(),
 ): Frame {
     val grid = body.map { it.toCharArray() }
-    val palette = palette + findItem(look.equipped["color"], custom)?.colors.orEmpty()
+    val mine = custom + look.custom
+    val palette = palette + findItem(look.equipped["color"], mine)?.colors.orEmpty()
 
     poses[pose]?.let { applyOverlay(grid, it) }
 
@@ -49,7 +52,7 @@ fun Sprites.compose(
 
     for (id in look.evolve) applyOverlay(grid, evolve.find { it.id == id }?.rows)
     if (look.scruffy) applyOverlay(grid, scruffy)
-    for (slot in listOf("antenna", "accessory", "hat")) applyOverlay(grid, findItem(look.equipped[slot], custom)?.rows)
+    for (slot in listOf("antenna", "accessory", "hat")) applyOverlay(grid, findItem(look.equipped[slot], mine)?.rows)
     return Frame(grid, palette)
 }
 

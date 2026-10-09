@@ -206,7 +206,20 @@
     "acc-scarf": "ぬくぬくマフラー",
     "pet-cat": "ねこのモチ",
     "pet-ghost": "おばけのブー",
-    "pet-slime": "スライムのグロップ"
+    "pet-slime": "スライムのグロップ",
+    "pet-bat": "コウモリのファング",
+    "pet-reindeer": "トナカイのダッシャー",
+    "pet-dragon": "ドラゴンのエンバー",
+    "pet-lovebird": "ラブバードのキューピッド",
+    "pet-chick": "ひよこのピープ",
+    "pet-crab": "カニのピンチー",
+    "pet-moonrabbit": "月うさぎのジェイド",
+    "scene-meadow": "ひだまりの草原",
+    "scene-night": "星空の夜",
+    "scene-beach": "ビーチの日",
+    "scene-snow": "雪の丘",
+    "scene-room": "ほっこりお部屋",
+    "scene-space": "宇宙"
   },
   "evolve": {
     "cheeks": "ほっぺがピンクに",
@@ -471,6 +484,40 @@
       ]
     }
   },
+  "appMessages": {
+    "statusNight": {
+      "mood": "sleepy",
+      "lines": [
+        "もう{time}…睡眠もなかなかいいアプリだよ。",
+        "{time}！？YouTubeは待ってくれるけど、睡眠は待ってくれないよ。",
+        "夜中のスクロールはワナだよ。経験者は語る。"
+      ]
+    },
+    "limit100": {
+      "mood": "angry",
+      "lines": [
+        "{m}分たったよ！何かほかのことをしよう。",
+        "ストップ！制限到達。ストレッチしよう！",
+        "時間だよ！きみならできる、このアプリを閉じよう。"
+      ]
+    },
+    "kept": {
+      "mood": "party",
+      "lines": [
+        "昨日は{n}個のアプリで制限を守れたね！+{n} ⭐",
+        "昨日は制限を{n}つ守ったよ！+{n} ⭐",
+        "昨日はよくがまんできたね！+{n} ⭐"
+      ]
+    },
+    "blocked": {
+      "mood": "angry",
+      "lines": [
+        "{name}の制限に到達。今日はこのアプリはおやすみ。",
+        "今日の{name}はここまで。また明日ね！",
+        "{name}は閉店中。Beepoが入り口を見張ってるよ。"
+      ]
+    }
+  },
   "android": {
     "usageTitle": "Beepoには使用状況へのアクセスが必要です",
     "usageBody": "各アプリでどれくらい過ごしたかを知るために、Beepoには使用状況へのアクセスが必要です。数えるのは時間だけで、データはすべてスマホの中に残ります。",
@@ -503,12 +550,39 @@
     "notNow": "今はしない",
     "start": "はじめよう！",
     "plusTitle": "Beepo Plus",
-    "plusBody": "一度きりのアンロック：ペットたちがみんな遊びに来てくれて、季節ごとに新しい帽子も届きます。小さなスタジオのBeepo作りの応援にもなります。",
+    "plusGet": "Beepo Plusを入手",
+    "plusBody": "一度きりのアンロック：画面にずっといて歩き回り、ペットたちもみんな一緒、季節ごとに新しい帽子、エディターで作る自分だけの帽子、ダークモード、背景つきホーム画面ウィジェット、そしてレポートの全履歴。小さなスタジオのBeepo作りの応援にもなります。",
     "plusBuy": "{price}でアンロック",
     "plusRestore": "購入を復元",
     "plusActive": "Plusが有効です。ありがとう！💛",
     "plusOffline": "今はストアにつながりません。あとでもう一度試してね。",
     "plusFailed": "うまくいきませんでした。もう一度試す？",
-    "plusNothing": "このアカウントにPlusの購入は見つかりませんでした。"
+    "plusNothing": "このアカウントにPlusの購入は見つかりませんでした。",
+    "overlayTitle": "アプリの上に出てきてもいい？",
+    "overlayBody": "ひと声かけるタイミングになったら、見守り中のアプリの下に出てきます。ブロックに設定したアプリは閉じます。画面の内容は何も読みません。",
+    "overlayHint": "Beepoの「他のアプリの上に重ねて表示」をオンにしてね。",
+    "overlaySection": "画面のBeepo",
+    "overlayOn": "アプリの上に出てくる",
+    "stayOut": "いつも外にいる",
+    "stayOutHint": "見守り中のアプリでは画面にいて、歩き回って、ペットも連れてきます。",
+    "notifChannel": "画面のBeepo",
+    "notifText": "Beepoが時間を見守っています",
+    "closeApp": "アプリを閉じる",
+    "overlayGranted": "他のアプリの上に重ねて表示：オン ✓",
+    "edHint": "タップやドラッグでBeepoの上に描こう。⌫はBeepo自身のピクセルを消し、·はそのままにします。",
+    "edSaved": "保存して、さっそく着てみたよ！ショップにもあるよ。",
+    "edMake": "✏ 自分で作る",
+    "thatWeek": "その週",
+    "vsWeekBefore": "前の週と比べて",
+    "weekByWeek": "週ごとの推移",
+    "widgetPlus": "Beepo Plusでホーム画面にも住めるよ。",
+    "scenes": "背景",
+    "sceneHint": "ホーム画面ウィジェットでぼくの後ろに表示されるよ。",
+    "sceneUse": "使う",
+    "sceneOff": "外す",
+    "theme": "ダークモード",
+    "themeLight": "ライト",
+    "themeDark": "ダーク",
+    "themeSystem": "端末に合わせる"
   }
 }

@@ -32,11 +32,14 @@ object UsageAccess {
     }
 
     /** Foreground milliseconds per package between `start` and `end`. */
-    fun foreground(context: Context, start: Long, end: Long): Map<String, Long> {
-        val from = start - LOOKBACK_MS
+    fun foreground(context: Context, start: Long, end: Long): Map<String, Long> =
+        foregroundTime(events(context, start - LOOKBACK_MS, end), start, end)
+
+    /** The usage events that matter, oldest first. */
+    fun events(context: Context, from: Long, to: Long): List<UsageEvent> {
         val usm = context.getSystemService(UsageStatsManager::class.java)
         val events = mutableListOf<UsageEvent>()
-        val raw = usm.queryEvents(from, end)
+        val raw = usm.queryEvents(from, to)
         val e = UsageEvents.Event()
         while (raw.getNextEvent(e)) {
             val type = when (e.eventType) {
@@ -48,6 +51,6 @@ object UsageAccess {
             } ?: continue
             events += UsageEvent(e.timeStamp, e.packageName, e.className, type)
         }
-        return foregroundTime(events, start, end)
+        return events
     }
 }

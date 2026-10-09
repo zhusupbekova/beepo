@@ -17,7 +17,8 @@
     "l": "#9be86b",
     "n": "#4f9a3a",
     "x": "#ffffff",
-    "m": "#8a8a9e"
+    "m": "#8a8a9e",
+    "u": "#9a5b34"
   },
   "body": [
     "................",
@@ -276,6 +277,235 @@
       "frames": [
         ["..........", "..........", "...llll...", "..lxllll..", ".llkllkll.", ".llllllll.", "llllllllll", "nnnnnnnnnn"],
         ["..........", "..........", "..........", "..lxllll..", ".llkllkll.", "llllllllll", "llllllllll", "nnnnnnnnnn"]
+      ]
+    },
+    "pet-bat": {
+      "slot": "pet", "name": "Fang the Bat", "price": 15, "plus": true, "season": ["10-01", "10-31"],
+      "frames": [
+        ["k........k", "kk.k..k.kk", "kkkkkkkkkk", ".kkykkykk.", "..kkkkkk..", "...kxxk...", "..........", ".........."],
+        ["..........", "...k..k...", "..kkkkkk..", "kkkykkykkk", "kk.kkkk.kk", "k..kxxk..k", "..........", ".........."]
+      ]
+    },
+    "pet-reindeer": {
+      "slot": "pet", "name": "Dasher the Reindeer", "price": 15, "plus": true, "season": ["12-01", "01-06"],
+      "frames": [
+        ["k.k.......", "kkk.......", ".uuu......", "ruku......", "..uu......", "..uuuuuuw.", "..uuuuuuu.", "..k.k.k.k."],
+        ["k.k.......", "kkk.......", ".uuu......", "ruku......", "..uu.....w", "..uuuuuuu.", "..uuuuuuu.", "...k.kk.k."]
+      ]
+    },
+    "pet-dragon": {
+      "slot": "pet", "name": "Ember the Dragon", "price": 15, "plus": true, "season": ["01-20", "02-24"],
+      "frames": [
+        ["..y.y.....", ".rrrr..y.y", "rrkrr.rrrr", "yrrrrrrrr.", "..yyrrrr..", "..yyrrrrr.", "..rr..rr.r", "..k...k..."],
+        ["..y.y.....", ".rrrr.y.y.", "rrkrrrrrr.", "yrrrrrrrr.", "..yyrrrr..", "..yyrrrrrr", "..rr..rr..", "...k...k.."]
+      ]
+    },
+    "pet-lovebird": {
+      "slot": "pet", "name": "Cupid the Lovebird", "price": 15, "plus": true, "season": ["02-01", "02-15"],
+      "frames": [
+        [".......r.r", "..pp....r.", ".pkpp.....", "ypppp.....", ".ppprrpp..", ".pppppppp.", "..ppppp.pp", "...y.y...."],
+        ["..pp......", ".pkpp..r.r", "ypppp...r.", ".pppprr...", ".ppprrrpp.", ".pppppppp.", "..ppppp.pp", "...y.y...."]
+      ]
+    },
+    "pet-chick": {
+      "slot": "pet", "name": "Peep the Chick", "price": 15, "plus": true, "season": ["03-20", "04-26"],
+      "frames": [
+        ["..........", "...yyy....", "..ykyyy...", ".oyyyyy...", "..yyyyy...", ".wmwmwmw..", ".wwwwwww..", "..wwwww..."],
+        ["...yyy....", "..ykyyy...", ".oyyyyy...", "..yyyyyy..", "..yyyyy...", ".wmwmwmw..", ".wwwwwww..", "..wwwww..."]
+      ]
+    },
+    "pet-crab": {
+      "slot": "pet", "name": "Pinchy the Crab", "price": 15, "plus": true, "season": ["06-01", "08-31"],
+      "frames": [
+        ["..........", ".rr....rr.", "rr.k..k.rr", ".r.k..k.r.", "..rrrrrr..", ".rrrrrrrr.", "..rrrrrr..", ".r.r..r.r."],
+        [".rr....rr.", "r.r....r.r", ".r.k..k.r.", "...k..k...", "..rrrrrr..", ".rrrrrrrr.", "..rrrrrr..", "r.r....r.r"]
+      ]
+    },
+    "pet-moonrabbit": {
+      "slot": "pet", "name": "Jade the Moon Rabbit", "price": 15, "plus": true, "season": ["09-05", "10-08"],
+      "frames": [
+        ["w.w.......", "wpw.......", "wpw.......", "www.......", "wkww......", "pwwwwww...", ".wwwwwwwx.", ".m..m.m..."],
+        ["..........", "w.w.......", "wpw.......", "wpw.......", "wwww......", "wkwwwww...", "pwwwwwwwx.", ".m.m..m..."]
+      ]
+    },
+    "scene-meadow": {
+      "slot": "scene", "name": "Sunny Meadow", "price": 15, "plus": true,
+      "colors": {"C": "#cdeeff", "L": "#bfe8a0"},
+      "scene": [
+        "CCCCCCCCCCCCCCCCCCCCCCCCCCyCCCCC",
+        "CCCCCCCCCCCCCCCCCCCCCCCyCCCCCyCC",
+        "CCCCCCCCCCCCCCCCCCCCCCCCCyyyCCCC",
+        "CCCxxxxxxCCCCCCCCCCCCCCCyyyyyCCC",
+        "CCxxxxxxxxxCCCCCCCCCCCyCyyyyyCyC",
+        "CCCCCCCCCCCCCCCCCCCCCCCCyyyyyCCC",
+        "CCCCCCCCCCCCCCCCCCCCCCCCCyyyCCCC",
+        "CCCCCCCCCCCCCxxxxCCCCCCyCCCCCyCC",
+        "CCCCCCCCCCCCxxxxxxxCCCCCCCyCCCCC",
+        "CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC",
+        "CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC",
+        "CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC",
+        "CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC",
+        "CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC",
+        "CLLLLCCCCCCCCLLLLCCCCCCCCLLLLCCC",
+        "LLLLLLCLLLLCLLLLLLCLLLLCLLLLLLCL",
+        "LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL",
+        "LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL",
+        "LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL",
+        "LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL",
+        "LlLLLLLLLLLLLLLLLLLlLLLLLLLLLlLL",
+        "lplllllllllllylllllpllllyllllpll",
+        "nnnnnlnnnnnnnnnnnlnnnnnnnnnnnnnn",
+        "nnnnnnnnnnnlnnnnnnnnnnnnnnlnnnnn"
+      ]
+    },
+    "scene-night": {
+      "slot": "scene", "name": "Starry Night", "price": 15, "plus": true,
+      "colors": {"H": "#22244a", "G": "#2f4a3a", "N": "#3f6a3a"},
+      "scene": [
+        "HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH",
+        "HHHHHHHHHHHHxHHHHHxHHHHHHHHHHHHH",
+        "HHxHHHHHHyHHHHHHHHHHHxHHwwwHHHHH",
+        "HHHHHHHHyyyHHHHHHHHHHHHwwwwHHHHH",
+        "HHHHHHHHHyHHHHHHxHHHHHwwmwHHHHHH",
+        "HHHHHHHHHHHHHHHHHHHHHHwwwwwHwHHH",
+        "HHHHHHHxHHHHHHHHHHHHHHwwwwwwwHHH",
+        "HxHHHHHHHHHHHHHHHHHHHHHwwwmwHHHH",
+        "HHHHHHHHHHHHHHHHHHHHHHHHwwwHHHHH",
+        "HHHHHHHHHHxHHHHHHHHHxHHHHHHHHHHH",
+        "HHHHHHHHHHHHHHHHHHHHHyHHHHHHHHHH",
+        "HHHHxHHHHHHHHHHHHHHHyyyHHHHHHHxH",
+        "HHHHHHHHHHHHHHxHHHHHHyHHHHHHHHHH",
+        "HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH",
+        "HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH",
+        "HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH",
+        "GHHGHGHHGHGHHGHGHHGHGHHGHGHHGHGH",
+        "GGHGGGGHGGGGHGGGGHGGGGHGGGGHGGGG",
+        "GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG",
+        "GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG",
+        "GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG",
+        "NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN",
+        "nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn",
+        "nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn"
+      ]
+    },
+    "scene-beach": {
+      "slot": "scene", "name": "Beach Day", "price": 15, "plus": true,
+      "colors": {"C": "#cdeeff", "Q": "#3f8fd0", "R": "#9fd8f0", "E": "#f5d99a"},
+      "scene": [
+        "CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC",
+        "CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC",
+        "CCCCyyyCCCCCCCCCCCCCCCCCCCCCCCCC",
+        "CCCyyyyyCCCCCCCCCCxxxxxCCCCCCCCC",
+        "CCCyyyyyCCCCCCCCCxxxxxxxxCCCCCCC",
+        "CCCyyyyyCCCCCCCCCCCCCCCCCCCCCCCC",
+        "CCCCyyyCCCCCCCCCCCCCCCCCCCCCCCCC",
+        "CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC",
+        "CCCCCCCCCCCCCCCCCCCCCCCCCCxxrCCC",
+        "CCCCCCCCCCCCCCCCCCCCCCCCrxrxrxrC",
+        "CCCCCCCCCCCCCCCCCCCCCCCxCCCuCCCC",
+        "CCCCCCCCCCCCCCCCCCCCCCCCCCCuCCCC",
+        "CCCCCCCCCCCCCCCCCCCCCCCCCCCuCCCC",
+        "RRRRRRRRRRRRRRRRRRRRRRRRRRRuRRRR",
+        "QQQQQQQQQQQQQQQQQQQQQQQQQQQuQQQQ",
+        "xxQQQxxQQQxxQQQxxQQQxxQQQxxuQQxx",
+        "QQQQQQQQQQQQQQQQQQQQQQQQQQQuQQQQ",
+        "QQQQQQQQQQQQQQQQQQQQQQQQQQQuQQQQ",
+        "xxxxxxxxxxxxxxxxxxxxxxxxxxxuxxxx",
+        "EEEEEEEEEEEEEEEEEEEEEEEEEEEuEEEE",
+        "EEEEEEEEEEEEEEEEEEEEEEEEEEEuEEEE",
+        "EEEpEEEEEEEEEEEEEEEEEEEEEEEEEEEE",
+        "EEEppEEEEEEEEEEEEEEExEEEEEEEEEEE",
+        "EEEEEEEEEEEEEEooEEEEEEEEEEEEEEEE"
+      ]
+    },
+    "scene-snow": {
+      "slot": "scene", "name": "Snowy Hill", "price": 15, "plus": true,
+      "colors": {"I": "#dbe8f7"},
+      "scene": [
+        "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII",
+        "IIIIIIIIIIIIIIIxIIIIIIIIIIIIIIII",
+        "IIxIIIIIIIIIIIIIIIIIIIIIIIIIxIII",
+        "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII",
+        "IIIIIIIIIIIIIIIIIIIIIIxIIIIIIIII",
+        "IIIIIIIIIxIIIIIIIIIIIIIIIIIIIIII",
+        "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII",
+        "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII",
+        "IIIIIIIIIIIIIIIIIIIxIIIIIIIIIIII",
+        "IIIIIxIIIIIIIIIIIIIIIIIxIIIIIIxI",
+        "IIIIxIIIIIIIIIIIIIIIIInnnIIIIIII",
+        "IIInnnIIIIIIxIIIIIIIIInnnIIxIIII",
+        "IIInnnIIIIIIIIIIIIIIInxnnnnnnIII",
+        "IInxnnnIIIIIIIIIIIIIInnnnnnnnIII",
+        "IxnnnnnIIIIIIIIIIIIInnnnnxnnnnII",
+        "InnnnnxnxxxxIIIIIIIInnnnnnnnnnII",
+        "InnnnnnnxxxxxxxxIIIIIxxunnnnnxnx",
+        "xxxxuxxxxxxxxxxxIIxxxxxxnnnnnnnx",
+        "xxxxxxxxxxxxxxxxxxxxxxxxxxxuxxxx",
+        "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+        "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+        "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+        "wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww",
+        "wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww"
+      ]
+    },
+    "scene-room": {
+      "slot": "scene", "name": "Cozy Room", "price": 15, "plus": true,
+      "colors": {"P": "#f6e3c8", "T": "#c58a4f", "C": "#cdeeff"},
+      "scene": [
+        "PPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP",
+        "PPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP",
+        "PPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP",
+        "PPPPPPPPPPPPPPPPPPPuuuuuuuuuuuPP",
+        "PPPuuuuuuPPPPPPPPPPuCCCCuCCCCuPP",
+        "PPPuyyyyuPPPPPPPPPPuCxxCuCCCCuPP",
+        "PPPuyoryuPPPPPPPPPPuCCCCuCCCCuPP",
+        "PPPuyyoyuPPPPPPPPPPuuuuuuuuuuuPP",
+        "PPPuyyyyuPPPPPPPPPPuCCCCuCCCCuPP",
+        "PPPuuuuuuPPPPPPPPPPuCCCCuCxxCuPP",
+        "PPPPPPPPPPPPPPPPPPPuCCCCuCCCCuPP",
+        "PPPPPPPPPPPPPPPPPPPuuuuuuuuuuuPP",
+        "PlPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP",
+        "lllPPPPPPPPPPPPPPPPPPPPPPPPPPPPP",
+        "PlPlPPPPPPPPPPPPPPPPPPPPPPPPPPPP",
+        "oooPPPPPPPPPPPPPPPPPPPPPPPPPPPPP",
+        "oooPPPPPPPPPPPPPPPPPPPPPPPPPPPPP",
+        "oooPPPPPPPPPPPPPPPPPPPPPPPPPPPPP",
+        "uuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu",
+        "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT",
+        "uTTTTTTuTTTTTTuTTTTTTuTTTTTTuTTT",
+        "TrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrT",
+        "TrpppppppppppppppppppppppppppprT",
+        "TrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrT"
+      ]
+    },
+    "scene-space": {
+      "slot": "scene", "name": "Outer Space", "price": 15, "plus": true,
+      "colors": {"H": "#1b1b3a"},
+      "scene": [
+        "HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH",
+        "HxHHHHHHHHHHHHHHHHHHxHHHHHHHHHHH",
+        "HHHHHHHHHHHxHHHHHHHHHHHHoooHHHHH",
+        "HHHHHHHHHHHHHHHHHHHHHHHoooooHHHx",
+        "HHHHHHxHHHHHHHyHHHHHHHoouooooHHH",
+        "HHHHHHHHHHHHHyyyHHHHyyyyyyyyyyyH",
+        "HHHHHHHHHHHHHHyHHHHHHHoooouooHHH",
+        "HHHHHHHHHHHHHHHxHHHHHHHoooooHHHH",
+        "HHHHHHHHHHHHHHHHHHHHHHHHoooHHHHH",
+        "HHHxHHHHHHHHHHHHHHHHHHHHxHHHHHHH",
+        "HwvHHHHHHHHHHHHHHHHHHHHHHHHHHHHH",
+        "HvvvHHHHHHHHHHHHHxHHHHHHHHHHHHHH",
+        "HHvHHHHHHxHHHHHHHHHHHHHHHHHHHHHH",
+        "HHHHHHHHHHHHHHHHHHHHHHHHHHHHHxHH",
+        "HmrrHHHHHHHHHHHHHHHHHHHHHHHHHHHH",
+        "HmrrHHHHHHHHHxHHHHHHHHHHHHHHHHHH",
+        "HmrrHHHHHHHHHHHHHHHHHHHHHHHHHHHH",
+        "HmHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH",
+        "HmHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH",
+        "mmmHHHmmmmmmHHHmmmmmmHHHmmmmmmHH",
+        "mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm",
+        "wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww",
+        "mmmmmmkkmmmmmmmmmmmmmmmmmmmkmmmm",
+        "mmmmmmmmmmmmmmmmmmkkmmmmmmmmmmmm"
       ]
     }
   }
