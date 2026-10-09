@@ -23,6 +23,10 @@ android {
             buildConfigField("String", "REVENUECAT_KEY", "\"test_HEQWOfmDhacpFwFOXQzmuqjLoCt\"")
         }
         getByName("release") {
+            // R8; the mapping file goes into the bundle and Play picks it up on upload.
+            isMinifyEnabled = true
+            isShrinkResources = true
+            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"))
             buildConfigField("String", "REVENUECAT_KEY", "\"${providers.gradleProperty("revenuecatKey").getOrElse("")}\"")
         }
     }
