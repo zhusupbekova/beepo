@@ -46,6 +46,7 @@ import studio.panikka.beepo.core.newId
 import studio.panikka.beepo.data.AppInfo
 import studio.panikka.beepo.openUrl
 import studio.panikka.beepo.overlay.Overlay
+import studio.panikka.beepo.overlay.rememberNotificationAsk
 import studio.panikka.beepo.sprite.Sprites
 import studio.panikka.beepo.sprite.compose
 import studio.panikka.beepo.usage.UsageAccess
@@ -77,6 +78,7 @@ fun Onboarding(
     var minutes by rememberSaveable { mutableIntStateOf(30) }
     var picked by rememberSaveable { mutableStateOf<List<String>?>(null) }
     BackHandler(enabled = step > 0) { step-- }
+    val askNotifications = rememberNotificationAsk()
 
     // The week's most used apps, once usage access is on.
     val top by produceState(emptyList<Pair<AppInfo, Long>>(), granted, apps) {
@@ -204,7 +206,7 @@ fun Onboarding(
                 }
                 step == 3 -> PixelButton(i18n.android("next")) {
                     onOverlay(true)
-                    step++
+                    askNotifications { step++ }
                 }
                 else -> PixelButton(i18n.android("start")) {
                     onDone(top.filter { it.first.pkg in selected }.map { (app) -> Rule(newId(), app.label, apps = listOf(app.pkg), minutes = minutes) })

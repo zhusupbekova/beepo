@@ -144,6 +144,11 @@ class BeepoService : Service() {
     private val blockView = mutableStateOf<BlockView?>(null)
     private var blockRule: String? = null
     private var blockPkg: String? = null
+    /** Launchers: the block screen sits over the home screen; any other app in front closes it. */
+    private val homes by lazy {
+        val home = Intent(Intent.ACTION_MAIN).addCategory(Intent.CATEGORY_HOME)
+        packageManager.queryIntentActivities(home, 0).map { it.activityInfo.packageName }.toSet()
+    }
 
     private var confettiWin: OverlayWindow? = null
 
@@ -219,7 +224,9 @@ class BeepoService : Service() {
             events.forEach(tracker::feed)
             events.lastOrNull()?.let { lastEventAt = it.time }
 
-            val pkg = tracker.top?.takeIf { it != packageName }
+            val top = tracker.top
+            if (blockRule != null && top != null && top != blockPkg && top !in homes) closeBlock()
+            val pkg = top?.takeIf { it != packageName }
             val rule = pkg?.let { matchApp(store.state.value.rules, it) }
             if (rule != null && (rule.id != ruleId || now - refreshedAt > REFRESH_MS)) {
                 withContext(Dispatchers.IO) { store.refresh() }

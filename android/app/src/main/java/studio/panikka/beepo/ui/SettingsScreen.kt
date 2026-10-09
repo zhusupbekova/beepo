@@ -30,6 +30,7 @@ import studio.panikka.beepo.core.LANGUAGES
 import studio.panikka.beepo.core.Settings
 import studio.panikka.beepo.data.Plus
 import studio.panikka.beepo.overlay.Overlay
+import studio.panikka.beepo.overlay.rememberNotificationAsk
 
 /** The options page, for the phone: language, when the day starts, Beepo on screen. */
 @Composable
@@ -44,6 +45,7 @@ fun SettingsScreen(
     onClose: () -> Unit,
 ) {
     val context = LocalContext.current
+    val askNotifications = rememberNotificationAsk()
     Dialog(onClose, DialogProperties(usePlatformDefaultWidth = false)) {
         Column(Modifier.fillMaxSize().background(Paper).safeDrawingPadding()) {
             // Title and Close stay at the top while the settings scroll.
@@ -83,7 +85,10 @@ fun SettingsScreen(
                 }
 
                 Section(i18n.android("overlaySection"), i18n.android("overlayBody")) {
-                    PixelChip(i18n.android("overlayOn"), settings.overlay) { onChange(settings.copy(overlay = !settings.overlay)) }
+                    PixelChip(i18n.android("overlayOn"), settings.overlay) {
+                        if (settings.overlay) onChange(settings.copy(overlay = false))
+                        else askNotifications { onChange(settings.copy(overlay = true)) }
+                    }
                     if (settings.overlay && !overlayOk) PixelButton(i18n.android("usageGrant"), fill = Gold) { Overlay.openSettings(context) }
                     PixelChip(i18n.t("quiet"), settings.quiet) { onChange(settings.copy(quiet = !settings.quiet)) }
                     PixelChip(i18n.t("sounds"), settings.sound) { onChange(settings.copy(sound = !settings.sound)) }
