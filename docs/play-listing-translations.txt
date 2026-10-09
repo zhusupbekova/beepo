@@ -1,0 +1,722 @@
+Beepo: Google Play store listing translations (source: PLAY.md, "Store listing (English)"). Fields per language: Title (max 30), Short description (max 80), Full description (max 4000).
+
+=== Spanish (es-419, es-ES) ===
+Title: Beepo: Tiempo de pantalla
+Short description: Robot pixelado que bloquea apps al acabar el tiempo. Menos scroll, más sombreros
+Full description:
+Beepo es un pequeño robot pixelado que te ayuda a reducir tu tiempo de pantalla y a concentrarte, con cariño. Elige las apps que se comen tu día y ponles un límite diario. Cuando se acaba el tiempo, Beepo aparece sobre la app con una señal de ALTO. Cumple tus límites, gana estrellas y vístelo como quieras.
+
+Sin culpa ni sermones. Beepo te da empujoncitos, te anima y nunca te avergüenza. Las estrellas solo se ganan y se gastan, nunca te las quitan.
+
+⏱ LÍMITES DE APPS Y BLOQUEO DE APPS
+• Límites de tiempo diarios para cualquier app o grupo de apps: redes sociales, videos, juegos
+• También metas: pon un mínimo para las apps que quieres usar más, como lectura o idiomas
+• Límites distintos para el fin de semana
+• Beepo te avisa al 50% y al 80% y saca su señal de ALTO al 100%
+• Botón "5 minutos más", y Beepo recuerda cuántas veces lo usaste
+• Pantalla de bloqueo: cuando se acaba el límite, la app se cierra. Gasta una estrella para desbloquear 5 minutos más
+• Mantén pulsado a Beepo y saltará al agujero de la cámara, donde se queda colgado bocabajo sin dejar de vigilar
+
+⭐ ESTRELLAS, RACHAS E INSIGNIAS
+• Gana estrellas por cada límite que cumplas y cada meta que alcances
+• Arma rachas diarias y desbloquea insignias
+• Gasta estrellas en la tienda: sombreros, colores, antenas, accesorios
+• Beepo evoluciona a medida que crece tu racha y se despeina un poquito cuando te descuidas
+
+📊 RESUMEN DEL TIEMPO DE PANTALLA
+• El tiempo de hoy por app, sacado de las estadísticas de uso del propio Android
+• Resumen semanal: tiempo por día, por app y el tiempo que ahorraste frente a la semana pasada
+
+✨ BEEPO PLUS: PAGO ÚNICO, SIN SUSCRIPCIÓN
+• Beepo se queda en tus apps vigiladas y pasea por la parte de abajo de la pantalla
+• Mascotas que lo siguen a todas partes, empezando por Mochi el gato
+• Sombreros y mascotas de temporada para las fiestas de todo el año
+• Widget para la pantalla de inicio con escenas pixeladas: prado soleado, noche estrellada, día de playa, colina nevada, cuarto acogedor, espacio exterior
+• Dibuja tus propios sombreros en el editor de sprites
+• Historial completo de resúmenes, semana a semana
+• Modo oscuro
+
+🔒 PRIVADO POR DISEÑO
+• Sin cuenta, sin anuncios, sin rastreo
+• Tu tiempo en apps nunca sale de tu teléfono. Beepo solo se conecta para comprobar las compras de Beepo Plus
+• Acceso al uso: permite a Beepo ver cuánto tiempo ha estado abierta cada app (solo nombres de paquete y minutos)
+• Mostrar sobre otras apps: permite a Beepo aparecer sobre la app que estás usando. Nunca lee tu pantalla
+
+Una mascota de tiempo de pantalla para tu bienestar digital: una forma tierna de dejar el doomscrolling, superar la adicción al celular y crear mejores hábitos de concentración. Beepo también vive en Chrome, Edge y Firefox como extensión del navegador, y habla 17 idiomas.
+
+
+=== Portuguese, Brazil (pt-BR) ===
+Title: Beepo: Pet do Tempo de Tela
+Short description: Robozinho bloqueia apps no fim do tempo. Chega de doomscrolling, ganhe chapéus
+Full description:
+O Beepo é um robozinho pixelado que ajuda você a reduzir o tempo de tela e manter o foco, com carinho. Escolha os apps que devoram seu dia e defina um limite diário. Quando o tempo acaba, o Beepo aparece sobre o app com uma placa de PARE. Respeite seus limites, ganhe estrelas e vista o Beepo do seu jeito.
+
+Sem culpa, sem sermão. O Beepo dá um toque, comemora com você e nunca te faz passar vergonha. Estrelas só se ganham e se gastam, nunca são tiradas.
+
+⏱ LIMITES E BLOQUEIO DE APPS
+• Limites diários de tempo para qualquer app ou grupo de apps: redes sociais, vídeos, jogos
+• Metas também: defina um mínimo para os apps que você quer usar mais, como leitura ou idiomas
+• Limites diferentes para o fim de semana
+• O Beepo dá um toque aos 50% e aos 80% e levanta a placa de PARE aos 100%
+• Soneca de "mais 5 minutos", e ele lembra quantas vezes você apertou
+• Tela de bloqueio: quando o limite acaba, o app fecha. Gaste uma estrela para liberar mais 5 minutos
+• Toque e segure o Beepo e ele pula para o furo da câmera e fica pendurado de cabeça para baixo, sempre de olho
+
+⭐ ESTRELAS, SEQUÊNCIAS E CONQUISTAS
+• Ganhe estrelas a cada limite respeitado e a cada meta batida
+• Faça sequências diárias e desbloqueie conquistas
+• Gaste estrelas na loja: chapéus, cores, antenas, acessórios
+• O Beepo evolui conforme sua sequência cresce e fica meio descabelado quando você escorrega
+
+📊 RELATÓRIO DE TEMPO DE TELA
+• O tempo de hoje por app, lido das estatísticas de uso do próprio Android
+• Relatório semanal: tempo por dia, por app e o tempo que você economizou em relação à semana passada
+
+✨ BEEPO PLUS: COMPRA ÚNICA, SEM ASSINATURA
+• O Beepo fica nos seus apps monitorados e passeia pela parte de baixo da tela
+• Pets que seguem o Beepo por toda parte, começando pelo Mochi, o gato
+• Chapéus e pets sazonais para as datas comemorativas do ano todo
+• Widget da tela inicial com cenários pixelados: campo ensolarado, noite estrelada, dia de praia, colina nevada, quarto aconchegante, espaço sideral
+• Desenhe seus próprios chapéus no editor de sprites
+• Histórico completo de relatórios, semana a semana
+• Modo escuro
+
+🔒 PRIVADO POR NATUREZA
+• Sem conta, sem anúncios, sem rastreamento
+• Seu tempo de uso dos apps nunca sai do seu celular. O Beepo só se conecta para verificar compras do Beepo Plus
+• Acesso ao uso: permite que o Beepo veja por quanto tempo cada app ficou aberto (só nomes de pacote e minutos)
+• Sobrepor a outros apps: permite que o Beepo apareça sobre o app que você está usando. Ele nunca lê sua tela
+
+Um pet de tempo de tela para o seu bem-estar digital: um jeito fofo de parar com o doomscrolling, vencer o vício em celular e criar hábitos melhores de foco. O Beepo também mora no Chrome, Edge e Firefox como extensão de navegador, e fala 17 idiomas.
+
+
+=== German (de-DE) ===
+Title: Beepo: Bildschirmzeit-Buddy
+Short description: Pixel-Roboter sperrt Apps nach Ablauf der Zeit. Weniger Doomscrolling, mehr Hüte
+Full description:
+Beepo ist ein kleiner Pixel-Roboter, der dir hilft, deine Bildschirmzeit zu verringern und fokussiert zu bleiben, ganz freundlich. Wähle die Apps, die deinen Tag auffressen, und leg ein Tageslimit fest. Ist die Zeit um, taucht Beepo mit einem STOPP-Schild über der App auf. Halte deine Limits ein, sammle Sterne und kleide ihn ein.
+
+Kein schlechtes Gewissen, keine Predigten. Beepo stupst dich an, feuert dich an und macht dir nie Vorwürfe. Sterne werden nur verdient und ausgegeben, nie weggenommen.
+
+⏱ APP-LIMITS & APP-SPERRE
+• Tägliche Zeitlimits für jede App oder Gruppe von Apps: soziale Medien, Videos, Spiele
+• Auch Ziele: Leg ein Minimum für Apps fest, die du mehr nutzen willst, etwa zum Lesen oder Sprachenlernen
+• Eigene Limits fürs Wochenende
+• Beepo meldet sich bei 50 % und 80 % und hält bei 100 % ein STOPP-Schild hoch
+• „Noch 5 Minuten“-Schlummern, und er merkt sich, wie oft du es drückst
+• Sperrbildschirm: Ist das Limit erreicht, wird die App geschlossen. Gib einen Stern aus, um 5 weitere Minuten freizuschalten
+• Drück lange auf Beepo, dann springt er in dein Kameraloch und hängt dort kopfüber, ohne dich aus den Augen zu lassen
+
+⭐ STERNE, SERIEN & ABZEICHEN
+• Verdiene Sterne für jedes eingehaltene Limit und jedes erreichte Ziel
+• Bau tägliche Serien auf und schalte Abzeichen frei
+• Gib Sterne im Shop aus: Hüte, Farben, Antennen, Extras
+• Beepo entwickelt sich mit deiner Serie weiter und wird ein bisschen zerzaust, wenn du mal danebenliegst
+
+📊 BILDSCHIRMZEIT-BERICHT
+• Die heutige Zeit pro App, direkt aus den Nutzungsstatistiken von Android
+• Wochenbericht: Zeit pro Tag, pro App und die gesparte Zeit im Vergleich zur Vorwoche
+
+✨ BEEPO PLUS: EINMALKAUF, KEIN ABO
+• Beepo bleibt in deinen beobachteten Apps sichtbar und läuft unten am Bildschirmrand entlang
+• Haustiere, die ihm überallhin folgen, angefangen mit Katze Mochi
+• Saisonale Hüte und Haustiere für Feiertage das ganze Jahr über
+• Widget für den Startbildschirm mit Pixel-Szenen: sonnige Wiese, Sternennacht, Strandtag, Schneehügel, gemütliches Zimmer, Weltraum
+• Male eigene Hüte im Sprite-Editor
+• Kompletter Berichtsverlauf, Woche für Woche
+• Dunkelmodus
+
+🔒 PRIVATSPHÄRE VON ANFANG AN
+• Kein Konto, keine Werbung, kein Tracking
+• Deine App-Zeit verlässt nie dein Handy. Beepo geht nur online, um Käufe von Beepo Plus zu prüfen
+• Nutzungszugriff: Damit sieht Beepo, wie lange jede App geöffnet war (nur Paketnamen und Minuten)
+• Über anderen Apps einblenden: Damit kann Beepo über der App auftauchen, die du gerade nutzt. Er liest nie deinen Bildschirm
+
+Ein Bildschirmzeit-Haustier für dein digitales Wohlbefinden: eine liebevolle Art, mit dem Doomscrolling aufzuhören, deine Handysucht zu überwinden und bessere Fokus-Gewohnheiten aufzubauen. Beepo wohnt auch als Browser-Erweiterung in Chrome, Edge und Firefox und spricht 17 Sprachen.
+
+
+=== French (fr-FR) ===
+Title: Beepo : robot du temps d'écran
+Short description: Robot pixel qui bloque tes applis. Fini le doomscrolling, gagne des chapeaux
+Full description:
+Beepo est un petit robot en pixel art qui t'aide à réduire ton temps d'écran et à rester concentré, en douceur. Choisis les applis qui dévorent ta journée et fixe une limite quotidienne. Quand le temps est écoulé, Beepo apparaît par-dessus l'appli avec un panneau STOP. Respecte tes limites, gagne des étoiles et habille-le comme tu veux.
+
+Pas de culpabilité, pas de leçons. Beepo te pousse gentiment, t'encourage et ne te fait jamais honte. Les étoiles se gagnent et se dépensent, on ne te les retire jamais.
+
+⏱ LIMITES D'APPLIS & BLOCAGE D'APPLIS
+• Limites de temps quotidiennes pour n'importe quelle appli ou groupe d'applis : réseaux sociaux, vidéos, jeux
+• Des objectifs aussi : fixe un minimum pour les applis que tu veux utiliser plus, comme la lecture ou l'apprentissage des langues
+• Des limites différentes pour le week-end
+• Beepo fait le point à 50 % et 80 % et brandit un panneau STOP à 100 %
+• Bouton « Encore 5 min », et il se souvient du nombre de fois où tu l'as utilisé
+• Écran de blocage : quand la limite est atteinte, l'appli se ferme. Dépense une étoile pour débloquer 5 minutes de plus
+• Appuie longuement sur Beepo : il saute dans le trou de la caméra et s'y suspend la tête en bas, toujours aux aguets
+
+⭐ ÉTOILES, SÉRIES & BADGES
+• Gagne des étoiles pour chaque limite respectée et chaque objectif atteint
+• Enchaîne les séries quotidiennes et débloque des badges
+• Dépense tes étoiles dans la boutique : chapeaux, couleurs, antennes, accessoires
+• Beepo évolue au fil de ta série, et devient un peu ébouriffé quand tu flanches
+
+📊 BILAN DU TEMPS D'ÉCRAN
+• Le temps du jour par appli, tiré des statistiques d'utilisation d'Android
+• Bilan hebdo : temps par jour, par appli, et temps gagné par rapport à la semaine dernière
+
+✨ BEEPO PLUS : ACHAT UNIQUE, SANS ABONNEMENT
+• Beepo reste visible dans tes applis suivies et se promène en bas de l'écran
+• Des compagnons qui le suivent partout, à commencer par Mochi le chat
+• Des chapeaux et compagnons de saison pour les fêtes de toute l'année
+• Widget pour l'écran d'accueil avec des décors en pixel art : prairie ensoleillée, nuit étoilée, journée à la plage, colline enneigée, chambre douillette, espace
+• Dessine tes propres chapeaux dans l'éditeur de sprites
+• Historique complet des bilans, semaine après semaine
+• Mode sombre
+
+🔒 CONFIDENTIEL PAR CONCEPTION
+• Pas de compte, pas de pub, pas de pistage
+• Ton temps d'appli ne quitte jamais ton téléphone. Beepo ne se connecte que pour vérifier les achats Beepo Plus
+• Accès aux données d'utilisation : permet à Beepo de voir combien de temps chaque appli a été ouverte (noms de paquets et minutes uniquement)
+• Afficher par-dessus les autres applis : permet à Beepo d'apparaître sur l'appli que tu utilises. Il ne lit jamais ton écran
+
+Un compagnon du temps d'écran pour ton bien-être numérique : une façon mignonne d'arrêter le doomscrolling, de vaincre l'addiction au téléphone et de prendre de meilleures habitudes de concentration. Beepo vit aussi dans Chrome, Edge et Firefox en tant qu'extension de navigateur, et il parle 17 langues.
+
+
+=== Italian (it-IT) ===
+Title: Beepo: Limita il Tempo Schermo
+Short description: Robot pixel: blocca le app a tempo scaduto. Basta doomscrolling, vinci cappelli
+Full description:
+Beepo è un piccolo robot in pixel art che ti aiuta, con gentilezza, a ridurre il tempo davanti allo schermo e a restare concentrato. Scegli le app che ti mangiano la giornata e imposta un limite giornaliero. Quando il tempo è scaduto, Beepo compare sopra l'app con un cartello STOP. Rispetta i limiti, guadagna stelle e vestilo come vuoi.
+
+Niente sensi di colpa, niente prediche. Beepo ti dà una spintarella, fa il tifo e non ti fa mai sentire in colpa. Le stelle si guadagnano e si spendono, ma non ti vengono mai tolte.
+
+⏱ LIMITI E BLOCCO DELLE APP
+• Limiti di tempo giornalieri per qualsiasi app o gruppo di app: social, video, giochi
+• Anche obiettivi: imposta un minimo per le app che vuoi usare di più, come lettura o lingue
+• Limiti diversi per il weekend
+• Beepo si fa sentire al 50% e all'80% e alza un cartello STOP al 100%
+• Pulsante "Altri 5 minuti", e Beepo ricorda quante volte lo premi
+• Schermata di blocco: quando il limite è superato, l'app si chiude. Spendi una stella per sbloccare altri 5 minuti
+• Tieni premuto Beepo e salta nel foro della fotocamera, dove resta appeso a testa in giù e continua a tenerti d'occhio
+
+⭐ STELLE, SERIE E MEDAGLIE
+• Guadagna stelle per ogni limite rispettato e ogni obiettivo raggiunto
+• Costruisci serie di giorni e sblocca medaglie
+• Spendi le stelle nel negozio: cappelli, colori, antenne, accessori
+• Beepo si evolve con le tue serie e diventa un po' arruffato quando sgarri
+
+📊 RESOCONTO DEL TEMPO DI UTILIZZO
+• Il tempo di oggi per ogni app, letto dalle statistiche di utilizzo di Android
+• Resoconto settimanale: tempo al giorno, per app e il tempo risparmiato rispetto alla settimana scorsa
+
+✨ BEEPO PLUS: ACQUISTO UNICO, NESSUN ABBONAMENTO
+• Beepo resta sullo schermo nelle app monitorate e passeggia in fondo allo schermo
+• Cuccioli che lo seguono ovunque, a partire da Mochi il gatto
+• Cappelli e cuccioli stagionali per le feste di tutto l'anno
+• Widget per la schermata Home con sfondi in pixel: prato soleggiato, notte stellata, giornata al mare, collina innevata, stanza accogliente, spazio
+• Disegna i tuoi cappelli nell'editor di sprite
+• Tutto lo storico dei resoconti, settimana per settimana
+• Tema scuro
+
+🔒 PRIVATO PER NATURA
+• Niente account, niente pubblicità, niente tracciamento
+• Il tuo tempo nelle app non lascia mai il telefono. Beepo va online solo per verificare gli acquisti di Beepo Plus
+• Accesso ai dati di utilizzo: permette a Beepo di vedere per quanto tempo è rimasta aperta ogni app (solo nomi dei pacchetti e minuti)
+• Mostra sopra altre app: permette a Beepo di comparire sopra l'app che stai usando. Non legge mai il tuo schermo
+
+Un amico virtuale per il tuo benessere digitale: un modo tenero per smettere di fare doomscrolling, combattere la dipendenza dal telefono e costruire abitudini di concentrazione migliori. Beepo vive anche in Chrome, Edge e Firefox come estensione del browser, e parla 17 lingue.
+
+
+=== Russian (ru-RU) ===
+Title: Beepo: экранное время, лимиты
+Short description: Пиксельный робот блокирует приложения, когда время вышло. Меньше думскроллинга
+Full description:
+Beepo — крошечный пиксельный робот, который по-доброму помогает сократить экранное время и не терять фокус. Выбери приложения, которые съедают твой день, и поставь дневной лимит. Когда время выйдет, Beepo появится поверх приложения с табличкой СТОП. Соблюдай лимиты, получай звёзды и наряжай его.
+
+Без чувства вины и нотаций. Beepo подталкивает, подбадривает и никогда не стыдит. Звёзды можно только заработать и потратить — их никогда не отнимают.
+
+⏱ ЛИМИТЫ И БЛОКИРОВКА ПРИЛОЖЕНИЙ
+• Дневные лимиты для любого приложения или группы приложений: соцсети, видео, игры
+• И цели тоже: задай минимум для приложений, которым хочешь уделять больше времени, например для чтения или изучения языков
+• Отдельные лимиты на выходные
+• Beepo напоминает о себе на 50% и 80%, а на 100% поднимает табличку СТОП
+• Кнопка «Ещё 5 минут» — и Beepo запоминает, сколько раз ты её нажимаешь
+• Экран блокировки: когда лимит исчерпан, приложение закрывается. Потрать звезду, чтобы открыть его ещё на 5 минут
+• Зажми Beepo — он запрыгнет в вырез камеры и повиснет там вниз головой, продолжая следить за временем
+
+⭐ ЗВЁЗДЫ, СЕРИИ И ЗНАЧКИ
+• Получай звёзды за каждый соблюдённый лимит и каждую достигнутую цель
+• Собирай серии дней и открывай значки
+• Трать звёзды в магазине: шляпы, цвета, антенны, аксессуары
+• Beepo эволюционирует вместе с твоей серией и слегка лохматится, когда ты срываешься
+
+📊 ОТЧЁТ ОБ ЭКРАННОМ ВРЕМЕНИ
+• Время в каждом приложении за сегодня — прямо из статистики использования Android
+• Отчёт за неделю: время по дням, по приложениям и сколько времени сэкономлено по сравнению с прошлой неделей
+
+✨ BEEPO PLUS: РАЗОВАЯ ПОКУПКА, БЕЗ ПОДПИСКИ
+• Beepo остаётся на экране в отслеживаемых приложениях и гуляет по нижнему краю экрана
+• Питомцы, которые ходят за ним по пятам, начиная с кошки Mochi
+• Сезонные шляпы и питомцы к праздникам круглый год
+• Виджет для главного экрана с пиксельными фонами: солнечный луг, звёздная ночь, день на пляже, снежный холм, уютная комната, космос
+• Рисуй свои шляпы в редакторе спрайтов
+• Вся история отчётов, неделя за неделей
+• Тёмная тема
+
+🔒 ПРИВАТНОСТЬ ПРЕЖДЕ ВСЕГО
+• Без аккаунта, рекламы и слежки
+• Время в приложениях никогда не покидает твой телефон. Beepo выходит в интернет только чтобы проверить покупки Beepo Plus
+• Доступ к истории использования: Beepo видит, сколько было открыто каждое приложение (только названия пакетов и минуты)
+• Поверх других приложений: Beepo может появляться поверх приложения, которым ты пользуешься. Он никогда не читает твой экран
+
+Питомец для экранного времени и цифрового благополучия: милый способ перестать бесконечно листать ленту, побороть зависимость от телефона и выработать привычку концентрироваться. Beepo также живёт в Chrome, Edge и Firefox как расширение для браузера и говорит на 17 языках.
+
+
+=== Ukrainian (uk) ===
+Title: Beepo: екранний час і ліміти
+Short description: Піксельний робот блокує застосунки, коли час сплив. Менше думскролінгу
+Full description:
+Beepo — крихітний піксельний робот, який лагідно допомагає скоротити екранний час і не втрачати зосередження. Обери застосунки, які з'їдають твій день, і встанови щоденний ліміт. Коли час спливе, Beepo з'явиться поверх застосунку з табличкою СТОП. Тримайся лімітів, здобувай зірочки й вбирай його.
+
+Без провини й нотацій. Beepo підштовхує, підбадьорює і ніколи не соромить. Зірочки можна лише здобути й витратити — їх ніколи не забирають.
+
+⏱ ЛІМІТИ Й БЛОКУВАННЯ ЗАСТОСУНКІВ
+• Щоденні ліміти для будь-якого застосунку чи групи застосунків: соцмережі, відео, ігри
+• А ще цілі: задай мінімум для застосунків, яким хочеш приділяти більше часу, наприклад для читання чи вивчення мов
+• Окремі ліміти на вихідні
+• Beepo озивається на 50% і 80%, а на 100% піднімає табличку СТОП
+• Кнопка «Ще 5 хвилин» — і Beepo пам'ятає, скільки разів ти її натискаєш
+• Екран блокування: коли ліміт вичерпано, застосунок закривається. Витрать зірочку, щоб відкрити його ще на 5 хвилин
+• Затисни Beepo — він застрибне у виріз камери й повисне там догори дриґом, і далі пильнуючи час
+
+⭐ ЗІРОЧКИ, СЕРІЇ Й ВІДЗНАКИ
+• Здобувай зірочки за кожен дотриманий ліміт і кожну досягнуту ціль
+• Збирай серії днів і відкривай відзнаки
+• Витрачай зірочки в крамниці: капелюхи, кольори, антени, аксесуари
+• Beepo еволюціонує разом із твоєю серією і трохи кудлатіє, коли ти зриваєшся
+
+📊 ЗВІТ ПРО ЕКРАННИЙ ЧАС
+• Сьогоднішній час у кожному застосунку — просто зі статистики використання Android
+• Тижневий звіт: час по днях, по застосунках і скільки часу зекономлено порівняно з минулим тижнем
+
+✨ BEEPO PLUS: РАЗОВА ПОКУПКА, БЕЗ ПІДПИСКИ
+• Beepo лишається на екрані у відстежуваних застосунках і гуляє вздовж нижнього краю екрана
+• Улюбленці, які ходять за ним слідом, починаючи з киці Mochi
+• Сезонні капелюхи й улюбленці до свят цілий рік
+• Віджет для головного екрана з піксельними фонами: сонячна галявина, зоряна ніч, день на пляжі, сніжний пагорб, затишна кімната, космос
+• Малюй власні капелюхи в редакторі спрайтів
+• Уся історія звітів, тиждень за тижнем
+• Темна тема
+
+🔒 ПРИВАТНІСТЬ ПОНАД УСЕ
+• Без акаунта, реклами й стеження
+• Час у застосунках ніколи не залишає твій телефон. Beepo виходить в інтернет лише щоб перевірити покупки Beepo Plus
+• Доступ до історії використання: Beepo бачить, скільки був відкритий кожен застосунок (лише назви пакетів і хвилини)
+• Поверх інших застосунків: Beepo може з'являтися поверх застосунку, яким ти користуєшся. Він ніколи не читає твій екран
+
+Улюбленець для екранного часу й цифрового добробуту: милий спосіб перестати безкінечно гортати стрічку, побороти залежність від телефона й виробити звичку зосереджуватися. Beepo також живе в Chrome, Edge і Firefox як розширення для браузера й розмовляє 17 мовами.
+
+
+=== Turkish (tr-TR) ===
+Title: Beepo: Ekran Süresi Dostu
+Short description: Süre dolunca uygulama engelleyen piksel robot. Doomscrolling'e son, şapka kazan
+Full description:
+Beepo, ekran süreni azaltmana ve odaklanmana nazikçe yardım eden minik bir piksel robot. Gününü yiyip bitiren uygulamaları seç ve günlük bir limit belirle. Süre dolunca Beepo, elinde DUR tabelasıyla uygulamanın üstünde belirir. Limitlerine uy, yıldız kazan ve onu giydir.
+
+Suçluluk yok, nutuk yok. Beepo dürter, tezahürat yapar ve asla utandırmaz. Yıldızlar yalnızca kazanılır ve harcanır, asla geri alınmaz.
+
+⏱ UYGULAMA LİMİTLERİ VE UYGULAMA ENGELLEYİCİ
+• Her uygulama veya uygulama grubu için günlük süre limitleri: sosyal medya, video, oyunlar
+• Hedefler de var: okuma ya da dil öğrenme gibi daha çok kullanmak istediğin uygulamalar için bir alt sınır belirle
+• Hafta sonu için farklı limitler
+• Beepo %50 ve %80'de haber verir, %100'de DUR tabelasını kaldırır
+• "5 dakika daha" ertelemesi; Beepo kaç kez bastığını unutmaz
+• Engel ekranı: limit dolunca uygulama kapanır. 5 dakika daha açmak için bir yıldız harca
+• Beepo'ya uzun bas, kamera deliğine atlayıp orada baş aşağı asılı kalır ve gözünü senden ayırmaz
+
+⭐ YILDIZLAR, SERİLER VE ROZETLER
+• Uyduğun her limit ve ulaştığın her hedef için yıldız kazan
+• Günlük seriler yap ve rozetlerin kilidini aç
+• Yıldızlarını mağazada harca: şapkalar, renkler, antenler, aksesuarlar
+• Beepo serin uzadıkça evrimleşir, sen tökezleyince de biraz dağılır
+
+📊 EKRAN SÜRESİ RAPORU
+• Bugün her uygulamada geçen süre, doğrudan Android'in kendi kullanım istatistiklerinden
+• Haftalık rapor: günlük ve uygulama bazında süre, geçen haftaya göre kazandığın zaman
+
+✨ BEEPO PLUS: TEK SEFERLİK SATIN ALMA, ABONELİK YOK
+• Beepo takip edilen uygulamalarda ekranda kalır ve ekranın altında dolaşır
+• Peşinden gelen evcil dostlar, ilki Kedi Mochi
+• Yıl boyunca özel günler için mevsimlik şapkalar ve evcil dostlar
+• Piksel sahneli ana ekran widget'ı: güneşli çayır, yıldızlı gece, plaj günü, karlı tepe, sıcacık oda, uzay
+• Sprite düzenleyicide kendi şapkalarını çiz
+• Hafta hafta tüm rapor geçmişi
+• Karanlık mod
+
+🔒 GİZLİLİK EN BAŞTAN
+• Hesap yok, reklam yok, takip yok
+• Uygulama süren asla telefonundan çıkmaz. Beepo yalnızca Beepo Plus satın alımlarını kontrol etmek için internete bağlanır
+• Kullanım erişimi: Beepo'nun her uygulamanın ne kadar açık kaldığını görmesini sağlar (yalnızca paket adları ve dakikalar)
+• Diğer uygulamaların üzerinde gösterme: Beepo'nun kullandığın uygulamanın üstünde belirmesini sağlar. Ekranını asla okumaz
+
+Dijital denge için bir ekran süresi dostu: doomscrolling'i bırakmanın, telefon bağımlılığını kırmanın ve daha iyi odak alışkanlıkları edinmenin sevimli bir yolu. Beepo ayrıca Chrome, Edge ve Firefox'ta tarayıcı eklentisi olarak yaşıyor ve 17 dil konuşuyor.
+
+
+=== Japanese (ja-JP) ===
+Title: Beepo: スクリーンタイム管理のドット絵ペット
+Short description: 時間が来たらアプリをブロックする、かわいいドット絵ロボット。だらだらスマホを卒業して、ぼうしをゲット
+Full description:
+Beepoは、スクリーンタイムを減らして集中できるよう、やさしく手伝ってくれる小さなドット絵ロボットです。一日を食いつぶすアプリを選んで、1日の制限を設定しましょう。時間になると、Beepoがアプリの上に現れて「止まれ」の標識を掲げます。制限を守ってスターをためて、Beepoを着せ替えよう。
+
+罪悪感もお説教もなし。Beepoはそっと声をかけて、応援して、決して責めません。スターはためて使うだけ。取り上げられることはありません。
+
+⏱ アプリ制限＆アプリブロック
+• どのアプリにも、アプリのグループにも1日の時間制限：SNS、動画、ゲーム
+• 目標も設定できます：読書や語学学習など、もっと使いたいアプリには最低時間を
+• 週末は別の制限に
+• 50%と80%でお知らせ、100%で「止まれ」の標識を掲げます
+• 「あと5分」スヌーズ。何回押したか、Beepoはちゃんと覚えています
+• ブロック画面：制限時間になるとアプリが閉じます。スターを使えば5分だけ解除
+• Beepoを長押しすると、カメラの穴に飛びついて逆さまにぶら下がり、そこからも見守ります
+
+⭐ スター、連続記録＆バッジ
+• 制限を守るたび、目標を達成するたびにスターがもらえます
+• 毎日の連続記録をのばして、バッジを解除
+• スターはショップで：ぼうし、カラー、アンテナ、アクセサリー
+• 連続記録がのびるとBeepoが進化。つまずくとちょっとボサボサに
+
+📊 スクリーンタイムレポート
+• 今日のアプリごとの利用時間（Android本体の使用状況データから）
+• 週間レポート：1日ごと・アプリごとの時間と、先週より節約できた時間
+
+✨ Beepo Plus：買い切り、サブスクなし
+• 見守り中のアプリでBeepoが画面にずっといて、画面の下を歩き回ります
+• あとをついてくるペットたち。まずはねこのモチから
+• 一年中、季節の行事ごとのぼうしとペット
+• ドット絵の背景つきホーム画面ウィジェット：ひだまりの草原、星空の夜、ビーチ、雪の丘、ほっこりお部屋、宇宙
+• スプライトエディタで自分だけのぼうしを描こう
+• レポートの全履歴を週ごとに
+• ダークモード
+
+🔒 プライバシー重視の設計
+• アカウントなし、広告なし、トラッキングなし
+• アプリの利用時間がスマホの外に出ることはありません。BeepoがネットにつながるのはBeepo Plusの購入確認のときだけです
+• 使用状況へのアクセス：各アプリが開いていた時間をBeepoが知るために使います（パッケージ名と分数のみ）
+• 他のアプリの上に重ねて表示：使っているアプリの上にBeepoが出てくるために使います。画面の内容は読みません
+
+デジタルウェルビーイングのためのスクリーンタイムペット。だらだらスクロールをやめて、スマホ依存から抜け出し、集中できる習慣をつくる、かわいい方法です。BeepoはChrome、Edge、Firefoxのブラウザ拡張機能にも住んでいて、17言語を話します。
+
+
+=== Korean (ko-KR) ===
+Title: Beepo: 스크린 타임 앱 차단 픽셀 펫
+Short description: 시간이 다 되면 앱을 차단해 주는 귀여운 픽셀 로봇. 둠스크롤링을 멈추고 모자를 모아요
+Full description:
+Beepo는 스크린 타임을 줄이고 집중할 수 있게 다정하게 도와주는 작은 픽셀 로봇이에요. 하루를 잡아먹는 앱을 골라 하루 제한을 정하세요. 시간이 다 되면 Beepo가 앱 위에 나타나 "멈춰" 표지판을 들어요. 제한을 지켜 별을 모으고 Beepo를 꾸며 주세요.
+
+죄책감도, 잔소리도 없어요. Beepo는 살짝 알려 주고 응원할 뿐, 절대 탓하지 않아요. 별은 모으고 쓰기만 할 뿐, 절대 빼앗기지 않아요.
+
+⏱ 앱 사용 제한 & 앱 차단
+• 어떤 앱이든, 앱 그룹이든 하루 사용 시간 제한: SNS, 동영상, 게임
+• 목표도 있어요: 독서나 외국어 공부처럼 더 쓰고 싶은 앱엔 최소 시간을 정해요
+• 주말엔 다른 제한
+• 50%와 80%에서 알려 주고, 100%가 되면 "멈춰" 표지판을 들어요
+• "5분만 더" 스누즈, 몇 번 눌렀는지 Beepo가 다 기억해요
+• 차단 화면: 제한 시간이 다 되면 앱이 닫혀요. 별 하나로 5분 더 잠금 해제
+• Beepo를 길게 누르면 카메라 구멍으로 뛰어올라 거꾸로 매달린 채 계속 지켜봐요
+
+⭐ 별, 연속 기록 & 배지
+• 제한을 지킬 때마다, 목표를 이룰 때마다 별을 받아요
+• 매일 연속 기록을 쌓고 배지를 모아요
+• 상점에서 별 쓰기: 모자, 색상, 안테나, 액세서리
+• 연속 기록이 늘면 Beepo가 진화하고, 흐트러지면 살짝 꾀죄죄해져요
+
+📊 스크린 타임 리포트
+• 오늘의 앱별 사용 시간, Android 자체 사용 기록에서 가져와요
+• 주간 리포트: 일별, 앱별 시간과 지난주보다 절약한 시간
+
+✨ Beepo Plus: 한 번 결제, 구독 없음
+• 추적 중인 앱에서 Beepo가 화면에 계속 나와 아래쪽을 걸어 다녀요
+• Beepo를 졸졸 따라다니는 펫, 고양이 모찌부터 시작해요
+• 일 년 내내 명절과 기념일마다 계절 모자와 펫
+• 픽셀 배경이 있는 홈 화면 위젯: 햇살 가득한 들판, 별이 빛나는 밤, 해변, 눈 덮인 언덕, 아늑한 방, 우주
+• 스프라이트 에디터로 나만의 모자 그리기
+• 전체 리포트 기록을 주별로
+• 다크 모드
+
+🔒 처음부터 프라이버시 중심
+• 계정 없음, 광고 없음, 추적 없음
+• 앱 사용 시간은 절대 휴대폰 밖으로 나가지 않아요. Beepo는 Beepo Plus 구매를 확인할 때만 인터넷에 연결해요
+• 사용 기록 접근: 각 앱이 얼마나 열려 있었는지 Beepo가 알 수 있게 해요 (패키지 이름과 분 단위 시간만)
+• 다른 앱 위에 표시: 사용 중인 앱 위에 Beepo가 나타날 수 있게 해요. 화면 내용은 절대 읽지 않아요
+
+디지털 웰빙을 위한 스크린 타임 펫: 둠스크롤링을 멈추고, 스마트폰 중독에서 벗어나고, 집중하는 습관을 만드는 귀여운 방법이에요. Beepo는 Chrome, Edge, Firefox 브라우저 확장 프로그램으로도 살고 있고, 17개 언어를 할 줄 알아요.
+
+
+=== Chinese (Simplified) (zh-CN) ===
+Title: Beepo：屏幕时间管理像素宠物
+Short description: 可爱像素机器人，时间到就屏蔽应用。戒掉停不下来的刷手机，告别手机成瘾，攒星星换帽子
+Full description:
+Beepo 是一个小小的像素机器人，用温柔的方式帮你减少屏幕时间、保持专注。选出那些吞噬你一天的应用，设置每日限额。时间一到，Beepo 就会出现在应用上方，举起“停”牌。守住限额，赚星星，给它换装。
+
+不内疚，不说教。Beepo 会提醒你、为你加油，但从不责备你。星星只会赚到和花掉，永远不会被扣走。
+
+⏱ 应用限额与应用屏蔽
+• 为任意应用或应用分组设置每日时间限额：社交媒体、视频、游戏
+• 也能设目标：为想多用的应用设个最低时长，比如阅读或学语言
+• 周末可以设不同的限额
+• Beepo 会在 50% 和 80% 时提醒你，到 100% 时举起“停”牌
+• “再玩5分钟”延时，它还会记住你按了几次
+• 屏蔽界面：限额用完，应用就会关闭。花一颗星星可以再解锁 5 分钟
+• 长按 Beepo，它会跳进摄像头挖孔里倒挂着，继续帮你盯着
+
+⭐ 星星、连续打卡与徽章
+• 每守住一个限额、每完成一个目标，都能赚到星星
+• 每天连续打卡，解锁徽章
+• 在商店用星星换帽子、颜色、天线、配饰
+• Beepo 会随连续打卡进化，偶尔松懈时会变得有点乱糟糟
+
+📊 屏幕时间报告
+• 今天每个应用的使用时长，直接读取 Android 自带的使用统计
+• 每周报告：每天、每个应用的时长，以及比上周省下的时间
+
+✨ Beepo Plus：一次买断，无需订阅
+• Beepo 会一直待在你关注的应用里，沿着屏幕底部走来走去
+• 跟着它到处跑的宠物，先从猫咪麻薯 Mochi 开始
+• 全年各个节日都有应季的帽子和宠物
+• 带像素场景的主屏幕小组件：阳光草地、星空之夜、海滩、雪山坡、温馨小屋、外太空
+• 用像素编辑器画你自己的帽子
+• 完整的报告历史，一周一周都能回看
+• 深色模式
+
+🔒 隐私至上
+• 无需账号，没有广告，不做追踪
+• 你的应用使用时间永远不会离开你的手机。Beepo 只在检查 Beepo Plus 购买时联网
+• 使用情况访问权限：让 Beepo 知道每个应用打开了多久（只记录包名和分钟数）
+• 显示在其他应用的上层：让 Beepo 能出现在你正在用的应用上方。它从不读取你的屏幕内容
+
+一只守护数字健康的屏幕时间宠物：用可爱的方式戒掉无休止地刷手机，摆脱手机成瘾，养成更专注的好习惯。Beepo 也以浏览器扩展的形式住在 Chrome、Edge 和 Firefox 里，还会说 17 种语言。
+
+
+=== Chinese (Traditional, Taiwan) (zh-TW) ===
+Title: Beepo：螢幕使用時間像素寵物
+Short description: 可愛像素機器人，時間到就封鎖 App。戒掉停不下來的滑手機，告別手機成癮，賺星星換帽子
+Full description:
+Beepo 是一隻小小的像素機器人，用溫柔的方式幫你減少螢幕使用時間、保持專注。選出那些吞噬你一天的 App，設定每日限制。時間一到，Beepo 就會出現在 App 上方，舉起「停」的牌子。守住限制、賺星星，再幫它打扮。
+
+沒有罪惡感，也不說教。Beepo 會提醒你、幫你加油，但從不責怪你。星星只會賺到和花掉，永遠不會被扣走。
+
+⏱ App 使用限制與 App 封鎖
+• 為任何 App 或 App 群組設定每日時間限制：社群媒體、影片、遊戲
+• 也能設目標：為想多用的 App 設個最低時間，像是閱讀或學語言
+• 週末可以設定不同的限制
+• Beepo 會在 50% 和 80% 時來問候你，到 100% 時舉起「停」的牌子
+• 「再5分鐘」延長功能，它還會記得你按了幾次
+• 封鎖畫面：限制時間一到，App 就會關閉。花一顆星星可以再解鎖 5 分鐘
+• 長按 Beepo，它會跳進鏡頭挖孔裡倒掛著，繼續幫你盯著
+
+⭐ 星星、連續紀錄與徽章
+• 每守住一個限制、每達成一個目標，都能賺到星星
+• 累積每日連續紀錄，解鎖徽章
+• 在商店用星星換帽子、顏色、天線、配件
+• Beepo 會隨著連續紀錄進化，偶爾失守時會變得有點亂糟糟
+
+📊 螢幕使用時間報告
+• 今天每個 App 的使用時間，直接讀取 Android 內建的使用統計
+• 每週報告：每日、各 App 的使用時間，以及比上週省下多少時間
+
+✨ Beepo Plus：一次買斷，不用訂閱
+• Beepo 會一直待在你關注的 App 裡，沿著螢幕底部走來走去
+• 跟著它到處跑的寵物，先從貓咪麻糬開始
+• 一年四季的節日都有應景的帽子和寵物
+• 附像素場景的主畫面小工具：陽光草地、星空之夜、海灘、雪山坡、溫馨小屋、外太空
+• 用角色編輯器畫自己的帽子
+• 完整的報告紀錄，一週一週都能回顧
+• 深色模式
+
+🔒 隱私優先
+• 不用帳號、沒有廣告、不做追蹤
+• 你的 App 使用時間永遠不會離開你的手機。Beepo 只在確認 Beepo Plus 購買時連網
+• 使用情形存取權：讓 Beepo 知道每個 App 開了多久（只記錄套件名稱和分鐘數）
+• 顯示在其他應用程式上層：讓 Beepo 能出現在你正在用的 App 上方。它從不讀取你的螢幕內容
+
+一隻守護數位健康的螢幕使用時間寵物：用可愛的方式戒掉停不下來的滑手機、擺脫手機成癮，養成更專注的好習慣。Beepo 也以瀏覽器擴充功能的形式住在 Chrome、Edge 和 Firefox 裡，還會說 17 種語言。
+
+
+=== Chinese (Traditional, Hong Kong; Cantonese) (zh-HK) ===
+Title: Beepo：螢幕使用時間像素寵物
+Short description: 可愛像素機械人，夠鐘就封鎖 App。唔再碌手機碌到停唔到，戒手機成癮，賺星星換帽
+Full description:
+Beepo 係一隻細細粒嘅像素機械人，用溫柔嘅方法幫你減少螢幕使用時間、保持專注。揀出嗰啲食晒你成日嘅 App，設定每日限制。夠鐘嘅時候，Beepo 就會喺 App 上面彈出嚟，舉起「停」牌。守住限制、賺星星，再幫佢扮靚。
+
+唔使內疚，唔會同你講大道理。Beepo 會提你、幫你打氣，但永遠唔會鬧你。星星只會賺返嚟同用出去，永遠唔會俾人扣走。
+
+⏱ App 限制同 App 封鎖
+• 為任何 App 或者一組 App 設定每日時間限制：社交媒體、影片、遊戲
+• 仲可以設目標：想多啲用嘅 App 就設個最少時間，好似睇書或者學語言
+• 週末可以分開設限制
+• Beepo 會喺 50% 同 80% 嘅時候嚟問候你，到 100% 就舉起「停」牌
+• 「多5分鐘」延長功能，佢仲會記住你㩒咗幾多次
+• 封鎖畫面：限制一到，App 就會閂咗。用一粒星星就可以解鎖多 5 分鐘
+• 長㩒 Beepo，佢會跳入鏡頭窿度倒吊住，繼續幫你睇實
+
+⭐ 星星、連續紀錄同徽章
+• 每守住一個限制、每達到一個目標，都可以賺星星
+• 儲每日連續紀錄，解鎖徽章
+• 喺商店用星星換帽、顏色、天線、配飾
+• Beepo 會跟住你嘅連續紀錄進化，失手嗰陣就會變得有啲亂糟糟
+
+📊 螢幕使用時間報告
+• 今日每個 App 用咗幾耐，直接讀 Android 自己嘅使用統計
+• 每週報告：每日、每個 App 用咗幾耐，同比上星期慳咗幾多時間
+
+✨ Beepo Plus：一次過買斷，唔使訂閱
+• Beepo 會一直留喺你關注緊嘅 App 度，沿住螢幕底周圍行
+• 會跟住佢周圍走嘅寵物，第一隻係貓仔麻糬
+• 一年四季唔同節日都有應節嘅帽同寵物
+• 有像素背景嘅主畫面小工具：陽光草地、星空夜晚、海灘、雪山坡、溫暖小房、外太空
+• 用角色編輯器畫你自己嘅帽
+• 成個報告紀錄，一個星期一個星期咁睇返
+• 深色模式
+
+🔒 私隱至上
+• 唔使開帳戶、冇廣告、冇追蹤
+• 你嘅 App 使用時間永遠唔會離開你部手機。Beepo 只會為咗檢查 Beepo Plus 購買先上網
+• 使用情況存取權：等 Beepo 知道每個 App 開咗幾耐（淨係記套件名稱同分鐘數）
+• 喺其他應用程式上層顯示：等 Beepo 可以喺你用緊嘅 App 上面彈出嚟。佢永遠唔會睇你螢幕上面嘅嘢
+
+一隻守護數碼健康嘅螢幕使用時間寵物：用可愛嘅方法戒咗停唔到嘅碌手機、擺脫手機成癮，養成更專注嘅好習慣。Beepo 仲以瀏覽器擴充功能嘅形式住喺 Chrome、Edge 同 Firefox，仲識講 17 種語言。
+
+
+=== Indonesian (id) ===
+Title: Beepo: Pet Piksel Screen Time
+Short description: Robot piksel lucu yang blokir aplikasi saat waktu habis. Stop doomscrolling!
+Full description:
+Beepo adalah robot piksel mungil yang membantumu mengurangi screen time (waktu layar) dan tetap fokus, dengan cara yang ramah. Pilih aplikasi yang menghabiskan harimu dan atur batas harian. Saat waktu habis, Beepo muncul di atas aplikasi sambil mengangkat papan STOP. Jaga batasmu, kumpulkan bintang, dan dandani Beepo.
+
+Tanpa rasa bersalah, tanpa ceramah. Beepo mengingatkan, menyemangati, dan tidak pernah mempermalukan. Bintang hanya bisa dikumpulkan dan dibelanjakan, tidak pernah diambil.
+
+⏱ BATAS APLIKASI & BLOKIR APLIKASI
+• Batas waktu harian untuk aplikasi apa pun atau grup aplikasi: media sosial, video, game
+• Ada target juga: atur waktu minimum untuk aplikasi yang ingin lebih sering kamu pakai, seperti membaca atau belajar bahasa
+• Batas berbeda untuk akhir pekan
+• Beepo menyapa di 50% dan 80%, lalu mengangkat papan STOP di 100%
+• Tunda "5 menit lagi", dan Beepo ingat berapa kali kamu menekannya
+• Layar blokir: saat batas habis, aplikasinya ditutup. Pakai satu bintang untuk membuka 5 menit lagi
+• Tekan lama Beepo, dan dia melompat ke lubang kamera lalu bergelantungan terbalik di sana, tetap berjaga
+
+⭐ BINTANG, STREAK & LENCANA
+• Dapat bintang untuk setiap batas yang kamu jaga dan setiap target yang tercapai
+• Bangun streak harian dan buka lencana
+• Belanjakan bintang di toko: topi, warna, antena, aksesori
+• Beepo berevolusi seiring streak-mu bertambah, dan jadi sedikit kusut kalau kamu tergelincir
+
+📊 LAPORAN SCREEN TIME
+• Waktu hari ini per aplikasi, dibaca dari statistik penggunaan bawaan Android
+• Laporan mingguan: waktu per hari, per aplikasi, dan waktu yang kamu hemat dibanding minggu lalu
+
+✨ BEEPO PLUS: SEKALI BELI, TANPA LANGGANAN
+• Beepo tetap tampil di aplikasi yang dipantau dan berjalan-jalan di bagian bawah layar
+• Peliharaan yang mengikutinya ke mana-mana, dimulai dari Mochi si Kucing
+• Topi dan peliharaan musiman untuk berbagai perayaan sepanjang tahun
+• Widget layar utama dengan latar piksel: padang cerah, malam berbintang, pantai, bukit bersalju, kamar nyaman, luar angkasa
+• Gambar topimu sendiri di editor sprite
+• Riwayat laporan lengkap, minggu demi minggu
+• Mode gelap
+
+🔒 PRIVASI SEJAK AWAL
+• Tanpa akun, tanpa iklan, tanpa pelacakan
+• Waktu aplikasimu tidak pernah keluar dari ponselmu. Beepo hanya online untuk memeriksa pembelian Beepo Plus
+• Akses penggunaan: agar Beepo bisa melihat berapa lama tiap aplikasi dibuka (hanya nama paket dan menit)
+• Tampilkan di atas aplikasi lain: agar Beepo bisa muncul di atas aplikasi yang sedang kamu pakai. Beepo tidak pernah membaca layarmu
+
+Pet screen time untuk kesejahteraan digitalmu: cara lucu untuk berhenti doomscrolling, lepas dari kecanduan HP, dan membangun kebiasaan fokus yang lebih baik. Beepo juga ada di Chrome, Edge, dan Firefox sebagai ekstensi browser, dan bisa 17 bahasa.
+
+
+=== Hindi (hi-IN) ===
+Title: Beepo: स्क्रीन टाइम पेट
+Short description: समय पूरा होने पर ऐप ब्लॉक करता प्यारा रोबोट। डूमस्क्रॉलिंग रोकें, टोपियाँ कमाएँ
+Full description:
+Beepo एक नन्हा पिक्सेल रोबोट है, जो प्यार से आपका स्क्रीन टाइम घटाने और फ़ोकस बनाए रखने में मदद करता है। वे ऐप चुनें जो आपका दिन खा जाते हैं और रोज़ की लिमिट तय करें। समय पूरा होते ही Beepo ऐप के ऊपर "रुको" का बोर्ड लेकर आ जाता है। लिमिट निभाएँ, स्टार कमाएँ और उसे सजाएँ।
+
+न कोई गिल्ट, न कोई भाषण। Beepo याद दिलाता है, हौसला बढ़ाता है और कभी शर्मिंदा नहीं करता। स्टार सिर्फ़ कमाए और ख़र्च किए जाते हैं, कभी छीने नहीं जाते।
+
+⏱ ऐप लिमिट और ऐप ब्लॉकर
+• किसी भी ऐप या ऐप्स के ग्रुप के लिए रोज़ की टाइम लिमिट: सोशल मीडिया, वीडियो, गेम
+• लक्ष्य भी: जिन ऐप्स में ज़्यादा समय बिताना चाहते हैं, जैसे पढ़ना या भाषा सीखना, उनके लिए कम से कम समय तय करें
+• वीकेंड के लिए अलग लिमिट
+• Beepo 50% और 80% पर हाल-चाल पूछता है और 100% पर "रुको" का बोर्ड दिखाता है
+• "5 मिनट और" स्नूज़, और Beepo याद रखता है कि आपने कितनी बार दबाया
+• ब्लॉक स्क्रीन: लिमिट पूरी होते ही ऐप बंद हो जाता है। एक स्टार ख़र्च करके 5 मिनट और अनलॉक करें
+• Beepo को देर तक दबाएँ, वह कैमरे के छेद में कूदकर उल्टा लटक जाता है और वहाँ से भी नज़र रखता है
+
+⭐ स्टार, स्ट्रीक और बैज
+• हर निभाई गई लिमिट और हर पूरे हुए लक्ष्य पर स्टार कमाएँ
+• रोज़ की स्ट्रीक बनाएँ और बैज अनलॉक करें
+• दुकान में स्टार ख़र्च करें: टोपियाँ, रंग, एंटीना, एक्सेसरी
+• स्ट्रीक बढ़ने के साथ Beepo बदलता है, और चूक होने पर थोड़ा बिखरा-बिखरा दिखता है
+
+📊 स्क्रीन टाइम रिपोर्ट
+• आज हर ऐप का समय, सीधे Android के अपने उपयोग आँकड़ों से
+• हफ़्ते की रिपोर्ट: हर दिन और हर ऐप का समय, और पिछले हफ़्ते के मुकाबले बचाया गया समय
+
+✨ Beepo Plus: एक बार की खरीद, कोई सब्सक्रिप्शन नहीं
+• ट्रैक किए गए ऐप्स में Beepo स्क्रीन पर रहता है और नीचे-नीचे घूमता है
+• उसके पीछे-पीछे चलने वाले पालतू, शुरुआत मोची बिल्ली से
+• साल भर त्योहारों के लिए मौसमी टोपियाँ और पालतू
+• पिक्सेल दृश्यों वाला होम स्क्रीन विजेट: धूप भरा मैदान, तारों भरी रात, समुद्र तट, बर्फ़ीली पहाड़ी, आरामदायक कमरा, अंतरिक्ष
+• स्प्राइट एडिटर में अपनी टोपियाँ खुद बनाएँ
+• पूरी रिपोर्ट हिस्ट्री, हफ़्ता दर हफ़्ता
+• डार्क मोड
+
+🔒 प्राइवेसी सबसे पहले
+• न कोई अकाउंट, न विज्ञापन, न ट्रैकिंग
+• आपका ऐप समय कभी आपके फ़ोन से बाहर नहीं जाता। Beepo सिर्फ़ Beepo Plus खरीदारी जाँचने के लिए ऑनलाइन जाता है
+• उपयोग ऐक्सेस: इससे Beepo देख पाता है कि हर ऐप कितनी देर खुला रहा (सिर्फ़ पैकेज के नाम और मिनट)
+• दूसरे ऐप्स के ऊपर दिखाएँ: इससे Beepo आपके चल रहे ऐप के ऊपर आ पाता है। वह कभी आपकी स्क्रीन नहीं पढ़ता
+
+आपकी डिजिटल वेलबीइंग के लिए एक स्क्रीन टाइम पेट: डूमस्क्रॉलिंग रोकने, फ़ोन की लत छुड़ाने और फ़ोकस की बेहतर आदतें बनाने का एक प्यारा तरीका। Beepo Chrome, Edge और Firefox में ब्राउज़र एक्सटेंशन के रूप में भी रहता है, और 17 भाषाएँ बोलता है।
+
+
+=== Arabic (ar) ===
+Title: Beepo: حيوان أليف لوقت الشاشة
+Short description: روبوت بكسلي يحظر التطبيقات حين ينتهي الوقت. أوقف التمرير اللانهائي واكسب القبعات
+Full description:
+Beepo روبوت بكسلي صغير يساعدك بلطف على تقليل وقت الشاشة والبقاء مركّزًا. اختر التطبيقات التي تلتهم يومك وضع لها حدًا يوميًا. وحين ينتهي الوقت، يظهر Beepo فوق التطبيق رافعًا لافتة «قف». التزم بحدودك، واكسب النجوم، وألبِسه ما يحلو لك.
+
+لا شعور بالذنب ولا محاضرات. Beepo ينبّه ويشجّع ولا يلوم أبدًا. النجوم تُكسب وتُنفق فقط، ولا تُؤخذ منك أبدًا.
+
+⏱ حدود التطبيقات وحظرها
+• حدود وقت يومية لأي تطبيق أو مجموعة تطبيقات: التواصل الاجتماعي، الفيديو، الألعاب
+• وأهداف أيضًا: حدّد حدًا أدنى للتطبيقات التي تريد وقتًا أكثر فيها، مثل القراءة أو تعلّم اللغات
+• حدود مختلفة لعطلة نهاية الأسبوع
+• يطمئن عليك Beepo عند 50% و80%، ويرفع لافتة «قف» عند 100%
+• تأجيل «5 دقائق بعد»، وBeepo يتذكر كم مرة ضغطته
+• شاشة الحظر: حين ينتهي الحد يُغلق التطبيق. أنفق نجمة لتفتحه 5 دقائق أخرى
+• اضغط مطولًا على Beepo فيقفز إلى ثقب الكاميرا ويتدلّى منه مقلوبًا، ويواصل المراقبة
+
+⭐ النجوم والسلاسل والأوسمة
+• اكسب نجمة عن كل حد تلتزم به وكل هدف تحققه
+• ابنِ سلاسل يومية متتالية وافتح الأوسمة
+• أنفق النجوم في المتجر: قبعات، ألوان، هوائيات، إكسسوارات
+• يتطوّر Beepo مع نمو سلسلتك، ويصبح أشعث قليلًا حين تتعثّر
+
+📊 تقرير وقت الشاشة
+• وقت اليوم لكل تطبيق، من إحصاءات الاستخدام في Android نفسه
+• تقرير أسبوعي: الوقت لكل يوم ولكل تطبيق، والوقت الذي وفّرته مقارنة بالأسبوع الماضي
+
+✨ Beepo Plus: شراء لمرة واحدة، بلا اشتراك
+• يبقى Beepo على الشاشة في تطبيقاتك المتابَعة ويتجوّل أسفلها
+• رفاق يتبعونه أينما ذهب، أولهم القطة موتشي
+• قبعات ورفاق موسمية للمناسبات طوال العام
+• أداة للشاشة الرئيسية بمشاهد بكسلية: مرج مشمس، ليلة مرصعة بالنجوم، شاطئ، تلة مثلجة، غرفة دافئة، الفضاء الخارجي
+• ارسم قبعاتك الخاصة في محرر الرسوم
+• سجل التقارير كاملًا، أسبوعًا بأسبوع
+• الوضع الداكن
+
+🔒 الخصوصية في صميم التصميم
+• لا حساب، لا إعلانات، لا تتبّع
+• وقتك في التطبيقات لا يغادر هاتفك أبدًا. يتصل Beepo بالإنترنت فقط للتحقق من مشتريات Beepo Plus
+• الوصول إلى بيانات الاستخدام: ليعرف Beepo كم بقي كل تطبيق مفتوحًا (أسماء الحزم والدقائق فقط)
+• الظهور فوق التطبيقات الأخرى: ليظهر Beepo فوق التطبيق الذي تستخدمه. لا يقرأ شاشتك أبدًا
+
+حيوان أليف لوقت الشاشة من أجل رفاهيتك الرقمية: طريقة لطيفة للتوقف عن التمرير اللانهائي، والتخلص من إدمان الهاتف، وبناء عادات تركيز أفضل. يعيش Beepo أيضًا في Chrome وEdge وFirefox كإضافة للمتصفح، ويتحدث 17 لغة.
+
+
