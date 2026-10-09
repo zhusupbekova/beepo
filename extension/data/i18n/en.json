@@ -569,6 +569,8 @@
     "notifText": "Beepo is keeping an eye on the time",
     "closeApp": "Close app",
     "overlayGranted": "Display over other apps is on ✓",
+    "hideApps": "Hide Beepo in these apps",
+    "focusApps": "Focus hours (apps off-limits)",
     "edHint": "Tap or drag to paint on top of Beepo. ⌫ erases Beepo's own pixels, · leaves a pixel as it is.",
     "edSaved": "Saved, and I'm wearing it! It's in the shop too.",
     "edMake": "✏ Make your own",

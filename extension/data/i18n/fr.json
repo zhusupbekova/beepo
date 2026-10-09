@@ -569,6 +569,8 @@
     "notifText": "Beepo garde un œil sur le temps",
     "closeApp": "Fermer l'app",
     "overlayGranted": "Superposition sur d'autres applis activée ✓",
+    "hideApps": "Masquer Beepo dans ces applis",
+    "focusApps": "Heures de concentration (applis interdites)",
     "edHint": "Touche ou glisse pour peindre par-dessus Beepo. ⌫ efface les pixels de Beepo, · laisse un pixel tel quel.",
     "edSaved": "Enregistré, et je le porte déjà ! Il est aussi dans la boutique.",
     "edMake": "✏ Crée le tien",

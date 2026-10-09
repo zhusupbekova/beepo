@@ -569,6 +569,8 @@
     "notifText": "Beepoが時間を見守っています",
     "closeApp": "アプリを閉じる",
     "overlayGranted": "他のアプリの上に重ねて表示：オン ✓",
+    "hideApps": "このアプリではBeepoを隠す",
+    "focusApps": "集中タイム（アプリ禁止）",
     "edHint": "タップやドラッグでBeepoの上に描こう。⌫はBeepo自身のピクセルを消し、·はそのままにします。",
     "edSaved": "保存して、さっそく着てみたよ！ショップにもあるよ。",
     "edMake": "✏ 自分で作る",

@@ -569,6 +569,8 @@
     "notifText": "Beepo zamana göz kulak oluyor",
     "closeApp": "Uygulamayı kapat",
     "overlayGranted": "Diğer uygulamaların üzerinde gösterme açık ✓",
+    "hideApps": "Bu uygulamalarda Beepo'yu gizle",
+    "focusApps": "Odak saatleri (uygulamalar yasak)",
     "edHint": "Beepo'nun üstüne boyamak için dokun veya sürükle. ⌫ Beepo'nun kendi piksellerini siler, · pikseli olduğu gibi bırakır.",
     "edSaved": "Kaydedildi, hemen taktım bile! Mağazada da var.",
     "edMake": "✏ Kendin yap",

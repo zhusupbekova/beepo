@@ -569,6 +569,8 @@
     "notifText": "Beepo 正在幫你留意時間",
     "closeApp": "關閉 App",
     "overlayGranted": "已開啟「顯示在其他應用程式上層」✓",
+    "hideApps": "在這些 App 裡隱藏 Beepo",
+    "focusApps": "專注時段（禁用 App）",
     "edHint": "點按或拖曳，在 Beepo 身上作畫。⌫ 擦掉 Beepo 自己的像素，· 保持像素不變。",
     "edSaved": "已儲存，我已經戴上囉！商店裡也有。",
     "edMake": "✏ 自己做",

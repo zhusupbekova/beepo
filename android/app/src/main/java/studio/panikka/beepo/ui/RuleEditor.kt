@@ -1,11 +1,14 @@
 package studio.panikka.beepo.ui
 
+import android.app.TimePickerDialog
+import android.text.format.DateFormat
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.FlowRow
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
@@ -23,6 +26,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardType
@@ -31,11 +35,13 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.Dialog
 import androidx.compose.ui.window.DialogProperties
 import studio.panikka.beepo.I18n
+import studio.panikka.beepo.core.Focus
 import studio.panikka.beepo.core.Mode
 import studio.panikka.beepo.core.Rule
 import studio.panikka.beepo.data.AppInfo
+import studio.panikka.beepo.overlay.Overlay
 
-/** Full-screen rule editor, same fields as the popup's (block / hide / focus come with the overlay). */
+/** Full-screen rule editor, same fields as the popup's. Block, hide and focus work through the overlay. */
 @Composable
 fun RuleEditor(
     rule: Rule,
@@ -53,6 +59,11 @@ fun RuleEditor(
     var mode by remember { mutableStateOf(rule.mode) }
     var minutes by remember { mutableStateOf(rule.minutes.toString()) }
     var weekend by remember { mutableStateOf(rule.weekendMinutes?.toString().orEmpty()) }
+    var block by remember { mutableStateOf(rule.block) }
+    var hidden by remember { mutableStateOf(rule.hidden) }
+    var focusStart by remember { mutableStateOf(rule.focus?.start.orEmpty()) }
+    var focusEnd by remember { mutableStateOf(rule.focus?.end.orEmpty()) }
+    var weekdaysOnly by remember { mutableStateOf(rule.focus?.weekdaysOnly ?: true) }
     var search by remember { mutableStateOf("") }
     var error by remember { mutableStateOf(false) }
 
@@ -84,6 +95,28 @@ fun RuleEditor(
                 }
                 Field(i18n.t("fieldWeekend"), Modifier.weight(1f)) {
                     PixelField(weekend, { weekend = it.filter(Char::isDigit) }, Modifier.fillMaxWidth(), i18n.t("weekendPlaceholder"), numbers)
+                }
+            }
+
+            FlowRow(horizontalArrangement = Arrangement.spacedBy(6.dp), verticalArrangement = Arrangement.spacedBy(6.dp)) {
+                if (mode == Mode.LIMIT) PixelChip(i18n.t("blockWhenOver"), block) { block = !block }
+                PixelChip(i18n.android("hideApps"), hidden) { hidden = !hidden }
+            }
+            Field(i18n.android("focusApps")) {
+                FlowRow(horizontalArrangement = Arrangement.spacedBy(6.dp), verticalArrangement = Arrangement.spacedBy(6.dp)) {
+                    TimeChip(focusStart) { focusStart = it }
+                    Text("–", style = PixelText)
+                    TimeChip(focusEnd) { focusEnd = it }
+                    PixelChip(i18n.t("weekdays"), weekdaysOnly) { weekdaysOnly = !weekdaysOnly }
+                    if (focusStart.isNotEmpty() || focusEnd.isNotEmpty()) PixelChip("✕", false) { focusStart = ""; focusEnd = "" }
+                }
+            }
+            // The block screen is an overlay, so without the permission blocking can't happen.
+            val context = LocalContext.current
+            if ((block && mode == Mode.LIMIT || focusStart.isNotEmpty() && focusEnd.isNotEmpty()) && !Overlay.allowed(context)) {
+                Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                    Text(i18n.android("overlayHint"), Modifier.weight(1f), style = PixelText.copy(color = Muted))
+                    PixelButton(i18n.android("usageGrant"), fill = Gold) { Overlay.openSettings(context) }
                 }
             }
 
@@ -126,6 +159,9 @@ fun RuleEditor(
                             mode = mode,
                             minutes = minutes.toIntOrNull() ?: rule.minutes,
                             weekendMinutes = weekend.toIntOrNull(),
+                            block = block && mode == Mode.LIMIT,
+                            hidden = hidden,
+                            focus = if (focusStart.isNotEmpty() && focusEnd.isNotEmpty()) Focus(focusStart, focusEnd, weekdaysOnly) else null,
                         ),
                     )
                 }
@@ -142,5 +178,15 @@ private fun Field(label: String, modifier: Modifier = Modifier, content: @Compos
     Column(modifier, verticalArrangement = Arrangement.spacedBy(4.dp)) {
         Text(label, style = PixelText.copy(color = Muted))
         content()
+    }
+}
+
+/** "HH:MM" (or "--:--" when unset); tapping opens the system time picker. */
+@Composable
+private fun TimeChip(value: String, onPick: (String) -> Unit) {
+    val context = LocalContext.current
+    PixelChip(value.ifEmpty { "--:--" }, false) {
+        val (h, m) = value.split(":").mapNotNull(String::toIntOrNull).takeIf { it.size == 2 } ?: listOf(22, 0)
+        TimePickerDialog(context, { _, hour, minute -> onPick("%02d:%02d".format(java.util.Locale.ROOT, hour, minute)) }, h, m, DateFormat.is24HourFormat(context)).show()
     }
 }

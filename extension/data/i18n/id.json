@@ -569,6 +569,8 @@
     "notifText": "Beepo sedang memantau waktu",
     "closeApp": "Tutup aplikasi",
     "overlayGranted": "Tampilkan di atas aplikasi lain sudah aktif ✓",
+    "hideApps": "Sembunyikan Beepo di aplikasi ini",
+    "focusApps": "Jam fokus (aplikasi terlarang)",
     "edHint": "Ketuk atau seret untuk melukis di atas Beepo. ⌫ menghapus piksel Beepo sendiri, · membiarkan piksel apa adanya.",
     "edSaved": "Tersimpan, dan sudah kupakai! Ada di toko juga.",
     "edMake": "✏ Buat sendiri",
