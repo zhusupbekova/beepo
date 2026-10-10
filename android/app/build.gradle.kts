@@ -12,7 +12,7 @@ android {
         applicationId = "studio.panikka.beepo"
         minSdk = 26
         targetSdk = 36
-        versionCode = 5
+        versionCode = 6
         versionName = "0.1.0"
     }
 

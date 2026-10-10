@@ -30,7 +30,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
-import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -38,29 +37,28 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.withContext
 import studio.panikka.beepo.I18n
-import studio.panikka.beepo.PRIVACY_URL
 import studio.panikka.beepo.core.Rule
 import studio.panikka.beepo.core.State
 import studio.panikka.beepo.core.matchApp
 import studio.panikka.beepo.core.newId
 import studio.panikka.beepo.data.AppInfo
-import studio.panikka.beepo.openUrl
+import studio.panikka.beepo.data.Plus
 import studio.panikka.beepo.overlay.Overlay
 import studio.panikka.beepo.overlay.rememberNotificationAsk
 import studio.panikka.beepo.sprite.Sprites
 import studio.panikka.beepo.sprite.compose
 import studio.panikka.beepo.usage.UsageAccess
 
-private const val STEPS = 5
 private const val WEEK_MS = 7 * 24 * 3_600_000L
 private const val PICK_MAX = 8
 private const val PRESELECT = 3
 
 /**
- * First-run intro: hello, how it works, usage access (with the privacy promise, before sending
- * anyone to system settings), showing up over other apps, then a few of the week's most used apps
- * to limit right away. `onOverlay` turns Beepo on screen on or off ("not now"); `onDone` gets the
- * rules to add (none if skipped).
+ * First-run intro: hello, how it works, what can be changed later in Settings, usage access (with
+ * the privacy promise, before sending anyone to system settings), showing up over other apps, then
+ * a few of the week's most used apps to limit right away, and last Beepo Plus (`plusPage`, null
+ * where it isn't sold; skipped for anyone who already has it). `onOverlay` turns Beepo on screen on
+ * or off ("not now"); `onDone` gets the rules to add (none if skipped).
  */
 @Composable
 fun Onboarding(
@@ -69,8 +67,10 @@ fun Onboarding(
     apps: Map<String, AppInfo>,
     granted: Boolean,
     overlayOk: Boolean,
+    plus: Boolean,
     i18n: I18n,
     onOverlay: (Boolean) -> Unit,
+    plusPage: (@Composable () -> Unit)?,
     onDone: (List<Rule>) -> Unit,
 ) {
     val context = LocalContext.current
@@ -78,6 +78,9 @@ fun Onboarding(
     var minutes by rememberSaveable { mutableIntStateOf(30) }
     var picked by rememberSaveable { mutableStateOf<List<String>?>(null) }
     BackHandler(enabled = step > 0) { step-- }
+    // Decided once, so buying on the Plus page doesn't take the page away.
+    val withPlus = rememberSaveable { plusPage != null && !plus }
+    val steps = if (withPlus) 7 else 6
     val askNotifications = rememberNotificationAsk()
 
     // The week's most used apps, once usage access is on.
@@ -101,9 +104,9 @@ fun Onboarding(
     }
     val (mood, pose) = when (step) {
         0 -> "happy" to if (tick % 4 < 2) "wave" else null
-        1 -> "proud" to null
-        2 -> (if (granted) "party" else if (tick % 12 == 0) "blink" else "neutral") to null
-        3 -> (if (overlayOk) "party" else "happy") to if (!overlayOk && tick % 4 < 2) "wave" else null
+        1, 2 -> "proud" to null
+        3 -> (if (granted) "party" else if (tick % 12 == 0) "blink" else "neutral") to null
+        4 -> (if (overlayOk) "party" else "happy") to if (!overlayOk && tick % 4 < 2) "wave" else null
         else -> "happy" to null
     }
 
@@ -113,7 +116,8 @@ fun Onboarding(
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.spacedBy(14.dp, Alignment.CenterVertically),
         ) {
-            PixelCanvas(sprites.compose(mood, pose, state.beepoLook(sprites).look), 8.dp)
+            // The Plus page shows Beepo with pets instead.
+            if (step < 6) PixelCanvas(sprites.compose(mood, pose, state.beepoLook(sprites).look), 8.dp)
             when (step) {
                 0 -> {
                     Title(i18n.android("obHello"))
@@ -121,36 +125,29 @@ fun Onboarding(
                 }
                 1 -> {
                     Title(i18n.android("obHowTitle"))
-                    Column(Modifier.fillMaxWidth().pixelBox().padding(10.dp), verticalArrangement = Arrangement.spacedBy(10.dp)) {
-                        for ((icon, key) in listOf("⏳" to "obLimits", "🎯" to "obGoals", "⭐" to "obStars", "🔥" to "obStreaks")) {
-                            Row(horizontalArrangement = Arrangement.spacedBy(10.dp)) {
-                                Text(icon, style = PixelText.copy(fontSize = 18.sp))
-                                Text(i18n.android(key), style = PixelText)
-                            }
-                        }
-                    }
+                    Points(i18n, listOf("⏳" to "obLimits", "🎯" to "obGoals", "⭐" to "obStars", "🔥" to "obStreaks"))
                 }
                 2 -> {
+                    Title(i18n.android("obSetTitle"))
+                    Body(i18n.android("obSetBody"))
+                    // Walking around is Plus (✨, as in Settings), so it's left out where Plus isn't sold.
+                    val walk = if (Plus.available) listOf("✨" to "obSetWalk") else emptyList()
+                    Points(i18n, walk + listOf("🤫" to "obSetQuiet", "📏" to "obSetLook", "⏰" to "obSetNag", "🛑" to "obSetBlock"))
+                }
+                3 -> {
                     Title(i18n.android("usageTitle"))
                     Body(i18n.android("usageBody"))
-                    Column(Modifier.fillMaxWidth().pixelBox(Gold).padding(10.dp), verticalArrangement = Arrangement.spacedBy(6.dp)) {
-                        Text("🔒 " + i18n.android("obOffline"), style = PixelText)
-                        Text(
-                            i18n.android("privacyPolicy"),
-                            Modifier.clickable { openUrl(context, PRIVACY_URL) },
-                            style = PixelText.copy(fontWeight = FontWeight.Bold, textDecoration = TextDecoration.Underline),
-                        )
-                    }
+                    Text("🔒 " + i18n.android("obOffline"), Modifier.fillMaxWidth().pixelBox(Gold).padding(10.dp), style = PixelText)
                     if (granted) Text(i18n.android("obGranted"), style = PixelText.copy(fontWeight = FontWeight.Bold))
                     else Body(i18n.android("usageFind"), muted = true)
                 }
-                3 -> {
+                4 -> {
                     Title(i18n.android("overlayTitle"))
                     Body(i18n.android("overlayBody"))
                     if (overlayOk) Text(i18n.android("overlayGranted"), style = PixelText.copy(fontWeight = FontWeight.Bold))
                     else Body(i18n.android("overlayHint"), muted = true)
                 }
-                else -> {
+                5 -> {
                     Title(i18n.android("obPickTitle"))
                     if (top.isEmpty()) Body(i18n.android("obNoApps"), muted = true)
                     else {
@@ -178,23 +175,24 @@ fun Onboarding(
                         }
                     }
                 }
+                else -> plusPage?.invoke()
             }
         }
 
         Row(Modifier.fillMaxWidth().padding(vertical = 12.dp), horizontalArrangement = Arrangement.Center) {
-            Text((0 until STEPS).joinToString(" ") { if (it == step) "●" else "○" }, style = PixelText.copy(color = Muted))
+            Text((0 until steps).joinToString(" ") { if (it == step) "●" else "○" }, style = PixelText.copy(color = Muted))
         }
         Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(8.dp)) {
             if (step > 0) PixelButton(i18n.android("back"), fill = Card) { step-- }
             Spacer(Modifier.weight(1f))
             when {
-                step < 2 -> PixelButton(i18n.android("next")) { step++ }
-                step == 2 && !granted -> {
+                step < 3 -> PixelButton(i18n.android("next")) { step++ }
+                step == 3 && !granted -> {
                     PixelButton(i18n.android("notNow"), fill = Card) { onDone(emptyList()) }
                     PixelButton(i18n.android("usageGrant")) { UsageAccess.openSettings(context) }
                 }
-                step == 2 -> PixelButton(i18n.android("next")) { step++ }
-                step == 3 && !overlayOk -> {
+                step == 3 -> PixelButton(i18n.android("next")) { step++ }
+                step == 4 && !overlayOk -> {
                     PixelButton(i18n.android("notNow"), fill = Card) {
                         onOverlay(false)
                         step++
@@ -204,10 +202,11 @@ fun Onboarding(
                         Overlay.openSettings(context)
                     }
                 }
-                step == 3 -> PixelButton(i18n.android("next")) {
+                step == 4 -> PixelButton(i18n.android("next")) {
                     onOverlay(true)
                     askNotifications { step++ }
                 }
+                step == 5 && withPlus -> PixelButton(i18n.android("next")) { step++ }
                 else -> PixelButton(i18n.android("start")) {
                     onDone(top.filter { it.first.pkg in selected }.map { (app) -> Rule(newId(), app.label, apps = listOf(app.pkg), minutes = minutes) })
                 }
@@ -215,6 +214,18 @@ fun Onboarding(
         }
     }
 }
+
+/** Icon + line rows in one box. */
+@Composable
+fun Points(i18n: I18n, points: List<Pair<String, String>>) =
+    Column(Modifier.fillMaxWidth().pixelBox().padding(10.dp), verticalArrangement = Arrangement.spacedBy(10.dp)) {
+        for ((icon, key) in points) {
+            Row(horizontalArrangement = Arrangement.spacedBy(10.dp)) {
+                Text(icon, style = PixelText.copy(fontSize = 18.sp))
+                Text(i18n.android(key), style = PixelText)
+            }
+        }
+    }
 
 @Composable
 private fun Title(text: String) =

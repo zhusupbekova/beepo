@@ -14,16 +14,22 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.SideEffect
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalView
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.compose.ui.window.Dialog
+import androidx.compose.ui.window.DialogProperties
+import androidx.compose.ui.window.DialogWindowProvider
+import androidx.core.view.WindowCompat
 import studio.panikka.beepo.core.Settings
 
 /**
@@ -120,3 +126,25 @@ fun PixelBar(ratio: Float, fill: Color, modifier: Modifier = Modifier) {
         Box(Modifier.fillMaxWidth(ratio.coerceIn(0f, 1f)).fillMaxHeight().background(fill))
     }
 }
+
+/**
+ * A dialog that covers the whole screen, behind the status and navigation bars too (the content
+ * pads itself with safeDrawingPadding), with bar icons matching the theme like the activity's.
+ */
+@Composable
+fun FullScreenDialog(onDismiss: () -> Unit, content: @Composable () -> Unit) =
+    Dialog(onDismiss, DialogProperties(usePlatformDefaultWidth = false, decorFitsSystemWindows = false)) {
+        val view = LocalView.current
+        val window = (view.parent as? DialogWindowProvider)?.window
+        val dark = Theme.dark
+        SideEffect {
+            if (window == null) return@SideEffect
+            window.setDimAmount(0f)
+            window.isNavigationBarContrastEnforced = false
+            WindowCompat.getInsetsController(window, view).run {
+                isAppearanceLightStatusBars = !dark
+                isAppearanceLightNavigationBars = !dark
+            }
+        }
+        content()
+    }

@@ -32,8 +32,6 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.window.Dialog
-import androidx.compose.ui.window.DialogProperties
 import studio.panikka.beepo.I18n
 import studio.panikka.beepo.core.Focus
 import studio.panikka.beepo.core.Mode
@@ -73,7 +71,7 @@ fun RuleEditor(
         .sortedWith(compareBy<AppInfo>({ it.pkg !in rule.apps }, { -(appSecs[it.pkg] ?: 0) }, { it.label.lowercase() }))
     val numbers = KeyboardOptions(keyboardType = KeyboardType.Number)
 
-    Dialog(onDismiss, DialogProperties(usePlatformDefaultWidth = false)) {
+    FullScreenDialog(onDismiss) {
         Column(
             Modifier.fillMaxSize().background(Paper).safeDrawingPadding().padding(12.dp),
             verticalArrangement = Arrangement.spacedBy(8.dp),

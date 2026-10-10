@@ -41,7 +41,14 @@ class OverlayWindow(
         if (focusable) WindowManager.LayoutParams.FLAG_LAYOUT_IN_SCREEN
         else WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE or WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL,
         PixelFormat.TRANSLUCENT,
-    ).apply(setup)
+    ).apply {
+        // Full-screen ones go behind the status and navigation bars too; their content pads itself.
+        if (focusable) {
+            fitInsetsTypes = 0
+            layoutInDisplayCutoutMode = WindowManager.LayoutParams.LAYOUT_IN_DISPLAY_CUTOUT_MODE_ALWAYS
+        }
+        setup()
+    }
 
     private val root = object : FrameLayout(context) {
         override fun dispatchKeyEvent(event: KeyEvent): Boolean {

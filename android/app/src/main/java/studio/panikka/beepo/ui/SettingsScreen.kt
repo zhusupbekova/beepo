@@ -20,8 +20,6 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.window.Dialog
-import androidx.compose.ui.window.DialogProperties
 import studio.panikka.beepo.BuildConfig
 import studio.panikka.beepo.I18n
 import studio.panikka.beepo.PRIVACY_URL
@@ -31,6 +29,7 @@ import studio.panikka.beepo.core.Settings
 import studio.panikka.beepo.data.Plus
 import studio.panikka.beepo.overlay.Overlay
 import studio.panikka.beepo.overlay.rememberNotificationAsk
+import studio.panikka.beepo.widget.BeepoWidget
 
 /** The options page, for the phone: language, when the day starts, Beepo on screen. */
 @Composable
@@ -46,21 +45,25 @@ fun SettingsScreen(
 ) {
     val context = LocalContext.current
     val askNotifications = rememberNotificationAsk()
-    Dialog(onClose, DialogProperties(usePlatformDefaultWidth = false)) {
+    FullScreenDialog(onClose) {
         Column(Modifier.fillMaxSize().background(Paper).safeDrawingPadding()) {
-            // Title and Close stay at the top while the settings scroll.
+            // Title, Close and Beepo Plus stay at the top while the settings scroll.
             Row(Modifier.fillMaxWidth().padding(start = 12.dp, end = 12.dp, top = 12.dp, bottom = 4.dp), verticalAlignment = Alignment.CenterVertically) {
                 Text(i18n.t("optTitle"), Modifier.weight(1f), style = PixelText.copy(fontWeight = FontWeight.Bold))
                 PixelButton(i18n.t("close"), onClick = onClose)
+            }
+            if (Plus.available) {
+                PixelButton(
+                    "✨ " + i18n.android(if (plus) "plusTitle" else "plusGet"),
+                    Modifier.fillMaxWidth().padding(start = 12.dp, end = 12.dp, top = 8.dp),
+                    fill = Gold,
+                    onClick = onPlus,
+                )
             }
             Column(
                 Modifier.weight(1f).verticalScroll(rememberScrollState()).padding(12.dp),
                 verticalArrangement = Arrangement.spacedBy(10.dp),
             ) {
-                if (Plus.available) {
-                    PixelButton("✨ " + i18n.android(if (plus) "plusTitle" else "plusGet"), Modifier.fillMaxWidth(), fill = Gold, onClick = onPlus)
-                }
-
                 Section(i18n.t("language")) {
                     PixelChip(i18n.android("langAuto"), settings.lang == "auto") { onChange(settings.copy(lang = "auto")) }
                     for ((code, name) in LANGUAGES) PixelChip(name, settings.lang == code) { onChange(settings.copy(lang = code)) }
@@ -81,6 +84,13 @@ fun SettingsScreen(
                 Section(i18n.t("newDay"), i18n.t("newDayHint")) {
                     for (h in 0 until 12) {
                         PixelChip("%02d:00".format(java.util.Locale.ROOT, h), settings.resetHour == h) { onChange(settings.copy(resetHour = h)) }
+                    }
+                }
+
+                // The widget is Plus too: without it the button opens the paywall.
+                if (Plus.available && BeepoWidget.canPin(context)) {
+                    PixelButton("🖼️ " + i18n.android("widgetAdd") + if (plus) "" else " ✨", Modifier.fillMaxWidth(), fill = Card) {
+                        if (plus) BeepoWidget.pin(context) else onPlus()
                     }
                 }
 

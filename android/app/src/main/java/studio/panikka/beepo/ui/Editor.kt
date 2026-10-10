@@ -36,8 +36,6 @@ import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.window.Dialog
-import androidx.compose.ui.window.DialogProperties
 import studio.panikka.beepo.I18n
 import studio.panikka.beepo.core.CustomItem
 import studio.panikka.beepo.data.Store
@@ -59,7 +57,7 @@ fun EditorScreen(store: Store, i18n: I18n, editing: CustomItem?, onClose: () -> 
     val h = sprites.height
     fun grid(rows: Map<Int, String>) = List(h) { y -> (rows[y] ?: "").padEnd(w, KEEP).take(w).toCharArray() }
 
-    var id by remember { mutableStateOf(editing?.id.orEmpty()) }
+    val id = editing?.id.orEmpty()
     var name by remember { mutableStateOf(editing?.name.orEmpty()) }
     var slot by remember { mutableStateOf(editing?.slot ?: "hat") }
     var cells by remember { mutableStateOf(grid(editing?.rows.orEmpty().mapKeys { it.key.toInt() })) }
@@ -78,7 +76,7 @@ fun EditorScreen(store: Store, i18n: I18n, editing: CustomItem?, onClose: () -> 
         msg = null
     }
 
-    Dialog(onClose, DialogProperties(usePlatformDefaultWidth = false)) {
+    FullScreenDialog(onClose) {
         Column(
             Modifier.fillMaxSize().background(Paper).safeDrawingPadding().verticalScroll(rememberScrollState()).padding(12.dp),
             verticalArrangement = Arrangement.spacedBy(10.dp),
@@ -181,8 +179,8 @@ fun EditorScreen(store: Store, i18n: I18n, editing: CustomItem?, onClose: () -> 
                 PixelButton(i18n.t("edSave"), fill = Gold) {
                     if (rows.isEmpty()) msg = i18n.t("edDrawFirst")
                     else {
-                        id = store.saveCustom(item)
-                        msg = i18n.android("edSaved")
+                        store.saveCustom(item)
+                        onClose()
                     }
                 }
             }

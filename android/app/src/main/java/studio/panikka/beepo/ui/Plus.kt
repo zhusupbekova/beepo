@@ -16,9 +16,12 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import androidx.compose.ui.window.Dialog
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.revenuecat.purchases.Package
@@ -29,13 +32,62 @@ import studio.panikka.beepo.data.Store
 import studio.panikka.beepo.sprite.Look
 import studio.panikka.beepo.sprite.compose
 import studio.panikka.beepo.sprite.pet
+import studio.panikka.beepo.widget.BeepoWidget
 
-/** Beepo Plus: what it brings, buy (price from RevenueCat), restore. */
 /** Pets in the paywall's row (more don't fit next to Beepo). */
 private const val PAYWALL_PETS = 4
 
+/** Beepo Plus: what it brings, buy (price from RevenueCat), restore. */
 @Composable
 fun PlusDialog(store: Store, i18n: I18n, onClose: () -> Unit) {
+    Dialog(onClose) {
+        Column(
+            Modifier.fillMaxWidth().pixelBox(Paper).padding(12.dp),
+            horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement = Arrangement.spacedBy(10.dp),
+        ) {
+            Text("✨ " + i18n.android("plusTitle"), style = PixelText.copy(fontWeight = FontWeight.Bold))
+            PlusHero(store, 4.dp)
+            Text(i18n.android("plusBody"), style = PixelText, textAlign = TextAlign.Center)
+            PlusBuy(store, i18n)
+            PixelButton(i18n.t("close"), Modifier.fillMaxWidth(), fill = Card, onClick = onClose)
+        }
+    }
+}
+
+/** The last onboarding page: Beepo Plus as a list, with the same buy and restore. */
+@Composable
+fun PlusPage(store: Store, i18n: I18n) {
+    PlusHero(store, 5.dp)
+    Text("✨ " + i18n.android("plusTitle"), style = PixelText.copy(fontWeight = FontWeight.Bold, fontSize = 20.sp), textAlign = TextAlign.Center)
+    Points(i18n, listOf("🚶" to "obPlusWalk", "🖼️" to "obPlusWidget", "🎩" to "obPlusHats", "📊" to "obPlusReport", "🌙" to "theme"))
+    Text(i18n.android("obPlusOnce"), style = PixelText.copy(color = Muted), textAlign = TextAlign.Center)
+    PlusBuy(store, i18n)
+    // Bought right here: the widget can go on the home screen straight away.
+    val context = LocalContext.current
+    val active by store.plus.collectAsStateWithLifecycle()
+    if (active && BeepoWidget.canPin(context)) {
+        PixelButton("🖼️ " + i18n.android("widgetAdd"), Modifier.fillMaxWidth(), fill = Card) { BeepoWidget.pin(context) }
+    }
+}
+
+/** Beepo in this season's hat (or the latest one seen), with as many Plus pets as fit in a row. */
+@Composable
+private fun PlusHero(store: Store, px: Dp) {
+    val sprites = store.sprites
+    val seen = store.state.collectAsStateWithLifecycle().value.wallet.seen
+    // The year-round pets, then seasonal ones already in the shop.
+    val pets = sprites.items.values.filter { it.plus && it.slot == "pet" && (it.season == null || it.id in seen) }.take(PAYWALL_PETS)
+    val hat = seen.lastOrNull { sprites.items[it]?.let { i -> i.plus && i.slot == "hat" } == true }
+    Row(horizontalArrangement = Arrangement.spacedBy(8.dp), verticalAlignment = Alignment.Bottom) {
+        PixelCanvas(sprites.compose("proud", look = Look(hat?.let { mapOf("hat" to it) }.orEmpty())), px)
+        for (p in pets) sprites.pet(p.id, 0)?.let { PixelCanvas(it, px) }
+    }
+}
+
+/** Unlock (or "Plus is on"), then restore. */
+@Composable
+private fun PlusBuy(store: Store, i18n: I18n) {
     val activity = LocalActivity.current
     val scope = rememberCoroutineScope()
     val active by store.plus.collectAsStateWithLifecycle()
@@ -49,56 +101,33 @@ fun PlusDialog(store: Store, i18n: I18n, onClose: () -> Unit) {
         loading = false
     }
 
-    val sprites = store.sprites
-    // Wearing this season's hat (or the latest one seen).
-    val seen = store.state.collectAsStateWithLifecycle().value.wallet.seen
-    // As many pets as fit in a row: the year-round ones, then seasonal ones already in the shop.
-    val pets = sprites.items.values.filter { it.plus && it.slot == "pet" && (it.season == null || it.id in seen) }.take(PAYWALL_PETS)
-    val hat = seen.lastOrNull { sprites.items[it]?.let { i -> i.plus && i.slot == "hat" } == true }
-
-    Dialog(onClose) {
-        Column(
-            Modifier.fillMaxWidth().pixelBox(Paper).padding(12.dp),
-            horizontalAlignment = Alignment.CenterHorizontally,
-            verticalArrangement = Arrangement.spacedBy(10.dp),
-        ) {
-            Text("✨ " + i18n.android("plusTitle"), style = PixelText.copy(fontWeight = FontWeight.Bold))
-            Row(horizontalArrangement = Arrangement.spacedBy(8.dp), verticalAlignment = Alignment.Bottom) {
-                PixelCanvas(sprites.compose("proud", look = Look(hat?.let { mapOf("hat" to it) }.orEmpty())), 4.dp)
-                for (p in pets) sprites.pet(p.id, 0)?.let { PixelCanvas(it, 4.dp) }
-            }
-            Text(i18n.android("plusBody"), style = PixelText, textAlign = TextAlign.Center)
-
-            when {
-                active -> Text(i18n.android("plusActive"), style = PixelText.copy(fontWeight = FontWeight.Bold), textAlign = TextAlign.Center)
-                loading -> Text("…", style = PixelText)
-                offer == null -> Text(i18n.android("plusOffline"), style = PixelText.copy(color = Muted), textAlign = TextAlign.Center)
-                else -> PixelButton(i18n.android("plusBuy", "price" to offer!!.product.price.formatted), Modifier.fillMaxWidth(), fill = Gold, enabled = !busy && activity != null) {
-                    val pkg = offer ?: return@PixelButton
-                    busy = true
-                    note = null
-                    scope.launch {
-                        note = when (Plus.buy(activity!!, pkg, store)) {
-                            Plus.Result.Done, Plus.Result.Cancelled -> null
-                            Plus.Result.Failed -> i18n.android("plusFailed")
-                        }
-                        busy = false
-                    }
+    when {
+        active -> Text(i18n.android("plusActive"), style = PixelText.copy(fontWeight = FontWeight.Bold), textAlign = TextAlign.Center)
+        loading -> Text("…", style = PixelText)
+        offer == null -> Text(i18n.android("plusOffline"), style = PixelText.copy(color = Muted), textAlign = TextAlign.Center)
+        else -> PixelButton(i18n.android("plusBuy", "price" to offer!!.product.price.formatted), Modifier.fillMaxWidth(), fill = Gold, enabled = !busy && activity != null) {
+            val pkg = offer ?: return@PixelButton
+            busy = true
+            note = null
+            scope.launch {
+                note = when (Plus.buy(activity!!, pkg, store)) {
+                    Plus.Result.Done, Plus.Result.Cancelled -> null
+                    Plus.Result.Failed -> i18n.android("plusFailed")
                 }
+                busy = false
             }
-            note?.let { Text(it, style = PixelText.copy(color = Muted), textAlign = TextAlign.Center) }
+        }
+    }
+    note?.let { Text(it, style = PixelText.copy(color = Muted), textAlign = TextAlign.Center) }
 
-            if (!active) {
-                PixelButton(i18n.android("plusRestore"), Modifier.fillMaxWidth(), fill = Card, enabled = !busy) {
-                    busy = true
-                    note = null
-                    scope.launch {
-                        if (!Plus.restore(store)) note = i18n.android("plusNothing")
-                        busy = false
-                    }
-                }
+    if (!active) {
+        PixelButton(i18n.android("plusRestore"), Modifier.fillMaxWidth(), fill = Card, enabled = !busy) {
+            busy = true
+            note = null
+            scope.launch {
+                if (!Plus.restore(store)) note = i18n.android("plusNothing")
+                busy = false
             }
-            PixelButton(i18n.t("close"), Modifier.fillMaxWidth(), fill = Card, onClick = onClose)
         }
     }
 }

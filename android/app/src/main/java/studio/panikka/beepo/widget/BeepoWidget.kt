@@ -73,6 +73,13 @@ class BeepoWidget : AppWidgetProvider() {
         private var i18n: I18n? = null
         private var i18nPref: String? = null
 
+        /** The launcher can add the widget for us (most do; it shows its own confirm sheet). */
+        fun canPin(context: Context) = AppWidgetManager.getInstance(context).isRequestPinAppWidgetSupported
+
+        fun pin(context: Context) {
+            AppWidgetManager.getInstance(context).requestPinAppWidget(ComponentName(context, BeepoWidget::class.java), null, null)
+        }
+
         fun update(context: Context) {
             val manager = AppWidgetManager.getInstance(context)
             val ids = manager.getAppWidgetIds(ComponentName(context, BeepoWidget::class.java))

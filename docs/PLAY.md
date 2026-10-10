@@ -89,7 +89,7 @@ Type: **Special use** (`FOREGROUND_SERVICE_SPECIAL_USE`). The manifest's `PROPER
 - **Video:** turn on Beepo on screen → open a tracked app → Beepo pops up with a reminder → reach the limit → STOP sign + snooze → a blocked app shows the block screen.
 
 ## Usage access (`PACKAGE_USAGE_STATS`)
-There's no Play declaration form for this. Policy wants a prominent disclosure before the user is sent to system settings, which onboarding does (step "Beepo needs Usage access": what it reads, that it stays on the phone, privacy policy link), as does the Today card. Only package names and seconds are kept.
+There's no Play declaration form for this. Policy wants a prominent disclosure before the user is sent to system settings, which onboarding does (step "Beepo needs Usage access": what it reads, that it stays on the phone; the privacy policy link is in Settings), as does the Today card. Only package names and seconds are kept.
 
 ## Display over other apps (`SYSTEM_ALERT_WINDOW`)
 There's no declaration form either. Onboarding explains it before sending the user to settings ("Let me pop up over your apps"), and "Not now" works: the app stays fully usable without it. The overlay never reads screen content and takes no touches outside Beepo, his bubble and the block screen.

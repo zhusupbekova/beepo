@@ -47,6 +47,7 @@ import studio.panikka.beepo.ui.Paper
 import studio.panikka.beepo.ui.Theme
 import studio.panikka.beepo.ui.PixelChip
 import studio.panikka.beepo.ui.PlusDialog
+import studio.panikka.beepo.ui.PlusPage
 import studio.panikka.beepo.ui.ReportScreen
 import studio.panikka.beepo.ui.SettingsScreen
 import studio.panikka.beepo.ui.ShopScreen
@@ -116,8 +117,9 @@ private fun App(store: Store) {
     CompositionLocalProvider(LocalLayoutDirection provides dir) {
         if (!state.settings.onboarded) {
             Onboarding(
-                state, store.sprites, apps, granted, overlayOk, i18n,
+                state, store.sprites, apps, granted, overlayOk, plus, i18n,
                 onOverlay = { store.setSettings(store.state.value.settings.copy(overlay = it)) },
+                plusPage = if (Plus.available) ({ PlusPage(store, i18n) }) else null,
                 onDone = store::finishOnboarding,
             )
             return@CompositionLocalProvider
