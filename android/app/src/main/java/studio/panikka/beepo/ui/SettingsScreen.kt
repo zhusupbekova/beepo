@@ -130,6 +130,8 @@ fun SettingsScreen(
                     Modifier.clickable { openUrl(context, PRIVACY_URL) }.padding(vertical = 4.dp),
                     style = PixelText.copy(textDecoration = TextDecoration.Underline),
                 )
+                // Name and number only, so nothing to translate.
+                Text("Beepo ${BuildConfig.VERSION_NAME} (${BuildConfig.VERSION_CODE})", style = PixelText.copy(color = Muted))
 
                 // Debug builds only, so not translated.
                 if (BuildConfig.DEBUG) {

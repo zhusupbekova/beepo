@@ -13,7 +13,7 @@ android {
         minSdk = 26
         targetSdk = 36
         versionCode = 6
-        versionName = "0.1.0"
+        versionName = "1.0.0"
     }
 
     // Upload key for Play (Play App Signing holds the real key). Path and password live in
