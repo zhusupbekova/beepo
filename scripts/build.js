@@ -17,7 +17,7 @@ const targets = {
     ...manifest,
     background: { scripts: ["background.js"], type: "module" },
     browser_specific_settings: {
-      gecko: { id: "beepo@panikka.studio", strict_min_version: "140.0", data_collection_permissions: { required: ["none"] } },
+      gecko: { id: "beepo@beepo.app", strict_min_version: "140.0", data_collection_permissions: { required: ["none"] } },
     },
   },
 };
