@@ -1,5 +1,6 @@
 import { DEFAULT_SETTINGS, LANGUAGES } from "../lib/core.js";
 import { localize } from "./i18n.js";
+import { reviewUrl, feedbackUrl, DONATE_URL } from "./links.js";
 
 const $ = (id) => document.getElementById(id);
 const form = $("settings");
@@ -71,6 +72,16 @@ $("file").addEventListener("change", async (e) => {
   flash(res?.ok ? t("imported") : t("notExport"));
   fill();
 });
+
+$("rate").href = reviewUrl();
+$("rate").addEventListener("click", async () => {
+  // Rated from here: no need for the popup to ask later.
+  await chrome.storage.sync.set({ settings: { ...(await getSettings()), reviewAsked: true } });
+});
+const subject = (k) => t(k).replace(/^\p{Extended_Pictographic}\uFE0F?\s*/u, ""); // the label minus its emoji
+$("idea").href = feedbackUrl(`Beepo: ${subject("suggestFeature")}`, assets.i18n.lang);
+$("bug").href = feedbackUrl(`Beepo: ${subject("reportBug")}`, assets.i18n.lang);
+$("donate").href = DONATE_URL;
 
 BeepoSprite.draw($("beepo"), assets, { mood: "happy", scale: 3 });
 fill();

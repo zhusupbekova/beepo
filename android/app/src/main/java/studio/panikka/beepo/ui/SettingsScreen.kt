@@ -24,6 +24,7 @@ import studio.panikka.beepo.BuildConfig
 import studio.panikka.beepo.I18n
 import studio.panikka.beepo.PRIVACY_URL
 import studio.panikka.beepo.openUrl
+import studio.panikka.beepo.sendFeedback
 import studio.panikka.beepo.core.LANGUAGES
 import studio.panikka.beepo.core.Settings
 import studio.panikka.beepo.data.Plus
@@ -122,6 +123,15 @@ fun SettingsScreen(
                     }
                     Section(i18n.t("nagEvery"), i18n.t("nagHint")) {
                         for (m in listOf(0, 5, 10, 15, 30)) PixelChip("$m", settings.nagMinutes == m) { onChange(settings.copy(nagMinutes = m)) }
+                    }
+                }
+
+                Section(i18n.t("feedback")) {
+                    // Mail subject: the label minus its emoji.
+                    for (key in listOf("suggestFeature", "reportBug")) {
+                        PixelButton(i18n.t(key), fill = Card) {
+                            sendFeedback(context, "Beepo: " + i18n.t(key).substringAfter(' '), i18n.lang)
+                        }
                     }
                 }
 

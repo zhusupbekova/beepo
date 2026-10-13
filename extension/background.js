@@ -284,6 +284,8 @@ async function popupState() {
     streaks: s,
     look: await lookFor(st),
     suggestions: core.suggestions(st.history, st.day, st.rules, st.settings.dismissed),
+    // Ask for a store rating once, after Beepo has been set up properly and used for a while.
+    askReview: !st.settings.reviewAsked && st.rules.length >= 5 && st.history.length >= 10 ? st.history.length : 0,
     report: core.weeklyReport(st.history, st.day, st.rules, st.today),
     badges: core.BADGES.map(({ id, name, desc }) => ({ id, name, desc, earned: st.wallet.badges.includes(id) })),
   };

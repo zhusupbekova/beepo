@@ -1,5 +1,6 @@
 import { normalizePattern, newId, hostOf } from "../lib/core.js";
 import { localize } from "./i18n.js";
+import { reviewUrl } from "./links.js";
 
 const $ = (id) => document.getElementById(id);
 const send = (msg) => chrome.runtime.sendMessage(msg);
@@ -75,8 +76,20 @@ function renderToday() {
   $("quick").querySelector(".row").hidden = !currentHost || !!existing;
   $("quickDomain").textContent = currentHost || "";
 
-  // Suggestions
+  // Suggestions (and, once, a request for a store rating)
   $("suggestions").replaceChildren(
+    !!st.askReview &&
+      el(
+        "div",
+        { class: "box suggest" },
+        el("div", {}, t("reviewAsk", { n: st.askReview })),
+        el(
+          "div",
+          { class: "row", style: "margin-top:6px" },
+          el("button", { onclick: () => answerReview(true) }, t("rateBeepo")),
+          el("button", { class: "ghost", onclick: () => answerReview(false) }, t("suggestNo"))
+        )
+      ),
     ...st.suggestions.map((s) =>
       el(
         "div",
@@ -146,6 +159,14 @@ async function removeRule(id) {
 
 async function dismiss(domain) {
   const settings = { ...st.settings, dismissed: [...st.settings.dismissed, domain] };
+  await chrome.storage.sync.set({ settings });
+  st = await send({ type: "popupState" });
+  render();
+}
+
+async function answerReview(rate) {
+  if (rate) chrome.tabs.create({ url: reviewUrl() });
+  const settings = { ...st.settings, reviewAsked: true };
   await chrome.storage.sync.set({ settings });
   st = await send({ type: "popupState" });
   render();

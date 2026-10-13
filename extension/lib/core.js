@@ -13,6 +13,7 @@ export const DEFAULT_SETTINGS = {
   idleSeconds: 60,
   dismissed: [], // suggestion domains the user said no to
   lang: "auto", // or a key of LANGUAGES
+  reviewAsked: false, // the one-time "rate Beepo" card was answered
 };
 
 // ---------- languages ----------
