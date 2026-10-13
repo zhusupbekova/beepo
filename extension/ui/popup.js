@@ -78,7 +78,7 @@ function renderToday() {
 
   // Suggestions (and, once, a request for a store rating)
   $("suggestions").replaceChildren(
-    !!st.askReview &&
+    ...(st.askReview ? [
       el(
         "div",
         { class: "box suggest" },
@@ -90,6 +90,7 @@ function renderToday() {
           el("button", { class: "ghost", onclick: () => answerReview(false) }, t("suggestNo"))
         )
       ),
+    ] : []),
     ...st.suggestions.map((s) =>
       el(
         "div",
