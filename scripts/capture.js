@@ -2,7 +2,7 @@
 // the extension, serves wordless mock sites (*.example), seeds storage, and renders
 // HTML compositions (with Beepo drawn by the real sprite code) to PNG.
 import { chromium } from "playwright";
-import { readFileSync } from "node:fs";
+import { readFileSync, writeFileSync } from "node:fs";
 import * as core from "../extension/lib/core.js";
 
 export const root = new URL("../", import.meta.url).pathname;
@@ -76,9 +76,47 @@ export function mockSite(host) {
 </main></body></html>`;
 }
 
+// ---------- recording ----------
+
+// Screenshots a page as fast as it can for `ms` (counted from when `ready()` first
+// holds, if given); returns entries for ffmpeg's concat demuxer, with `readyAt` the index
+// where `ready()` first held.
+export async function record(p, ms, prefix, ready) {
+  const list = [];
+  let t0 = ready ? Infinity : Date.now();
+  let last = Date.now();
+  const cap = Date.now() + 30000;
+  while (Date.now() - Math.min(t0, cap) < ms) {
+    if (t0 === Infinity && (await ready())) {
+      t0 = Date.now();
+      list.readyAt = list.length;
+    }
+    const file = `${prefix}${String(list.length).padStart(4, "0")}.png`;
+    writeFileSync(file, await p.screenshot({ scale: "device" }));
+    const now = Date.now();
+    if (list.length) list[list.length - 1].d = (now - last) / 1000;
+    list.push({ file, d: 0.1 });
+    last = now;
+  }
+  return list;
+}
+
+// The last file is repeated so its duration is honored.
+export const concatList = (list) =>
+  list.map((f) => `file '${f.file}'\nduration ${f.d.toFixed(3)}`).join("\n") + `\nfile '${list[list.length - 1].file}'\n`;
+
 // ---------- framing ----------
 
 export const png = (buf) => `data:image/png;base64,${buf.toString("base64")}`;
+// Where Beepo is available, with the official logos (scripts/assets/stores/) as data URLs.
+// Use these whenever media names the stores.
+const logo = (file) => `data:image/webp;base64,${readFileSync(`${root}scripts/assets/stores/${file}`).toString("base64")}`;
+export const STORES = [
+  { name: "Chrome", logo: logo("chrome.webp") },
+  { name: "Firefox", logo: logo("firefox.webp") },
+  { name: "Edge", logo: logo("edge.webp") },
+  { name: "Google Play", logo: logo("play.webp") },
+];
 export const esc = (s) => s.replace(/&/g, "&amp;").replace(/</g, "&lt;");
 export const FONT = `ui-monospace, Menlo, "PingFang TC", "PingFang SC", "Hiragino Sans", "Apple SD Gothic Neo", "Geeza Pro", "Kohinoor Devanagari", monospace`;
 export const BASE_CSS = `*{box-sizing:border-box} body{margin:0;background:#f4f1e8;color:#1b1b2f;font-family:${FONT};overflow:hidden}
@@ -92,8 +130,8 @@ export async function render(page, { w, h, html, beepo = [] }) {
     ({ sprites, beepo }) => {
       for (const b of beepo) {
         const c = document.getElementById(b.id);
-        if (b.pet) BeepoSprite.drawPet(c, { sprites }, b.pet, 0, b.scale);
-        else BeepoSprite.draw(c, { sprites }, { mood: b.mood || "happy", scale: b.scale, look: { equipped: b.equipped || {} } });
+        if (b.pet) BeepoSprite.drawPet(c, { sprites }, b.pet, b.frame || 0, b.scale, b.flip);
+        else BeepoSprite.draw(c, { sprites }, { mood: b.mood || "happy", pose: b.pose, scale: b.scale, look: { equipped: b.equipped || {}, evolve: b.evolve } });
       }
     },
     { sprites, beepo }

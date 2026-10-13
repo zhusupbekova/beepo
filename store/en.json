@@ -10,5 +10,18 @@
     "today": "Set limits and goals for any site",
     "shop": "Earn stars, dress up Beepo, adopt a pet",
     "report": "Weekly report: see the time you saved"
+  },
+  "play": {
+    "tagline": "Your pixel buddy for screen time",
+    "captions": {
+      "stop": "Beepo stops your doomscrolling",
+      "limits": "Daily limits for any app",
+      "shop": "Earn stars, dress him up",
+      "streaks": "Streaks make him evolve",
+      "block": "A kind block screen",
+      "report": "Your weekly screen time",
+      "plus": "Plus: widget, pets, scenes",
+      "private": "No account, no ads"
+    }
   }
 }

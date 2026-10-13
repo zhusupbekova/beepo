@@ -10,5 +10,18 @@
     "today": "Defina limites e metas para qualquer site",
     "shop": "Ganhe estrelas, vista o Beepo e adote um pet",
     "report": "Relatório semanal: veja o tempo que você economizou"
+  },
+  "play": {
+    "tagline": "Seu parceiro pixelado para o tempo de tela",
+    "captions": {
+      "stop": "O Beepo freia a rolagem infinita",
+      "limits": "Limite diário para qualquer app",
+      "shop": "Ganhe estrelas e vista o Beepo",
+      "streaks": "Sequências fazem ele evoluir",
+      "block": "Um bloqueio gentil",
+      "report": "Seu tempo de tela da semana",
+      "plus": "Plus: widget, pets e cenários",
+      "private": "Sem conta, sem anúncios"
+    }
   }
 }

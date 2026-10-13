@@ -77,6 +77,17 @@ A screen time pet for your digital wellbeing: a cute way to stop doomscrolling, 
 
 **Feature graphic** (1024×500): Beepo with the STOP sign + tagline "Your pixel buddy for screen time".
 
+The captions and the feature graphic's tagline for every language are in `store/<lang>.json` → `play` (written per language, not word for word). Upload each folder of `dist/play/<lang>/` to the matching listing language: `es` → es-419 and es-ES, `pt_BR` → pt-BR, `zh_CN` → zh-CN, `zh_TW` → zh-TW, `yue` → zh-HK, the rest by their language code.
+
+**Making the graphics:**
+1. `ANDROID_SERIAL=emulator-5558 node scripts/play-capture.js [en ja …]` → `dist/play/raw/<lang>/`. Drives a debug build on an emulator; see the top of the script for the one-time setup (permissions, widget on the home screen, a few real minutes today in the tracked apps). It seeds `files/*.json` (rules, 2 weeks of history with a 9-day streak, stars, badges), sets `settings.lang`, and uses the demo status bar (9:41).
+2. `npm run play [-- en ja …]` → `dist/play/icon-512.png`, and per language `dist/play/<lang>/feature-1024x500.png` and the eight screenshots at 1080×1920 (no alpha, as Play wants).
+
+- Free shots wear free items (party hat, scarf); only 7 shows Plus ones (Settings → "Dev: Plus", witch hat, Mochi, night scene).
+- 1 and 5 are Chrome on a wordless mock page served from the Mac (`adb reverse`, `http://localhost:8765`), with Chrome's rule over its limit: blocking off for the STOP sign (address bar cropped off), on for the block screen. Each run adds real Chrome time, so the script does Beepo's own screens for every language first.
+- 7 is the widget on the home screen, 8 the onboarding Usage access page.
+- The emulator's system language stays English, so the home screen's date and app labels in 7 are English in every language.
+
 **Later:** custom store listings (Play Console → Grow → Store presence) can target search keywords; good candidates are "screen time pet" (lean on the pet and the widget) and "app blocker" (lead with the STOP sign and the block screen). Store listing experiments: A/B the two titles (Play ranks on click-through rate since July 2026).
 
 ## Foreground service (App content → Foreground service permissions)

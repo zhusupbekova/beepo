@@ -10,5 +10,18 @@
     "today": "Limits und Ziele für jede Seite festlegen",
     "shop": "Sterne sammeln, Beepo einkleiden, ein Haustier adoptieren",
     "report": "Wochenbericht: Sieh, wie viel Zeit du gespart hast"
+  },
+  "play": {
+    "tagline": "Dein Pixel-Buddy für die Bildschirmzeit",
+    "captions": {
+      "stop": "Beepo stoppt dein Doomscrolling",
+      "limits": "Tageslimits für jede App",
+      "shop": "Sterne sammeln, Beepo einkleiden",
+      "streaks": "Deine Serien lassen ihn wachsen",
+      "block": "Eine freundliche Sperre",
+      "report": "Deine Bildschirmzeit pro Woche",
+      "plus": "Plus: Widget, Haustiere, Szenen",
+      "private": "Kein Konto, keine Werbung"
+    }
   }
 }

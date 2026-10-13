@@ -10,5 +10,18 @@
     "today": "Imposta limiti e obiettivi per qualsiasi sito",
     "shop": "Guadagna stelle, vesti Beepo, adotta un cucciolo",
     "report": "Resoconto settimanale: guarda quanto tempo hai risparmiato"
+  },
+  "play": {
+    "tagline": "Il tuo amico pixel per il tempo davanti allo schermo",
+    "captions": {
+      "stop": "Beepo ferma lo scroll infinito",
+      "limits": "Limiti giornalieri per ogni app",
+      "shop": "Guadagna stelle e vestilo",
+      "streaks": "Le tue serie lo fanno evolvere",
+      "block": "Un blocco gentile",
+      "report": "Il resoconto della tua settimana",
+      "plus": "Plus: widget, cuccioli, sfondi",
+      "private": "Niente account, niente pubblicità"
+    }
   }
 }

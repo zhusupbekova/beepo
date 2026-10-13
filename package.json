@@ -10,7 +10,10 @@
     "locales": "node scripts/make-locales.js",
     "store": "node scripts/store-assets.js",
     "social": "node scripts/social-assets.js",
-    "fixtures": "node scripts/make-fixtures.js"
+    "fixtures": "node scripts/make-fixtures.js",
+    "play": "node scripts/play-assets.js",
+    "promo": "node scripts/promo-videos.js",
+    "posts": "node scripts/social-posts.js"
   },
   "devDependencies": {
     "playwright": "^1.63.0"

@@ -10,5 +10,18 @@
     "today": "Fixe des limites et des objectifs pour n'importe quel site",
     "shop": "Gagne des étoiles, habille Beepo, adopte un compagnon",
     "report": "Bilan hebdo : vois le temps que tu as gagné"
+  },
+  "play": {
+    "tagline": "Ton compagnon pixel pour le temps d'écran",
+    "captions": {
+      "stop": "Beepo freine ton scroll infini",
+      "limits": "Des limites pour chaque appli",
+      "shop": "Gagne des étoiles, habille-le",
+      "streaks": "Tes séries le font évoluer",
+      "block": "Un blocage tout en douceur",
+      "report": "Ton temps d'écran de la semaine",
+      "plus": "Plus : widget, compagnons, décors",
+      "private": "Sans compte, sans pub"
+    }
   }
 }

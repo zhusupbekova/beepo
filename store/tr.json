@@ -10,5 +10,18 @@
     "today": "Her site için limit ve hedef belirle",
     "shop": "Yıldız kazan, Beepo'yu giydir, evcil dost sahiplen",
     "report": "Haftalık rapor: kazandığın zamanı gör"
+  },
+  "play": {
+    "tagline": "Ekran süren için piksel dostun",
+    "captions": {
+      "stop": "Beepo sonsuz kaydırmayı durdurur",
+      "limits": "Her uygulamaya günlük limit",
+      "shop": "Yıldız kazan, Beepo'yu giydir",
+      "streaks": "Seri yaptıkça Beepo gelişir",
+      "block": "Nazik bir engel ekranı",
+      "report": "Haftalık ekran süren",
+      "plus": "Plus: widget, evcil dostlar, sahneler",
+      "private": "Hesap yok, reklam yok"
+    }
   }
 }

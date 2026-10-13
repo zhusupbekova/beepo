@@ -10,5 +10,18 @@
     "today": "Atur batas dan target untuk situs apa pun",
     "shop": "Kumpulkan bintang, dandani Beepo, pelihara hewan",
     "report": "Laporan mingguan: lihat waktu yang kamu hemat"
+  },
+  "play": {
+    "tagline": "Teman piksel untuk waktu layarmu",
+    "captions": {
+      "stop": "Beepo menghentikan scroll tanpa ujung",
+      "limits": "Batas harian untuk aplikasi apa pun",
+      "shop": "Kumpulkan bintang, dandani Beepo",
+      "streaks": "Streak bikin Beepo berevolusi",
+      "block": "Layar blokir yang ramah",
+      "report": "Waktu layarmu tiap minggu",
+      "plus": "Plus: widget, peliharaan, latar",
+      "private": "Tanpa akun, tanpa iklan"
+    }
   }
 }

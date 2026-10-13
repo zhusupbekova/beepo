@@ -1,0 +1,216 @@
+<en-US>
+Hi, I'm Beepo! 👋 A tiny pixel robot who helps you spend less time in the apps that eat your day.
+
+• Daily limits and goals for any app
+• I pop up when time's almost up, and hold up a STOP sign when it is
+• Block screen and focus hours
+• Stars, streaks, badges, and outfits for me
+• Weekly report of your screen time
+• Beepo Plus: I walk around with a pet, plus a widget, seasonal hats and dark mode
+
+Your app time never leaves your phone.
+</en-US>
+<es-419>
+¡Hola, soy Beepo! 👋 Un pequeño robot pixelado que te ayuda a pasar menos tiempo en las apps que se comen tu día.
+
+• Límites y metas diarias para cualquier app
+• Aparezco cuando se acaba el tiempo y saco una señal de ALTO
+• Pantalla de bloqueo y horas de concentración
+• Estrellas, rachas, insignias y ropa para mí
+• Informe semanal de tu tiempo de pantalla
+• Beepo Plus: paseo con una mascota, widget, sombreros de temporada y modo oscuro
+
+Tu tiempo en apps nunca sale de tu teléfono.
+</es-419>
+<es-ES>
+¡Hola, soy Beepo! 👋 Un pequeño robot pixelado que te ayuda a pasar menos tiempo en las apps que se comen tu día.
+
+• Límites y metas diarias para cualquier app
+• Aparezco cuando se acaba el tiempo y saco una señal de ALTO
+• Pantalla de bloqueo y horas de concentración
+• Estrellas, rachas, insignias y ropa para mí
+• Informe semanal de tu tiempo de pantalla
+• Beepo Plus: paseo con una mascota, widget, sombreros de temporada y modo oscuro
+
+Tu tiempo en apps nunca sale de tu móvil.
+</es-ES>
+<pt-BR>
+Oi, eu sou o Beepo! 👋 Um robozinho de pixels que te ajuda a passar menos tempo nos apps que devoram seu dia.
+
+• Limites e metas diárias para qualquer app
+• Eu apareço quando o tempo está acabando e levanto uma placa de PARE
+• Tela de bloqueio e horas de foco
+• Estrelas, sequências, conquistas e roupinhas para mim
+• Relatório semanal do seu tempo de tela
+• Beepo Plus: passeio com um bichinho, widget, chapéus da estação e modo escuro
+
+Seu tempo nos apps nunca sai do seu celular.
+</pt-BR>
+<de-DE>
+Hallo, ich bin Beepo! 👋 Ein kleiner Pixel-Roboter für weniger Zeit in Apps, die deinen Tag fressen.
+
+• Tägliche Limits und Ziele für jede App
+• Ich tauche auf, wenn die Zeit fast um ist, und halte ein STOPP-Schild hoch
+• Sperrbildschirm und Fokuszeiten
+• Sterne, Serien, Abzeichen und Outfits für mich
+• Wochenbericht deiner Bildschirmzeit
+• Beepo Plus: Ich laufe mit Haustier herum, dazu Widget, Saisonhüte, Dunkelmodus
+
+Deine App-Zeit verlässt nie dein Handy.
+</de-DE>
+<fr-FR>
+Salut, moi c'est Beepo ! 👋 Un petit robot en pixels pour moins de temps dans les applis qui dévorent tes journées.
+
+• Limites et objectifs quotidiens pour chaque appli
+• J'apparais avant la fin du temps, puis je brandis un panneau STOP
+• Écran de blocage et heures de concentration
+• Étoiles, séries, badges et tenues pour moi
+• Bilan hebdo de ton temps d'écran
+• Beepo Plus : je me promène avec un compagnon, widget, chapeaux de saison, mode sombre
+
+Ton temps d'appli reste sur ton téléphone.
+</fr-FR>
+<it-IT>
+Ciao, sono Beepo! 👋 Un piccolo robot in pixel per passare meno tempo nelle app che ti mangiano la giornata.
+
+• Limiti e obiettivi giornalieri per qualsiasi app
+• Compaio quando il tempo sta per scadere e alzo il cartello STOP
+• Schermata di blocco e ore di concentrazione
+• Stelle, serie, medaglie e vestiti per me
+• Resoconto settimanale del tempo di utilizzo
+• Beepo Plus: passeggio con un animaletto, widget, cappelli di stagione, tema scuro
+
+Il tuo tempo nelle app non lascia mai il telefono.
+</it-IT>
+<ru-RU>
+Привет, я Beepo! 👋 Маленький пиксельный робот, который помогает меньше сидеть в приложениях, съедающих твой день.
+
+• Дневные лимиты и цели для любого приложения
+• Я появляюсь, когда время почти вышло, и поднимаю табличку СТОП
+• Экран блокировки и часы фокуса
+• Звёзды, серии, значки и наряды для меня
+• Еженедельный отчёт об экранном времени
+• Beepo Plus: гуляю с питомцем, виджет, сезонные шляпы, тёмная тема
+
+Время в приложениях никогда не покидает твой телефон.
+</ru-RU>
+<uk>
+Привіт, я Beepo! 👋 Маленький піксельний робот, який допомагає менше сидіти в застосунках, що з'їдають твій день.
+
+• Денні ліміти й цілі для будь-якого застосунку
+• Я з'являюся, коли час майже сплив, і піднімаю табличку СТОП
+• Екран блокування й години фокусу
+• Зірочки, серії, відзнаки й убрання для мене
+• Щотижневий звіт про екранний час
+• Beepo Plus: гуляю з улюбленцем, віджет, сезонні капелюхи, темна тема
+
+Час у застосунках ніколи не залишає твій телефон.
+</uk>
+<tr-TR>
+Merhaba, ben Beepo! 👋 Gününü yiyip bitiren uygulamalarda daha az vakit geçirmene yardım eden minik bir piksel robot.
+
+• Her uygulama için günlük limitler ve hedefler
+• Süre dolmak üzereyken çıkarım, dolunca DUR tabelası kaldırırım
+• Engelleme ekranı ve odak saatleri
+• Yıldızlar, seriler, rozetler ve bana kıyafetler
+• Haftalık ekran süresi raporu
+• Beepo Plus: evcil dostumla dolaşırım, widget, mevsimlik şapkalar, karanlık mod
+
+Uygulama süren asla telefonundan çıkmaz.
+</tr-TR>
+<ja-JP>
+こんにちは、Beepoだよ！👋 一日を食べつくすアプリの時間を減らすお手伝いをする、小さなドット絵ロボットです。
+
+• どのアプリにも1日の制限と目標
+• 時間が近づいたら登場して、時間切れには「止まれ」の札を掲げるよ
+• ブロック画面と集中タイム。スター1つで5分だけ解除
+• スターを集めて、連続記録をのばして、バッジを解除して、ぼくを着せかえ
+• スクリーンタイムの週間レポート
+• Beepo Plus：ペットといっしょにアプリの中を歩くよ。ウィジェット、季節の帽子、ダークモード
+
+アプリの利用時間がスマホの外に出ることはありません。
+</ja-JP>
+<ko-KR>
+안녕, 나는 Beepo야! 👋 하루를 잡아먹는 앱에서 시간을 덜 쓰도록 도와주는 작은 픽셀 로봇이에요.
+
+• 모든 앱에 하루 제한과 목표 설정
+• 시간이 거의 다 되면 나타나고, 다 되면 '멈춰' 표지판을 들어요
+• 차단 화면과 집중 시간, 별 1개로 5분 잠금 해제
+• 별 모으기, 연속 기록, 배지 잠금 해제, 나 꾸미기
+• 주간 스크린 타임 리포트
+• Beepo Plus: 반려동물과 함께 앱 속을 돌아다녀요. 위젯, 계절 모자, 다크 모드
+
+앱 사용 시간은 절대 휴대폰 밖으로 나가지 않아요.
+</ko-KR>
+<zh-CN>
+你好，我是 Beepo！👋 一个小小的像素机器人，帮你少花时间在吞噬你一天的应用上。
+
+• 为任何应用设置每日限制和目标
+• 时间快到时我会出现，时间到了就举起“停”牌
+• 屏蔽界面和专注时段，花一颗星星可解锁 5 分钟
+• 赚星星、连续打卡、解锁徽章、给我打扮
+• 每周屏幕时间报告
+• Beepo Plus：我带着宠物在你的应用里走来走去，主屏幕小组件、季节帽子、深色模式
+
+你的应用使用时间永远不会离开你的手机。
+</zh-CN>
+<zh-TW>
+你好，我是 Beepo！👋 一個小小的像素機器人，幫你少花時間在吞掉你一整天的 App 上。
+
+• 為任何 App 設定每日限制和目標
+• 時間快到時我會出現，時間到了就舉起「停」的牌子
+• 封鎖畫面和專注時段，花一顆星星可解鎖 5 分鐘
+• 賺星星、累積連續紀錄、解鎖徽章、幫我打扮
+• 每週螢幕使用時間報告
+• Beepo Plus：我帶著寵物在你的 App 裡走來走去，主畫面小工具、季節帽子、深色模式
+
+你的 App 使用時間永遠不會離開你的手機。
+</zh-TW>
+<zh-HK>
+你好，我係 Beepo！👋 一個細細嘅像素機械人，幫你少啲時間碌啲食晒你成日嘅 app。
+
+• 每個 app 都可以設每日限制同目標
+• 就嚟夠鐘我會出嚟，夠鐘就舉起「停」牌
+• 封鎖畫面同專注時段，用一粒星就可以解鎖 5 分鐘
+• 賺星星、儲連續紀錄、解鎖徽章、幫我扮靚
+• 每週螢幕使用時間報告
+• Beepo Plus：我會帶住寵物喺你啲 app 度周圍行，主畫面小工具、季節帽、深色模式
+
+你嘅 app 使用時間永遠唔會離開你部手機。
+</zh-HK>
+<id>
+Halo, aku Beepo! 👋 Robot piksel mungil yang membantumu mengurangi waktu di aplikasi yang menghabiskan harimu.
+
+• Batas dan target harian untuk aplikasi apa pun
+• Aku muncul saat waktu hampir habis, dan mengangkat papan STOP saat habis
+• Layar blokir dan jam fokus
+• Bintang, streak, lencana, dan baju untukku
+• Laporan mingguan screen time-mu
+• Beepo Plus: aku jalan-jalan bersama peliharaan, widget, topi musiman, mode gelap
+
+Waktu aplikasimu tidak pernah keluar dari ponselmu.
+</id>
+<hi-IN>
+नमस्ते, मैं Beepo हूँ! 👋 एक छोटा पिक्सेल रोबोट, जो आपका दिन खा जाने वाले ऐप्स में कम समय बिताने में मदद करता है।
+
+• किसी भी ऐप के लिए रोज़ की लिमिट और लक्ष्य
+• समय लगभग पूरा होने पर मैं आता हूँ, और पूरा होने पर "रुको" का बोर्ड उठाता हूँ
+• ब्लॉक स्क्रीन और फ़ोकस घंटे
+• स्टार, स्ट्रीक, बैज और मेरे लिए कपड़े
+• आपके स्क्रीन टाइम की साप्ताहिक रिपोर्ट
+• Beepo Plus: मैं पालतू के साथ घूमता हूँ, विजेट, मौसमी टोपियाँ, डार्क मोड
+
+आपका ऐप समय कभी आपके फ़ोन से बाहर नहीं जाता।
+</hi-IN>
+<ar>
+مرحبًا، أنا Beepo! 👋 روبوت بكسلي صغير يساعدك على قضاء وقت أقل في التطبيقات التي تلتهم يومك.
+
+• حدود وأهداف يومية لأي تطبيق
+• أظهر عندما يوشك الوقت على الانتهاء، وأرفع لافتة «قف» عندما ينتهي
+• شاشة حظر وساعات تركيز، مع فتح لمدة 5 دقائق مقابل نجمة
+• اجمع النجوم، وابنِ سلاسل، وافتح الشارات، وألبسني ما تحب
+• تقرير أسبوعي عن وقت الشاشة
+• Beepo Plus: أتجوّل في تطبيقاتك مع حيوان أليف، وأداة للشاشة الرئيسية، وقبعات موسمية، ووضع داكن
+
+وقتك في التطبيقات لا يغادر هاتفك أبدًا.
+</ar>

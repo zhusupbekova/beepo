@@ -6,7 +6,7 @@
 // Usage: npm run social [-- xhs en ru yue zh_TW tiktok]
 import { mkdirSync, writeFileSync, rmSync } from "node:fs";
 import { execFileSync } from "node:child_process";
-import { root, wait, render, png, esc, launch } from "./capture.js";
+import { root, wait, render, png, esc, launch, record, concatList } from "./capture.js";
 
 const out = root + "dist/social/";
 const targets = process.argv.slice(2).length ? process.argv.slice(2) : ["xhs", "en", "ru", "yue", "zh_TW", "tiktok"];
@@ -137,29 +137,6 @@ async function captures(lang, vw, vh) {
   await popup.close();
   return shots;
 }
-
-// Screenshots a page as fast as it can for `ms` (counted from when `ready()` first
-// holds, if given); returns entries for ffmpeg's concat demuxer.
-async function record(p, ms, prefix, ready) {
-  const list = [];
-  let t0 = ready ? Infinity : Date.now();
-  let last = Date.now();
-  const cap = Date.now() + 30000;
-  while (Date.now() - Math.min(t0, cap) < ms) {
-    if (t0 === Infinity && (await ready())) t0 = Date.now();
-    const file = `${prefix}${String(list.length).padStart(4, "0")}.png`;
-    writeFileSync(file, await p.screenshot({ scale: "device" }));
-    const now = Date.now();
-    if (list.length) list[list.length - 1].d = (now - last) / 1000;
-    list.push({ file, d: 0.1 });
-    last = now;
-  }
-  return list;
-}
-
-// The last file is repeated so its duration is honored.
-const concatList = (list) =>
-  list.map((f) => `file '${f.file}'\nduration ${f.d.toFixed(3)}`).join("\n") + `\nfile '${list[list.length - 1].file}'\n`;
 
 // Beepo counting down the last seconds of a 2-minute limit, then hitting it.
 async function video(lang, c, font, vw, vh, dir) {

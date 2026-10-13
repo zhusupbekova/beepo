@@ -10,5 +10,18 @@
     "today": "Pon límites y metas en cualquier sitio",
     "shop": "Gana estrellas, viste a Beepo y adopta una mascota",
     "report": "Resumen semanal: mira cuánto tiempo ahorraste"
+  },
+  "play": {
+    "tagline": "Tu compañero pixelado para el tiempo de pantalla",
+    "captions": {
+      "stop": "Beepo frena tu scroll infinito",
+      "limits": "Límites diarios para cualquier app",
+      "shop": "Gana estrellas y vístelo",
+      "streaks": "Tus rachas lo hacen evolucionar",
+      "block": "Una pantalla de bloqueo amable",
+      "report": "Tu tiempo de pantalla, semana a semana",
+      "plus": "Plus: widget, mascotas y escenas",
+      "private": "Sin cuentas ni anuncios"
+    }
   }
 }
