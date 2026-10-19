@@ -611,6 +611,11 @@
     "theme": "ダークモード",
     "themeLight": "ライト",
     "themeDark": "ダーク",
-    "themeSystem": "端末に合わせる"
+    "themeSystem": "端末に合わせる",
+    "widgetCard": "ホーム画面にも住めるよ。今日の時間がひと目でわかるんだ。",
+    "shareFriend": "💌 友だちに教える",
+    "shareText": "Beepoを使ってるよ。アプリを使いすぎたらそっと教えてくれる、小さなドットの相棒。スマホ: {play} ブラウザ: {chrome}",
+    "browserTitle": "ブラウザにもBeepo",
+    "browserBody": "ウェブサイトの下にも住んでいて、そこでも時間を見守るよ。Chrome・Edge・Firefoxで無料。"
   }
 }

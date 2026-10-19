@@ -3,11 +3,13 @@ package studio.panikka.beepo.widget
 import android.app.PendingIntent
 import android.appwidget.AppWidgetManager
 import android.appwidget.AppWidgetProvider
+import android.appwidget.AppWidgetProviderInfo
 import android.content.ComponentName
 import android.content.Context
 import android.content.Intent
 import android.content.res.Configuration
 import android.graphics.Bitmap
+import android.os.Build
 import android.os.Bundle
 import android.view.View
 import android.widget.RemoteViews
@@ -78,6 +80,25 @@ class BeepoWidget : AppWidgetProvider() {
 
         fun pin(context: Context) {
             AppWidgetManager.getInstance(context).requestPinAppWidget(ComponentName(context, BeepoWidget::class.java), null, null)
+        }
+
+        /** At least one Beepo widget is on the home screen. */
+        fun placed(context: Context) =
+            AppWidgetManager.getInstance(context).getAppWidgetIds(ComponentName(context, BeepoWidget::class.java)).isNotEmpty()
+
+        private var previewed = false
+
+        /**
+         * Android 15+: the widget picker shows this Beepo instead of a blank box. The system
+         * rate-limits it, so once per app start is plenty.
+         */
+        fun preview(context: Context) {
+            if (previewed || Build.VERSION.SDK_INT < Build.VERSION_CODES.VANILLA_ICE_CREAM) return
+            previewed = true
+            val store = Store.get(context)
+            val views = views(context, store, store.state.value, store.plus.value, 3)
+            AppWidgetManager.getInstance(context)
+                .setWidgetPreview(ComponentName(context, BeepoWidget::class.java), AppWidgetProviderInfo.WIDGET_CATEGORY_HOME_SCREEN, views)
         }
 
         fun update(context: Context) {
@@ -168,14 +189,15 @@ class BeepoWidget : AppWidgetProvider() {
                 }
             }
         }
-
-        private fun Frame.bitmap(): Bitmap {
-            val px = IntArray(width * SCALE * height * SCALE)
-            for ((y, row) in grid.withIndex()) for ((x, c) in row.withIndex()) {
-                val argb = palette[c] ?: continue
-                for (dy in 0 until SCALE) px.fill(argb, (y * SCALE + dy) * width * SCALE + x * SCALE, (y * SCALE + dy) * width * SCALE + (x + 1) * SCALE)
-            }
-            return Bitmap.createBitmap(px, width * SCALE, height * SCALE, Bitmap.Config.ARGB_8888)
-        }
     }
+}
+
+/** The frame as a bitmap, `scale` bitmap pixels per sprite pixel (also the launcher shortcuts' icons). */
+fun Frame.bitmap(scale: Int = SCALE): Bitmap {
+    val px = IntArray(width * scale * height * scale)
+    for ((y, row) in grid.withIndex()) for ((x, c) in row.withIndex()) {
+        val argb = palette[c] ?: continue
+        for (dy in 0 until scale) px.fill(argb, (y * scale + dy) * width * scale + x * scale, (y * scale + dy) * width * scale + (x + 1) * scale)
+    }
+    return Bitmap.createBitmap(px, width * scale, height * scale, Bitmap.Config.ARGB_8888)
 }

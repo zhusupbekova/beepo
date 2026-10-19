@@ -29,9 +29,11 @@ import studio.panikka.beepo.core.baseLimitSecs
 import studio.panikka.beepo.core.matchApp
 import studio.panikka.beepo.core.newId
 import studio.panikka.beepo.data.AppInfo
+import studio.panikka.beepo.data.Plus
 import studio.panikka.beepo.data.Store
 import studio.panikka.beepo.overlay.Overlay
 import studio.panikka.beepo.usage.UsageAccess
+import studio.panikka.beepo.widget.BeepoWidget
 
 private const val PHONE_TODAY_MAX = 12
 
@@ -40,7 +42,7 @@ private const val PHONE_TODAY_MAX = 12
  * popup). Usage comes from [Store.refresh], which MainActivity runs while the app is open.
  */
 @Composable
-fun TodayScreen(state: State, store: Store, apps: Map<String, AppInfo>, granted: Boolean, overlayOk: Boolean, i18n: I18n) {
+fun TodayScreen(state: State, store: Store, apps: Map<String, AppInfo>, granted: Boolean, overlayOk: Boolean, plus: Boolean, i18n: I18n) {
     val context = LocalContext.current
     val rules = state.rules
     val key = state.today()
@@ -80,6 +82,13 @@ fun TodayScreen(state: State, store: Store, apps: Map<String, AppInfo>, granted:
                     val app = apps.getValue(pkg)
                     QuickAddRow(app, secs, i18n) { addRule(app, it) }
                 }
+            }
+        }
+
+        // Once there's something to show on it. Without Plus the widget invites to Plus.
+        if (rules.isNotEmpty() && !state.settings.widgetCardSeen && (Plus.available || plus) && BeepoWidget.canPin(context) && !BeepoWidget.placed(context)) {
+            WidgetCard(i18n, onAdd = { BeepoWidget.pin(context); store.setSettings(state.settings.copy(widgetCardSeen = true)) }) {
+                store.setSettings(state.settings.copy(widgetCardSeen = true))
             }
         }
 
@@ -131,6 +140,17 @@ private fun OverlayCard(i18n: I18n, onGrant: () -> Unit, onLater: () -> Unit) {
         Text(i18n.android("overlayHint"), style = PixelText.copy(color = Muted))
         Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
             PixelButton(i18n.android("usageGrant"), fill = Card, onClick = onGrant)
+            PixelButton(i18n.android("notNow"), fill = Paper, onClick = onLater)
+        }
+    }
+}
+
+@Composable
+private fun WidgetCard(i18n: I18n, onAdd: () -> Unit, onLater: () -> Unit) {
+    Column(Modifier.fillMaxWidth().pixelBox().padding(10.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
+        Text(i18n.android("widgetCard"), style = PixelText)
+        Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+            PixelButton("🖼️ " + i18n.android("widgetAdd"), Modifier.weight(1f, fill = false), fill = Gold, onClick = onAdd)
             PixelButton(i18n.android("notNow"), fill = Paper, onClick = onLater)
         }
     }

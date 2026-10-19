@@ -611,6 +611,11 @@
     "theme": "다크 모드",
     "themeLight": "라이트",
     "themeDark": "다크",
-    "themeSystem": "휴대폰 설정 따르기"
+    "themeSystem": "휴대폰 설정 따르기",
+    "widgetCard": "홈 화면에도 살 수 있어. 오늘 쓴 시간을 한눈에 보여 줄게.",
+    "shareFriend": "💌 친구에게 알려주기",
+    "shareText": "Beepo를 쓰고 있어. 앱을 충분히 썼을 때 살짝 알려 주는 작은 픽셀 친구야. 폰: {play} 브라우저: {chrome}",
+    "browserTitle": "브라우저에서도 Beepo",
+    "browserBody": "웹사이트 아래쪽에도 살면서 거기서도 시간을 지켜봐. Chrome, Edge, Firefox에서 무료."
   }
 }

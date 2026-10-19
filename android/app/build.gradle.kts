@@ -66,6 +66,7 @@ dependencies {
     implementation(libs.androidx.compose.material3)
     implementation(libs.kotlinx.serialization.json)
     implementation(libs.revenuecat.purchases)
+    implementation(libs.play.review)
 
     testImplementation(libs.junit)
     // org.json is part of Android but stubbed in local unit tests.

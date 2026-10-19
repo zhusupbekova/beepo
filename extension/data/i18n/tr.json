@@ -611,6 +611,11 @@
     "theme": "Karanlık mod",
     "themeLight": "Açık",
     "themeDark": "Koyu",
-    "themeSystem": "Telefona uy"
+    "themeSystem": "Telefona uy",
+    "widgetCard": "Ana ekranında da yaşayabilirim, bugünkü süren bir bakışta.",
+    "shareFriend": "💌 Bir arkadaşına anlat",
+    "shareText": "Beepo kullanıyorum: bir uygulamada yeterince vakit geçirdiğimde beni dürten küçük bir piksel dostu. Telefon: {play} Tarayıcı: {chrome}",
+    "browserTitle": "Tarayıcında Beepo",
+    "browserBody": "Web sitelerinin altında da yaşıyorum ve orada da süreye göz kulak oluyorum. Chrome, Edge ve Firefox'ta ücretsiz."
   }
 }

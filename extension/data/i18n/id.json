@@ -611,6 +611,11 @@
     "theme": "Mode gelap",
     "themeLight": "Terang",
     "themeDark": "Gelap",
-    "themeSystem": "Ikuti ponsel"
+    "themeSystem": "Ikuti ponsel",
+    "widgetCard": "Aku juga bisa tinggal di layar utamamu, dengan waktu hari ini sekilas.",
+    "shareFriend": "💌 Ceritakan ke teman",
+    "shareText": "Aku pakai Beepo, teman piksel kecil yang mengingatkanku saat sudah cukup lama di sebuah aplikasi. HP: {play} Browser: {chrome}",
+    "browserTitle": "Beepo di browsermu",
+    "browserBody": "Aku juga tinggal di bawah situs web dan menjaga waktumu di sana. Gratis di Chrome, Edge, dan Firefox."
   }
 }

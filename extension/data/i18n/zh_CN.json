@@ -611,6 +611,11 @@
     "theme": "深色模式",
     "themeLight": "浅色",
     "themeDark": "深色",
-    "themeSystem": "跟随手机"
+    "themeSystem": "跟随手机",
+    "widgetCard": "我也可以住在你的主屏幕上，今天的时间一眼就能看到。",
+    "shareFriend": "💌 告诉朋友",
+    "shareText": "我在用 Beepo，一个小小的像素伙伴，在我刷某个应用刷够了的时候轻轻提醒我。手机：{play} 浏览器：{chrome}",
+    "browserTitle": "浏览器里的 Beepo",
+    "browserBody": "我也住在网页底部，在那里帮你留意时间。Chrome、Edge 和 Firefox 上免费。"
   }
 }

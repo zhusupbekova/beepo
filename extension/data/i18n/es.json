@@ -611,6 +611,11 @@
     "theme": "Modo oscuro",
     "themeLight": "Claro",
     "themeDark": "Oscuro",
-    "themeSystem": "Como el móvil"
+    "themeSystem": "Como el móvil",
+    "widgetCard": "También puedo vivir en tu pantalla de inicio, con el tiempo de hoy de un vistazo.",
+    "shareFriend": "💌 Cuéntaselo a un amigo",
+    "shareText": "Uso Beepo, un pequeño amigo pixelado que me avisa cuando ya he tenido bastante de una app. Móvil: {play} Navegador: {chrome}",
+    "browserTitle": "Beepo en tu navegador",
+    "browserBody": "También vivo al pie de las webs y vigilo el tiempo allí. Gratis en Chrome, Edge y Firefox."
   }
 }

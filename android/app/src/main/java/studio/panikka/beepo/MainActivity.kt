@@ -1,5 +1,7 @@
 package studio.panikka.beepo
 
+import android.app.Activity
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -20,6 +22,7 @@ import androidx.compose.foundation.verticalScroll
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.SideEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -38,6 +41,7 @@ import androidx.lifecycle.repeatOnLifecycle
 import studio.panikka.beepo.data.AppInfo
 import studio.panikka.beepo.data.Apps
 import studio.panikka.beepo.data.Plus
+import studio.panikka.beepo.data.Review
 import studio.panikka.beepo.data.Store
 import studio.panikka.beepo.overlay.Overlay
 import studio.panikka.beepo.ui.BadgesScreen
@@ -52,18 +56,29 @@ import studio.panikka.beepo.ui.ReportScreen
 import studio.panikka.beepo.ui.SettingsScreen
 import studio.panikka.beepo.ui.ShopScreen
 import studio.panikka.beepo.ui.TodayScreen
+import studio.panikka.beepo.ui.beepoLook
 import studio.panikka.beepo.usage.UsageAccess
+import studio.panikka.beepo.widget.BeepoWidget
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.withContext
 
 class MainActivity : ComponentActivity() {
+    /** Tab asked for by a launcher shortcut, until the app has switched to it. */
+    private val openTab = mutableStateOf<String?>(null)
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         val store = Store.get(this)
         Plus.init(this, store)
-        setContent { App(store) }
+        if (savedInstanceState == null) openTab.value = intent.getStringExtra(Shortcuts.EXTRA_TAB)
+        setContent { App(store, openTab) }
+    }
+
+    override fun onNewIntent(intent: Intent) {
+        super.onNewIntent(intent)
+        intent.getStringExtra(Shortcuts.EXTRA_TAB)?.let { openTab.value = it }
     }
 }
 
@@ -72,7 +87,7 @@ private val TABS = listOf("today", "report", "shop", "badges")
 
 /** The popup, as an app: header, tabs, settings. */
 @Composable
-private fun App(store: Store) {
+private fun App(store: Store, openTab: MutableState<String?>) {
     val context = LocalContext.current
     val state by store.state.collectAsStateWithLifecycle()
     val plus by store.plus.collectAsStateWithLifecycle()
@@ -86,6 +101,22 @@ private fun App(store: Store) {
 
     LaunchedEffect(Unit) { apps = withContext(Dispatchers.IO) { Apps.launchable(context) } }
 
+    val asked = openTab.value
+    LaunchedEffect(asked) {
+        if (asked in TABS) {
+            tab = asked!!
+            settingsOpen = false
+            plusOpen = false
+        }
+        openTab.value = null
+    }
+
+    // Launcher shortcuts in Beepo's language, wearing what he wears.
+    val equipped = state.wallet.equipped
+    LaunchedEffect(i18n, equipped, state.custom) {
+        withContext(Dispatchers.Default) { Shortcuts.update(context, store.sprites, store.state.value.beepoLook(store.sprites).look, i18n) }
+    }
+
     // While open: roll the day over and re-read usage now and then. Checking on every resume
     // also notices usage access granted in system settings.
     val lifecycle = LocalLifecycleOwner.current.lifecycle
@@ -94,7 +125,10 @@ private fun App(store: Store) {
             while (true) {
                 granted = UsageAccess.granted(context)
                 overlayOk = Overlay.allowed(context)
-                withContext(Dispatchers.IO) { store.refresh() }
+                withContext(Dispatchers.IO) {
+                    store.refresh()
+                    BeepoWidget.preview(context)
+                }
                 Overlay.sync(context, store.state.value)
                 delay(REFRESH_MS)
             }
@@ -126,9 +160,14 @@ private fun App(store: Store) {
         }
         Column(Modifier.fillMaxSize().background(Paper).safeDrawingPadding()) {
             Column(Modifier.weight(1f).verticalScroll(rememberScrollState()).padding(12.dp), verticalArrangement = Arrangement.spacedBy(10.dp)) {
-                Header(state, store.sprites, i18n, onSettings = { settingsOpen = true }, onNewsSeen = store::clearNews)
+                Header(state, store.sprites, i18n, onSettings = { settingsOpen = true }, onNewsSeen = {
+                    // Good news just read: a happy moment to ask for a review (Play decides if it shows).
+                    val happy = Review.happy(store.state.value)
+                    store.clearNews()
+                    if (happy) (context as? Activity)?.let { Review.maybeAsk(it, store) }
+                })
                 when (tab) {
-                    "today" -> TodayScreen(state, store, apps, granted, overlayOk, i18n)
+                    "today" -> TodayScreen(state, store, apps, granted, overlayOk, plus, i18n)
                     "report" -> ReportScreen(state, i18n, plus) { plusOpen = true }
                     "shop" -> ShopScreen(state, store, i18n)
                     "badges" -> BadgesScreen(state, store.sprites, i18n)

@@ -611,6 +611,11 @@
     "theme": "Dark mode",
     "themeLight": "Light",
     "themeDark": "Dark",
-    "themeSystem": "Match phone"
+    "themeSystem": "Match phone",
+    "widgetCard": "I can sit on your home screen too, with today's time at a glance.",
+    "shareFriend": "💌 Tell a friend",
+    "shareText": "I'm using Beepo, a little pixel buddy that nudges me when I've had enough of an app. Phone: {play} Browser: {chrome}",
+    "browserTitle": "Beepo in your browser",
+    "browserBody": "I also live at the bottom of websites and keep an eye on time there. Free on Chrome, Edge and Firefox."
   }
 }

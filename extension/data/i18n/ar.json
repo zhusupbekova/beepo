@@ -611,6 +611,11 @@
     "theme": "الوضع الداكن",
     "themeLight": "فاتح",
     "themeDark": "داكن",
-    "themeSystem": "مثل الهاتف"
+    "themeSystem": "مثل الهاتف",
+    "widgetCard": "يمكنني أن أسكن شاشتك الرئيسية أيضًا، مع وقت اليوم في لمحة.",
+    "shareFriend": "💌 أخبر صديقًا",
+    "shareText": "أستخدم Beepo، رفيقًا صغيرًا بالبكسل ينبّهني حين أكتفي من تطبيق ما. الهاتف: {play} المتصفح: {chrome}",
+    "browserTitle": "Beepo في متصفحك",
+    "browserBody": "أعيش أيضًا أسفل المواقع وأراقب الوقت هناك. مجاني على Chrome وEdge وFirefox."
   }
 }

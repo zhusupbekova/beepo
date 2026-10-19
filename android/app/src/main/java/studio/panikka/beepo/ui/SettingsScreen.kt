@@ -1,5 +1,6 @@
 package studio.panikka.beepo.ui
 
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -10,6 +11,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.safeDrawingPadding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Text
@@ -17,12 +19,19 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import studio.panikka.beepo.BuildConfig
 import studio.panikka.beepo.I18n
+import studio.panikka.beepo.CHROME_URL
+import studio.panikka.beepo.EDGE_URL
+import studio.panikka.beepo.FIREFOX_URL
+import studio.panikka.beepo.PLAY_SHARE_URL
 import studio.panikka.beepo.PRIVACY_URL
+import studio.panikka.beepo.R
+import studio.panikka.beepo.shareText
 import studio.panikka.beepo.openUrl
 import studio.panikka.beepo.sendFeedback
 import studio.panikka.beepo.core.LANGUAGES
@@ -88,10 +97,10 @@ fun SettingsScreen(
                     }
                 }
 
-                // The widget is Plus too: without it the button opens the paywall.
+                // The widget is Plus; without it, the widget itself invites to Plus.
                 if (Plus.available && BeepoWidget.canPin(context)) {
                     PixelButton("🖼️ " + i18n.android("widgetAdd") + if (plus) "" else " ✨", Modifier.fillMaxWidth(), fill = Card) {
-                        if (plus) BeepoWidget.pin(context) else onPlus()
+                        BeepoWidget.pin(context)
                     }
                 }
 
@@ -124,6 +133,25 @@ fun SettingsScreen(
                     Section(i18n.t("nagEvery"), i18n.t("nagHint")) {
                         for (m in listOf(0, 5, 10, 15, 30)) PixelChip("$m", settings.nagMinutes == m) { onChange(settings.copy(nagMinutes = m)) }
                     }
+                }
+
+                Section(i18n.android("browserTitle"), i18n.android("browserBody")) {
+                    // Store names are brands, so not translated.
+                    for ((logo, name, url) in listOf(
+                        Triple(R.drawable.store_chrome, "Chrome Web Store", CHROME_URL),
+                        Triple(R.drawable.store_edge, "Microsoft Edge Add-ons", EDGE_URL),
+                        Triple(R.drawable.store_firefox, "Firefox Add-ons", FIREFOX_URL),
+                    )) {
+                        Image(
+                            painterResource(logo),
+                            name,
+                            Modifier.size(44.dp).clickable { openUrl(context, url) }.padding(4.dp),
+                        )
+                    }
+                }
+
+                PixelButton(i18n.android("shareFriend"), Modifier.fillMaxWidth(), fill = Card) {
+                    shareText(context, i18n.android("shareText", "play" to PLAY_SHARE_URL, "chrome" to CHROME_URL))
                 }
 
                 Section(i18n.t("feedback")) {

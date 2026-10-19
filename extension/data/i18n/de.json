@@ -611,6 +611,11 @@
     "theme": "Dunkelmodus",
     "themeLight": "Hell",
     "themeDark": "Dunkel",
-    "themeSystem": "Wie das Handy"
+    "themeSystem": "Wie das Handy",
+    "widgetCard": "Ich kann auch auf deinem Startbildschirm wohnen, mit der heutigen Zeit auf einen Blick.",
+    "shareFriend": "💌 Einem Freund erzählen",
+    "shareText": "Ich nutze Beepo, einen kleinen Pixel-Kumpel, der mich anstupst, wenn ich genug von einer App habe. Handy: {play} Browser: {chrome}",
+    "browserTitle": "Beepo im Browser",
+    "browserBody": "Ich wohne auch unten auf Webseiten und behalte dort die Zeit im Blick. Kostenlos für Chrome, Edge und Firefox."
   }
 }

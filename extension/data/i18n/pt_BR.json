@@ -611,6 +611,11 @@
     "theme": "Modo escuro",
     "themeLight": "Claro",
     "themeDark": "Escuro",
-    "themeSystem": "Igual ao celular"
+    "themeSystem": "Igual ao celular",
+    "widgetCard": "Também posso morar na sua tela inicial, com o tempo de hoje num relance.",
+    "shareFriend": "💌 Contar para um amigo",
+    "shareText": "Estou usando o Beepo, um amiguinho em pixel que me cutuca quando já usei um app demais. Celular: {play} Navegador: {chrome}",
+    "browserTitle": "Beepo no navegador",
+    "browserBody": "Também moro no rodapé dos sites e fico de olho no tempo por lá. Grátis no Chrome, Edge e Firefox."
   }
 }

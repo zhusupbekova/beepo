@@ -611,6 +611,11 @@
     "theme": "Tema scuro",
     "themeLight": "Chiaro",
     "themeDark": "Scuro",
-    "themeSystem": "Come il telefono"
+    "themeSystem": "Come il telefono",
+    "widgetCard": "Posso stare anche nella tua schermata Home, con il tempo di oggi a colpo d'occhio.",
+    "shareFriend": "💌 Dillo a un amico",
+    "shareText": "Uso Beepo, un piccolo amico in pixel che mi dà una spintarella quando ho passato abbastanza tempo su un'app. Telefono: {play} Browser: {chrome}",
+    "browserTitle": "Beepo nel browser",
+    "browserBody": "Vivo anche in fondo ai siti web e lì tengo d'occhio il tempo. Gratis su Chrome, Edge e Firefox."
   }
 }

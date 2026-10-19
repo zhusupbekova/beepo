@@ -55,6 +55,10 @@ data class Settings(
     val stayOut: Boolean = false,
     /** Android only, Plus: "light", "dark" or "system" (follows the phone). */
     val theme: String = "light",
+    /** Android only: day key when the Play review sheet was last asked for. */
+    val reviewAskedOn: String? = null,
+    /** Android only: the "add the widget" card on Today was answered. */
+    val widgetCardSeen: Boolean = false,
 )
 
 @Serializable
