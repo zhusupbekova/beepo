@@ -45,6 +45,7 @@ import studio.panikka.beepo.data.Review
 import studio.panikka.beepo.data.Store
 import studio.panikka.beepo.overlay.Overlay
 import studio.panikka.beepo.ui.BadgesScreen
+import studio.panikka.beepo.ui.Centered
 import studio.panikka.beepo.ui.Header
 import studio.panikka.beepo.ui.Onboarding
 import studio.panikka.beepo.ui.Paper
@@ -72,6 +73,12 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         val store = Store.get(this)
         Plus.init(this, store)
+        AppLanguage.fromSystem(this)?.let { lang ->
+            if (lang != store.state.value.settings.lang) store.setSettings(store.state.value.settings.copy(lang = lang))
+        }
+        // Theme's state must exist before the first composition: created later on a background
+        // thread (widget rendering), the composition's snapshot can't read it.
+        Theme.dark
         if (savedInstanceState == null) openTab.value = intent.getStringExtra(Shortcuts.EXTRA_TAB)
         setContent { App(store, openTab) }
     }
@@ -148,7 +155,7 @@ private fun App(store: Store, openTab: MutableState<String?>) {
     }
 
     val dir = if (i18n.rtl) LayoutDirection.Rtl else LayoutDirection.Ltr
-    CompositionLocalProvider(LocalLayoutDirection provides dir) {
+    CompositionLocalProvider(LocalLayoutDirection provides dir) { Centered {
         if (!state.settings.onboarded) {
             Onboarding(
                 state, store.sprites, apps, granted, overlayOk, plus, i18n,
@@ -156,7 +163,7 @@ private fun App(store: Store, openTab: MutableState<String?>) {
                 plusPage = if (Plus.available) ({ PlusPage(store, i18n) }) else null,
                 onDone = store::finishOnboarding,
             )
-            return@CompositionLocalProvider
+            return@Centered
         }
         Column(Modifier.fillMaxSize().background(Paper).safeDrawingPadding()) {
             Column(Modifier.weight(1f).verticalScroll(rememberScrollState()).padding(12.dp), verticalArrangement = Arrangement.spacedBy(10.dp)) {
@@ -179,5 +186,5 @@ private fun App(store: Store, openTab: MutableState<String?>) {
         }
         if (settingsOpen) SettingsScreen(state.settings, i18n, store::setSettings, onPlus = { plusOpen = true }, plus, overlayOk, store::setPlus) { settingsOpen = false }
         if (plusOpen) PlusDialog(store, i18n) { plusOpen = false }
-    }
+    } }
 }

@@ -1,5 +1,7 @@
 package studio.panikka.beepo.ui
 
+import androidx.activity.compose.rememberLauncherForActivityResult
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -16,6 +18,11 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.rememberCoroutineScope
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
@@ -23,6 +30,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import studio.panikka.beepo.AppLanguage
 import studio.panikka.beepo.BuildConfig
 import studio.panikka.beepo.I18n
 import studio.panikka.beepo.CHROME_URL
@@ -37,6 +45,10 @@ import studio.panikka.beepo.sendFeedback
 import studio.panikka.beepo.core.LANGUAGES
 import studio.panikka.beepo.core.Settings
 import studio.panikka.beepo.data.Plus
+import studio.panikka.beepo.data.Store
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import studio.panikka.beepo.overlay.Overlay
 import studio.panikka.beepo.overlay.rememberNotificationAsk
 import studio.panikka.beepo.widget.BeepoWidget
@@ -75,8 +87,12 @@ fun SettingsScreen(
                 verticalArrangement = Arrangement.spacedBy(10.dp),
             ) {
                 Section(i18n.t("language")) {
-                    PixelChip(i18n.android("langAuto"), settings.lang == "auto") { onChange(settings.copy(lang = "auto")) }
-                    for ((code, name) in LANGUAGES) PixelChip(name, settings.lang == code) { onChange(settings.copy(lang = code)) }
+                    fun pick(lang: String) {
+                        onChange(settings.copy(lang = lang))
+                        AppLanguage.toSystem(context, lang)
+                    }
+                    PixelChip(i18n.android("langAuto"), settings.lang == "auto") { pick("auto") }
+                    for ((code, name) in LANGUAGES) PixelChip(name, settings.lang == code) { pick(code) }
                 }
 
                 // Dark mode is Plus; without it the other choices open the paywall.
@@ -135,6 +151,8 @@ fun SettingsScreen(
                     }
                 }
 
+                DataSection(i18n)
+
                 Section(i18n.android("browserTitle"), i18n.android("browserBody")) {
                     // Store names are brands, so not translated.
                     for ((logo, name, url) in listOf(
@@ -183,6 +201,62 @@ fun SettingsScreen(
                 }
             }
         }
+    }
+}
+
+/** Export to / import from a file the user picks (no storage permission needed). */
+@Composable
+private fun DataSection(i18n: I18n) {
+    val context = LocalContext.current
+    val store = remember { Store.get(context) }
+    val scope = rememberCoroutineScope()
+    var note by remember { mutableStateOf<String?>(null) }
+    var picked by remember { mutableStateOf<String?>(null) }
+
+    val export = rememberLauncherForActivityResult(ActivityResultContracts.CreateDocument("application/json")) { uri ->
+        uri ?: return@rememberLauncherForActivityResult
+        scope.launch {
+            note = withContext(Dispatchers.IO) {
+                runCatching { context.contentResolver.openOutputStream(uri, "wt")!!.use { it.write(store.exportJson().toByteArray()) } }
+                    .fold({ i18n.t("savedTick") }, { it.message })
+            }
+        }
+    }
+    val import = rememberLauncherForActivityResult(ActivityResultContracts.OpenDocument()) { uri ->
+        uri ?: return@rememberLauncherForActivityResult
+        scope.launch {
+            val text = withContext(Dispatchers.IO) {
+                runCatching { context.contentResolver.openInputStream(uri)!!.use { it.readBytes().decodeToString() } }.getOrNull()
+            }
+            if (text == null) note = i18n.t("badJson") else picked = text
+        }
+    }
+
+    Section(i18n.t("yourData"), i18n.android("dataHint")) {
+        PixelButton(i18n.t("export"), fill = Card) {
+            note = null
+            export.launch("beepo-${java.time.LocalDate.now()}.json")
+        }
+        PixelButton(i18n.t("import"), fill = Card) {
+            note = null
+            import.launch(arrayOf("application/json", "text/plain", "application/octet-stream"))
+        }
+        picked?.let { text ->
+            Column(Modifier.fillMaxWidth(), verticalArrangement = Arrangement.spacedBy(6.dp)) {
+                Text(i18n.t("confirmImport"), style = PixelText)
+                Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                    PixelButton(i18n.android("importYes"), fill = Red) {
+                        picked = null
+                        scope.launch {
+                            val ok = withContext(Dispatchers.IO) { store.importJson(text).also { if (it) store.refresh() } }
+                            note = i18n.t(if (ok) "imported" else "notExport")
+                        }
+                    }
+                    PixelButton(i18n.t("cancel"), fill = Paper) { picked = null }
+                }
+            }
+        }
+        note?.let { Text(it, Modifier.fillMaxWidth(), style = PixelText.copy(color = Muted)) }
     }
 }
 

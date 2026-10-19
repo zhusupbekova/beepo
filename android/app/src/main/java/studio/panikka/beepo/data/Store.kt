@@ -31,6 +31,7 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharedFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.serialization.KSerializer
+import kotlinx.serialization.Serializable
 import kotlinx.serialization.builtins.ListSerializer
 import kotlinx.serialization.json.Json
 import java.io.File
@@ -40,6 +41,21 @@ import java.io.File
  * filesDir, same shapes as the extension's storage: rules, settings, wallet, day, history, pending, custom.
  * Every change goes through a synchronized method; screens read [state] and call these.
  */
+@Serializable
+private class Export(
+    val app: String = "beepo",
+    val platform: String = "",
+    val version: Int = 1,
+    val exportedAt: String = "",
+    val rules: List<Rule> = emptyList(),
+    val settings: Settings = Settings(),
+    val wallet: Wallet = Wallet(),
+    val day: Day? = null,
+    val history: List<HistoryEntry> = emptyList(),
+    val pending: List<News> = emptyList(),
+    val custom: List<CustomItem> = emptyList(),
+)
+
 class Store private constructor(private val context: Context) {
     val sprites: Sprites = Sprites.parse(context.assets.open("sprites.json").bufferedReader().use { it.readText() })
 
@@ -199,6 +215,27 @@ class Store private constructor(private val context: Context) {
             else -> return
         }
         save(st.copy(wallet = st.wallet.copy(equipped = equipped)))
+    }
+
+    /** Everything in one file (Settings → Your data), for a copy or a new phone. */
+    fun exportJson(now: Long = System.currentTimeMillis()): String {
+        val st = _state.value
+        return json.encodeToString(
+            Export.serializer(),
+            Export(platform = "android", exportedAt = java.time.Instant.ofEpochMilli(now).toString(), rules = st.rules, settings = st.settings, wallet = st.wallet,
+                day = st.day, history = st.history, pending = st.pending, custom = st.custom),
+        )
+    }
+
+    /** Replaces everything with an [exportJson] file; false if it isn't one (extension exports aren't). */
+    @Synchronized
+    fun importJson(text: String): Boolean {
+        val data = runCatching { json.decodeFromString(Export.serializer(), text) }.getOrNull()
+        if (data?.app != "beepo" || data.platform != "android") return false
+        save(State(data.rules, data.settings, data.wallet, data.day, data.history, data.pending, data.custom))
+        // Plus items and creations come off again if Plus isn't active here; refresh() rolls the day over.
+        setPlus(_plus.value)
+        return true
     }
 
     /** Writes only what changed. */

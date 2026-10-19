@@ -616,6 +616,8 @@
     "shareFriend": "💌 Dillo a un amico",
     "shareText": "Uso Beepo, un piccolo amico in pixel che mi dà una spintarella quando ho passato abbastanza tempo su un'app. Telefono: {play} Browser: {chrome}",
     "browserTitle": "Beepo nel browser",
-    "browserBody": "Vivo anche in fondo ai siti web e lì tengo d'occhio il tempo. Gratis su Chrome, Edge e Firefox."
+    "browserBody": "Vivo anche in fondo ai siti web e lì tengo d'occhio il tempo. Gratis su Chrome, Edge e Firefox.",
+    "dataHint": "Tutto resta sul tuo telefono. Il backup del telefono conserva regole, impostazioni e stelle, ma non il tempo nelle app. Esporta un file per portare tutto su un nuovo telefono.",
+    "importYes": "Sostituisci"
   }
 }

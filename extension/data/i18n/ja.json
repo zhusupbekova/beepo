@@ -616,6 +616,8 @@
     "shareFriend": "💌 友だちに教える",
     "shareText": "Beepoを使ってるよ。アプリを使いすぎたらそっと教えてくれる、小さなドットの相棒。スマホ: {play} ブラウザ: {chrome}",
     "browserTitle": "ブラウザにもBeepo",
-    "browserBody": "ウェブサイトの下にも住んでいて、そこでも時間を見守るよ。Chrome・Edge・Firefoxで無料。"
+    "browserBody": "ウェブサイトの下にも住んでいて、そこでも時間を見守るよ。Chrome・Edge・Firefoxで無料。",
+    "dataHint": "データはすべてスマホの中。スマホのバックアップにはルール・設定・スターが入りますが、アプリの使用時間は入りません。新しいスマホにすべて移すにはファイルを書き出してね。",
+    "importYes": "置き換える"
   }
 }

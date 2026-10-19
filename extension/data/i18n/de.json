@@ -616,6 +616,8 @@
     "shareFriend": "💌 Einem Freund erzählen",
     "shareText": "Ich nutze Beepo, einen kleinen Pixel-Kumpel, der mich anstupst, wenn ich genug von einer App habe. Handy: {play} Browser: {chrome}",
     "browserTitle": "Beepo im Browser",
-    "browserBody": "Ich wohne auch unten auf Webseiten und behalte dort die Zeit im Blick. Kostenlos für Chrome, Edge und Firefox."
+    "browserBody": "Ich wohne auch unten auf Webseiten und behalte dort die Zeit im Blick. Kostenlos für Chrome, Edge und Firefox.",
+    "dataHint": "Alles bleibt auf deinem Handy. Das Backup deines Handys sichert Regeln, Einstellungen und Sterne, aber keine App-Zeiten. Exportiere eine Datei, um alles auf ein neues Handy mitzunehmen.",
+    "importYes": "Ersetzen"
   }
 }

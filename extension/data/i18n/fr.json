@@ -616,6 +616,8 @@
     "shareFriend": "💌 En parler à un ami",
     "shareText": "J'utilise Beepo, un petit compagnon en pixels qui me fait signe quand j'ai assez traîné sur une appli. Téléphone : {play} Navigateur : {chrome}",
     "browserTitle": "Beepo dans ton navigateur",
-    "browserBody": "Je vis aussi en bas des sites web et j'y surveille le temps. Gratuit sur Chrome, Edge et Firefox."
+    "browserBody": "Je vis aussi en bas des sites web et j'y surveille le temps. Gratuit sur Chrome, Edge et Firefox.",
+    "dataHint": "Tout reste sur ton téléphone. La sauvegarde du téléphone garde les règles, les réglages et les étoiles, mais pas le temps passé dans les applis. Exporte un fichier pour tout emporter sur un nouveau téléphone.",
+    "importYes": "Remplacer"
   }
 }

@@ -616,6 +616,8 @@
     "shareFriend": "💌 Ceritakan ke teman",
     "shareText": "Aku pakai Beepo, teman piksel kecil yang mengingatkanku saat sudah cukup lama di sebuah aplikasi. HP: {play} Browser: {chrome}",
     "browserTitle": "Beepo di browsermu",
-    "browserBody": "Aku juga tinggal di bawah situs web dan menjaga waktumu di sana. Gratis di Chrome, Edge, dan Firefox."
+    "browserBody": "Aku juga tinggal di bawah situs web dan menjaga waktumu di sana. Gratis di Chrome, Edge, dan Firefox.",
+    "dataHint": "Semuanya tetap di HP-mu. Cadangan HP menyimpan aturan, pengaturan, dan bintang, tapi tidak waktu aplikasi. Ekspor file untuk membawa semuanya ke HP baru.",
+    "importYes": "Ganti"
   }
 }

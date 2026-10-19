@@ -616,6 +616,8 @@
     "shareFriend": "💌 Contar para um amigo",
     "shareText": "Estou usando o Beepo, um amiguinho em pixel que me cutuca quando já usei um app demais. Celular: {play} Navegador: {chrome}",
     "browserTitle": "Beepo no navegador",
-    "browserBody": "Também moro no rodapé dos sites e fico de olho no tempo por lá. Grátis no Chrome, Edge e Firefox."
+    "browserBody": "Também moro no rodapé dos sites e fico de olho no tempo por lá. Grátis no Chrome, Edge e Firefox.",
+    "dataHint": "Tudo fica no seu celular. O backup do celular guarda regras, configurações e estrelas, mas não o tempo nos apps. Exporte um arquivo para levar tudo para um celular novo.",
+    "importYes": "Substituir"
   }
 }

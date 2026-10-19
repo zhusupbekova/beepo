@@ -616,6 +616,8 @@
     "shareFriend": "💌 話畀朋友知",
     "shareText": "我用緊 Beepo，一個細細隻嘅像素老友，喺我碌某個 App 碌夠嘅時候輕輕提吓我。手機：{play} 瀏覽器：{chrome}",
     "browserTitle": "瀏覽器入面嘅 Beepo",
-    "browserBody": "我都住喺網頁底部，喺嗰度幫你睇住時間。Chrome、Edge 同 Firefox 免費。"
+    "browserBody": "我都住喺網頁底部，喺嗰度幫你睇住時間。Chrome、Edge 同 Firefox 免費。",
+    "dataHint": "所有嘢都留喺你部手機度。手機備份會保存規則、設定同星星，但唔包 App 使用時間。匯出檔案，就可以將所有嘢搬去新手機。",
+    "importYes": "取代"
   }
 }

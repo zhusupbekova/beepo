@@ -616,6 +616,8 @@
     "shareFriend": "💌 Cuéntaselo a un amigo",
     "shareText": "Uso Beepo, un pequeño amigo pixelado que me avisa cuando ya he tenido bastante de una app. Móvil: {play} Navegador: {chrome}",
     "browserTitle": "Beepo en tu navegador",
-    "browserBody": "También vivo al pie de las webs y vigilo el tiempo allí. Gratis en Chrome, Edge y Firefox."
+    "browserBody": "También vivo al pie de las webs y vigilo el tiempo allí. Gratis en Chrome, Edge y Firefox.",
+    "dataHint": "Todo se queda en tu móvil. La copia de seguridad del móvil guarda reglas, ajustes y estrellas, pero no el tiempo en apps. Exporta un archivo para llevarte todo a un móvil nuevo.",
+    "importYes": "Reemplazar"
   }
 }

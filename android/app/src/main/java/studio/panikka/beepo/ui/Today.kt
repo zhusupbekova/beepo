@@ -28,6 +28,7 @@ import studio.panikka.beepo.core.State
 import studio.panikka.beepo.core.baseLimitSecs
 import studio.panikka.beepo.core.matchApp
 import studio.panikka.beepo.core.newId
+import studio.panikka.beepo.core.suggestions
 import studio.panikka.beepo.data.AppInfo
 import studio.panikka.beepo.data.Plus
 import studio.panikka.beepo.data.Store
@@ -66,6 +67,17 @@ fun TodayScreen(state: State, store: Store, apps: Map<String, AppInfo>, granted:
                 if (rules.isEmpty()) Text(i18n.android("noRules"), style = PixelText.copy(color = Muted))
                 for (rule in rules) {
                     RuleRow(rule, day.usage[rule.id] ?: 0, baseLimitSecs(rule, key), rule.apps.mapNotNull { apps[it] }, i18n) { editing = rule }
+                }
+            }
+        }
+
+        // Apps with lots of time on most recent days that no rule covers yet.
+        if (granted) {
+            val suggested = suggestions(state.history, day, { matchApp(rules, it) != null }, state.settings.dismissed).filter { it.domain in apps }
+            for (s in suggested) {
+                val app = apps.getValue(s.domain)
+                SuggestionCard(app, i18n.t("suggest", "domain" to app.label, "n" to s.avgMinutes), i18n, onAdd = { addRule(app, 30) }) {
+                    store.setSettings(state.settings.copy(dismissed = state.settings.dismissed + s.domain))
                 }
             }
         }
@@ -141,6 +153,20 @@ private fun OverlayCard(i18n: I18n, onGrant: () -> Unit, onLater: () -> Unit) {
         Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
             PixelButton(i18n.android("usageGrant"), fill = Card, onClick = onGrant)
             PixelButton(i18n.android("notNow"), fill = Paper, onClick = onLater)
+        }
+    }
+}
+
+@Composable
+private fun SuggestionCard(app: AppInfo, text: String, i18n: I18n, onAdd: () -> Unit, onNo: () -> Unit) {
+    Column(Modifier.fillMaxWidth().pixelBox(Gold).padding(10.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
+        Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+            AppIcon(app, 28)
+            Text(text, Modifier.weight(1f), style = PixelText)
+        }
+        Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+            PixelButton(i18n.t("suggestAdd"), fill = Card, onClick = onAdd)
+            PixelButton(i18n.t("suggestNo"), fill = Paper, onClick = onNo)
         }
     }
 }

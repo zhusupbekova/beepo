@@ -616,6 +616,8 @@
     "shareFriend": "💌 Bir arkadaşına anlat",
     "shareText": "Beepo kullanıyorum: bir uygulamada yeterince vakit geçirdiğimde beni dürten küçük bir piksel dostu. Telefon: {play} Tarayıcı: {chrome}",
     "browserTitle": "Tarayıcında Beepo",
-    "browserBody": "Web sitelerinin altında da yaşıyorum ve orada da süreye göz kulak oluyorum. Chrome, Edge ve Firefox'ta ücretsiz."
+    "browserBody": "Web sitelerinin altında da yaşıyorum ve orada da süreye göz kulak oluyorum. Chrome, Edge ve Firefox'ta ücretsiz.",
+    "dataHint": "Her şey telefonunda kalır. Telefonunun yedeği kuralları, ayarları ve yıldızları saklar ama uygulama sürelerini saklamaz. Her şeyi yeni bir telefona taşımak için bir dosya dışa aktar.",
+    "importYes": "Değiştir"
   }
 }

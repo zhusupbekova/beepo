@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Android 11 and older: cloud backup keeps what you set up and earned, never app time
+     (day.json, history.json stay on the phone). -->
+<full-backup-content>
+    <include domain="file" path="rules.json" />
+    <include domain="file" path="settings.json" />
+    <include domain="file" path="wallet.json" />
+    <include domain="file" path="custom.json" />
+</full-backup-content>

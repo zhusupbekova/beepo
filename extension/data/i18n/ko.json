@@ -616,6 +616,8 @@
     "shareFriend": "💌 친구에게 알려주기",
     "shareText": "Beepo를 쓰고 있어. 앱을 충분히 썼을 때 살짝 알려 주는 작은 픽셀 친구야. 폰: {play} 브라우저: {chrome}",
     "browserTitle": "브라우저에서도 Beepo",
-    "browserBody": "웹사이트 아래쪽에도 살면서 거기서도 시간을 지켜봐. Chrome, Edge, Firefox에서 무료."
+    "browserBody": "웹사이트 아래쪽에도 살면서 거기서도 시간을 지켜봐. Chrome, Edge, Firefox에서 무료.",
+    "dataHint": "모든 데이터는 폰에만 있어요. 폰 백업에는 규칙, 설정, 별이 저장되지만 앱 사용 시간은 저장되지 않아요. 새 폰으로 전부 옮기려면 파일로 내보내세요.",
+    "importYes": "바꾸기"
   }
 }

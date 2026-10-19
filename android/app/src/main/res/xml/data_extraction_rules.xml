@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Android 12+: cloud backup keeps what you set up and earned, never app time. Moving to a new
+     phone (cable or local transfer, no cloud) takes everything. -->
+<data-extraction-rules>
+    <cloud-backup>
+        <include domain="file" path="rules.json" />
+        <include domain="file" path="settings.json" />
+        <include domain="file" path="wallet.json" />
+        <include domain="file" path="custom.json" />
+    </cloud-backup>
+    <device-transfer>
+        <include domain="file" path="." />
+    </device-transfer>
+</data-extraction-rules>

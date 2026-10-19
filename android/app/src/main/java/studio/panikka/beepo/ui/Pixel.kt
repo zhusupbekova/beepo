@@ -5,12 +5,14 @@ import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxHeight
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.text.BasicTextField
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.widthIn
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -146,5 +148,15 @@ fun FullScreenDialog(onDismiss: () -> Unit, content: @Composable () -> Unit) =
                 isAppearanceLightNavigationBars = !dark
             }
         }
-        content()
+        Centered(content)
+    }
+
+/** Widest the app gets: on tablets, foldables and in landscape it stays phone-width in the middle. */
+private val MAX_WIDTH = 640.dp
+
+/** Paper all around, the content in a column of at most [MAX_WIDTH] in the middle. */
+@Composable
+fun Centered(content: @Composable () -> Unit) =
+    Box(Modifier.fillMaxSize().background(Paper), contentAlignment = Alignment.TopCenter) {
+        Box(Modifier.widthIn(max = MAX_WIDTH)) { content() }
     }
