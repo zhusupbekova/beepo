@@ -144,7 +144,15 @@
     "edDrawFirst": "Gambar sesuatu dulu!",
     "edSaved": "Tersimpan! Pakai dari tab Toko.",
     "edDefaultName": "Kreasiku",
-    "edErase": "Hapus piksel Beepo"
+    "edErase": "Hapus piksel Beepo",
+    "phoneTitle": "📱 Beepo di ponselmu",
+    "phoneText": "Beepo juga mengawasi aplikasimu di Android. Pindai kodenya atau ketuk lencananya.",
+    "playBadgeAlt": "Temukan di Google Play",
+    "playLegal": "Google Play dan logo Google Play adalah merek dagang Google LLC.",
+    "shareBtn": "📣 Bagikan Beepo",
+    "shareSaved": "Minggu ini aku menghabiskan {time} lebih sedikit untuk hal yang buang waktu dibanding minggu lalu, bersama Beepo, teman piksel yang menjauhkanku dari doomscrolling.",
+    "shareText": "Beepo adalah teman piksel yang tinggal di bawah situs web dan menjauhkanku dari doomscrolling.",
+    "copied": "Disalin!"
   },
   "badges": {
     "first_star": {

@@ -144,7 +144,15 @@
     "edDrawFirst": "Önce bir şey çiz!",
     "edSaved": "Kaydedildi! Mağaza sekmesinden takabilirsin.",
     "edDefaultName": "Tasarımım",
-    "edErase": "Beepo pikselini sil"
+    "edErase": "Beepo pikselini sil",
+    "phoneTitle": "📱 Telefonunda Beepo",
+    "phoneText": "Beepo, Android'de de uygulamalarına göz kulak olur. Kodu tara ya da rozete dokun.",
+    "playBadgeAlt": "Google Play'den alın",
+    "playLegal": "Google Play ve Google Play logosu, Google LLC'nin ticari markalarıdır.",
+    "shareBtn": "📣 Beepo'yu paylaş",
+    "shareSaved": "Bu hafta zaman tüketen şeylere geçen haftadan {time} daha az harcadım; beni sonsuz kaydırmadan uzak tutan piksel dostum Beepo sayesinde.",
+    "shareText": "Beepo, sitelerin altında yaşayan ve beni sonsuz kaydırmadan uzak tutan bir piksel dost.",
+    "copied": "Kopyalandı!"
   },
   "badges": {
     "first_star": {

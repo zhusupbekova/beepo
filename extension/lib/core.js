@@ -14,6 +14,7 @@ export const DEFAULT_SETTINGS = {
   dismissed: [], // suggestion domains the user said no to
   lang: "auto", // or a key of LANGUAGES
   reviewAsked: false, // the one-time "rate Beepo" card was answered
+  phoneCardSeen: false, // the "Beepo on your phone" card in the popup was closed or used
 };
 
 // ---------- languages ----------

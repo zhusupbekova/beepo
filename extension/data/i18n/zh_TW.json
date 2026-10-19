@@ -144,7 +144,15 @@
     "edDrawFirst": "先畫點東西吧！",
     "edSaved": "已儲存！到商店分頁就能穿上。",
     "edDefaultName": "我的作品",
-    "edErase": "擦掉 Beepo 像素"
+    "edErase": "擦掉 Beepo 像素",
+    "phoneTitle": "📱 手機上的 Beepo",
+    "phoneText": "在 Android 上，Beepo 也會幫你盯著 App。掃描條碼或點一下徽章就好。",
+    "playBadgeAlt": "立即從 Google Play 下載",
+    "playLegal": "Google Play 和 Google Play 標誌是 Google LLC 的商標。",
+    "shareBtn": "📣 分享 Beepo",
+    "shareSaved": "這週我花在「時間黑洞」上的時間比上週少了 {time}，多虧了 Beepo——一個把我從無限滑手機裡拉出來的像素小夥伴。",
+    "shareText": "Beepo 是一個住在網頁底部的像素小夥伴，會把我從無限滑手機裡拉出來。",
+    "copied": "已複製！"
   },
   "badges": {
     "first_star": {

@@ -144,7 +144,15 @@
     "edDrawFirst": "पहले कुछ बनाइए!",
     "edSaved": "सेव हो गया! दुकान टैब से पहनिए।",
     "edDefaultName": "मेरी कलाकारी",
-    "edErase": "Beepo का पिक्सेल मिटाएँ"
+    "edErase": "Beepo का पिक्सेल मिटाएँ",
+    "phoneTitle": "📱 आपके फ़ोन पर Beepo",
+    "phoneText": "Beepo Android पर भी आपके ऐप्स पर नज़र रखता है। कोड स्कैन करें या बैज पर टैप करें।",
+    "playBadgeAlt": "इसे Google Play पर पाएं",
+    "playLegal": "Google Play और Google Play लोगो, Google LLC के ट्रेडमार्क हैं।",
+    "shareBtn": "📣 Beepo शेयर करें",
+    "shareSaved": "इस हफ़्ते मैंने समय खाने वाली चीज़ों पर पिछले हफ़्ते से {time} कम बिताया, Beepo के साथ — एक पिक्सेल दोस्त जो मुझे बेवजह स्क्रॉल करने से रोकता है।",
+    "shareText": "Beepo एक पिक्सेल दोस्त है जो वेबसाइटों के नीचे रहता है और मुझे बेवजह स्क्रॉल करने से रोकता है।",
+    "copied": "कॉपी हो गया!"
   },
   "badges": {
     "first_star": {

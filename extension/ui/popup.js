@@ -1,6 +1,7 @@
 import { normalizePattern, newId, hostOf } from "../lib/core.js";
 import { localize } from "./i18n.js";
-import { reviewUrl } from "./links.js";
+import { reviewUrl, shareUrl } from "./links.js";
+import { phoneCard } from "./phone.js";
 
 const $ = (id) => document.getElementById(id);
 const send = (msg) => chrome.runtime.sendMessage(msg);
@@ -106,6 +107,11 @@ function renderToday() {
     )
   );
 
+  // Footer: the Android app
+  $("phone").replaceChildren(
+    ...(st.phoneCard ? [phoneCard(t, assets.i18n.lang, { onClose: closePhoneCard, onOpen: closePhoneCard })] : [])
+  );
+
   // Rules
   const list = $("list");
   if (!st.rules.length) {
@@ -169,6 +175,12 @@ async function answerReview(rate) {
   if (rate) chrome.tabs.create({ url: reviewUrl() });
   const settings = { ...st.settings, reviewAsked: true };
   await chrome.storage.sync.set({ settings });
+  st = await send({ type: "popupState" });
+  render();
+}
+
+async function closePhoneCard() {
+  await chrome.storage.sync.set({ settings: { ...st.settings, phoneCardSeen: true } });
   st = await send({ type: "popupState" });
   render();
 }
@@ -262,8 +274,25 @@ function renderReport() {
                 el("td", { class: "num" }, fmtMin(r.lastWeek)),
                 el("td", { class: "num" }, `${delta > 0 ? "+" : delta < 0 ? "−" : ""}${fmtMin(Math.abs(delta))} ${delta === 0 ? "" : good ? "👍" : "👀"}`));
             }))
-        : el("div", { class: "empty" }, t("noRules")))
+        : el("div", { class: "empty" }, t("noRules"))),
+    el("button", { class: "ghost", style: "width:100%", onclick: (e) => share(e.currentTarget, savedSecs) }, t("shareBtn"))
   );
+}
+
+/** Share sheet where the browser has one, else copy text + link. */
+async function share(btn, savedSecs) {
+  const text = savedSecs >= 60 ? t("shareSaved", { time: fmtMin(savedSecs) }) : t("shareText");
+  const url = shareUrl();
+  if (navigator.share) {
+    try {
+      return await navigator.share({ text, url });
+    } catch (e) {
+      if (e.name === "AbortError") return;
+    }
+  }
+  await navigator.clipboard.writeText(`${text} ${url}`);
+  btn.textContent = t("copied");
+  setTimeout(() => (btn.textContent = t("shareBtn")), 1500);
 }
 
 // ---------- shop ----------

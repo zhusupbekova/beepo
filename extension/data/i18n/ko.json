@@ -144,7 +144,15 @@
     "edDrawFirst": "먼저 뭔가 그려 주세요!",
     "edSaved": "저장했어요! 상점 탭에서 착용할 수 있어요.",
     "edDefaultName": "내 작품",
-    "edErase": "Beepo 픽셀 지우기"
+    "edErase": "Beepo 픽셀 지우기",
+    "phoneTitle": "📱 폰에서도 Beepo",
+    "phoneText": "Beepo는 Android에서도 앱 사용을 지켜봐요. 코드를 스캔하거나 배지를 눌러 보세요.",
+    "playBadgeAlt": "Google Play에서 다운로드",
+    "playLegal": "Google Play 및 Google Play 로고는 Google LLC의 상표입니다.",
+    "shareBtn": "📣 Beepo 공유하기",
+    "shareSaved": "이번 주엔 시간 도둑에게 쓴 시간이 지난주보다 {time} 줄었어요. 무한 스크롤에서 꺼내 주는 픽셀 친구 Beepo 덕분에요.",
+    "shareText": "Beepo는 웹사이트 아래에 살면서 무한 스크롤에서 꺼내 주는 픽셀 친구예요.",
+    "copied": "복사했어요!"
   },
   "badges": {
     "first_star": {

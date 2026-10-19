@@ -1,6 +1,7 @@
 import { DEFAULT_SETTINGS, LANGUAGES } from "../lib/core.js";
 import { localize } from "./i18n.js";
 import { reviewUrl, feedbackUrl, DONATE_URL } from "./links.js";
+import { phoneCard } from "./phone.js";
 
 const $ = (id) => document.getElementById(id);
 const form = $("settings");
@@ -82,6 +83,7 @@ const subject = (k) => t(k).replace(/^\p{Extended_Pictographic}\uFE0F?\s*/u, "")
 $("idea").href = feedbackUrl(`Beepo: ${subject("suggestFeature")}`, assets.i18n.lang);
 $("bug").href = feedbackUrl(`Beepo: ${subject("reportBug")}`, assets.i18n.lang);
 $("donate").href = DONATE_URL;
+$("phone").replaceWith(phoneCard(t, assets.i18n.lang));
 
 BeepoSprite.draw($("beepo"), assets, { mood: "happy", scale: 3 });
 fill();

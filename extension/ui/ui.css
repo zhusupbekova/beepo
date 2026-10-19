@@ -41,3 +41,11 @@ button.icon:hover { opacity: 1; }
 .empty { color: var(--muted); text-align: center; padding: 8px; }
 label.field { display: flex; flex-direction: column; gap: 2px; font-size: 11px; }
 label.check { display: flex; align-items: center; gap: 6px; }
+
+/* "Beepo on your phone" card (ui/phone.js) */
+.phone .row { align-items: center; gap: 10px; }
+.phone h2 { margin: 0; }
+.phone .qr { width: 102px; height: 102px; border: 2px solid var(--ink); image-rendering: pixelated; }
+.phone .playBadge { display: inline-block; margin-top: 4px; }
+.phone .playBadge img { height: 54px; display: block; margin-inline-start: -7px; }
+.phone .legal { font-size: 9px; color: var(--muted); margin-top: 4px; }

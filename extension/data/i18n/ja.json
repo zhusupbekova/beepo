@@ -144,7 +144,15 @@
     "edDrawFirst": "まず何か描いてね！",
     "edSaved": "保存しました！ショップのタブから装備できます。",
     "edDefaultName": "マイ作品",
-    "edErase": "Beepoのピクセルを消す"
+    "edErase": "Beepoのピクセルを消す",
+    "phoneTitle": "📱 スマホにもBeepo",
+    "phoneText": "AndroidでもBeepoがアプリの使いすぎを見守ります。コードを読み取るか、バッジをタップしてね。",
+    "playBadgeAlt": "Google Play で手に入れよう",
+    "playLegal": "Google Play および Google Play ロゴは Google LLC の商標です。",
+    "shareBtn": "📣 Beepoをシェア",
+    "shareSaved": "今週は時間泥棒に使った時間が先週より{time}減りました。ダラダラスクロールから連れ出してくれるピクセルの相棒、Beepoのおかげ。",
+    "shareText": "Beepoはサイトの下に住んでいて、ダラダラスクロールから連れ出してくれるピクセルの相棒です。",
+    "copied": "コピーしました！"
   },
   "badges": {
     "first_star": {

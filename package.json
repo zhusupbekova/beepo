@@ -13,9 +13,11 @@
     "fixtures": "node scripts/make-fixtures.js",
     "play": "node scripts/play-assets.js",
     "promo": "node scripts/promo-videos.js",
-    "posts": "node scripts/social-posts.js"
+    "posts": "node scripts/social-posts.js",
+    "badges": "node scripts/make-play-badge.js"
   },
   "devDependencies": {
-    "playwright": "^1.63.0"
+    "playwright": "^1.63.0",
+    "qrcode": "^1.5.4"
   }
 }

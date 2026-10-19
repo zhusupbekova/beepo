@@ -144,7 +144,15 @@
     "edDrawFirst": "ارسم شيئًا أولًا!",
     "edSaved": "تم الحفظ! ارتدِه من تبويب المتجر.",
     "edDefaultName": "إبداعي",
-    "edErase": "امحُ بكسل Beepo"
+    "edErase": "امحُ بكسل Beepo",
+    "phoneTitle": "📱 Beepo على هاتفك",
+    "phoneText": "يراقب Beepo تطبيقاتك على Android أيضًا. امسح الرمز أو اضغط على الشارة.",
+    "playBadgeAlt": "احصل عليه من Google Play",
+    "playLegal": "‏Google Play وشعار Google Play علامتان تجاريتان لشركة Google LLC.",
+    "shareBtn": "📣 شارك Beepo",
+    "shareSaved": "هذا الأسبوع قضيت {time} أقل من الأسبوع الماضي على ما يضيّع وقتي، مع Beepo، رفيق بكسلي يبعدني عن التمرير اللانهائي.",
+    "shareText": "‏Beepo رفيق بكسلي يعيش أسفل المواقع ويبعدني عن التمرير اللانهائي.",
+    "copied": "تم النسخ!"
   },
   "badges": {
     "first_star": {

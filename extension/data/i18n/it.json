@@ -144,7 +144,15 @@
     "edDrawFirst": "Prima disegna qualcosa!",
     "edSaved": "Salvato! Indossalo dalla scheda Negozio.",
     "edDefaultName": "La mia creazione",
-    "edErase": "Cancella pixel di Beepo"
+    "edErase": "Cancella pixel di Beepo",
+    "phoneTitle": "📱 Beepo sul telefono",
+    "phoneText": "Beepo tiene d'occhio anche le tue app su Android. Scansiona il codice o tocca il badge.",
+    "playBadgeAlt": "Disponibile su Google Play",
+    "playLegal": "Google Play e il logo Google Play sono marchi di Google LLC.",
+    "shareBtn": "📣 Condividi Beepo",
+    "shareSaved": "Questa settimana ho passato {time} in meno della scorsa sulle perdite di tempo, con Beepo, un amico in pixel che mi allontana dal doomscrolling.",
+    "shareText": "Beepo è un amico in pixel che vive in fondo ai siti e mi allontana dal doomscrolling.",
+    "copied": "Copiato!"
   },
   "badges": {
     "first_star": {
