@@ -511,13 +511,20 @@
   // ---------- block screen ----------
 
   let pauseTimer = null;
+  let blockLine = null;
   function renderBlock() {
     const blocked = isBlocked();
     ui.block.hidden = !blocked;
     clearInterval(pauseTimer);
-    if (!blocked) return;
+    if (!blocked) {
+      blockLine = null;
+      return;
+    }
     const focus = view.state === "blocked-focus";
-    const m = line(focus ? "focus" : "blocked", { name: view.rule.name, until: view.rule.focus?.end || "" });
+    // Keep the same line while the screen stays up; a new one on every tick looks like flicker.
+    const key = `${view.state}:${view.rule.id}`;
+    if (blockLine?.key !== key) blockLine = { key, ...line(focus ? "focus" : "blocked", { name: view.rule.name, until: view.rule.focus?.end || "" }) };
+    const m = blockLine;
     ui.btitle.textContent = m.text;
     ui.binfo.textContent = focus
       ? t("blockFocus", { start: view.rule.focus.start, end: view.rule.focus.end, stars: view.stars })
