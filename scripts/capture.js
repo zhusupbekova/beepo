@@ -131,7 +131,7 @@ export async function render(page, { w, h, html, beepo = [] }) {
       for (const b of beepo) {
         const c = document.getElementById(b.id);
         if (b.pet) BeepoSprite.drawPet(c, { sprites }, b.pet, b.frame || 0, b.scale, b.flip);
-        else BeepoSprite.draw(c, { sprites }, { mood: b.mood || "happy", pose: b.pose, scale: b.scale, look: { equipped: b.equipped || {}, evolve: b.evolve } });
+        else BeepoSprite.draw(c, { sprites }, { mood: b.mood || "happy", pose: b.pose, scale: b.scale, look: { equipped: b.equipped || {}, evolve: b.evolve, scruffy: b.scruffy } });
       }
     },
     { sprites, beepo }
